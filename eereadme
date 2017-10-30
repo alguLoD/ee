@@ -1,0 +1,52 @@
+A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance.
+
+Changelog:
+
+0.1 Preview / High Priestess Build
+
+* Minimalist starting stationary defenders for the Pale One, Druid and Troll King. Should help them stay alive more reliably.
+* Tweaked Enchanter rituals. Enchanters always start with Animate Tools, Sword, Bow and Armor. Sculpt Terracotta Soldier does not destroy swamps but costs 5 gold.
+* Reduced the cost of all T2 and T3 Pale One rituals by between a fourth and a third. Very slightly buffed Lesser Lava Summoning. Rituals of Mastery left untouched for fear of breaking things.
+
+* Heavily revamped the High Priestess class. 
+* Blood Feast rituals are more expensive and instantly destroy a settlement but always summons a living giant commander (and their retinue), who in turn can summon more giants in walled citadels for gold, sacrifices and six action points. Zamzummites can still be acquired via T2 Blood Feast and are key to the Sheol ritpower branch. (Recruitment method subject to change.)
+* Ceremony to Baal split into several parts. Summon Creatures of Baal and Summon Greater Creatures of Baal cheaply summons spiders and potentially scorpions in the south. Ceremonies for Baal are desert-only but always summon demons. T2 Ceremony for Baal will never summon Mazzikim on their lonesome, they will always be accompanied by a Lilot or a couple of Se'irim.
+* The Sheol ritpower possessed by Zamzummites and Malikum can summon generic spectral units at T1, Lammashta and Ditanu at T2, Malikum at T2 (Zamzummite only, kills Zamzummite and destroys a town) for both sacrifices and hands, and T3 (Malikum only) can plane swap between Elysium and Hades for a large chunk of sacrifices and hands. Malik intentionally does not have the plane shift ability, at least for now.
+* Ditanim and Malikum have magic swords. Rephaim, Melqarts and Nephilim have fire resistance 50. Shedim are rearpos (like pikemen) and so slightly less exposed.
+* T3 rituals mostly left untouched for now. Watchers cannot be acquired through blood feasts at the moment and so are not accessible. Scorpion Men are only available in deserts. More changes are planned but left alone for now.
+
+0.2 Preview Build 171020
+* Ditanu -> mr 7.
+* Added event chain (minturn 12 chance 5%) for guaranteed Spirit Guide access for Barbarians.
+* Druid starting Venus Traps 2 -> 4.
+* Call Gibborim, Anakim more efficient. Slightly reduced probability of Mazzikim results for Ceremony to Baal. Only Anakite Captains can Call Gibborim.
+* Added elemental soldiers string to Warlock lesser summoning. Paraelementals are still T2 exclusive.
+* Bloodsworn not slow.
+* Light cavalry mercenary (fast, javelin) + captain added to Baron, Senator, Enchanter, Warlock, Dwarf Queen and Illusionist.
+* Generic Warrior Mage (mounted, front, rearpos, spellweapon ?) available to all classes (with libraries).
+* Master Smith added to Baron - allows the promotion of Knights to variants with resistances using gems.
+* Bakemono "Summon Oni" ritual will no longer summon Ao or Aka Oni. These have been replaced with a new "Oni" monster which has a greatsword and javelin. Kuro Oni will come with two of these as a retinue.
+* Nekromants start with Reanimate Animals. Create Flesh Golem is now a T1 ritual.
+* Added one-time Spirit Guide-spawning event for Barbarian, 5% chance per turn after turn 12.
+
+0.3 Preview Build 171028
+* Increased Barbarian event chance/turn to 10%.
+* Barbarian ancestor summon costs slashed by 20%. Ritual of Grand Mastery down to 1000 herbs (from 1200).
+* Amazons tweaked. All troops got +1 armor, Onyx Amazons no longer slow. +5 iron cost for Jade/Garnet Amazons, +10 for Onyx Amazon. Crystal Amazons use composite bows, which have slightly better range, damage and initiative.
+* Enchanter tweaks. Apprentic recruitment offer up to 5% (from 3%). Ritual tweaks. Animate Armor no longer free
+* Sculpt Terracotta Soldier creates three per cast, costs 20 gold. Create Gargoyles creates two per cast, costs 30 gold, 10 iron. 
+* New Sculpt Wooden and Stone Soldiers rituals for the Enchanter, in forests (inc. jungles, but not ancient forests) and mountains respectively. Sculpt Wooden Warriors learned as part of a batch with Sculpt Terracotta Soldiers. Sculpt Stone Soldiers learned as part of a batch with Create Gargoyles.
+* Because of how they usually learn several rituals at once, Enchanter's Lesser Ritual of Mastery cost has been raised to 25 (from 15).
+* Mercenary cavalry recruited four at a time, frequency slightly decreased, cost is the same (so more per unit).
+* Warlock T1 rituals revised further, now always elemental soldiers, regular elementals or rarely a minor spellcaster. Less efficient than the T2 summons still but less likely to induce buyer's remorse. Lesser elementals instead come as a retinue to Champions (at no extra cost).
+* Pale One Ritual of Grand Mastery cost down to 180 (from 240). Lava Summoning gives Magma Warriors instead of Lesser Fires.
+* Bloodsworn 100% control chance, 50% fire and cold resistance.
+* Troll King tweaks. Goblin Shamans and Witchdoctors given extra ritpower that mainly allows them to upgrade goblin troops (+MR, hp & morale, poison arrows). Wolf Kin Reavers are now promoted from Wolf Kin using a ritual. Reduced Rock Troll iron cost to 40.
+* Secondary leaders for Troll King. Opt between Goblin Mountain King for large masses of less-terrible goblins or Giant King for more giants, inc. ogre poachers with spears and javelins.
+* Secondary leaders for Barbarian. Amazon Queens are available at a low probability if the respective priestesses have been previously recruited. Only one can be recruited at a time and gives reliable access of their Amazon troop type, plus a rarer mounted elite. (You can probably guess what they are if you're familiar with Dominions.)
+* Zamzummites can scry for Sheol Temples.
+
+Minor fixes and tweaks. 
+* Warrior Mage cost fixed. 
+* Spider Familiars much less common for High Priestess (AI armies were swarming with them).
+

@@ -1,0 +1,1746 @@
+icon "ee/ee.tga"
+description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
+# 
+# Other: Recoffers for mercenary light cavalry (and captains) with javelins and spears for most human classes.
+#
+# Warrior Mage: New generic cavalry mage. Frontline combat caster.
+# (Baron) Master Smith: low reqfreqency. Can upgrade knights for gems. Efficiency is much lower than Runesmith.
+# (Baron/Senator/Other?) Artificer: low reqfreqency. can make a small variety of magic trinkets (i.e. make chests that come with items much like how other mods have done it), mostly useful for casters. Can only perform the ritual of mastery in libraries? Resource types used?
+# War Elephants: low reqfreqency option in Desert Palaces?
+#
+#
+# For those wondering why I separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
+#
+newmonster "Mercenary Cavalry"
+spr1 "ee/sprites/merccav1.tga"
+spr2 "ee/sprites/merccav2.tga"
+rank 1
+hp 10
+armor 0
+mor 4
+mr 4
+str 4
+rangedweapon 0 24 # Javelin
+meleeweapon 0 4 # Spear
+fast
+human
+shield
+allitemslots
+nobootslots
+
+selectmonster "Mercenary Cavalry"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
+
+newmonster "Mercenary Captain"
+copystats "Mercenary Cavalry"
+rank 0
+hp 12
+mor 5
+
+selectmonster "Mercenary Captain"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
+
+newmonster "Warrior Mage"
+spr1 "ee/sprites/warmage1.tga"
+spr2 "ee/sprites/warmage2.tga"
+rank 1
+rearpos # (maybe?)
+hp 12
+armor 2
+mor 5
+mr 7
+str 4
+spellweaponbonus 23 1 # Iron Arcana
+meleeweapon 1 474 # Magic Sword
+battlefast
+human
+shield
+allitemslots
+nobootslots
+randomitem 50
+
+selectmonster "Warrior Mage"
+descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
+
+# [BARON]
+# Mercenary cavalry access.
+# Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
+# Keep the Master Smith idea.
+#
+# ALL KNIGHT NAMES PLACEHOLDERS
+newmonster "Fire Knight"
+copystats "Knight"
+spr1 "ee/sprites/fireknight1.tga"
+spr2 "ee/sprites/fireknight2.tga"
+hp 13
+mr 5
+fireres 50
+
+selectmonster "Fire Knight"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
+
+newmonster "Earth Knight"
+copystats "Knight"
+spr1 "ee/sprites/earthknight1.tga"
+spr2 "ee/sprites/earthknight2.tga"
+hp 15
+mr 6
+armor 4
+
+selectmonster "Earth Knight"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
+
+newmonster "Air Knight"
+copystats "Knight"
+spr1 "ee/sprites/airknight1.tga"
+spr2 "ee/sprites/airknight2.tga"
+hp 13
+mr 5
+shockres 50
+
+selectmonster "Air Knight"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+
+newmonster "Frost Knight"
+copystats "Knight"
+spr1 "ee/sprites/waterknight1.tga"
+spr2 "ee/sprites/waterknight2.tga"
+hp 13
+mr 5
+coldres 50
+
+selectmonster "Frost Knight"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+
+# Dummy pseudocode: I considered giving the upgraded knights magic swords as well. Since I'm lazy and will probably return to that idea at some point...
+#clearweapons
+#meleeweaponspec 12 13
+#meleeweapon 1 474
+#meleeweaponbonus 4 95
+#
+#newmonster "Unicorn Knight of Fire"
+#copystats "Unicorn Knight"
+#spr1
+#spr2
+#
+#newmonster "Unicorn Knight of Frost"
+#copystats "Unicorn Knight"
+#spr1
+#spr2
+#
+#newmonster "Unicorn Knight of Air"
+#copystats "Unicorn Knight"
+#spr1
+#spr2
+#
+#newmonster "Unicorn Knight of Earth"
+#copystats "Unicorn Knight"
+#spr1
+#spr2
+
+newritpow
+
+newritual "Forge Armaments of Flame"
+ritpow 48
+level 1
+cost 0 15
+cost 7 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Fire Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Fire"
+
+selectritual "Forge Armaments of Flame"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Frost"
+ritpow 48
+level 1
+cost 0 15
+cost 8 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Frost Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Frost"
+
+selectritual "Forge Armaments of Frost"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Air"
+ritpow 48
+level 1
+cost 0 15
+cost 9 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Air Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Air"
+
+selectritual "Forge Armaments of Air"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Earth"
+ritpow 48
+level 1
+cost 0 15
+cost 10 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Earth Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Earth"
+
+
+selectritual "Forge Armaments of Earth"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+ #SPRITE PLACEHOLDER
+newmonster "Master Smith"
+spr1 "ee/sprites/msmith1.tga"
+spr2 "ee/sprites/msmith2.tga"
+rank -1
+hp 6
+armor 0
+mor 4
+mr 5
+str 5
+meleeweapon 0 6 # Hammer
+human
+allitemslots
+power 48 1
+gathergems
+
+selectmonster "Master Smith"
+descr "Master smiths have mastered the craft of forging enchanted armour, which they are willing to do at considerable expense. They are proud and only provide their services to knights. Master smiths are stereotyped as stout and gruff, and due to their skills it is a widespread belief that they all have dwarven blood. This is obviously impossible to anyone who is familiar with dwarven reproduction and who consequently experiences considerable consternation when this myth is mentioned in their vicinity."
+
+selectclass 1
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Master Smith" 3 1 80 20 0
+
+# [NECROMANCER]
+selectclass 2
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+# ?
+#selectritual "Raise Legion
+#addstring "(-27)c*? & 5d6*Fossil Warrior"
+# setvar # pay no attention to this move along
+# [DEMONOLOGIST]
+selectclass 3
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+selectmonster "Bloodsworn"
+clearmove
+fireres 50
+coldres 50
+ctrlchance 100
+infwander 6
+
+#
+# [WITCH]
+selectclass 4
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+#
+# [HIGH PRIESTESS]
+
+#selectmonster "Nephil"
+#ritpow 8 4
+#
+#selectmonster "God"
+#ritpow 8 5
+#
+selectclass 5
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+# Undecided on whether Rephaite lords should enable the recruitment of Rephaites or whether I should give them a new ritpow with rituals that are fort-only, high AP and cost gold plus sacrifices. For now implemented as rituals.
+#addunitrec "Gibbor"
+#reclimiter "+Anointed Priestess"
+#addunitrec "Anakite"
+#reclimiter "+Adon"
+#addcomrec "Anakite Captain"
+#reclimiter "+Adon"
+#addunitrec "Rephaite"
+#reclimiter "+Melqart"
+#addcomrec "Emite"
+#reclimiter "+Zamzummite"
+#
+#newmonster "Belus"
+#newmonster "Gibbor Scout"
+#newmonster "Gibbor Archer"
+#newmonster "Qedesim"
+#newmonster "Emite"
+#newmonster "Anakite Elder"
+#newmonster "Anakite Sage"
+#newmonster "Kohen"
+#newmonster "Dawn Guard"
+#newmonster "Fossil Warrior"
+
+selectritual "Lesser Ceremony to Baal"
+clearritspec
+level 9
+nostart
+
+newritual "Lesser Ceremony of Baal"
+ritpow 8 # Baalite Rituals
+level 1
+cost 4 20 # Sacrifices
+terr 117 # Desert
+noundead
+summoning
+addstring "1d4+2*Mazzik"
+addstring "1d2*Se'ir"
+
+selectritual "Lesser Ceremony of Baal"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
+
+selectritual "Lesser Blood Feast"
+clearritspec
+level 9
+nostart
+
+newritual "Common Blood Feast"
+ritpow 8 # Baalite
+level 1
+cost 4 30 # Sacrifices
+terr -29 # Hamlets and up.
+noundead
+sum0chance 75
+summoning
+destroyterr 100
+addstring "c*Anakite Captain & 1d2+1*Anakite"
+#addstring "c*Emite"
+
+selectritual "Common Blood Feast"
+descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+
+newritual "Summon Creatures of Baal"
+ritpow 8 # Baalite Rituals
+level 1
+cost 4 10 # Sacrifices
+noundead
+sum0chance 20
+summoning
+addstring "Large Spider Familiar"
+addstring "1d4*Large Spider"
+addstring "2d5*Small Spider"
+addstring "(-27)2d5*Scorpion"
+addstring "(-27)1d4*Giant Scorpion"
+addstring "(-27)1*Scorpion Beast"
+
+selectritual "Summon Creatures of Baal"
+descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are only found in the south."
+
+selectritual "Ceremony to Baal"
+clearritspec
+level 9
+nostart
+
+newritual "Ceremony of Baal"
+ritpow 8 # Baalite Rituals
+level 2
+cost 4 75 # Sacrifices
+terr 117 # Deserts only
+noundead
+sum0chance 15
+sum1chance 15
+summoning
+addstring "1d2+1*Se'ir & 3d4*Mazzik"
+addstring "Lilot & 3d4*Mazzik"
+addstring "2d3*Se'ir"
+addstring "1d2*Shed"
+addstring "1d3*Lilot"
+
+selectritual "Ceremony of Baal"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
+
+newritual "Summon Greater Creatures of Baal"
+ritpow 8 # Baalite
+level 2
+cost 4 50 # Sacrifices
+noundead
+summoning
+addstring "2d3*Giant Spider & 2d3*Small Spider"
+addstring "2d6+2*Large Spider"
+addstring "(-27)2d3*Scorpion Beast"
+addstring "(-27)1d3*Scorpion Beast & 3d3*Giant Scorpion"
+
+selectritual "Summon Greater Creatures of Baal"
+descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are found only in the south."
+
+selectritual "Grand Ceremony to Baal"
+clearritspec
+level 9
+nostart
+
+newritual "Grand Ceremony of Baal"
+ritpow 8 # Baalite
+level 3
+cost 4 100 # Sacrifices
+noundead
+summoning
+addstring "Sirrush"
+addstring "c*Manticore"
+addstring "(117)c*Scorpion Man"
+
+selectritual "Grand Ceremony of Baal"
+descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions."
+
+selectritual "Blood Feast"
+clearritspec
+level 9
+nostart
+
+newritual "Great Blood Feast"
+ritpow 8 # Baalite
+level 2
+cost 4 100 # Sacrifices
+terr -32 # Village or larger
+noundead
+sum0chance 75
+summoning
+destroyterr 100
+addstring "c*Adon & 2d3+1*Anakite"
+addstring "c*Zamzummite"
+
+selectritual "Great Blood Feast"
+descr "By sacrificing a few blood slaves in a village the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high status to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+
+selectritual "Grand Blood Feast"
+clearritspec
+nostart
+level 9
+
+# I've considered setting Royal Blood Feast to being city-only and turning the city into a ruin or into a haunted city (and the same for the Banquet to the Dead) and having reqterr city for the High Priestess, but for now...
+newritual "Royal Blood Feast"
+ritpow 8 # Baalite
+level 3
+cost 4 150 # Sacrifices
+terr -28 # Towns and cities.
+noundead
+sum0chance 80
+summoning
+destroyterr 100
+addstring "c*Melqart & 2d4*Rephaite"
+addstring "c*Nephil"
+#addstring "c*Belus & 2d4*Rephaite"
+
+selectritual "Royal Blood Feast"
+descr "By sacrificing a few blood slaves in a town the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a Rephaite lord and his retinue to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+
+ritpow 8
+selectritual "Summon God"
+free
+
+
+#
+#newritual "" - scry for Watchers
+#ritpow 8 4
+# planeloc 2
+# randnewloc 104 # Pit
+#
+##newritual "Second Sun"
+#ritpow 8 5
+# Most of the Sheol rituals are placeholders and works in progress.
+# IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
+
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+ritpow 49 # Sheol
+level 1
+cost 5 5 # Hands
+newrit 1
+soundfx 57 # orchhit.smp
+free
+
+newritual "Ritual of Mastery"
+ritpow 49 # Sheol
+level 2
+cost 5 30 # Hands
+newrit 2
+soundfx 57 # orchhit.smp
+rebatelvl 2
+free
+
+newritual "Ritual of Grand Mastery"
+ritpow 49 # Sheol
+level 3
+cost 5 60 # Hands
+newrit 3
+soundfx 57 # orchit.smp
+rebatelvl 3
+free
+
+#newritual "Walk through Sheol"
+
+newritual "Call the Dead"
+descr "The caster reaches through the Veil between Elysium and Sheol and summons some of its inhabitants to serve the High Priestess."
+ritpow 49 # Sheol
+level 1
+cost 5 5
+summoning
+addstring "1d3*Ghost Warrior"
+addstring "1d3*Spectral Archer"
+addstring "1d3*Shade"
+addstring "1d3*Shade Beast"
+addstring "1d6*Dispossessed Spirit"
+
+#newritual "Seek the Dead"
+#descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
+#ritpow 49
+#level 1
+#cost 5 5
+#planeloc 3
+#randnewloc 224 # Sheol Temple
+#scryloc 20
+
+newritual "Dirge for the Dead"
+descr "The caster holds a grand dirge for the honored dead.  The servants of the Malikum will hear the dirge and return to serve the cause of the High Priestess."
+ritpow 49 # Sheol
+level 2
+cost 5 25 # Hands
+sum0chance 25
+summoning
+addstring "Lammashta"
+addstring "Ditanu"
+
+#newritual - fossil warriors
+
+selectritual "Banquet for the Dead"
+clearritspec
+nostart
+level 9
+
+newritual "Banquet to the Dead"
+ritpow 49 # Sheol
+level 2
+cost 5 35 # Hands
+cost 4 50 # Sacrifices
+terr -28 # Towns or cities
+sum0chance 75
+summoning
+destroyterr 100
+killtarg 9999
+addstring "c*Malik & 2d3+1*Ditanu"
+#addstring "c*Ditan & 3d3*Ditanu"
+noundead
+
+selectritual "Banquet to the Dead"
+descr "The Zamzummite holds a banquet for the deified dead.  For three days the living and the shades of the dead share tables and meals.  At the eastern end of the table is a throne for the living Zamzummite and at the western end is an empty throne.  Each night the ghostly shapes in the empty seats and throne become more solid.  At the final night the Zamzummite sacrifices himself and entire town to the dead king who can then manifest in the land of the living as a reawakened god."
+
+newritual "Passage to Sheol"
+ritpow 49 # Sheol
+level 3
+cost 5 25 # Hands 
+cost 4 25 # Sacrifices
+planeswap 3 # Elysium to Hades and back.
+centercaster
+soundfx 43
+closewin
+
+selectritual "Passage to Sheol"
+descr "Using the power of both life and death the Malik can move through the veil between Elysium and Sheol at will, bringing along his entire army."
+
+#newritual "Host of Sheol"
+
+newritpow
+
+newritual "Call Gibborim"
+descr "The Anakite Captain invites a group of Gibborim to a grisly banquet.  While the lords of the Anakim and Rephaim are loathe to associate with degenerates, not all of their servants share their scruples.  After partaking in the feast and being plied with wine and fine gifts the Gibborim will serve the High Priestess."
+ritpow 50
+level 1
+cost 0 60
+cost 4 20
+terr -9
+levelreq 1
+summoning
+apcost 5
+#addstring - qedesim?
+addstring "4*Gibbor"
+#addstring "Gibbor Scout & 2*Gibbor"
+#addstring - archers?
+
+newritual "Call Anakim"
+descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
+ritpow 50
+level 2
+cost 0 80
+cost 4 40
+terr -9
+summoning
+apcost 5
+#addstring - emite
+#addstring - anakite elder
+addstring "4*Anakite"
+#addstring - ?
+
+#newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
+
+newritual "Call Rephaim"
+descr "The Melqart invites a small group of Rephaite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
+ritpow 50
+level 3
+cost 0 120
+cost 4 60
+terr -9
+summoning
+apcost 5 
+addstring "3*Rephaite"
+
+selectmonster "Zamzummite"
+power 1 0 # Gets rid of necromancy
+power 49 2 # Sheol
+gatherhands
+
+selectmonster "Shed"
+rearpos
+
+selectmonster "Ditanu"
+clearweapons
+meleeweapon 19 474 # Magic sword, damage 1-26
+mr 7
+
+selectmonster "Malik"
+spiritsight
+clearweapons
+spellweapon 38 3 # Necromancy
+meleeweapon 22 474 # Magic sword, damage 1-29
+power 1 0 # Gets rid of Necromancy.
+power 49 3 # Sheol
+gatherhands
+
+selectmonster "Anakite Captain"
+power 49 1
+
+selectmonster "Adon"
+power 49 2
+
+selectmonster "Rephaite"
+fireres 50
+
+selectmonster "Melqart"
+power 49 3
+fireres 50
+
+selectmonster "Nephil"
+fireres 50
+#power 49 4
+
+#selectmonster "God"
+
+# Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
+
+# [BAKEMONO]
+# Should have more proper Oni.
+# Other changes may be in the pipeline.
+selectclass 6
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+newmonster "Oni"
+copystats "Kuro Oni"
+spr1 "ee/sprites/oni1.tga"
+spr2 "ee/sprites/oni2.tga"
+rank 1
+hp 33
+armor 0
+mr 7
+mor 7
+str 6
+clearweapons
+rangedweapon 3 24 # Javelin
+meleeweapon 3 21 # Greatsword
+fireres -50
+coldres 50
+poisonres -50
+diseaseres
+allitemslots
+banishsurv
+firstshape 1
+
+selectmonster "Oni"
+descr descr "Oni are ugly, wild demons with pot-bellies and unkempt hair.  They come in different colors and with different abnormalities, but red or green skin with a pair of horns or an extra eye or ear seem to be the most common variants.  Although all Oni enjoys striking people with large clubs, most of them are also capable of dealing pain using their demonic magic.  The Oni have a great appetite and consume all the food and drink they can get hold of.  However, food is also their weakness as they cannot pass a line of carefully arranged potatoes.  Putting a few potatoes on the doorstep is an effective way to keep the Oni out, but on the other hand beasts and especially Bears might be attracted by the potatoes instead."
+
+newmonster "Spectral Oni"
+copystats "Oni"
+spr1 "ee/sprites/soni1.tga"
+spr2 "ee/sprites/soni2.tga"
+hp 20
+mor 3
+clearweapons
+meleeweapon 11 158 # Spectral Sword
+ethereal
+banishsurv
+secondshape 2
+
+selectmonster "Spectral Oni"
+descr "Oni are almost immortal.  When their body is slain, their spirit will live on.  If the spirit is not slain or banished as well, it will reform a new body over time."
+
+selectritual "Summon Oni"
+clearritspec
+level 9
+nostart
+
+newritual "Summon Greater Oni"
+ritpow 7 # Bakemono
+level 2
+cost 4 100 # Sacrifices
+varcost 100
+defctrl 65
+summoning
+addstring "c*Kuro Oni & 2*Oni"
+addstring "c*Hannya"
+addstring "2d4+2*Oni"
+addstring "Gozu & Mezu"
+
+selectritual "Summon Greater Oni"
+descr "Oni are evil demons and this ritual will summon them and then try to control them.  The more sacrifices used the greater the chance of success."
+
+selectritual "Summon King"
+clearritspec
+level 9
+nostart 
+
+newritual "Summon Kings"
+ritpow 7 # Bakemono Rituals
+level 3
+cost 4 300 # 300 Sacrifices
+varcost 60 # Can spend as little as 40% of cost.
+defctrl 70 # % default control chance for summonings. Can be overridden by monster's own ctrlchance.
+summoning
+addstring "c*Dai Oni & 2d3+2*Oni & 1d6+2*Aka Oni & 1d6+2*Ao Oni"
+addstring "c*Dai Tengu & 3d6*Tengu Warrior & 3d6*Konoha Tengu"
+
+selectritual "Summon Kings"
+descr "This ritual will summon and try to take control over a king and his guards.  The more sacrifices used, the greater the chance of success."
+# [BARBARIAN]
+# Guaranteed herb-gatherer access around year three? Or gramps comes back if you show up at an Ancient Battlefield?
+
+newweapon "Composite Bow"
+range 6
+init 3
+dmgtype 3 # Piercing
+dmg 4
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+
+selectmonster "Garnet Amazon"
+armor 1
+
+selectmonster "Jade Amazon"
+armor 1
+
+selectmonster "Crystal Amazon"
+clearweapons
+rangedweapon 0 "Composite Bow"
+meleeweapon 0 1
+
+selectmonster "Crystal Priestess"
+clearweapons
+rangedweapon 0 "Composite Bow"
+meleeweapon 0 1
+
+selectmonster "Crystal Sorceress"
+clearweapons
+rangedweapon 0 "Composite Bow"
+meleeweapon 0 1
+
+selectmonster "Onyx Amazon"
+clearmove
+armor 2
+
+newmonster "Garnet Queen"
+copystats "Garnet Sorceress"
+spr1 "ee/sprites/garnetqueen1.tga"
+spr2 "ee/sprites/garnetqueen2.tga"
+descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
+
+newmonster "Jade Queen"
+copystats "Jade Sorceress"
+spr1 "ee/sprites/jadequeen1.tga"
+spr2 "ee/sprites/jadequeen2.tga"
+descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
+
+newmonster "Crystal Queen"
+copystats "Crystal Sorceress"
+spr1 "ee/sprites/crystalqueen1.tga"
+spr2 "ee/sprites/crystalqueen2.tga"
+descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
+
+newmonster "Onyx Queen"
+copystats "Onyx Sorceress"
+spr1 "ee/sprites/onyxqueen1.tga"
+spr2 "ee/sprites/onyxqueen2.tga"
+descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
+
+newmonster "Gryphon Rider"
+spr1 "ee/sprites/garrid1.tga"
+spr2 "ee/sprites/garrid2.tga"
+descr "The elites of the Garnet tribe are the most horrifying of all Amazon warriors. They apparently know how to safely steal Gryphon eggs and raise the hatchlings as mounts for their sacred warriors. Fortunately these Gryphon Riders are very rare. None have ever been captured alive, a fact that seems to disappoint many knights who dream of riding gryphons of their own."
+rank 1 
+hp 106
+armor 2
+mr 7
+mor 7
+str 9
+meleeweaponspec 3 4 # Spear
+meleeweapon 23 93 # Beak
+meleeweapon 15 94 # Talon
+flying
+huge
+acutesenses
+human
+shield
+shockres 50
+fireres 100
+allitemslots
+nobootslots
+
+newmonster "Jade Maiden"
+spr1 "ee/sprites/jadrid1.tga"
+spr2 "ee/sprites/jadrid2.tga"
+descr "The elites of the Jade tribe ride strange, swamp-born two-legged lizards with tiny arms. They are more ferocious than they appear, and the lizard will bite and claw at the maiden's enemies."
+rank 1
+hp 12
+armor 2
+mr 8
+mor 7
+str 5
+meleeweaponspec 15 13 # Lance
+meleeweapon 1 4 # Spear
+meleeweapon 5 11 # Bite
+meleeweapon 4 12 # Claw
+fast
+poisonres 50
+shield
+human
+allitemslots
+nobootslots
+
+newmonster "Wind Rider"
+spr1 "ee/sprites/winrid1.tga"
+spr2 "ee/sprites/winrid2.tga"
+descr "The elites of the Crystal tribe ride atop winged horses. These horses can fly, in contradiction to all common sense. The origin of these horses is unknown but speculated to rise from a crossing between a horse and a very large swan. While not as dangerous as the Gryphon Riders, the Wind Riders are more numerous and can simply fly over conventional fortifications."
+rank 1
+hp 15
+armor 2
+mr 7
+mor 7
+str 5
+meleeweaponspec 15 13 # Lance
+meleeweapon 2 4 # Spear
+meleeweapon 4 95 # Hoof
+flying
+shockres 50
+shield
+human
+allitemslots
+nobootslots
+
+newmonster "Nightmare"
+spr1 "ee/sprites/onyrid1.tga"
+spr2 "ee/sprites/onyrid2.tga"
+descr "The elites of the Onyx tribe ride horrifying undead horses raised by the tribe's priestesses. These are surrounded by an aura of terror that seems to be at least partially magical. Aside from this they differ little from conventional cavalry."
+rank 1
+hp 18
+armor 3
+mr 7
+mor 7
+str 5
+meleeweaponspec 15 13 # Lance
+meleeweapon 1 4 # Spear
+meleeweapon 4 95 # Hoof
+battlefast
+fear
+shield
+human
+allitemslots
+nobootslots
+
+selectclass 7
+clearrec
+addcomrec "Barbarian Leader" 100 25 10 0
+reclimiter "-Barbarian Leader"
+addcomrec "Garnet Queen" 6 75 25 0
+reclimiter "+Garnet Priestess"
+reclimiter "-Garnet Queen"
+reclimiter "-Jade Queen"
+reclimiter "-Crystal Queen"
+reclimiter "-Onyx Queen"
+addcomrec "Jade Queen" 6 75 25 0
+reclimiter "+Jade Priestess"
+reclimiter "-Garnet Queen"
+reclimiter "-Jade Queen"
+reclimiter "-Crystal Queen"
+reclimiter "-Onyx Queen"
+addcomrec "Crystal Queen" 6 75 25 0
+reclimiter "+Crystal Priestess"
+reclimiter "-Garnet Queen"
+reclimiter "-Jade Queen"
+reclimiter "-Crystal Queen"
+reclimiter "-Onyx Queen"
+addcomrec "Onyx Queen" 6 75 25 0
+reclimiter "+Onyx Priestess"
+reclimiter "-Garnet Queen"
+reclimiter "-Jade Queen"
+reclimiter "-Crystal Queen"
+reclimiter "-Onyx Queen"
+addunitrec  "Barbarian Warrior" 100 7 50 0 0
+addunitrec  "Barbarian Bowman" 100 7 50  0 0
+addunitrec  "Barbarian Swordsman" 100 7 50  0 10
+addunitrec  "Barbarian Cavalry" 100 4 50 0 0
+addunitrec  "Barbarian Lancer" 100 4 50 0 10
+addunitrec  "Barbarian Werebear" 10 1 25 0 0
+addcomrec   "Spirit Guide" 8  75 20 0
+templerec
+addcomrec   "Soothsayer"   8 40 20 0
+templerec
+addcomrec   "Mounted Chief" 10 25 10 0
+addmercrec  "Mounted Scout" 15 1 15 10 0
+addcomrec   "Crystal Priestess" 3 40 20 0
+templerec
+reclimiter "-Crystal Queen"
+addcomrec   "Crystal Sorceress"3 80 20 0
+reclimiter  "+Crystal Priestess"
+reclimiter "-Crystal Queen"
+addunitrec  "Crystal Amazon" 25 8 50 0 0
+reclimiter  "+Crystal Priestess"
+reclimiter "-Crystal Queen"
+addcomrec   "Garnet Priestess" 3 40 20 0
+templerec
+reclimiter "-Garnet Queen"
+addcomrec   "Garnet Sorceress"  3 80 20 0
+reclimiter  "+Garnet Priestess"
+reclimiter "-Garnet Queen"
+addunitrec  "Garnet Amazon"  25 8 50  0 5
+reclimiter  "+Garnet Priestess"
+reclimiter "-Garnet Queen"
+addcomrec   "Jade Priestess" 3 40 20 0
+templerec
+reclimiter "-Jade Queen"
+addcomrec   "Jade Sorceress" 3 80 20 0
+reclimiter  "+Jade Priestess"
+reclimiter "-Jade Queen"
+addunitrec  "Jade Amazon" 25 8 50 0 5
+reclimiter  "+Jade Priestess"
+reclimiter "-Jade Queen"
+addcomrec   "Onyx Priestess" 3 40 20 0
+templerec
+reclimiter "-Onyx Queen"
+addcomrec   "Onyx Sorceress" 3 80 20 0
+reclimiter  "+Onyx Priestess"
+reclimiter "-Onyx Queen"
+addunitrec  "Onyx Amazon" 25 8 50 0 10
+reclimiter  "+Onyx Priestess"
+reclimiter "-Onyx Queen"
+# Garnet Queen Recruitment
+addunitrec "Garnet Amazon" 100 8 50 0 5
+reclimiter "+Garnet Queen"
+addcomrec "Garnet Priestess" 6 40 20 0
+templerec
+reclimiter "+Garnet Queen"
+addcomrec "Garnet Sorceress" 6 80 20 0
+reclimiter "+Garnet Queen"
+addunitrec "Gryphon Rider" 5 1 150 0 20
+reclimiter "+Garnet Queen"
+# Jade Queen Recruitment
+addunitrec "Jade Amazon" 100 8 50 0 5
+reclimiter "+Jade Queen"
+addcomrec "Jade Priestess" 6 40 20 0
+templerec
+reclimiter "+Jade Queen"
+addcomrec "Jade Sorceress" 6 80 20 0
+reclimiter "+Jade Queen"
+addunitrec "Jade Maiden" 10 4 60 0 10
+reclimiter "+Jade Queen"
+# Crystal Queen Recruitment
+addunitrec "Crystal Amazon" 100 8 50 0 0
+reclimiter "+Crystal Queen"
+addcomrec "Crystal Priestess" 6 40 20 0
+templerec
+reclimiter "+Crystal Queen"
+addcomrec "Crystal Sorceress" 6 80 20 0
+reclimiter "+Crystal Queen"
+addunitrec "Wind Rider" 10 4 80 0 10
+reclimiter "+Crystal Queen"
+# Onyx Queen Recruitment
+addunitrec "Onyx Amazon" 100 8 50 0 10
+reclimiter "+Onyx Queen"
+addcomrec "Onyx Priestess" 6 40 20 0
+templerec
+reclimiter "+Onyx Queen"
+addcomrec "Onyx Sorceress" 6 80 20 0
+reclimiter "+Onyx Queen"
+addunitrec "Nightmare" 10 4 80 0 15
+reclimiter "+Onyx Queen"
+# generic
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+# It works! Didn't entirely expect it to.
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++class -2 "Barbarian"
++varequal 107 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 107 1
+endevent
+
+selectritual "Summon Ancestor"
+cost 2 40
+
+selectritual "Summon Heroes of Old"
+cost 2 240
+
+selectritual "Ritual of Grand Mastery"
+cost 2 1000
+
+selectritual "Army of Legends"
+cost 2 800
+
+
+
+# [SENATOR]
+selectclass 8
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+# Mercenary cavalry access.
+
+# [PALE ONE]
+
+selectclass 9
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addstartunits "Granite Guardian"
+addstartunits "Sentinel" 2
+
+
+
+selectritual "Lesser Lava Summoning"
+addstring "1d3+1*Lesser Fire"
+addstring "Magma Child"
+
+selectritual "Olm Conclave"
+cost 8 80
+
+selectritual "Summoning of the Dead"
+cost 9 60
+
+selectritual "Lava Summoning"
+clearritspec
+level 9
+nostart
+
+newritual "Lava Summoning"
+ritpow 15
+level 2
+cost 7 60
+rebatefx25 1
+summoning
+addstring "3d4*Magma Warrior"
+addstring "1d3*Fire Elemental"
+addstring "1d3*Magma Child"
+
+selectritual "Ritual of Grand Mastery"
+cost 10 180 # Emeralds
+
+selectritual "Deep Earth Summoning"
+cost 10 60
+
+selectritual "Awaken Marble Oracle"
+cost 10 60
+
+selectritual "Awaken Onyx Oracle"
+cost 10 180
+
+# [DRUID]
+# Starting defenders 1 tree of crows + 2 venus traps
+# ?
+
+selectclass 10
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addstartunits "Venus Trap" 4
+addstartunits "Tree of Crows"
+
+# [HOBURG] / [BURGMEISTER]
+selectclass 11
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+# [WARLOCK]
+selectclass 12
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+
+# Spells revised to make T1 summoning more palatable for non-Air Warlocks.
+
+selectritual "Lesser Fire Summoning"
+clearritspec
+level 9
+nostart
+
+selectritual "Lesser Water Summoning"
+clearritspec
+level 9
+nostart
+
+selectritual "Lesser Air Summoning"
+clearritspec
+level 9
+nostart
+
+selectritual "Lesser Earth Summoning"
+clearritspec
+level 9
+nostart
+
+newritual "Lesser Fire Summoning"
+ritpow 18
+level 1
+cost 7 25
+summoning
+sum0chance 25
+rebateterr20 -48 # Elemental Citadel
+addstring "Flame Spirit"
+addstring "1d6+2*Ember Warrior"
+addstring "Fire Elemental"
+
+newritual "Lesser Water Summoning"
+ritpow 19
+level 1
+cost 8 25
+summoning
+sum0chance 25
+rebateterr20 -49 # Elemental Citadel
+addstring "Undine"
+addstring "1d6+2*Wave Warrior"
+addstring "Water Elemental"
+
+newritual "Lesser Air Summoning"
+ritpow 20
+level 1
+cost 9 25
+summoning
+sum0chance 25
+rebateterr20 -50 # Elemental Citadel
+addstring "Sylph"
+addstring "1d6+2*Cloud Warrior"
+addstring "Air Elemental"
+
+newritual "Lesser Earth Summoning"
+ritpow 21
+level 1
+cost 10 25
+summoning
+sum0chance 25
+rebateterr20 -51 # Elemental Citadel
+addstring "Earth Gnome"
+addstring "1d6+2*Stone Warrior"
+addstring "Earth Elemental"
+
+selectritual "Summon Champion of Fire"
+clearritspec
+level 9
+nostart
+
+selectritual "Summon Champion of Water"
+clearritspec
+level 9
+nostart
+
+selectritual "Summon Champion of Air"
+clearritspec
+level 9
+nostart
+
+selectritual "Summon Champion of Earth"
+clearritspec
+level 9
+nostart
+
+newritual "Summon Champion of Fire"
+ritpow 18
+level 2
+cost 7 50
+summoning
+sum0chance 66
+addstring "c*Champion of Flames & 1d4+1 Lesser Fire"
+addstring "c*Phoenix"
+addstring "c*Fire Giant"
+
+newritual "Summon Champion of Water"
+ritpow 19
+level 2
+cost 8 50
+summoning
+sum0chance 66
+addstring "c*Champion of Waves & 1d4+1 Lesser Water"
+addstring "(-42)c*Frost Giant"
+addstring "(-43)c*Sea Giant"
+addstring "(-17)c*Lake Troll King"
+
+newritual "Summon Champion of Air"
+ritpow 20
+level 2
+cost 9 50
+summoning
+sum0chance 66
+addstring "c*Champion of Storms & 1d3 Lesser Air"
+addstring "c*Storm Giant"
+
+newritual "Summon Champion of Earth"
+ritpow 21
+level 2
+cost 10 50
+summoning
+sum0chance 66
+addstring "c*Champion of Mountains & 1d4+1 Lesser Earth"
+addstring "c*Mountain Giant"
+
+# [PRIEST KING]
+selectclass 13
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+# [TROLL KING]
+
+# Svartalf, 53
+#newritpow 
+
+#newritual
+#level 1
+#cost ?
+#soundfx 57
+#promotion 5
+#addstring "Goblin Warrior"
+#addstring "Goblin Swordbearer"
+#addstring "Goblin Champion"
+#addstring "Goblin Swordthane"
+
+#newritual
+#level 1
+#cost ?
+#soundfx 57
+#promotion 5
+#addstring "Goblin Spearman"
+#addstring "Goblin Shieldbearer"
+#addstring "Goblin Piercer"
+#addstring "Goblin Spearthane"
+
+#newritual
+#level 1
+#cost ?
+#soundfx 57
+#promotion 5
+#addstring "Goblin Archer"
+#addstring "Goblin Sharpshooter"
+#addstring "Goblin Poison Archer"
+#addstring "Goblin Thornshooter"
+#addstring "Goblin Ranger"
+#addstring "Goblin Bowthane"
+#addstring "Goblin Skulker"
+#addstring "Goblin Bowthane"
+
+#newmonster "War Troll"
+
+#newmonster "Moose Knight"
+
+# Being completely unable to find most goblin sprites in a useable form, current promoted goblins have identical basesprites.
+
+newmonster "Goblin Mountain King"
+copystats "Goblin King"
+
+selectmonster "Goblin Mountain King"
+descr "To be king among goblins is a title of dubious value.  Maybe it will add up to something if you are king of really many Goblins. The Goblin Mountain king is a vassal of the famed Troll King. He is known to hate giants and often rallies his warriors to trap and slay them, but these attempts rarely seem to even hurt the giants. Regardless, the Goblin mountain king would likely not remain in the Troll King's service were he to bring lots of giants to his swampy court."
+
+#newmonster "Svartalf"
+
+newmonster "Goblin Warrior"
+copystats "Goblin"
+descr "Goblins are cowardly creatures of low morals and limited intelligence that like to skulk around in the forests where they can stay hidden from their foes.  The Goblins would be totally harmless if it weren't for their strange alliance with the Trolls.  The Trolls can find the Goblins with their excellent sense of smell and this is the foundation for the alliance.  The Goblins serve the Trolls and in return the Trolls don't kill all the Goblins."
+clearweapons
+hp 4
+mor 4
+meleeweapon -1 
+
+newmonster "Goblin Champion"
+copystats "Goblin Warrior"
+descr "Goblins are cowardly creatures of low morals and limited intelligence that like to skulk around in the forests where they can stay hidden from their foes. Some goblins are known to inhale the smoke of specially-prepared fungi. This maddens the little creatures and according to captured subjects makes them much more ferocious. Reports from the captains of civilized armies do not corroborate this, and cannot tell the supposedly enhanced goblins apart from the rest."
+hp 5
+str 4
+mr 5
+mor 5
+meleeweapon 0 19
+
+#newmonster "Goblin Swordbearer"
+#copystats "Goblin Warrior"
+
+#newmonster "Goblin Swordthane"
+#copystats "Goblin Warrior"
+
+newmonster "Goblin Piercer"
+copystats "Goblin Spearman"
+descr "Goblins are cowardly creatures of low morals and limited intelligence that like to skulk around in the forests where they can stay hidden from their foes. Some goblins are known to inhale the smoke of specially-prepared fungi. This maddens the little creatures and according to captured subjects makes them much more ferocious. Reports from the captains of civilized armies do not corroborate this, and cannot tell the supposedly enhanced goblins apart from the rest."
+hp 5
+str 4
+mr 5
+mor 5
+meleeweapon 0 4 # Spear
+
+#newmonster "Goblin Shieldbearer"
+#copystats "Goblin Spearman"
+
+#newmonster "Goblin Spearthane"
+#copystats "Goblin Spearman"
+
+newmonster "Goblin Poison Archer"
+copystats "Goblin Archer"
+descr "Goblins are cowardly creatures of low morals and limited intelligence that like to skulk around in the forests where they can stay hidden from their foes. They are however keenly aware of their own weakness and sometimes use poisoned weapons, much like the pygmies who dwell in the far south of Elysium. In contradiction to certain popular folk tales, however, there is no apparent relationship between the two races."
+rangedweapon -1 34 # Poison Bow
+
+newmonster "Goblin Ranger"
+copystats "Goblin Archer"
+descr "Goblins are cowardly creatures of low morals and limited intelligence that like to skulk around in the forests where they can stay hidden from their foes. Some goblins are known to inhale the smoke of specially-prepared fungi. This maddens the little creatures and according to captured subjects makes them much more ferocious. Reports from the captains of civilized armies do not corroborate this, and cannot tell the supposedly enhanced goblins apart from the rest."
+hp 4
+str 4
+mr 5
+mor 4
+rangedweapon 0 34 # Poison Bow
+
+#newmonster "Goblin Sharpshooter"
+#copystats "Goblin Archer"
+
+#newmonster "Goblin Thornshooter"
+#copystats "Goblin Sharpshooter"
+
+#newmonster "Goblin Bowthane"
+#copystats "Goblin Archer"
+
+newmonster "Giant King"
+copystats "Hill Giant"
+spr1 "ee/sprites/giantking1.tga"
+spr2 "ee/sprites/giantking2.tga"
+descr "Lately there has been word of a particularly big and stubborn hill giant who wears gaudy and slightly undersized jewelry. The origin of these accoutrements are a mystery, as they clearly cannot have been made specifically for the giant, but there also are no other creatures known for which they would fit given their reputed size. Supposedly this giant has declared himself a king among his fellows, much as his smaller brethren call themselves barons. We would dismiss his existence entirely were it not for the tireless work of our student interrogators on captured goblins. They are terrified of the giant and he is said to devour their kind by the handful as a deer would eat berries."
+clearweapons
+mr 5
+mor 9
+str 13
+siegeweapon 42 361 # Massive Boulder
+meleeweapon 32 632 # Great Club
+
+#newmonster "Giant Witcher"
+#copystats "Forest Giant"
+
+newmonster "Ogre Poacher"
+copystats "Ogre"
+spr1 "ee/sprites/ogrepoach1.tga"
+spr2 "ee/sprites/ogrepoach2.tga"
+descr "The smallest of the Giants lives in small tribes that often raid our farmlands.  Having had a close relationship with Trolls and Hill Giants, they have developed a dire craving for human flesh, but in being more cunning than their cousins, they often execute well planned raids on human villages or waylay travelers at crossroads in order to fill up their larders. Some of them seem to prefer deer, boar, and other wildlife. As a trend it could be worthy to encourage through carefully direct social manipulation, but they never seem to hesitate to use their crudely-fashioned spears on humans as well. Ogre poachers consider themselves highly intelligent and are very proud of the fact."
+rangedweapon 3 24
+meleeweapon 3 4
+
+#newmonster "Ettin Reaver"
+#copystats "Ettin"
+
+# Goblins, 51
+
+newritpow
+
+
+newritual "Poisoned Arrows"
+ritpow 51
+level 1
+cost 3 50
+soundfx 57
+promotion 5
+addstring "Goblin Archer"
+addstring "Goblin Poison Archer"
+#addstring "Goblin Sharpshooter"
+#addstring "Goblin Thornshooter"
+
+selectritual "Poisoned Arrows"
+descr ""
+
+newritual "Wolfhowl"
+ritpow 51
+level 1
+cost 1 5 # Iron
+cost 3 30 # Fungi
+soundfx 57
+promotion 5
+addstring "Wolf Kin"
+addstring "Wolf Kin Reaver"
+
+selectritual "Wolfhowl"
+descr "The goblin shaman gathers up a group of wolf kin and shouts really loudly at them while a heavy mist rises from a nearby cauldron full of burning fungi. This will frighten the wolf kin so badly that they will lose much of their cowardice. They are then given finer armaments on behalf of the Troll King."
+
+newritual "Minor Summons"
+ritpow 51
+level 1
+cost 3 30 # Fungi
+terr -7 # Forests, jungles or mountains.
+sum0chance
+summoning
+addstring "1d6+1*Wolf"
+addstring "1d4+1*Boar"
+addstring "2d6*Frog"
+addstring "Raven Familiar"
+
+selectritual "Minor Summons"
+descr "Summons a small number of animals that get along well with goblins."
+
+selectritual "Golden Nose"
+ritpow 51
+
+#Dummying out all the advanced promotions for now. They may be scrapped entirely, at any rate they're bogging down progress on 0.3.
+
+newritual "Fungal Incense"
+level 2
+cost 3 50
+soundfx 57
+promotion 10
+addstring "Goblin"
+addstring "Goblin Champion"
+addstring "Goblin Archer"
+addstring "Goblin Ranger"
+addstring "Goblin Poison Archer"
+addstring "Goblin Ranger"
+addstring "Goblin Warrior"
+addstring "Goblin Champion"
+addstring "Goblin Spearman"
+addstring "Goblin Piercer"
+#addstring "Goblin Swordbearer"
+#addstring "Goblin Swordthane"
+#addstring "Goblin Shieldbearer"
+#addstring "Goblin Spearthane"
+
+selectritual "Fungal Incense"
+descr "The witch doctor exposes a group of up to ten goblins to a horrible fungal incense. This will make the goblins more stubborn and let them ignore injuries that would kill most of their kind."
+
+selectmonster "Goblin Shaman"
+power 51 1 # Goblin rituals
+
+selectmonster "Goblin Witch Doctor"
+power 51 2 # Goblin rituals
+
+selectclass 14
+clearrec
+addcomrec "Troll King" 5 80 20 30
+reclimiter "-Troll King"
+addcomrec "Goblin Mountain King" 3 40 10 0
+reclimiter "-Goblin Mountain King"
+reclimiter "-Giant King"
+addcomrec "Giant King" 3 150 20 0
+reclimiter "-Goblin Mountain King"
+reclimiter "-Giant King"
+addunitrec "Goblin" 100 15 50 0 0
+reclimiter "-Goblin Mountain King"
+addunitrec "Ogre" 100 1 25 0 0
+reclimiter "-Giant King"
+addunitrec "Ogre Poacher" 10 2 50 0 0
+reclimiter "-Giant King"
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addunitrec "Goblin Spearman" 40 15 50 0 0
+reclimiter "-Goblin Mountain King"
+addunitrec "Goblin Archer" 20 10 50 0 0
+reclimiter "-Goblin Mountain King"
+addunitrec "Wolf Kin" 20 10 50 0 0
+reclimiter "-Goblin Mountain King"
+addunitrec "Rock Troll" 7 1 50 0 60
+reclimiter "-Troll King"
+addunitrec "Troll" 10 1 50 0 20
+reclimiter "-Troll King"
+addunitrec "Forest Troll" 15 1 40 0 10
+reclimiter "-Troll King"
+addunitrec "Hill Giant" 5 1 100 0 0
+reclimiter "-Giant King"
+addunitrec "Ettin" 10 1 75 0 0
+reclimiter "-Giant King"
+addcomrec "Goblin Chieftain" 7 25 20 0
+reclimiter "-Goblin Mountain King"
+addcomrec "Ogre Chief" 3 35 20 0
+reclimiter "-Giant King"
+addcomrec "Forest Giant" 5 70 20 0
+reclimiter "-Giant King"
+addcomrec "Goblin Shaman" 2 35 20 0
+templerec
+reclimiter "-Goblin Mountain King"
+addcomrec "Troll Shaman" 0 75 50 0
+templerec
+addmercrec "Goblin Murderer" 3 1 10 40 0
+reclimiter "-Goblin Mountain King"
+addcomrec "Goblin Hero" 3 10 50 0
+reclimiter "-Goblin Mountain King"
+# Troll King Recruitment
+addunitrec "Rock Troll" 20 1 50 0 60
+reclimiter "+Troll King"
+addunitrec "Troll" 30 1 50 0 20
+reclimiter "+Troll King"
+addunitrec "Forest Troll" 40 1 40 0 10
+reclimiter "+Troll King"
+addcomrec "Troll Shaman" 2 75 50 0
+templerec
+reclimiter "+Troll King"
+# Goblin Mountain King Recruitment
+addunitrec "Goblin Spearman" 100 15 50 0 0
+reclimiter "+Goblin Mountain King"
+addunitrec "Goblin Warrior" 100 15 50 0 5
+reclimiter "+Goblin Mountain King"
+addunitrec "Goblin Archer" 100 15 50 0 0
+reclimiter "+Goblin Mountain King"
+addunitrec "Wolf Kin" 100 10 50 0 0
+reclimiter "+Goblin Mountain King"
+addcomrec "Goblin Chieftain" 15 30 10 0
+reclimiter "+Goblin Mountain King"
+addcomrec "Goblin Shaman" 8 40 10 0
+reclimiter "+Goblin Mountain King"
+templerec
+addmercrec "Goblin Murderer" 6 1 20 20 0
+reclimiter "+Goblin Mountain King"
+addcomrec "Goblin Hero" 6 10 50 0
+reclimiter "+Goblin Mountain King"
+# Giant King Recruitment
+addunitrec "Ogre" 100 3 50 0 0
+reclimiter "+Giant King"
+addunitrec "Ogre Poacher" 30 2 45 10 0
+reclimiter "+Giant King"
+addunitrec "Hill Giant" 15 1 100 0 0
+reclimiter "+Giant King"
+addcomrec "Forest Giant" 15 65 20 0
+reclimiter "+Giant King"
+addstartunits "Shadow Tree"
+addstartunits "Devil Fungus" 2
+# ?
+
+
+#bogus playerevent
+
+# [ENCHANTER]
+# Tweak rituals. Basic Animate Tools/Bow/Sword rituals should always be available.
+# Sculpt Terracotta Soldier requires a bit of gold but will never destroy a swamp.
+
+newmonster "Wooden Soldier"
+descr "The Wooden Soldier is skillfully carved from wood and then enchanted to come to life.  It is vulnerable to fire, but quite resistant to spears and arrows."
+spr1 "ee/sprites/wsold1.tga"
+spr2 "ee/sprites/wsold2.tga"
+rank 1
+hp 15
+armor 1
+mr 4
+mor 99
+str 5
+meleeweapon 4 0 # Fist, 1-5
+poisonres 100
+sleepres
+charmres
+noheal
+diseaseres
+pierceres
+allitemslots
+inanimate
+pierceres
+fireres -50
+
+newmonster "Stone Soldier"
+descr "The Stone Soldier is skillfully sculpted from stone and then enchanted to come to life.  It is strong and sturdy. It is slow on the march but cares little for snow or mountainous terrain."
+spr1 "ee/sprites/ssold1.tga"
+spr2 "ee/sprites/ssold2.tga"
+rank 1
+hp 12
+armor 2
+mr 5
+mor 99
+str 6
+meleeweapon 5 292 # Granite Spear, 1-7 blunt
+largeshield
+slow
+poisonres 100
+sleepres
+charmres
+noheal
+diseaseres 
+slashres
+pierceres
+inanimate 
+mountain
+snow
+fireres 50
+coldres 50
+stonebeing 1
+
+selectclass 15
+clearrec
+stdtroops
+addcomrec "Enchanter's Apprentice" 5 55 20 0
+libraryrec
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+
+selectritual "Animate Sword"
+free
+
+selectritual "Animate Bow"
+free
+
+selectritual "Animate Tools"
+free
+
+selectritual "Sculpt Terracotta Soldier"
+clearritspec
+level 9
+nostart
+
+newritual "Sculpt Terracotta Soldiers"
+ritpow 11 # Enchantment
+level 1
+terr -20 # Swamps
+summoning
+cost 0 20 # Gold
+apcost 2 #
+nexttoo
+addstring "3*Terracotta Soldier"
+
+selectritual "Lesser Ritual of Mastery"
+ritpow 11
+cost 0 25
+
+newritual "Sculpt Wooden Soldiers"
+ritpow 11
+level 1
+terr -38 # Forests and jungles
+summoning
+cost 1 1 # Iron
+apcost 2
+addstring "3*Wooden Soldier"
+
+selectritual "Sculpt Terracotta Soldiers"
+descr "The Enchanter forms a trio of soldiers out of mud and fires them with a special glaze after which he brings them to life with a simple enchantment.  The process takes a long time, but other than the expensive glaze it only requires large quantities of mud."
+
+selectritual "Sculpt Wooden Soldiers"
+descr "The Enchanter forms three blocks of wood and carves each into the semblance of a man which he then brings to live with a simple enchantment. These are vulnerable to fire and do not use weapons other than their fists, but other than time the only expense is a small amount of iron to replace worn-out tools."
+
+selectritual "Craft Gargoyle"
+clearritspec
+level 9
+nostart
+
+newritual "Sculpt Stone Soldiers"
+ritpow 11
+level 1
+terr -5
+summoning
+cost 1 2 # Iron
+apcost 2
+nexttoo
+addstring "1*Stone Soldier"
+
+newritual "Craft Gargoyles"
+ritpow 11
+level 1
+cost 0 30 # Gold
+cost 1 10 # Iron
+summoning
+apcost 3
+addstring "2*Gargoyle"
+
+selectritual "Sculpt Stone Soldiers"
+descr "The Enchanter cuts out a block of stone and carves it into the semblance of a large soldier which he then brings to live with a simple enchantment. These massive warriors are strong and resistant to the elements, and while not much hindered by snow or mountainous terrain they are slow on the march. While stone soldiers are cheap to create, the stonecutting process itself is very slow."
+
+selectritual "Craft Gargoyles"
+descr "The Enchanter crafts a pair Gargoyles from ordinary earth and brings them to life with a complex ritual.  This ritual is both time consuming and expensive, but the gargoyle is a solid construct that is difficult to harm in combat."
+
+# [HIGH CULTIST]
+selectclass 19
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec 
+
+# [DWARF QUEEN]
+selectclass 20
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addmercrec "Mercenary Cavalry" 3 8 150 0 0
+addcomrec "Mercenary Captain" -1 1 45 0 0
+
+# [VOICE OF EL]
+# Are any changes even needed here?
+# Special recruitables available in certain terrains, maybe. (Turns out that's not moddable, though.)
+
+selectclass 21
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+# [ILLUSIONIST]
+# Assassination unit/ritual access?
+selectclass 22
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+
+# [MARKGRAF]
+selectclass 23
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+
+ritpow 39
+selectritual "Reanimate Animals"
+free
+
+ritpow 39
+selectritual "Create Flesh Golem"
+level 1
+
+# Guarantee flesh golem access?
+
+# [DRYAD QUEEN]
+selectclass 24
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+# Not sure anything is needed here.
+
+

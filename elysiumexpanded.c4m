@@ -278,17 +278,7 @@ libraryrec
 selectclass 5
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-# Undecided on whether Rephaite lords should enable the recruitment of Rephaites or whether I should give them a new ritpow with rituals that are fort-only, high AP and cost gold plus sacrifices. For now implemented as rituals.
-#addunitrec "Gibbor"
-#reclimiter "+Anointed Priestess"
-#addunitrec "Anakite"
-#reclimiter "+Adon"
-#addcomrec "Anakite Captain"
-#reclimiter "+Adon"
-#addunitrec "Rephaite"
-#reclimiter "+Melqart"
-#addcomrec "Emite"
-#reclimiter "+Zamzummite"
+
 #
 #newmonster "Belus"
 #newmonster "Gibbor Scout"
@@ -545,7 +535,7 @@ cost 4 50 # Sacrifices
 terr -28 # Towns or cities
 sum0chance 75
 summoning
-destroyterr 100
+destroyterr 100 # Remove?
 killtarg 9999
 addstring "c*Malik & 2d3+1*Ditanu"
 #addstring "c*Ditan & 3d3*Ditanu"
@@ -612,6 +602,7 @@ terr -9
 summoning
 apcost 5 
 addstring "3*Rephaite"
+#addstring - ?
 
 selectmonster "Zamzummite"
 power 1 0 # Gets rid of necromancy
@@ -917,53 +908,53 @@ reclimiter "-Garnet Queen"
 reclimiter "-Jade Queen"
 reclimiter "-Crystal Queen"
 reclimiter "-Onyx Queen"
-addunitrec  "Barbarian Warrior" 100 7 50 0 0
-addunitrec  "Barbarian Bowman" 100 7 50  0 0
-addunitrec  "Barbarian Swordsman" 100 7 50  0 10
-addunitrec  "Barbarian Cavalry" 100 4 50 0 0
-addunitrec  "Barbarian Lancer" 100 4 50 0 10
-addunitrec  "Barbarian Werebear" 10 1 25 0 0
-addcomrec   "Spirit Guide" 8  75 20 0
+addunitrec "Barbarian Warrior" 100 7 50 0 0
+addunitrec "Barbarian Bowman" 100 7 50  0 0
+addunitrec "Barbarian Swordsman" 100 7 50  0 10
+addunitrec "Barbarian Cavalry" 100 4 50 0 0
+addunitrec "Barbarian Lancer" 100 4 50 0 10
+addunitrec "Barbarian Werebear" 10 1 25 0 0
+addcomrec  "Spirit Guide" 8  75 20 0
 templerec
-addcomrec   "Soothsayer"   8 40 20 0
+addcomrec "Soothsayer"   8 40 20 0
 templerec
-addcomrec   "Mounted Chief" 10 25 10 0
-addmercrec  "Mounted Scout" 15 1 15 10 0
-addcomrec   "Crystal Priestess" 3 40 20 0
+addcomrec "Mounted Chief" 10 25 10 0
+addmercrec "Mounted Scout" 15 1 15 10 0
+addcomrec "Crystal Priestess" 3 40 20 0
 templerec
 reclimiter "-Crystal Queen"
-addcomrec   "Crystal Sorceress"3 80 20 0
-reclimiter  "+Crystal Priestess"
+addcomrec "Crystal Sorceress"3 80 20 0
+reclimiter"+Crystal Priestess"
 reclimiter "-Crystal Queen"
-addunitrec  "Crystal Amazon" 25 8 50 0 0
-reclimiter  "+Crystal Priestess"
+addunitrec "Crystal Amazon" 25 8 50 0 0
+reclimiter "+Crystal Priestess"
 reclimiter "-Crystal Queen"
-addcomrec   "Garnet Priestess" 3 40 20 0
+addcomrec "Garnet Priestess" 3 40 20 0
 templerec
 reclimiter "-Garnet Queen"
-addcomrec   "Garnet Sorceress"  3 80 20 0
-reclimiter  "+Garnet Priestess"
+addcomrec "Garnet Sorceress"  3 80 20 0
+reclimiter "+Garnet Priestess"
 reclimiter "-Garnet Queen"
-addunitrec  "Garnet Amazon"  25 8 50  0 5
-reclimiter  "+Garnet Priestess"
+addunitrec "Garnet Amazon"  25 8 50  0 5
+reclimiter "+Garnet Priestess"
 reclimiter "-Garnet Queen"
-addcomrec   "Jade Priestess" 3 40 20 0
+addcomrec "Jade Priestess" 3 40 20 0
 templerec
 reclimiter "-Jade Queen"
-addcomrec   "Jade Sorceress" 3 80 20 0
-reclimiter  "+Jade Priestess"
+addcomrec "Jade Sorceress" 3 80 20 0
+reclimiter "+Jade Priestess"
 reclimiter "-Jade Queen"
-addunitrec  "Jade Amazon" 25 8 50 0 5
-reclimiter  "+Jade Priestess"
+addunitrec "Jade Amazon" 25 8 50 0 5
+reclimiter "+Jade Priestess"
 reclimiter "-Jade Queen"
-addcomrec   "Onyx Priestess" 3 40 20 0
+addcomrec "Onyx Priestess" 3 40 20 0
 templerec
 reclimiter "-Onyx Queen"
-addcomrec   "Onyx Sorceress" 3 80 20 0
-reclimiter  "+Onyx Priestess"
+addcomrec "Onyx Sorceress" 3 80 20 0
+reclimiter "+Onyx Priestess"
 reclimiter "-Onyx Queen"
-addunitrec  "Onyx Amazon" 25 8 50 0 10
-reclimiter  "+Onyx Priestess"
+addunitrec "Onyx Amazon" 25 8 50 0 10
+reclimiter "+Onyx Priestess"
 reclimiter "-Onyx Queen"
 # Garnet Queen Recruitment
 addunitrec "Garnet Amazon" 100 8 50 0 5
@@ -1742,5 +1733,226 @@ selectclass 24
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
 # Not sure anything is needed here.
+
+# [SHAH]
+
+newmonster "Shah"
+
+#newmonster "Shahanshah"
+
+newmonster "Paighan"
+descr ""
+spr1
+spr2
+rank 1
+hp 5
+armor 0
+mr 4
+mor 3
+str 4
+meleeweapon 0 4 # Spear
+frontpos
+human
+shield
+allitemslots
+
+newmonster "Turan Infantry"
+descr ""
+spr1
+spr2
+rank 1
+hp
+armor
+mr
+mor
+str
+rangedweapon  # Javelin
+meleeweapon   # Sword
+human
+shield
+allitemslots
+
+newmonster "Zhayedan"
+descr ""
+spr1
+spr2
+rank 1
+hp
+armor
+mr
+mor
+str
+rangedweapon # Bow
+meleeweapon # Sword
+rearpos
+human
+shield
+allitemslots
+
+
+newmonster "Iceclad Zhayedan"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+rangedweapon # Bow
+meleeweapon # Sword
+rearpos
+human
+shield
+allitemslots
+
+newmonster "Turan Cavalry"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Cataphract"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Savaran Guard"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "War Elephant"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+#
+newmonster "Karapan"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Dastur"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Grand Dastur"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+#
+newmonster "Athravahn"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Zaotar"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+newmonster "Grand Zaotar"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+#
+newmonster
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+
+
+
+newclass
+setclassname "Shah"
+setmaincom "Shah"
+classdescr
+hometerr 
+addstartterr
+addstartterr 
+addstartunits "Turan Infantry" 8
+addstartunits 
+recherochance
+recasschance
+libbonusdescr ""
+templebonusdescr ""
+
 
 

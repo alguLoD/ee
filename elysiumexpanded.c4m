@@ -261,12 +261,7 @@ libraryrec
 #
 # [HIGH PRIESTESS]
 
-#selectmonster "Nephil"
-#ritpow 8 4
-#
-#selectmonster "God"
-#ritpow 8 5
-#
+
 selectclass 5
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
@@ -290,7 +285,7 @@ summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
-newritual "Lesser Temple Ceremony of Baal"
+newritual "Lesser Temple Ceremony"
 ritpow 8 # Baalite Rituals
 level 1
 nostart
@@ -304,7 +299,7 @@ addstring "1d2*Se'ir"
 selectritual "Lesser Ceremony of Baal"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
 
-selectritual "Lesser Temple Ceremony of Baal"
+selectritual "Lesser Temple Ceremony"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
 
 selectritual "Lesser Blood Feast"
@@ -312,20 +307,21 @@ clearritspec
 level 9
 nostart
 
-newritual "Common Blood Feast"
-ritpow 8 # Baalite
-level 1
-cost 4 30 # Sacrifices
-terr -29 # Hamlets and up.
-noundead
-sum0chance 75
-summoning
-destroyterr 100
-addstring "c*Anakite Captain & 1d2+1*Anakite"
+# Blood Feasts level 2+ from now on?
+#newritual "Common Blood Feast"
+#ritpow 8 # Baalite
+#level 1
+#cost 4 30 # Sacrifices
+#terr -29 # Hamlets and up.
+#noundead
+#sum0chance 75
+#summoning
+#destroyterr 100
+#addstring "c*Anakite Captain & 1d2+1*Anakite"
 #addstring "c*Emite"
-
-selectritual "Common Blood Feast"
-descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+#
+#selectritual "Common Blood Feast"
+#descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
 
 newritual "Summon Creatures of Baal"
 ritpow 8 # Baalite Rituals
@@ -431,14 +427,32 @@ level 2
 cost 4 100 # Sacrifices
 terr -32 # Village or larger
 noundead
+nexttoo
 sum0chance 75
 summoning
 destroyterr 100
 addstring "c*Adon & 2d3+1*Anakite"
 addstring "c*Zamzummite"
 
+newritual "Bloody Banquet"
+ritpow 8
+level 2
+nostart
+cost 0 20 # Gold
+cost 4 20 # Sacrifices
+apcost 2
+terr -9 # Fortified citadels
+noundead 
+summoning
+addstring "c*Anakite Captain"
+addstring "1d3+1*Gibbor"
+addstring "Gibbor Scout"
+
 selectritual "Great Blood Feast"
 descr "By sacrificing a few blood slaves in a village the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high status to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+
+selectritual "Bloody Banquet"
+descr ""
 
 selectritual "Grand Blood Feast"
 clearritspec
@@ -452,12 +466,11 @@ level 3
 cost 4 150 # Sacrifices
 terr -28 # Towns and cities.
 noundead
-sum0chance 80
+sum0chance 75
 summoning
 destroyterr 100
 addstring "c*Melqart & 2d4*Rephaite"
-addstring "c*Nephil"
-#addstring "c*Belus & 2d4*Rephaite"
+addstring "c*Belus & 2d4*Rephaite"
 
 selectritual "Royal Blood Feast"
 descr "By sacrificing a few blood slaves in a town the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a Rephaite lord and his retinue to partake in the feast.  The entire settlement will be destroyed in the blood feast."
@@ -483,6 +496,8 @@ descr "The Nephilim are the children of the Watchers and in turn begat all the r
 #
 # Most of the Sheol rituals are placeholders and works in progress.
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
+
+
 
 newritpow
 
@@ -596,10 +611,10 @@ terr -9
 levelreq 1
 summoning
 apcost 5
-#addstring - qedesim?
-addstring "4*Gibbor"
-#addstring "Gibbor Scout & 2*Gibbor"
-#addstring - archers?
+addstring "c*Qedesim"
+addstring "2d3-1*Gibbor"
+addstring "Gibbor Scout & 2*Gibbor"
+addstring "1d4+1*Gibbor Archer"
 
 newritual "Call Anakim"
 descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
@@ -608,17 +623,20 @@ level 2
 cost 0 80
 cost 4 40
 terr -9
+sum0chance 20
+sum1chance 20
 summoning
 apcost 5
-#addstring - emite
-#addstring - anakite elder
-addstring "4*Anakite"
-#addstring - ?
+addstring "c*Emite"
+addstring "c*Anakite Elder"
+addstring "2d3-1*Anakite"
+addstring "c*Anakite Captain & 1d3+1*Anakite"
+#addstring "2*Dawn Guard"
 
 #newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
 
 newritual "Call Rephaim"
-descr "The Melqart invites a small group of Rephaite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
+descr "The Melqart invites a small group of Rephaim to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
 ritpow 50
 level 3
 cost 0 120
@@ -626,8 +644,20 @@ cost 4 60
 terr -9
 summoning
 apcost 5 
-addstring "3*Rephaite"
+addstring "1d3+1*Rephaite"
 #addstring - ?
+
+newritual "Royal Banquet"
+descr ""
+ritpow 50
+level 3
+cost 0 
+cost 4 300
+terr -9
+apcost 5
+summoning
+addstring "c*Melqart & 
+addstring "c*Belus & 
 
 selectmonster "Shed"
 rearpos
@@ -666,18 +696,22 @@ fireres 50
 
 selectmonster "Nephil"
 fireres 50
-#power 49 4
+#ritpow 8 4
+#
 
-#selectmonster "God"
+selectmonster "God"
+unaging
+#ritpow 8 5
+#
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
 # An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
 
 newmonster "Belus"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
-rank
+rank -1
 hp
 armor
 mr
@@ -685,21 +719,22 @@ mor
 str
 spellweapon
 meleeweapon
+power 8 1
+power 50 3
 fireres 50
 weaponslots
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
-descr ""
-spr1
-spr2
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"descr ""
 rank 0
 acutesenses
 
 newmonster "Gibbor Archer"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 rank 0
 hp
 armor
@@ -708,9 +743,9 @@ rangedweapon
 meleeweapon
 
 newmonster "Qedesim"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 rank -1
 hp
 armor
@@ -724,6 +759,8 @@ human
 allitemslots
 
 newmonster "Emite"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
 spr1
 spr2
@@ -747,10 +784,10 @@ power 49 2 # Sheol
 gatherhands
 
 newmonster "Anakite Elder"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
-rank
+rank -1
 hp
 armor
 mr
@@ -763,9 +800,9 @@ weaponslots
 
 newmonster "Anakite Sage"
 copystats "Anakite Elder"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 hp
 mr
 mor
@@ -773,35 +810,46 @@ spellweapon 51 2 # High Arcana
 meleeweapon
 
 #newmonster "Kohen"
-#newmonster "Dawn Guard"
-newmonster "Fossil Warrior"
+
+newmonster "Dawn Guard"
+copystats "Anakite"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
+hp
+mr 7
+mor
+clearweapons
+meleeweapon # Magic Sword
+
+newmonster "Fossil Warrior"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
+descr ""
 rank
 hp
 armor
 mr
 mor
 str
-meleeweapon
+meleeweapon # ?
 fireres 50
 coldres 100
 poisonres 100
 undead
 
 newmonster "Spectral Ba'alite"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 rank
 hp
 armor
 mr
 mor
 str
-rangedweapon 
-meleeweapon 
+rangedweapon # Spectral Javelin
+meleeweapon # Spectral Spear
 ethereal
 coldres 100
 poisonres 100
@@ -809,16 +857,16 @@ undead
 unaging
 
 newmonster "Spectral Ba'alite Zealot"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 rank
 hp
 armor
 mr
 mor
 str
-meleeweapon
+meleeweapon # Spectral Sword
 ethereal
 coldres 100
 poisonres 100
@@ -826,17 +874,17 @@ undead
 unaging
 
 newmonster "Spectral Ba'alite Archer"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
 rank
 hp
 armor
 mr
 mor
 str
-rangedweapon
-meleeweapon
+rangedweapon # Spectral Bow
+meleeweapon # Spectral Dagger/Weapon
 ethereal
 coldres 100
 poisonres 100
@@ -844,17 +892,17 @@ undead
 unaging
 
 newmonster "Hierodule Shade"
+spr1 "ee/sprites/hp/"
+spr2 "ee/sprites/hp/"
 descr ""
-spr1
-spr2
-rank
+rank -1
 hp
 armor
 mr
 mor
 str
-spellweapon
-meleeweapon
+spellweapon # Unlife? Dark?
+meleeweapon # Drain Life?
 ethereal
 coldres 100
 poisonres 100
@@ -881,8 +929,8 @@ libraryrec
 
 newmonster "Oni"
 copystats "Kuro Oni"
-spr1 "ee/sprites/oni1.tga"
-spr2 "ee/sprites/oni2.tga"
+spr1 "ee/sprites/bs/oni1.tga"
+spr2 "ee/sprites/bs/oni2.tga"
 rank 1
 hp 33
 armor 0
@@ -905,8 +953,8 @@ descr descr "Oni are ugly, wild demons with pot-bellies and unkempt hair.  They 
 
 newmonster "Spectral Oni"
 copystats "Oni"
-spr1 "ee/sprites/soni1.tga"
-spr2 "ee/sprites/soni2.tga"
+spr1 "ee/sprites/bs/soni1.tga"
+spr2 "ee/sprites/bs/soni2.tga"
 hp 20
 mor 3
 clearweapons
@@ -999,31 +1047,31 @@ armor 2
 
 newmonster "Garnet Queen"
 copystats "Garnet Sorceress"
-spr1 "ee/sprites/garnetqueen1.tga"
-spr2 "ee/sprites/garnetqueen2.tga"
+spr1 "ee/sprites/b/garnetqueen1.tga"
+spr2 "ee/sprites/b/garnetqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Jade Queen"
 copystats "Jade Sorceress"
-spr1 "ee/sprites/jadequeen1.tga"
-spr2 "ee/sprites/jadequeen2.tga"
+spr1 "ee/sprites/b/jadequeen1.tga"
+spr2 "ee/sprites/b/jadequeen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Crystal Queen"
 copystats "Crystal Sorceress"
-spr1 "ee/sprites/crystalqueen1.tga"
-spr2 "ee/sprites/crystalqueen2.tga"
+spr1 "ee/sprites/b/crystalqueen1.tga"
+spr2 "ee/sprites/b/crystalqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Onyx Queen"
 copystats "Onyx Sorceress"
-spr1 "ee/sprites/onyxqueen1.tga"
-spr2 "ee/sprites/onyxqueen2.tga"
+spr1 "ee/sprites/b/onyxqueen1.tga"
+spr2 "ee/sprites/b/onyxqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Gryphon Rider"
-spr1 "ee/sprites/garrid1.tga"
-spr2 "ee/sprites/garrid2.tga"
+spr1 "ee/sprites/b/garrid1.tga"
+spr2 "ee/sprites/b/garrid2.tga"
 descr "The elites of the Garnet tribe are the most horrifying of all Amazon warriors. They apparently know how to safely steal Gryphon eggs and raise the hatchlings as mounts for their sacred warriors. Fortunately these Gryphon Riders are very rare. None have ever been captured alive, a fact that seems to disappoint many knights who dream of riding gryphons of their own."
 rank 1 
 hp 106
@@ -1045,8 +1093,8 @@ allitemslots
 nobootslots
 
 newmonster "Jade Maiden"
-spr1 "ee/sprites/jadrid1.tga"
-spr2 "ee/sprites/jadrid2.tga"
+spr1 "ee/sprites/b/jadrid1.tga"
+spr2 "ee/sprites/b/jadrid2.tga"
 descr "The elites of the Jade tribe ride strange, swamp-born two-legged lizards with tiny arms. They are more ferocious than they appear, and the lizard will bite and claw at the maiden's enemies."
 rank 1
 hp 12
@@ -1066,8 +1114,8 @@ allitemslots
 nobootslots
 
 newmonster "Wind Rider"
-spr1 "ee/sprites/winrid1.tga"
-spr2 "ee/sprites/winrid2.tga"
+spr1 "ee/sprites/b/winrid1.tga"
+spr2 "ee/sprites/b/winrid2.tga"
 descr "The elites of the Crystal tribe ride atop winged horses. These horses can fly, in contradiction to all common sense. The origin of these horses is unknown but speculated to rise from a crossing between a horse and a very large swan. While not as dangerous as the Gryphon Riders, the Wind Riders are more numerous and can simply fly over conventional fortifications."
 rank 1
 hp 15
@@ -1086,8 +1134,8 @@ allitemslots
 nobootslots
 
 newmonster "Nightmare"
-spr1 "ee/sprites/onyrid1.tga"
-spr2 "ee/sprites/onyrid2.tga"
+spr1 "ee/sprites/b/onyrid1.tga"
+spr2 "ee/sprites/b/onyrid2.tga"
 descr "The elites of the Onyx tribe ride horrifying undead horses raised by the tribe's priestesses. These are surrounded by an aura of terror that seems to be at least partially magical. Aside from this they differ little from conventional cavalry."
 rank 1
 hp 18
@@ -1468,11 +1516,46 @@ libraryrec
 
 #selectritual "Lesser Ceremony of Night"
 
-#newmonster "Camazotz"
+#newmonster ah itz/way/camazots
+spr1 "ee/spr/pk/"
+spr2 "ee/spr/pk/"
+hp
+armor
+mr
+mor
+str
+spellweapon
+meleeweapon
+flying
+allitemslots
+#holy?
 
-#newmonster "Zotz"
+newmonster "Zotz"
+spr1 "ee/spr/pk/"
+spr2 "ee/spr/pk/"
+descr ""
+hp
+armor
+mr
+mor
+str
+meleeweapon
+flying
+allitemslots
 
-#newmonster "Zotz Warrior"
+newmonster "Zotz Warrior"
+copystats "Zotz"
+spr1 "ee/spr/pk/"
+spr2 "ee/spr/pk/"
+descr ""
+hp
+mor
+clearweapons
+meleeweaponspec
+meleeweapon
+shield
+flying
+allitemslots
 
 # [TROLL KING]
 
@@ -1590,8 +1673,8 @@ rangedweapon 0 34 # Poison Bow
 
 newmonster "Giant King"
 copystats "Hill Giant"
-spr1 "ee/sprites/giantking1.tga"
-spr2 "ee/sprites/giantking2.tga"
+spr1 "ee/spr/tk/giantking1.tga"
+spr2 "ee/spr/tk/giantking2.tga"
 descr "Lately there has been word of a particularly big and stubborn hill giant who wears gaudy and slightly undersized jewelry. The origin of these accoutrements are a mystery, as they clearly cannot have been made specifically for the giant, but there also are no other creatures known for which they would fit given their reputed size. Supposedly this giant has declared himself a king among his fellows, much as his smaller brethren call themselves barons. We would dismiss his existence entirely were it not for the tireless work of our student interrogators on captured goblins. They are terrified of the giant and he is said to devour their kind by the handful as a deer would eat berries."
 clearweapons
 mr 5
@@ -1605,8 +1688,8 @@ meleeweapon 32 632 # Great Club
 
 newmonster "Ogre Poacher"
 copystats "Ogre"
-spr1 "ee/sprites/ogrepoach1.tga"
-spr2 "ee/sprites/ogrepoach2.tga"
+spr1 "ee/spr/tk/ogrepoach1.tga"
+spr2 "ee/spr/tk/ogrepoach2.tga"
 descr "The smallest of the Giants lives in small tribes that often raid our farmlands.  Having had a close relationship with Trolls and Hill Giants, they have developed a dire craving for human flesh, but in being more cunning than their cousins, they often execute well planned raids on human villages or waylay travelers at crossroads in order to fill up their larders. Some of them seem to prefer deer, boar, and other wildlife. As a trend it could be worthy to encourage through carefully direct social manipulation, but they never seem to hesitate to use their crudely-fashioned spears on humans as well. Ogre poachers consider themselves highly intelligent and are very proud of the fact."
 rangedweapon 3 24
 meleeweapon 3 4
@@ -1794,8 +1877,8 @@ addstartunits "Devil Fungus" 2
 
 newmonster "Wooden Soldier"
 descr "The Wooden Soldier is skillfully carved from wood and then enchanted to come to life.  It is vulnerable to fire, but quite resistant to spears and arrows."
-spr1 "ee/sprites/wsold1.tga"
-spr2 "ee/sprites/wsold2.tga"
+spr1 "ee/spr/e/wsold1.tga"
+spr2 "ee/spr/e/wsold2.tga"
 rank 1
 hp 15
 armor 1
@@ -1816,8 +1899,8 @@ fireres -50
 
 newmonster "Stone Soldier"
 descr "The Stone Soldier is skillfully sculpted from stone and then enchanted to come to life.  It is strong and sturdy. It is slow on the march but cares little for snow or mountainous terrain."
-spr1 "ee/sprites/ssold1.tga"
-spr2 "ee/sprites/ssold2.tga"
+spr1 "ee/spr/e/ssold1.tga"
+spr2 "ee/spr/e/ssold2.tga"
 rank 1
 hp 12
 armor 2
@@ -1983,7 +2066,7 @@ libraryrec
 selectmonster "Dispossessed Spirit"
 unaging
 
-select monster "Spectral Warrior"
+select monster "Ghost Warrior"
 unaging
 
 select monster "Spectral Archer"
@@ -2041,27 +2124,24 @@ newritpow
 
 newritual "Lesser Ritual of Mastery"
 ritpow
-level
-rebatelvl
+level 1
+rebatelvl 1
 cost
 free
-newspell
 
 newritual "Ritual of Mastery"
 ritpow
-level
-rebatelvl
+level 1
+rebatelvl 2
 cost
 free
-newspell
 
 newritual "Ritual of Grand Mastery"
 ritpow
-level
-rebatelvl
+level 2
+rebatelvl 3
 cost
 free
-newspell
 
 newritual ""
 
@@ -2083,27 +2163,25 @@ newritpow
 
 newritual "Lesser Ritual of Mastery"
 ritpow
-level
-rebatelvl
+level 1
+rebatelvl 1
 cost
 free
-newspell
 
 newritual "Ritual of Mastery"
 ritpow
-level
-rebatelvl
+level 1
+rebatelvl 2
 cost
 free
-newspell
 
 newritual "Ritual of Grand Mastery"
 ritpow
-level
-rebatelvl
+level 2
+rebatelvl 3
 cost
 free
-newspell
+
 newritual ""
 
 newritual ""
@@ -2120,8 +2198,8 @@ newritual ""
 
 newmonster "Shah"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 0
 hp
 armor
@@ -2131,17 +2209,55 @@ str
 meleeweaponspec
 meleeweapon
 meleeweapon
+battlefast
 human
 shield
 allitemslots
+nobootslots
 
+#created by coronation at king's castle?
 #newmonster "Shahanshah"
 
+newmonster "Spahbed"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank 0
+hp
+armor
+mr
+mor
+str
+meleeweaponspec # Lance
+meleeweapon # Broadsword
+meleeweapon # Hoof
+battlefast
+human
+shield
+allitemslots
+nobootslots
+
+newmonster "Savaran Spahbed"
+copystats "Spahbed"
+hp
+armor
+mr
+mor
+clearweapons
+meleeweaponspec # Lance
+meleeweapon # Broadsword
+meleeweapon # Stronger hoof
+fast
+human
+shield
+fireres 100
+allitemslots
+nobootslots
 
 newmonster "Paighan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp 5
 armor 0
@@ -2156,8 +2272,8 @@ allitemslots
 
 newmonster "Turan Infantry"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp 6
 armor # ?
@@ -2172,8 +2288,8 @@ allitemslots
 
 newmonster "Zhayedan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp 8
 armor 2
@@ -2194,7 +2310,7 @@ descr ""
 spr1 "ee/sprites/shah/"
 spr2 "ee/sprites/shah/"
 rank 1
-hp 9
+hp 10
 armor 2
 mr 6
 mor 7
@@ -2210,10 +2326,10 @@ allitemslots
 
 newmonster "Turan Cavalry"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
-hp 9
+hp 10
 armor 1
 mr 4
 mor 5
@@ -2223,52 +2339,55 @@ meleeweaponspec # Weak lance
 meleeweapon
 human
 shield
+fast
 allitemslots
 nobootslots
 
 newmonster "Cataphract"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank
-hp
-armor
-mr
-mor
-str
-rangedweapon
-meleeweaponspec
-meleeweapon
+hp 12
+armor 2
+mr 4
+mor 5
+str 4
+rangedweapon # Bow
+meleeweaponspec # Lance
+meleeweapon # Broadsword
 human
 shield
+battlefast
 allitemslots
 nobootslots
 
 newmonster "Savaran Guard"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
-rank
-hp
-armor
-mr
-mor
-str
-rangedweapon
-meleeweaponspec
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank 1
+hp 15
+armor 2
+mr 5
+mor 6
+str 4
+rangedweapon # Bow
+meleeweaponspec # Lance
 meleeweapon # Broadsword
-meleeweapon # Hoof
+meleeweapon # Strong hoof
 human
 shield
 fireres 100
+fast
 allitemslots
 nobootslots
 
 newmonster "War Elephant"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
-rank
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank 1
 hp
 armor
 mr
@@ -2279,18 +2398,18 @@ trample ?
 #
 newmonster "Karapan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
-hp
-armor
-mr
-mor
-str
+hp 6
+armor 0
+mr 7
+mor 6
+str 4
 spellweaponsingle
 spellweaponsingle
 meleeweapon
-power
+power  1
 human
 allitemslots
 mastery
@@ -2298,104 +2417,89 @@ gathersacrifices
 
 newmonster "Dastur"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power
-human
-allitemslots
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+hp 7
+mr 8
+mor 7
+clearweapons
+spellweaponsingle  2
+spellweaponsingle  2
+meleeweapon 0 ?
+power  2
 mastery
-gathersacrifices
 
 newmonster "Grand Dastur"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power
-human
-allitemslots
-gathersacrifices
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+hp 8
+mr 9
+mor 8
+clearweapons
+spellweaponsingle  3
+spellweaponsingle  3
+meleeweapon 0 ?
+fireres 50
+power  3
 
 #
 newmonster "Athravan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power
+hp 5
+armor 0
+mr 7
+mor 5
+str 4
+spellweaponsingle  1
+spellweaponsingle  1
+meleeweapon 0 ?
+power  1
 human
 allitemslots
 mastery
 gathergems
 
 newmonster "Zaotar"
+copystats "Athravan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power
-human
-allitemslots
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+hp 6
+mr 8
+mor 6
+clearweapons
+spellweaponsingle  2
+spellweaponsingle  2
+meleeweapon 0 ?
+power  2
 mastery
-gathergems
 
 newmonster "Grand Zaotar"
+copystats "Zaotar"
 descr ""
 spr1 "ee/sprites/shah/"
 spr2 "ee/sprites/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power
-human
-allitemslots
+hp 7
+mr 9
+mor 7
+clearweapons
+spellweaponsingle  3
+spellweaponsingle  3
+meleeweapon 0 ?
+power  3
+coldres 50
 gathergems
 
 #
 newmonster "Spenta of Sky and Metals"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2408,9 +2512,9 @@ allitemslots
 
 newmonster "Spenta of Animals"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2423,9 +2527,9 @@ allitemslots
 
 newmonster "Spenta of Fire"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2438,9 +2542,9 @@ allitemslots
 
 newmonster "Spenta of Plants"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2453,9 +2557,9 @@ allitemslots
 
 newmonster "Spenta of Waters"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2468,9 +2572,9 @@ allitemslots
 
 newmonster "Spenta of the Earth"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2483,9 +2587,9 @@ allitemslots
 
 newmonster "Yazad"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2498,9 +2602,9 @@ allitemslots
 
 newmonster "Daeva of Evil Intentions"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2514,9 +2618,9 @@ allitemslots
 
 newmonster "Daeva of Frozen Minds"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2531,9 +2635,9 @@ allitemslots
 
 newmonster "Daeva of Oppression"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2546,9 +2650,9 @@ allitemslots
 
 newmonster "Daeva of Discontent"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2561,9 +2665,9 @@ allitemslots
 
 newmonster "Daeva of Destruction"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2576,9 +2680,9 @@ allitemslots
 
 newmonster "Daeva of Aging"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2591,9 +2695,9 @@ allitemslots
 
 newmonster "Daeva"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2607,9 +2711,9 @@ allitemslots
 
 newmonster "Jahi"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 0
 hp
 armor
 mr
@@ -2621,9 +2725,9 @@ allitemslots
 
 newmonster "Daeva of Shooting Stars"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2636,9 +2740,9 @@ allitemslots
 
 newmonster "Daeva of Frost and Snow"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2651,9 +2755,9 @@ allitemslots
 
 newmonster "Pairika"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2666,9 +2770,9 @@ allitemslots
 
 newmonster "Ahurani"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2681,9 +2785,9 @@ allitemslots
 
 newmonster "Airya Seraph"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2696,9 +2800,9 @@ allitemslots
 
 newmonster "Seraphine"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
@@ -2711,9 +2815,9 @@ allitemslots
 
 newmonster "Airya Iceclad"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 1
 hp
 armor
 mr
@@ -2729,9 +2833,9 @@ allitemslots
 
 newmonster "Kavi Archer"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 0
 hp
 armor
 mr
@@ -2746,47 +2850,47 @@ allitemslots
 
 newmonster "Harab"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
-spellweapon 
-meleeweapon
+spellweapon # Necromancy?
+meleeweapon 
 flying
 allitemslots
 
 newmonster "Iron Guard"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 1
 hp
 armor
 mr
 mor
 str
-meleeweaponspec
-meleeweapon
+meleeweaponspec # Lance
+meleeweapon # Spear
 shield
 flying
 allitemslots
 
 newmonster "Iron Crow"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 1
 hp
 armor
 mr
 mor
 str
-meleeweapon
-meleeweapon
+meleeweapon # Sword
+meleeweapon # Sword
 flying
 allitemslots
 
@@ -2798,13 +2902,37 @@ setmaincom "Shah"
 classdescr
 hometerr 
 addstartterr
-addstartterr 
-addstartunits "Turan Infantry" 8
-addstartunits 
+addstartterr # coal mine
+addstartunits "Turan Soldier" 8
+addstartunits "Zhayedan" 5
+addstartcom "Spahbed"
 recherochance
 recasschance
 libbonusdescr ""
 templebonusdescr ""
-
-
-
+nostdtroops
+addcomrec "Shah"
+reclimiter "-Shah"
+#reclimiter "Shahanshah"
+addcomrec "Spahbed"
+addunitrec "Paighan" 100 8 40 0 0
+addunitrec "Turan Soldier" 100 5 50 0 5
+addunitrec "Zhayedan" 100 4 50 0 15
+addunitrec "Turan Rider" 100 3 50 0 10
+addunitrec "Cataphract" 100 3 50 0 20
+addunitrec "War Elephant" 10 1 65 15 10
+addmercrec "Scout" 10 1 25 10 0
+addcomrec "Athravan" 5 45 10 0
+templerec
+reclimiter "-Karapan"
+reclimiter "-Dastur"
+reclimiter "-Grand Dastur"
+addcomrec "Karapan" 5 45 10 0
+templerec
+reclimiter "-Athravan"
+reclimiter "-Zaotar"
+reclimiter "-Grand Zaotar"
+addmercrec "Mercenary Cavalry" 6 4 50 12 0
+addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec

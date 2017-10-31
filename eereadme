@@ -50,3 +50,25 @@ Minor fixes and tweaks.
 * Warrior Mage cost fixed. 
 * Spider Familiars much less common for High Priestess (AI armies were swarming with them).
 
+0.4 Preview/Shah Build 1711xx
+
+0.4 design
+* Implementing the Shah, finally.
+
+* Terracotta cost -> 10 gold (from 20).
+* Second run at the High Priestess. More-or-less a complete revamp of the class' mechanics once I'm done. 
+Blood feasts revamped, lesser blood feast gone completely, though a Blood Banquet ritual at T2 (more expensive) emulates its functionality.
+Expanded roster of giants accessed through their leaders. Blood Feast spells leave ruins. Spells available to giant lords (Adon, Melqart, the new Belus) allow duplication of Blood Spell effect at dramatically higher cost.
+Qedesim, gibbor archers and scouts. Anakite Emites, which upgrade into Zamzummim. High Arcana Anakite Elders, Sages, and Rephaite Belusim. Anakite Dawn Guards. Blood feasts more expensive?
+New undead units. Fossil warriors. More appropriate spectral units. 
+Add central-only scorpion summons to Creatures rituals, less efficient than southern.
+T1 & T2 Ceremonies have temple-only variant copies (learned at the same time) at a slight increase in cost, so you can always summon demons in your starting citadel and in any temples you find outside the south.
+Baal replaces one spellweapon /w Command 3. New levels for Ba'alite rituals, Nephil and Ba'al-exclusive, respectively. Invade Hell to release revamped Grigori?
+Polish up the Barbarian's and Troll King's new stuff.
+Zotz for the Priest King.
+Merman mercenaries.
+Spirit Sight for Hades recruitables.
+Unaging for most spectral undead.
+Master Smith gives magic swords as well and can also upgrade Unicorn Knights(and will prioritize them first).
+Generic Chartmaker/Navigator/Stormcaller that can scry for ports and "sail" (teleport at high AP cost) from port to port at a suitable fee in gold.
+More terrains and indies spawned in turn 0?

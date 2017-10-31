@@ -1,16 +1,8 @@
 icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
-# 
-# Other: Recoffers for mercenary light cavalry (and captains) with javelins and spears for most human classes.
-#
-# Warrior Mage: New generic cavalry mage. Frontline combat caster.
-# (Baron) Master Smith: low reqfreqency. Can upgrade knights for gems. Efficiency is much lower than Runesmith.
-# (Baron/Senator/Other?) Artificer: low reqfreqency. can make a small variety of magic trinkets (i.e. make chests that come with items much like how other mods have done it), mostly useful for casters. Can only perform the ritual of mastery in libraries? Resource types used?
-# War Elephants: low reqfreqency option in Desert Palaces?
-#
-#
 # For those wondering why I separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
 #
+
 newmonster "Mercenary Cavalry"
 spr1 "ee/sprites/merccav1.tga"
 spr2 "ee/sprites/merccav2.tga"
@@ -280,16 +272,7 @@ addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
 
 #
-#newmonster "Belus"
-#newmonster "Gibbor Scout"
-#newmonster "Gibbor Archer"
-#newmonster "Qedesim"
-#newmonster "Emite"
-#newmonster "Anakite Elder"
-#newmonster "Anakite Sage"
-#newmonster "Kohen"
-#newmonster "Dawn Guard"
-#newmonster "Fossil Warrior"
+
 
 selectritual "Lesser Ceremony to Baal"
 clearritspec
@@ -299,6 +282,7 @@ nostart
 newritual "Lesser Ceremony of Baal"
 ritpow 8 # Baalite Rituals
 level 1
+nexttoo
 cost 4 20 # Sacrifices
 terr 117 # Desert
 noundead
@@ -306,8 +290,22 @@ summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
+newritual "Lesser Temple Ceremony of Baal"
+ritpow 8 # Baalite Rituals
+level 1
+nostart
+cost 4 20 # Sacrifices
+terr -2 # Temples
+noundead
+summoning
+addstring "1d4+2*Mazzik"
+addstring "1d2*Se'ir"
+
 selectritual "Lesser Ceremony of Baal"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
+
+selectritual "Lesser Temple Ceremony of Baal"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
 
 selectritual "Lesser Blood Feast"
 clearritspec
@@ -356,6 +354,23 @@ ritpow 8 # Baalite Rituals
 level 2
 cost 4 75 # Sacrifices
 terr 117 # Deserts only
+nexttoo
+noundead
+sum0chance 15
+sum1chance 15
+summoning
+addstring "1d2+1*Se'ir & 3d4*Mazzik"
+addstring "Lilot & 3d4*Mazzik"
+addstring "2d3*Se'ir"
+addstring "1d2*Shed"
+addstring "1d3*Lilot"
+
+newritual "Temple Ceremony of Baal"
+ritpow 8
+level 2
+nostart
+cost 4 75
+terr -2 # Temples
 noundead
 sum0chance 15
 sum1chance 15
@@ -368,6 +383,9 @@ addstring "1d3*Lilot"
 
 selectritual "Ceremony of Baal"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
+
+selectritual "Ceremony of Baal"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
 
 newritual "Summon Greater Creatures of Baal"
 ritpow 8 # Baalite
@@ -397,6 +415,7 @@ summoning
 addstring "Sirrush"
 addstring "c*Manticore"
 addstring "(117)c*Scorpion Man"
+addstring "1d2+1*Shed & 2d3*Se'ir"
 
 selectritual "Grand Ceremony of Baal"
 descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions."
@@ -447,15 +466,21 @@ ritpow 8
 selectritual "Summon God"
 free
 
+newritual "Blood to Blood" # Scry for Watchers
+cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it's mostly a token.
+ritpow 8 4 # Nephil-only
+planeloc 2 # Inferno
+randnewloc 104 # Pit
+
+selectritual "Blood to Blood"
+descr "The Nephilim are the children of the Watchers and in turn begat all the races of giants who serve Ba'al.  With this pure blood a scrying ritual can be performed to locate the fathers of the Nephilim.  The blood of the Nephil is the key and the ten sacrificed maidens provides the power."
 
 #
-#newritual "" - scry for Watchers
-#ritpow 8 4
-# planeloc 2
-# randnewloc 104 # Pit
-#
-##newritual "Second Sun"
+##selectritual "Second Sun"
 #ritpow 8 5
+#cost 4 0
+#apcost 3
+#
 # Most of the Sheol rituals are placeholders and works in progress.
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
@@ -604,18 +629,17 @@ apcost 5
 addstring "3*Rephaite"
 #addstring - ?
 
-selectmonster "Zamzummite"
-power 1 0 # Gets rid of necromancy
-power 49 2 # Sheol
-gatherhands
-
 selectmonster "Shed"
 rearpos
+
+selectmonster "Lammashta"
+unaging
 
 selectmonster "Ditanu"
 clearweapons
 meleeweapon 19 474 # Magic sword, damage 1-26
 mr 7
+unaging
 
 selectmonster "Malik"
 spiritsight
@@ -624,6 +648,7 @@ spellweapon 38 3 # Necromancy
 meleeweapon 22 474 # Magic sword, damage 1-29
 power 1 0 # Gets rid of Necromancy.
 power 49 3 # Sheol
+unaging
 gatherhands
 
 selectmonster "Anakite Captain"
@@ -646,6 +671,206 @@ fireres 50
 #selectmonster "God"
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
+# An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
+
+newmonster "Belus"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon
+meleeweapon
+fireres 50
+weaponslots
+
+newmonster "Gibbor Scout"
+copystats "Gibbor"
+descr ""
+spr1
+spr2
+rank 0
+acutesenses
+
+newmonster "Gibbor Archer"
+descr ""
+spr1
+spr2
+rank 0
+hp
+armor
+clearweapons
+rangedweapon
+meleeweapon
+
+newmonster "Qedesim"
+descr ""
+spr1
+spr2
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon
+meleeweapon
+localleadership 1
+human
+allitemslots
+
+newmonster "Emite"
+descr ""
+spr1
+spr2
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+power 49 1
+#mastery ??
+weaponslots
+gatherhands
+#promotesto or whatever
+
+selectmonster "Zamzummite"
+power 1 0 # Gets rid of necromancy
+power 49 2 # Sheol
+gatherhands
+
+newmonster "Anakite Elder"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 51 1 # High Arcana
+meleeweapon
+weaponslots
+#promotesto or whatever (in a library?)
+
+newmonster "Anakite Sage"
+copystats "Anakite Elder"
+descr ""
+spr1
+spr2
+hp
+mr
+mor
+spellweapon 51 2 # High Arcana
+meleeweapon
+
+#newmonster "Kohen"
+#newmonster "Dawn Guard"
+newmonster "Fossil Warrior"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+fireres 50
+coldres 100
+poisonres 100
+undead
+
+newmonster "Spectral Ba'alite"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+rangedweapon 
+meleeweapon 
+ethereal
+coldres 100
+poisonres 100
+undead
+unaging
+
+newmonster "Spectral Ba'alite Zealot"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+ethereal
+coldres 100
+poisonres 100
+undead
+unaging
+
+newmonster "Spectral Ba'alite Archer"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+rangedweapon
+meleeweapon
+ethereal
+coldres 100
+poisonres 100
+undead
+unaging
+
+newmonster "Hierodule Shade"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon
+meleeweapon
+ethereal
+coldres 100
+poisonres 100
+undead
+unaging
+
+# events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.
+#playerevent
+#+turn 0
+#+player 19 # Are Sheolites independents or Hades-aligned?
+#+ownsloc -1 ???  # Sheol Temple
+#+hasunithere 
+#
+#playerevent
+#
+#
 
 # [BAKEMONO]
 # Should have more proper Oni.
@@ -667,9 +892,9 @@ str 6
 clearweapons
 rangedweapon 3 24 # Javelin
 meleeweapon 3 21 # Greatsword
-fireres -50
+fireres -50 # Results in a neutral value.
 coldres 50
-poisonres -50
+poisonres -50 # Results in a neutral value.
 diseaseres
 allitemslots
 banishsurv
@@ -1083,6 +1308,12 @@ cost 10 60
 selectritual "Awaken Onyx Oracle"
 cost 10 180
 
+selectmonster "Penumbral"
+unaging
+
+selectmonster "Umbral"
+unaging
+
 # [DRUID]
 # Starting defenders 1 tree of crows + 2 venus traps
 # ?
@@ -1234,6 +1465,14 @@ addstring "c*Mountain Giant"
 selectclass 13
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+
+#selectritual "Lesser Ceremony of Night"
+
+#newmonster "Camazotz"
+
+#newmonster "Zotz"
+
+#newmonster "Zotz Warrior"
 
 # [TROLL KING]
 
@@ -1734,16 +1973,175 @@ addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
 # Not sure anything is needed here.
 
+# [INDEPENDENTS] / [NON-CLASS SPECIFIC]
+
+
+# ethereal undead unaging
+#selectmonster - ghost captain?
+#spiritsight
+
+selectmonster "Dispossessed Spirit"
+unaging
+
+select monster "Spectral Warrior"
+unaging
+
+select monster "Spectral Archer"
+unaging
+
+select monster "Shade"
+unaging
+
+select monster "Shade Hound"
+unaging
+
+select monster "Ghost"
+unaging
+
+select monster "Banshee"
+unaging
+
+select monster "Wraith"
+unaging
+
+select monster "Wraith Lord"
+unaging
+
+select monster "Ghost Mage"
+unaging
+
+select monster "Dusk Elder"
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
+select monster ""
+unaging
+
 # [SHAH]
 
+# Athravan / Yazata - costs gems like an illusionist
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+
+newritual "Ritual of Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+
+newritual "Ritual of Grand Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+
+newritual ""
+
+newritual ""
+
+# Flames of Vafur copy
+newritual "Sacred Fire"
+
+# Enchanted gate
+newritual ""
+
+# Iceclad promotion
+newritual ""
+
+newritual ""
+
+# Karapan / Daeva - costs sacrifices
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+
+newritual "Ritual of Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+
+newritual "Ritual of Grand Mastery"
+ritpow
+level
+rebatelvl
+cost
+free
+newspell
+newritual ""
+
+newritual ""
+
+# Flames of Vafur copy
+newritual "Sacred Fire"
+
+# Savaran promotion
+newritual ""
+
+newritual ""
+
+newritual ""
+
 newmonster "Shah"
+descr ""
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 0
+hp
+armor
+mr
+mor
+str
+meleeweaponspec
+meleeweapon
+meleeweapon
+human
+shield
+allitemslots
 
 #newmonster "Shahanshah"
 
+
 newmonster "Paighan"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank 1
 hp 5
 armor 0
@@ -1758,14 +2156,14 @@ allitemslots
 
 newmonster "Turan Infantry"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank 1
-hp
-armor
-mr
-mor
-str
+hp 6
+armor # ?
+mr 4
+mor 4
+str 4
 rangedweapon  # Javelin
 meleeweapon   # Sword
 human
@@ -1774,17 +2172,18 @@ allitemslots
 
 newmonster "Zhayedan"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank 1
-hp
-armor
-mr
-mor
-str
+hp 8
+armor 2
+mr 5
+mor 6
+str 5
 rangedweapon # Bow
 meleeweapon # Sword
-rearpos
+#rearpos
+#iceprot
 human
 shield
 allitemslots
@@ -1792,142 +2191,207 @@ allitemslots
 
 newmonster "Iceclad Zhayedan"
 descr ""
-spr1
-spr2
-rank
-hp
-armor
-mr
-mor
-str
-rangedweapon # Bow
-meleeweapon # Sword
-rearpos
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 1
+hp 9
+armor 2
+mr 6
+mor 7
+str 5
+rangedweapon # Frost Bow
+meleeweapon # Frost Sword
+#rearpos
 human
 shield
+iceprot 1
+coldres 100
 allitemslots
 
 newmonster "Turan Cavalry"
 descr ""
-spr1
-spr2
-rank
-hp
-armor
-mr
-mor
-str
-
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank 1
+hp 9
+armor 1
+mr 4
+mor 5
+str 4
+rangedweapon
+meleeweaponspec # Weak lance
+meleeweapon
+human
+shield
+allitemslots
+nobootslots
 
 newmonster "Cataphract"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank
 hp
 armor
 mr
 mor
 str
-
+rangedweapon
+meleeweaponspec
+meleeweapon
+human
+shield
+allitemslots
+nobootslots
 
 newmonster "Savaran Guard"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank
 hp
 armor
 mr
 mor
 str
-
+rangedweapon
+meleeweaponspec
+meleeweapon # Broadsword
+meleeweapon # Hoof
+human
+shield
+fireres 100
+allitemslots
+nobootslots
 
 newmonster "War Elephant"
 descr ""
-spr1
-spr2
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
 rank
 hp
 armor
 mr
 mor
 str
+trample ?
 
 #
 newmonster "Karapan"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
-
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+mastery
+gathersacrifices
 
 newmonster "Dastur"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
-
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+mastery
+gathersacrifices
 
 newmonster "Grand Dastur"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+gathersacrifices
 
 #
-newmonster "Athravahn"
+newmonster "Athravan"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
-
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+mastery
+gathergems
 
 newmonster "Zaotar"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
-
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+mastery
+gathergems
 
 newmonster "Grand Zaotar"
 descr ""
-spr1
-spr2
-rank
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
 hp
 armor
 mr
 mor
 str
+spellweaponsingle
+spellweaponsingle
+meleeweapon
+power
+human
+allitemslots
+gathergems
 
 #
-newmonster
+newmonster "Spenta of Sky and Metals"
 descr ""
 spr1
 spr2
@@ -1937,6 +2401,394 @@ armor
 mr
 mor
 str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Spenta of Animals"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Spenta of Fire"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Spenta of Plants"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Spenta of Waters"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Spenta of the Earth"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Yazad"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+awe 1
+flying
+allitemslots
+
+newmonster "Daeva of Evil Intentions"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Frozen Minds"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+# confusion weapon?
+
+newmonster "Daeva of Oppression"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Discontent"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Destruction"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Aging"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweaponspec
+meleeweapon
+fear  # Might be too strong, special fear attack instead?
+flying
+allitemslots
+
+newmonster "Jahi"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Shooting Stars"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Daeva of Frost and Snow"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Pairika"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Ahurani"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Airya Seraph"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Seraphine"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Airya Iceclad"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweaponspec
+meleeweapon
+shield
+iceprot 2
+flying
+coldres 100
+allitemslots
+
+newmonster "Kavi Archer"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+rangedweapon
+meleeweapon
+iceprot 2
+flying
+coldres 100
+allitemslots
+
+newmonster "Harab"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+
+newmonster "Iron Guard"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweaponspec
+meleeweapon
+shield
+flying
+allitemslots
+
+newmonster "Iron Crow"
+descr ""
+spr1
+spr2
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+meleeweapon
+flying
+allitemslots
 
 
 

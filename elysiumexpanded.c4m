@@ -63,76 +63,84 @@ ritpow 48
 level 1
 levelreq 1
 cost 0 15
-cost 7 20
+cost 7 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Fire"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Fire"
 addstring "Knight"
 addstring "Fire Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Fire"
-
-selectritual "Forge Armaments of Flame"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Frost"
 ritpow 48
 level 1
 levelreq 1
 cost 0 15
-cost 8 20
+cost 8 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Frost"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Frost"
 addstring "Knight"
 addstring "Frost Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Frost"
-
-selectritual "Forge Armaments of Frost"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Air"
 ritpow 48
 level 1
 levelreq 1
 cost 0 15
-cost 9 20
+cost 9 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Air"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Air"
 addstring "Knight"
 addstring "Air Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Air"
-
-selectritual "Forge Armaments of Air"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Earth"
 ritpow 48
 level 1
 levelreq 1
 cost 0 15
-cost 10 20
+cost 10 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Earth"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Earth"
 addstring "Knight"
 addstring "Earth Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Earth"
+
+selectritual "Forge Armaments of Flame"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+selectritual "Forge Armaments of Frost"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+selectritual "Forge Armaments of Air"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 selectritual "Forge Armaments of Earth"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Find Port"
 ritpow 48
@@ -142,7 +150,6 @@ cost 0 10 # Gold
 soundfx 57
 randnewloc ? # Port
 scryloc 20
-
 
 newritual ""
 ritpow 48
@@ -159,7 +166,7 @@ descr ""
 selectritual ""
 descr ""
 
-newmonster "Navigator"
+newmonster "Chartmaker"
 spr1
 spr2
 descr ""
@@ -171,12 +178,13 @@ mr 6
 str
 spellweapon ? 1 # Storm
 meleeweapon
+power 48 2
 human
 allitemslots
 miscitem 30
 
-newmonster "Stormcaller"
-copystats "Navigator"
+newmonster "Navigator"
+copystats "Chartmaker"
 spr1
 spr2
 descr ""
@@ -184,10 +192,17 @@ hp 6
 mr 7
 spellweapon ? 2 # Storm
 
+newmonster "Stormcaller"
+copystats "Navigator"
+spr1
+spr2
+descr ""
+hp 7
+mr 8
+spellweapon ? 3 # Storm
+
 # [BARON]
-# Mercenary cavalry access.
 # Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
-# Keep the Master Smith idea.
 #
 # ALL KNIGHT NAMES PLACEHOLDERS
 newmonster "Fire Knight"
@@ -196,6 +211,10 @@ spr1 "ee/sprites/fireknight1.tga"
 spr2 "ee/sprites/fireknight2.tga"
 hp 13
 mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
 fireres 50
 
 selectmonster "Fire Knight"
@@ -207,6 +226,10 @@ spr1 "ee/sprites/earthknight1.tga"
 spr2 "ee/sprites/earthknight2.tga"
 hp 15
 mr 6
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
 armor 4
 
 selectmonster "Earth Knight"
@@ -218,6 +241,10 @@ spr1 "ee/sprites/airknight1.tga"
 spr2 "ee/sprites/airknight2.tga"
 hp 13
 mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
 shockres 50
 
 selectmonster "Air Knight"
@@ -229,6 +256,10 @@ spr1 "ee/sprites/waterknight1.tga"
 spr2 "ee/sprites/waterknight2.tga"
 hp 13
 mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
 coldres 50
 
 selectmonster "Frost Knight"
@@ -236,29 +267,57 @@ descr "Knights are elite troops, higher in station and far better trained than n
 
 # Dummy pseudocode: I considered giving the upgraded knights magic swords as well. Since I'm lazy and will probably return to that idea at some point...
 #clearweapons
-#meleeweaponspec 12 13
-#meleeweapon 1 474
-#meleeweaponbonus 4 95
+#meleeweaponspec 12 13 # Lance?
+#meleeweapon 1 474 # Magic sword
+#meleeweaponbonus 4 95 # Hoof
 #
-#newmonster "Unicorn Knight of Fire"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Frost"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Air"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Earth"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
+newmonster "Unicorn Knight of Fire"
+copystats "Unicorn Knight"
+spr1
+spr2
+hp
+mr
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+fireres 50
+
+newmonster "Unicorn Knight of Frost"
+copystats "Unicorn Knight"
+spr1
+spr2
+hp
+mr
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+coldres 50
+
+newmonster "Unicorn Knight of Air"
+copystats "Unicorn Knight"
+spr1
+spr2
+hp
+mr
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+shockres 50
+
+newmonster "Unicorn Knight of Earth"
+copystats "Unicorn Knight"
+spr1
+spr2
+hp
+armor
+mr
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
 
 # SPRITE PLACEHOLDER
 newmonster "Master Smith"
@@ -293,8 +352,10 @@ libraryrec
 
 # ?
 #selectritual "Raise Legion
-#addstring "(-27)c*? & 5d6*Fossil Warrior"
-# setvar # pay no attention to this move along
+#addstring "(-27)c*Fossil Guard? & 5d6*Fossil Warrior"
+# setvar ??? 1 # pay no attention to this move along
+#
+#
 # [DEMONOLOGIST]
 selectclass 3
 addcomrec "Warrior Mage" 0 65 20 5
@@ -307,6 +368,7 @@ coldres 50
 ctrlchance 100
 infwander 6
 
+# Mod most/all summoning rituals to have a rebate in the home citadel, slightly increase base cost to compensate?
 #
 # [WITCH]
 selectclass 4
@@ -466,7 +528,7 @@ summoning
 addstring "Sirrush"
 addstring "c*Manticore"
 addstring "(117)c*Scorpion Man"
-addstring "1d2+1*Shed & 2d3*Se'ir"
+addstring "(117)1d2+1*Shed & 2d3*Se'ir"
 
 selectritual "Grand Ceremony of Baal"
 descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions."
@@ -483,18 +545,16 @@ cost 4 100 # Sacrifices
 terr -32 # Village or larger
 noundead
 nexttoo
-sum0chance 75
 summoning
 destroyterr 100
-addstring "c*Adon & 2d3+1*Anakite"
-addstring "c*Zamzummite"
+addstring "c*Adon & 2*Dawn Guard & 1d3+1*Anakite"
 
 newritual "Bloody Banquet"
 ritpow 8
 level 2
 nostart
 cost 0 20 # Gold
-cost 4 20 # Sacrifices
+cost 4 30 # Sacrifices
 apcost 2
 terr -9 # Fortified citadels
 noundead 
@@ -665,11 +725,11 @@ cost 4 20
 terr -9
 levelreq 1
 summoning
-apcost 5
+apcost 2
 addstring "c*Qedesim"
-addstring "2d3-1*Gibbor"
+addstring "1d3+1*Gibbor"
 addstring "Gibbor Scout & 2*Gibbor"
-addstring "1d4+1*Gibbor Archer"
+addstring "1d3+1*Gibbor Archer"
 
 newritual "Call Anakim"
 descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
@@ -2971,8 +3031,8 @@ newclass
 setclassname "Shah"
 setmaincom "Shah"
 classdescr
-hometerr 
-addstartterr
+hometerr ? 
+addstartterr ? 
 addstartterr # coal mine
 addstartunits "Turan Soldier" 8
 addstartunits "Zhayedan" 5

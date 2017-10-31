@@ -54,6 +54,136 @@ randomitem 50
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
 
+# Ritpow 48, Master Smith, Chartmaker
+
+newritpow
+
+newritual "Forge Armaments of Flame"
+ritpow 48
+level 1
+levelreq 1
+cost 0 15
+cost 7 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Fire Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Fire"
+
+selectritual "Forge Armaments of Flame"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Frost"
+ritpow 48
+level 1
+levelreq 1
+cost 0 15
+cost 8 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Frost Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Frost"
+
+selectritual "Forge Armaments of Frost"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Air"
+ritpow 48
+level 1
+levelreq 1
+cost 0 15
+cost 9 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Air Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Air"
+
+selectritual "Forge Armaments of Air"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Forge Armaments of Earth"
+ritpow 48
+level 1
+levelreq 1
+cost 0 15
+cost 10 20
+soundfx 57
+promotion 3
+terr -9
+apcost 2
+free
+addstring "Knight"
+addstring "Earth Knight"
+#addstring "Unicorn Knight"
+#addstring "Unicorn Knight of Earth"
+
+selectritual "Forge Armaments of Earth"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+newritual "Find Port"
+ritpow 48
+level 2
+levelreq 2
+cost 0 10 # Gold
+soundfx 57
+randnewloc ? # Port
+scryloc 20
+
+
+newritual ""
+ritpow 48
+level 2
+levelreq 2
+cost 0 50 # Gold
+# stuff I will need to look in the manual for
+# targetloc/teleportloc and whatnot
+# sailing for ports
+
+selectritual "Find Port"
+descr ""
+
+selectritual ""
+descr ""
+
+newmonster "Navigator"
+spr1
+spr2
+descr ""
+rank -1
+hp 5
+armor 0
+mor 4
+mr 6
+str
+spellweapon ? 1 # Storm
+meleeweapon
+human
+allitemslots
+miscitem 30
+
+newmonster "Stormcaller"
+copystats "Navigator"
+spr1
+spr2
+descr ""
+hp 6
+mr 7
+spellweapon ? 2 # Storm
+
 # [BARON]
 # Mercenary cavalry access.
 # Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
@@ -130,82 +260,7 @@ descr "Knights are elite troops, higher in station and far better trained than n
 #spr1
 #spr2
 
-newritpow
-
-newritual "Forge Armaments of Flame"
-ritpow 48
-level 1
-cost 0 15
-cost 7 20
-soundfx 57
-promotion 3
-terr -9
-apcost 2
-free
-addstring "Knight"
-addstring "Fire Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Fire"
-
-selectritual "Forge Armaments of Flame"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
-
-newritual "Forge Armaments of Frost"
-ritpow 48
-level 1
-cost 0 15
-cost 8 20
-soundfx 57
-promotion 3
-terr -9
-apcost 2
-free
-addstring "Knight"
-addstring "Frost Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Frost"
-
-selectritual "Forge Armaments of Frost"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
-
-newritual "Forge Armaments of Air"
-ritpow 48
-level 1
-cost 0 15
-cost 9 20
-soundfx 57
-promotion 3
-terr -9
-apcost 2
-free
-addstring "Knight"
-addstring "Air Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Air"
-
-selectritual "Forge Armaments of Air"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
-
-newritual "Forge Armaments of Earth"
-ritpow 48
-level 1
-cost 0 15
-cost 10 20
-soundfx 57
-promotion 3
-terr -9
-apcost 2
-free
-addstring "Knight"
-addstring "Earth Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Earth"
-
-
-selectritual "Forge Armaments of Earth"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
-
- #SPRITE PLACEHOLDER
+# SPRITE PLACEHOLDER
 newmonster "Master Smith"
 spr1 "ee/sprites/msmith1.tga"
 spr2 "ee/sprites/msmith2.tga"
@@ -541,14 +596,14 @@ addstring "1d3*Shade"
 addstring "1d3*Shade Beast"
 addstring "1d6*Dispossessed Spirit"
 
-#newritual "Seek the Dead"
-#descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
-#ritpow 49
-#level 1
-#cost 5 5
-#planeloc 3
-#randnewloc 224 # Sheol Temple
-#scryloc 20
+newritual "Seek the Dead"
+descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
+ritpow 49
+level 1
+cost 5 5
+planeloc 3
+randnewloc 224 # Sheol Temple
+scryloc 20
 
 newritual "Dirge for the Dead"
 descr "The caster holds a grand dirge for the honored dead.  The servants of the Malikum will hear the dirge and return to serve the cause of the High Priestess."
@@ -2810,6 +2865,22 @@ mor
 str
 spellweapon 
 meleeweapon
+flying
+allitemslots
+
+newmonster "Icecrafter"
+descr ""
+spr1 "ee/sprites/shah/"
+spr2 "ee/sprites/shah/"
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+power 48 3
 flying
 allitemslots
 

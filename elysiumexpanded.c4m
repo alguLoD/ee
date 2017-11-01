@@ -2,6 +2,27 @@ icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
 # For those wondering why I separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
 #
+#
+#
+# [NEW WEAPONS]
+
+newweapon "Composite Bow"
+range 5
+init 3
+dmgtype 3 # Piercing
+dmg 4
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+
+newweapon "Great Bow"
+
+newweapon "Frost Bow
 
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/merccav1.tga"
@@ -32,9 +53,109 @@ mor 5
 selectmonster "Mercenary Captain"
 descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 
+# Turtle tribe?
+newmonster "Merman"
+spr1 "ee/spr/i/lmman1"
+spr2 "ee/spr/i/lmman2"
+descr ""
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+rangedweapon
+meleeweapon
+human # If Gibbor count, these are close enough.
+shield
+allitemslots
+nobootslots
+watershape 1
+
+newmonster "Merman"
+spr1 "ee/spr/i/wmman1"
+spr2 "ee/spr/i/wmman2"
+descr ""
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+meleeweapon
+human
+shield
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
+newmonster "Mermage"
+spr1 "ee/spr/i/lmmage1"
+spr2 "ee/spr/i/lmmage2"
+descr ""
+rank -1
+hp 5
+armor 0
+mor 4
+mr 7
+str 4
+spellweapon 4 1
+meleeweapon
+allitemslots
+nobootslots
+randomitem 25
+watershape 1
+
+newmonster "Mermage"
+spr1 "ee/spr/i/wmmage1"
+spr2 "ee/spr/i/wmmage2
+descr ""
+rank -1
+hp 5
+armor 0
+mor 4
+mr 7
+str 4
+spellweapon 4 1
+meleeweapon
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
+newmonster "Merman Captain"
+spr1 "ee/spr/i/lmcap1"
+spr2 "ee/spr/i/lmcap2"
+rank 0
+hp 8
+armor 0
+mor 5
+mr 5
+str 4
+meleeweapon
+allitemslots
+nobootslots
+watershape 1
+
+newmonster "Merman Captain"
+spr1
+spr2
+rank 0
+hp 8
+armor 0
+mor 5
+mr 5
+str 4
+meleeweapon
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
 newmonster "Warrior Mage"
-spr1 "ee/spr/warmage1.tga"
-spr2 "ee/spr/warmage2.tga"
+spr1 "ee/spr/i/warmage1.tga"
+spr2 "ee/spr/i/warmage2.tga"
 rank 1
 rearpos # (maybe?)
 hp 12
@@ -176,7 +297,7 @@ armor 0
 mor 4
 mr 6
 str
-spellweapon ? 1 # Storm
+spellweapon 5 1 # Storm
 meleeweapon
 power 48 2
 human
@@ -190,7 +311,7 @@ spr2
 descr ""
 hp 6
 mr 7
-spellweapon ? 2 # Storm
+spellweapon 5 2 # Storm
 
 newmonster "Stormcaller"
 copystats "Navigator"
@@ -199,7 +320,7 @@ spr2
 descr ""
 hp 7
 mr 8
-spellweapon ? 3 # Storm
+spellweapon 5 3 # Storm
 
 # [BARON]
 # Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
@@ -374,6 +495,9 @@ infwander 6
 selectclass 4
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+
+selectmonster "Swamp Ghost"
+unaging
 
 #
 # [HIGH PRIESTESS]
@@ -832,12 +956,13 @@ armor
 mr
 mor
 str
-spellweapon
+spellweapon 51 3 # High Arcana
 meleeweapon
 power 8 1
 power 50 3
 fireres 50
 weaponslots
+nametype 49
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
@@ -872,6 +997,7 @@ meleeweapon
 localleadership 1
 human
 allitemslots
+nametype 49
 
 newmonster "Emite"
 spr1 "ee/spr/hp/"
@@ -891,6 +1017,7 @@ power 49 1
 #mastery ??
 weaponslots
 gatherhands
+nametype 49
 #promotesto or whatever
 
 selectmonster "Zamzummite"
@@ -911,6 +1038,7 @@ str
 spellweapon 51 1 # High Arcana
 meleeweapon
 weaponslots
+nametype 49
 #promotesto or whatever (in a library?)
 
 newmonster "Anakite Sage"
@@ -923,6 +1051,7 @@ mr
 mor
 spellweapon 51 2 # High Arcana
 meleeweapon
+nametype 49
 
 #newmonster "Kohen"
 
@@ -1016,13 +1145,14 @@ armor
 mr
 mor
 str
-spellweapon # Unlife? Dark?
+spellweapon 8 1 # Unlife right now. Should it? Dark? Or Dark Prayers?
 meleeweapon # Drain Life?
 ethereal
 coldres 100
 poisonres 100
 undead
 unaging
+nametype 50
 
 # events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.
 #playerevent
@@ -1120,20 +1250,6 @@ selectritual "Summon Kings"
 descr "This ritual will summon and try to take control over a king and his guards.  The more sacrifices used, the greater the chance of success."
 # [BARBARIAN]
 # Guaranteed herb-gatherer access around year three? Or gramps comes back if you show up at an Ancient Battlefield?
-
-newweapon "Composite Bow"
-range 6
-init 3
-dmgtype 3 # Piercing
-dmg 4
-mundane
-arrow
-lob
-rangepen
-flymode 1 # Arrow
-flylook 0 # Arrow
-flysound 14  # Arrow
-sound -1  # No sound on impact
 
 selectmonster "Garnet Amazon"
 armor 1
@@ -1414,6 +1530,33 @@ cost 2 1000
 selectritual "Army of Legends"
 cost 2 800
 
+selectmonster "Ancestral Archer"
+descr ""
+unaging
+
+selectmonster "Ancestral Warrior"
+descr ""
+unaging
+
+selectmonster "Ancestral Hero"
+descr ""
+unaging
+
+selectmonster "Ancestor Guide"
+descr ""
+unaging
+
+selectmonster "Ancestral Shaman"
+descr ""
+unaging
+
+selectmonster "Ancestral Chief"
+descr ""
+unaging
+
+selectmonster "Ancestral Lancer"
+descr ""
+unaging
 
 
 # [SENATOR]
@@ -1423,6 +1566,9 @@ addcomrec "Mercenary Captain" -1 45 10 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
 # Mercenary cavalry access.
+
+selectmonster "Imperial Spirit"
+unaging
 
 # [PALE ONE]
 
@@ -1671,6 +1817,9 @@ meleeweapon
 shield
 flying
 allitemslots
+
+selectmonster "Civatateo"
+unaging
 
 # [TROLL KING]
 
@@ -2165,6 +2314,12 @@ level 1
 
 # Guarantee flesh golem access?
 
+selectmonster "Small Ghost"
+unaging
+
+selectmonster "Ghost Nekromant"
+unaging
+
 # [DRYAD QUEEN]
 selectclass 24
 addcomrec "Warrior Mage" 0 65 20 5
@@ -2175,62 +2330,64 @@ libraryrec
 
 
 # ethereal undead unaging
-#selectmonster - ghost captain?
-#spiritsight
+selectmonster "Ghost Captain"
+spiritsight
+unaging
 
 selectmonster "Dispossessed Spirit"
 unaging
 
-select monster "Ghost Warrior"
+selectmonster "Ghost Warrior"
 unaging
 
-select monster "Spectral Archer"
+selectmonster "Spectral Archer"
 unaging
 
-select monster "Shade"
+selectmonster "Spectral Horseman"
 unaging
 
-select monster "Shade Hound"
+selectmonster "Shade"
 unaging
 
-select monster "Ghost"
+selectmonster "Shade Lord"
 unaging
 
-select monster "Banshee"
+selectmonster "Shade Mage"
 unaging
 
-select monster "Wraith"
+selectmonster "Shade Beast"
 unaging
 
-select monster "Wraith Lord"
+selectmonster "Ghost"
 unaging
 
-select monster "Ghost Mage"
+selectmonster "Banshee"
 unaging
 
-select monster "Dusk Elder"
+selectmonster "Wraith"
 unaging
 
-select monster ""
+selectmonster "Wraith Lord"
 unaging
 
-select monster ""
+selectmonster "Wraith King"
 unaging
 
-select monster ""
+selectmonster "Ghost Mage"
 unaging
 
-select monster ""
+selecmonster "Ghost King"
 unaging
 
-select monster ""
+selectmonster "Stygian Ghost"
 unaging
 
-select monster ""
+selectmonster "Stygian King"
 unaging
 
-select monster ""
+selectmonster "Dusk Elder"
 unaging
+
 
 # [SHAH]
 
@@ -2338,14 +2495,14 @@ descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 0
-hp
-armor
-mr
-mor
-str
+hp 15
+armor 2
+mr 4
+mor 6
+str 5
 meleeweaponspec # Lance
-meleeweapon # Broadsword
-meleeweapon # Hoof
+meleeweapon 1 2 # Broadsword
+meleeweapon 4 95 # Hoof
 battlefast
 human
 shield
@@ -2360,8 +2517,8 @@ mr
 mor
 clearweapons
 meleeweaponspec # Lance
-meleeweapon # Broadsword
-meleeweapon # Stronger hoof
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Stronger hoof
 fast
 human
 shield
@@ -2395,8 +2552,8 @@ armor # ?
 mr 4
 mor 4
 str 4
-rangedweapon  # Javelin
-meleeweapon   # Sword
+rangedweapon 0 24  # Javelin
+meleeweapon 0 2 # Broadsword
 human
 shield
 allitemslots
@@ -2411,10 +2568,9 @@ armor 2
 mr 5
 mor 6
 str 5
-rangedweapon # Bow
-meleeweapon # Sword
+rangedweapon 0 7 # Bow
+meleeweapon 1 2 # Broadsword
 #rearpos
-#iceprot
 human
 shield
 allitemslots
@@ -2431,7 +2587,7 @@ mr 6
 mor 7
 str 5
 rangedweapon # Frost Bow
-meleeweapon # Frost Sword
+meleeweapon 1 522 # Frost-branded Sword
 #rearpos
 human
 shield
@@ -2449,9 +2605,9 @@ armor 1
 mr 4
 mor 5
 str 4
-rangedweapon
-meleeweaponspec # Weak lance
-meleeweapon
+rangedweapon 0 7 # Bow
+meleeweaponspec # Weak Lance
+meleeweapon 0 4 # Spear
 human
 shield
 fast
@@ -2467,10 +2623,11 @@ hp 12
 armor 2
 mr 4
 mor 5
-str 4
-rangedweapon # Bow
+str 5
+rangedweapon 0 7 # Bow
 meleeweaponspec # Lance
-meleeweapon # Broadsword
+meleeweapon 1 2 # Broadsword
+meleeweapon 4 95 # Hoof
 human
 shield
 battlefast
@@ -2486,11 +2643,11 @@ hp 15
 armor 2
 mr 5
 mor 6
-str 4
-rangedweapon # Bow
+str 5
+rangedweapon 0 7 # Bow
 meleeweaponspec # Lance
-meleeweapon # Broadsword
-meleeweapon # Strong hoof
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Strong hoof
 human
 shield
 fireres 100
@@ -2521,10 +2678,10 @@ armor 0
 mr 7
 mor 6
 str 4
-spellweaponsingle
-spellweaponsingle
-meleeweapon
-power  1
+spellweaponsingle 3 1 # Pyromancy
+spellweaponsingle 11 1 # Blood
+meleeweapon 0 1 # Dagger
+power 1
 human
 allitemslots
 mastery
@@ -2538,9 +2695,9 @@ hp 7
 mr 8
 mor 7
 clearweapons
-spellweaponsingle  2
-spellweaponsingle  2
-meleeweapon 0 ?
+spellweaponsingle 3 2
+spellweaponsingle 11 2
+meleeweapon 0 1 # Dagger
 power  2
 mastery
 
@@ -2552,9 +2709,9 @@ hp 8
 mr 9
 mor 8
 clearweapons
-spellweaponsingle  3
-spellweaponsingle  3
-meleeweapon 0 ?
+spellweaponsingle 3 3
+spellweaponsingle 11 3
+meleeweapon 0 1 # Dagger
 fireres 50
 power  3
 
@@ -2569,9 +2726,9 @@ armor 0
 mr 7
 mor 5
 str 4
-spellweaponsingle  1
-spellweaponsingle  1
-meleeweapon 0 ?
+spellweaponsingle 3 1 # Pyromancy
+spellweaponsingle 5 1 # Storm
+meleeweapon 0 0 # Fist
 power  1
 human
 allitemslots
@@ -2587,9 +2744,9 @@ hp 6
 mr 8
 mor 6
 clearweapons
-spellweaponsingle  2
-spellweaponsingle  2
-meleeweapon 0 ?
+spellweaponsingle 3 2
+spellweaponsingle 5 2
+meleeweapon 0 0 # Fist
 power  2
 mastery
 
@@ -2602,9 +2759,9 @@ hp 7
 mr 9
 mor 7
 clearweapons
-spellweaponsingle  3
-spellweaponsingle  3
-meleeweapon 0 ?
+spellweaponsingle 3 3
+spellweaponsingle 5 3
+meleeweapon 0 0 # Fist
 power  3
 coldres 50
 gathergems

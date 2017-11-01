@@ -4,8 +4,8 @@ description "A mod that seeks to tweak and expand on the game without changing i
 #
 
 newmonster "Mercenary Cavalry"
-spr1 "ee/sprites/merccav1.tga"
-spr2 "ee/sprites/merccav2.tga"
+spr1 "ee/spr/merccav1.tga"
+spr2 "ee/spr/merccav2.tga"
 rank 1
 hp 10
 armor 0
@@ -33,8 +33,8 @@ selectmonster "Mercenary Captain"
 descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 
 newmonster "Warrior Mage"
-spr1 "ee/sprites/warmage1.tga"
-spr2 "ee/sprites/warmage2.tga"
+spr1 "ee/spr/warmage1.tga"
+spr2 "ee/spr/warmage2.tga"
 rank 1
 rearpos # (maybe?)
 hp 12
@@ -207,8 +207,8 @@ spellweapon ? 3 # Storm
 # ALL KNIGHT NAMES PLACEHOLDERS
 newmonster "Fire Knight"
 copystats "Knight"
-spr1 "ee/sprites/fireknight1.tga"
-spr2 "ee/sprites/fireknight2.tga"
+spr1 "ee/spr/fireknight1.tga"
+spr2 "ee/spr/fireknight2.tga"
 hp 13
 mr 5
 clearweapons
@@ -222,8 +222,8 @@ descr "Knights are elite troops, higher in station and far better trained than n
 
 newmonster "Earth Knight"
 copystats "Knight"
-spr1 "ee/sprites/earthknight1.tga"
-spr2 "ee/sprites/earthknight2.tga"
+spr1 "ee/spr/earthknight1.tga"
+spr2 "ee/spr/earthknight2.tga"
 hp 15
 mr 6
 clearweapons
@@ -237,8 +237,8 @@ descr "Knights are elite troops, higher in station and far better trained than n
 
 newmonster "Air Knight"
 copystats "Knight"
-spr1 "ee/sprites/airknight1.tga"
-spr2 "ee/sprites/airknight2.tga"
+spr1 "ee/spr/airknight1.tga"
+spr2 "ee/spr/airknight2.tga"
 hp 13
 mr 5
 clearweapons
@@ -252,8 +252,8 @@ descr "Knights are elite troops, higher in station and far better trained than n
 
 newmonster "Frost Knight"
 copystats "Knight"
-spr1 "ee/sprites/waterknight1.tga"
-spr2 "ee/sprites/waterknight2.tga"
+spr1 "ee/spr/waterknight1.tga"
+spr2 "ee/spr/waterknight2.tga"
 hp 13
 mr 5
 clearweapons
@@ -321,8 +321,8 @@ meleeweaponbonus 4 95 # Hoof
 
 # SPRITE PLACEHOLDER
 newmonster "Master Smith"
-spr1 "ee/sprites/msmith1.tga"
-spr2 "ee/sprites/msmith2.tga"
+spr1 "ee/spr/msmith1.tga"
+spr2 "ee/spr/msmith2.tga"
 rank -1
 hp 6
 armor 0
@@ -823,8 +823,8 @@ unaging
 # An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
 
 newmonster "Belus"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank -1
 hp
@@ -841,14 +841,14 @@ weaponslots
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"descr ""
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"descr ""
 rank 0
 acutesenses
 
 newmonster "Gibbor Archer"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank 0
 hp
@@ -858,8 +858,8 @@ rangedweapon
 meleeweapon
 
 newmonster "Qedesim"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank -1
 hp
@@ -874,8 +874,8 @@ human
 allitemslots
 
 newmonster "Emite"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 spr1
 spr2
@@ -899,8 +899,8 @@ power 49 2 # Sheol
 gatherhands
 
 newmonster "Anakite Elder"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank -1
 hp
@@ -915,8 +915,8 @@ weaponslots
 
 newmonster "Anakite Sage"
 copystats "Anakite Elder"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 hp
 mr
@@ -928,8 +928,8 @@ meleeweapon
 
 newmonster "Dawn Guard"
 copystats "Anakite"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 hp
 mr 7
@@ -938,8 +938,8 @@ clearweapons
 meleeweapon # Magic Sword
 
 newmonster "Fossil Warrior"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank
 hp
@@ -954,8 +954,8 @@ poisonres 100
 undead
 
 newmonster "Spectral Ba'alite"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank
 hp
@@ -972,8 +972,8 @@ undead
 unaging
 
 newmonster "Spectral Ba'alite Zealot"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank
 hp
@@ -989,8 +989,8 @@ undead
 unaging
 
 newmonster "Spectral Ba'alite Archer"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank
 hp
@@ -1007,8 +1007,8 @@ undead
 unaging
 
 newmonster "Hierodule Shade"
-spr1 "ee/sprites/hp/"
-spr2 "ee/sprites/hp/"
+spr1 "ee/spr/hp/"
+spr2 "ee/spr/hp/"
 descr ""
 rank -1
 hp
@@ -1044,8 +1044,8 @@ libraryrec
 
 newmonster "Oni"
 copystats "Kuro Oni"
-spr1 "ee/sprites/bs/oni1.tga"
-spr2 "ee/sprites/bs/oni2.tga"
+spr1 "ee/spr/bs/oni1.tga"
+spr2 "ee/spr/bs/oni2.tga"
 rank 1
 hp 33
 armor 0
@@ -1068,8 +1068,8 @@ descr descr "Oni are ugly, wild demons with pot-bellies and unkempt hair.  They 
 
 newmonster "Spectral Oni"
 copystats "Oni"
-spr1 "ee/sprites/bs/soni1.tga"
-spr2 "ee/sprites/bs/soni2.tga"
+spr1 "ee/spr/bs/soni1.tga"
+spr2 "ee/spr/bs/soni2.tga"
 hp 20
 mor 3
 clearweapons
@@ -1162,31 +1162,31 @@ armor 2
 
 newmonster "Garnet Queen"
 copystats "Garnet Sorceress"
-spr1 "ee/sprites/b/garnetqueen1.tga"
-spr2 "ee/sprites/b/garnetqueen2.tga"
+spr1 "ee/spr/barb/garnetqueen1.tga"
+spr2 "ee/spr/barb/garnetqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Jade Queen"
 copystats "Jade Sorceress"
-spr1 "ee/sprites/b/jadequeen1.tga"
-spr2 "ee/sprites/b/jadequeen2.tga"
+spr1 "ee/spr/barb/jadequeen1.tga"
+spr2 "ee/spr/barb/jadequeen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Crystal Queen"
 copystats "Crystal Sorceress"
-spr1 "ee/sprites/b/crystalqueen1.tga"
-spr2 "ee/sprites/b/crystalqueen2.tga"
+spr1 "ee/spr/barb/crystalqueen1.tga"
+spr2 "ee/spr/barb/crystalqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Onyx Queen"
 copystats "Onyx Sorceress"
-spr1 "ee/sprites/b/onyxqueen1.tga"
-spr2 "ee/sprites/b/onyxqueen2.tga"
+spr1 "ee/spr/barb/onyxqueen1.tga"
+spr2 "ee/spr/barb/onyxqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Gryphon Rider"
-spr1 "ee/sprites/b/garrid1.tga"
-spr2 "ee/sprites/b/garrid2.tga"
+spr1 "ee/spr/barb/garrid1.tga"
+spr2 "ee/spr/barb/garrid2.tga"
 descr "The elites of the Garnet tribe are the most horrifying of all Amazon warriors. They apparently know how to safely steal Gryphon eggs and raise the hatchlings as mounts for their sacred warriors. Fortunately these Gryphon Riders are very rare. None have ever been captured alive, a fact that seems to disappoint many knights who dream of riding gryphons of their own."
 rank 1 
 hp 106
@@ -1208,8 +1208,8 @@ allitemslots
 nobootslots
 
 newmonster "Jade Maiden"
-spr1 "ee/sprites/b/jadrid1.tga"
-spr2 "ee/sprites/b/jadrid2.tga"
+spr1 "ee/spr/barb/jadrid1.tga"
+spr2 "ee/spr/barb/jadrid2.tga"
 descr "The elites of the Jade tribe ride strange, swamp-born two-legged lizards with tiny arms. They are more ferocious than they appear, and the lizard will bite and claw at the maiden's enemies."
 rank 1
 hp 12
@@ -1229,8 +1229,8 @@ allitemslots
 nobootslots
 
 newmonster "Wind Rider"
-spr1 "ee/sprites/b/winrid1.tga"
-spr2 "ee/sprites/b/winrid2.tga"
+spr1 "ee/spr/barb/winrid1.tga"
+spr2 "ee/spr/barb/winrid2.tga"
 descr "The elites of the Crystal tribe ride atop winged horses. These horses can fly, in contradiction to all common sense. The origin of these horses is unknown but speculated to rise from a crossing between a horse and a very large swan. While not as dangerous as the Gryphon Riders, the Wind Riders are more numerous and can simply fly over conventional fortifications."
 rank 1
 hp 15
@@ -1249,8 +1249,8 @@ allitemslots
 nobootslots
 
 newmonster "Nightmare"
-spr1 "ee/sprites/b/onyrid1.tga"
-spr2 "ee/sprites/b/onyrid2.tga"
+spr1 "ee/spr/barb/onyrid1.tga"
+spr2 "ee/spr/barb/onyrid2.tga"
 descr "The elites of the Onyx tribe ride horrifying undead horses raised by the tribe's priestesses. These are surrounded by an aura of terror that seems to be at least partially magical. Aside from this they differ little from conventional cavalry."
 rank 1
 hp 18
@@ -2422,8 +2422,8 @@ allitemslots
 
 newmonster "Iceclad Zhayedan"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp 10
 armor 2
@@ -2596,8 +2596,8 @@ mastery
 newmonster "Grand Zaotar"
 copystats "Zaotar"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 hp 7
 mr 9
 mor 7
@@ -2612,8 +2612,8 @@ gathergems
 #
 newmonster "Spenta of Sky and Metals"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2627,8 +2627,8 @@ allitemslots
 
 newmonster "Spenta of Animals"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2642,8 +2642,8 @@ allitemslots
 
 newmonster "Spenta of Fire"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2657,8 +2657,8 @@ allitemslots
 
 newmonster "Spenta of Plants"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2672,8 +2672,8 @@ allitemslots
 
 newmonster "Spenta of Waters"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2687,8 +2687,8 @@ allitemslots
 
 newmonster "Spenta of the Earth"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2702,8 +2702,8 @@ allitemslots
 
 newmonster "Yazad"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2717,8 +2717,8 @@ allitemslots
 
 newmonster "Daeva of Evil Intentions"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2733,8 +2733,8 @@ allitemslots
 
 newmonster "Daeva of Frozen Minds"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2750,8 +2750,8 @@ allitemslots
 
 newmonster "Daeva of Oppression"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2765,8 +2765,8 @@ allitemslots
 
 newmonster "Daeva of Discontent"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2780,8 +2780,8 @@ allitemslots
 
 newmonster "Daeva of Destruction"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2795,8 +2795,8 @@ allitemslots
 
 newmonster "Daeva of Aging"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2810,8 +2810,8 @@ allitemslots
 
 newmonster "Daeva"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2826,8 +2826,8 @@ allitemslots
 
 newmonster "Jahi"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 0
 hp
 armor
@@ -2840,8 +2840,8 @@ allitemslots
 
 newmonster "Daeva of Shooting Stars"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2855,8 +2855,8 @@ allitemslots
 
 newmonster "Daeva of Frost and Snow"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2870,8 +2870,8 @@ allitemslots
 
 newmonster "Pairika"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2885,8 +2885,8 @@ allitemslots
 
 newmonster "Ahurani"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2900,8 +2900,8 @@ allitemslots
 
 newmonster "Airya Seraph"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2915,8 +2915,8 @@ allitemslots
 
 newmonster "Seraphine"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2930,8 +2930,8 @@ allitemslots
 
 newmonster "Icecrafter"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2946,8 +2946,8 @@ allitemslots
 
 newmonster "Airya Iceclad"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp
 armor
@@ -2964,8 +2964,8 @@ allitemslots
 
 newmonster "Kavi Archer"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 0
 hp
 armor
@@ -2981,8 +2981,8 @@ allitemslots
 
 newmonster "Harab"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank -1
 hp
 armor
@@ -2996,8 +2996,8 @@ allitemslots
 
 newmonster "Iron Guard"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp
 armor
@@ -3012,8 +3012,8 @@ allitemslots
 
 newmonster "Iron Crow"
 descr ""
-spr1 "ee/sprites/shah/"
-spr2 "ee/sprites/shah/"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
 rank 1
 hp
 armor
@@ -3067,3 +3067,4 @@ addmercrec "Mercenary Cavalry" 6 4 50 12 0
 addcomrec "Mercenary Captain" -1 45 10 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+

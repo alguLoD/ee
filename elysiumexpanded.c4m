@@ -21,8 +21,44 @@ flysound 14  # Arrow
 sound -1  # No sound on impact
 
 newweapon "Great Bow"
+range 7
+init 1
+dmgtype 3 # Piercing
+dmg 5 # Will usually do more, but that's done through unit stats.
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
 
-newweapon "Frost Bow
+newweapon "Frost Bow"
+range 5
+init 2
+dmgtype 3 # Piercing
+dmg 3
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+#next ???
+
+newweapon "Spectral Javelin"
+range 3
+init 1
+dmgtype 7 # Magic
+oneshot
+arrow
+flymode 1
+flylook 1
+flysound 19
+sound -1
 
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/merccav1.tga"
@@ -709,7 +745,7 @@ sum0chance 75
 summoning
 destroyterr 100
 addstring "c*Melqart & 2d4*Rephaite"
-addstring "c*Belus & 2d4*Rephaite"
+addstring "c*Belus & 1d4+1*Rephaite"
 
 selectritual "Royal Blood Feast"
 descr "By sacrificing a few blood slaves in a town the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a Rephaite lord and his retinue to partake in the feast.  The entire settlement will be destroyed in the blood feast."
@@ -891,12 +927,12 @@ descr ""
 ritpow 50
 level 3
 cost 0 
-cost 4 300
+cost 4 450
 terr -9
 apcost 5
 summoning
-addstring "c*Melqart & 
-addstring "c*Belus & 
+addstring "c*Melqart & 2d4 Rephaite"
+addstring "c*Belus & 1d4+1 Rephaite"
 
 selectmonster "Shed"
 rearpos
@@ -947,9 +983,9 @@ unaging
 # An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
 
 newmonster "Belus"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
-descr ""
+spr1 "ee/spr/hp/bel1"
+spr2 "ee/spr/hp/bel2"
+descr "The Belusim were Rephaite nobles and scholars of the Twin Cities in the Time of Giants, when Ba'al was incarnate.  They were not so ferocious or influential as the Melqarts, but they studied the arcana under the Watchers themselves and possess magic as mighty as that of any wizard that has studied within the walls of the Collegium.  Now they are once more called to serve their dark God and his priestesses, attracted with the lure of hideous banquets overflowing with the flesh of sacrificial victims fresh from the bloodstained altars."
 rank -1
 hp
 armor
@@ -962,49 +998,51 @@ power 8 1
 power 50 3
 fireres 50
 weaponslots
-nametype 49
+nametype 49 # Rephaite
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"descr ""
+spr1 "ee/spr/hp/gsct1"
+spr2 "ee/spr/hp/gsct2"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some of the more keen-eyed Gibbor serve the High Priestess as scouts rather than true warriors."
 rank 0
 acutesenses
 
 newmonster "Gibbor Archer"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
-descr ""
+spr1 "ee/spr/hp/garc1"
+spr2 "ee/spr/hp/garc2"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some Gibborim forgo melee combat entirely and use massive bows instead.  They wear very heavy armour and are considered cowardly by their brethren, but their arrows are like javelins and have unmatched range.  It is fortunate indeed that ranged weapons are despised by most of the giants."
 rank 0
-hp
-armor
+hp 21
+armor 3
+str 6
 clearweapons
-rangedweapon
-meleeweapon
+rangedweapon 1 "Great Bow"
+meleeweapon 2 8 # Shortsword
+human
+allitemslots
 
 newmonster "Qedesim"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
-descr ""
+spr1 "ee/spr/hp/qed1"
+spr2 "ee/spr/hp/qed2"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedesim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedesim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest."
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-meleeweapon
+hp 18
+armor 0
+mr 5
+mor 6
+str 6
+spellweapon 28 1 # Dark Prayers
+meleeweapon 4 0 # Fist
 localleadership 1
 human
 allitemslots
 nametype 49
 
 newmonster "Emite"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
-descr ""
-spr1
-spr2
+spr1 "ee/spr/hp/emi1"
+spr2 "ee/spr/hp/emi2"
+descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
 rank -1
 hp
 armor
@@ -1028,7 +1066,7 @@ gatherhands
 newmonster "Anakite Elder"
 spr1 "ee/spr/hp/"
 spr2 "ee/spr/hp/"
-descr ""
+descr "Anakites that grow old or otherwise unsuitable for battle often turn to study the preserved teachings of the Watchers.  While it is said that these texts have been neglected by the Anakim at large and become fragmented, they are evidently complete enough that these elders become like court mages to the Adonim."
 rank -1
 hp
 armor
@@ -1045,7 +1083,7 @@ newmonster "Anakite Sage"
 copystats "Anakite Elder"
 spr1 "ee/spr/hp/"
 spr2 "ee/spr/hp/"
-descr ""
+descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
 hp
 mr
 mor
@@ -1057,101 +1095,128 @@ nametype 49
 
 newmonster "Dawn Guard"
 copystats "Anakite"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/dgrd1"
+spr2 "ee/spr/hp/dgrd2"
 descr ""
-hp
+hp 49
 mr 7
-mor
+mor 8
 clearweapons
-meleeweapon # Magic Sword
+meleeweapon 12 474 # Magic Sword
 
 newmonster "Fossil Warrior"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/fwar1"
+spr2 "ee/spr/hp/fwar2"
 descr ""
-rank
-hp
-armor
-mr
-mor
-str
+rank 1
+hp 35
+armor 5
+mr 7
+mor 8
+str 8
 meleeweapon # ?
 fireres 50
 coldres 100
 poisonres 100
+sleepres
+charmres
+diseaseres
 undead
 
 newmonster "Spectral Ba'alite"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/spbal1"
+spr2 "ee/spr/hp/spbal2"
 descr ""
 rank
-hp
-armor
-mr
-mor
-str
-rangedweapon # Spectral Javelin
-meleeweapon # Spectral Spear
+hp 6
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 0 "Spectral Javelin"
+meleeweapon 4 222 # Spectral Spear
+float
 ethereal
 coldres 100
 poisonres 100
+sleepres
+charmres
+diseaseres
 undead
 unaging
+allitemslots
+banishsurv
 
 newmonster "Spectral Ba'alite Zealot"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/spbaz1"
+spr2 "ee/spr/hp/spbaz2"
 descr ""
-rank
-hp
-armor
-mr
-mor
-str
-meleeweapon # Spectral Sword
+rank 1
+hp 8
+armor 0
+mr 7
+mor 7
+str 4
+meleeweapon 6 158 # Spectral Sword
+float
 ethereal
 coldres 100
 poisonres 100
+sleepres
+charmres
+diseaseres
 undead
 unaging
+allitemslots
+banishsurv
 
 newmonster "Spectral Ba'alite Archer"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/spbar1"
+spr2 "ee/spr/hp/spbar2"
 descr ""
-rank
-hp
-armor
-mr
-mor
-str
-rangedweapon # Spectral Bow
-meleeweapon # Spectral Dagger/Weapon
+rank 0
+hp 4
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 3 223 # Spectral Bow
+meleeweapon 2 222 # Spectral Dagger/Weapon
+float
 ethereal
 coldres 100
 poisonres 100
+sleepres
+charmres
+diseaseres
 undead
 unaging
+allitemslots
+banishsurv
 
-newmonster "Hierodule Shade"
-spr1 "ee/spr/hp/"
+newmonster "Hierodule Ghost"
+spr1 "ee/spr/hp/higho"
 spr2 "ee/spr/hp/"
 descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
+hp 5
+armor 0
+mr 7
+mor 6
+str 4
 spellweapon 8 1 # Unlife right now. Should it? Dark? Or Dark Prayers?
 meleeweapon # Drain Life?
+float
 ethereal
 coldres 100
 poisonres 100
+sleepres
+charmres
+diseaseres
 undead
 unaging
+allitemslots
+banishsurv
 nametype 50
 
 # events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.

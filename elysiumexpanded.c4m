@@ -969,7 +969,7 @@ newritual "Call Gibborim"
 descr "The Anakite Captain invites a group of Gibborim to a grisly banquet.  While the lords of the Anakim and Rephaim are loathe to associate with degenerates, not all of their servants share their scruples.  After partaking in the feast and being plied with wine and fine gifts the Gibborim will serve the High Priestess."
 ritpow 50
 level 1
-cost 0 60
+cost 0 40
 cost 4 20
 terr -9
 levelreq 1
@@ -980,12 +980,13 @@ addstring "1d3+1*Gibbor"
 addstring "Gibbor Scout & 2*Gibbor"
 addstring "1d3+1*Gibbor Archer"
 
+# Mid-range feasts/banquets need a serious look. Note for later.
 newritual "Call Anakim"
 descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
 ritpow 50
 level 2
 cost 0 80
-cost 4 40
+cost 4 60
 terr -9
 sum0chance 20
 sum1chance 20
@@ -993,9 +994,17 @@ summoning
 apcost 5
 addstring "c*Emite"
 addstring "c*Anakite Elder"
-addstring "2d3-1*Anakite"
+addstring "1d3+1*Anakite"
 addstring "c*Anakite Captain & 1d3+1*Anakite"
 #addstring "2*Dawn Guard"
+
+newritual "Blood Banquet"
+ritpow 50
+level 2
+cost 0
+cost 4
+summoning
+apcost 5
 
 #newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
 
@@ -1004,7 +1013,7 @@ descr "The Melqart invites a small group of Rephaim to a grisly banquet.  After 
 ritpow 50
 level 3
 cost 0 120
-cost 4 60
+cost 4 80
 terr -9
 summoning
 apcost 5 
@@ -1015,7 +1024,7 @@ newritual "Royal Banquet"
 descr ""
 ritpow 50
 level 3
-cost 0 
+cost 0 180
 cost 4 450
 terr -9
 apcost 5
@@ -2937,6 +2946,56 @@ mor
 str
 trample ?
 
+newmonster "Athravan"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+descr ""
+rank -1
+hp 5
+armor 0
+mr 7
+mor 5
+str 4
+spellweaponsingle 3 1 # Pyromancy
+spellweaponsingle 5 1 # Storm
+meleeweapon 0 0 # Fist
+power 52 1
+human
+allitemslots
+mastery
+gathergems
+
+newmonster "Zaotar"
+copystats "Athravan"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+descr ""
+hp 6
+mr 8
+mor 6
+clearweapons
+spellweaponsingle 3 2
+spellweaponsingle 5 2
+meleeweapon 0 0 # Fist
+power 52 2
+mastery
+
+newmonster "Grand Zaotar"
+copystats "Zaotar"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+descr ""
+hp 7
+mr 9
+mor 7
+clearweapons
+spellweaponsingle 3 3
+spellweaponsingle 5 3
+meleeweapon 0 0 # Fist
+power 52 3
+coldres 50
+gathergems
+
 #
 newmonster "Karapan"
 descr ""
@@ -2951,10 +3010,10 @@ str 4
 spellweaponsingle 3 1 # Pyromancy
 spellweaponsingle 11 1 # Blood
 meleeweapon 0 1 # Dagger
-power 1
+power 53 1
 human
 allitemslots
-mastery
+mastery 1
 gathersacrifices
 
 newmonster "Dastur"
@@ -2968,8 +3027,8 @@ clearweapons
 spellweaponsingle 3 2
 spellweaponsingle 11 2
 meleeweapon 0 1 # Dagger
-power  2
-mastery
+power 53 2
+mastery 1
 
 newmonster "Grand Dastur"
 descr ""
@@ -2983,58 +3042,7 @@ spellweaponsingle 3 3
 spellweaponsingle 11 3
 meleeweapon 0 1 # Dagger
 fireres 50
-power  3
-
-#
-newmonster "Athravan"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank -1
-hp 5
-armor 0
-mr 7
-mor 5
-str 4
-spellweaponsingle 3 1 # Pyromancy
-spellweaponsingle 5 1 # Storm
-meleeweapon 0 0 # Fist
-power  1
-human
-allitemslots
-mastery
-gathergems
-
-newmonster "Zaotar"
-copystats "Athravan"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-hp 6
-mr 8
-mor 6
-clearweapons
-spellweaponsingle 3 2
-spellweaponsingle 5 2
-meleeweapon 0 0 # Fist
-power  2
-mastery
-
-newmonster "Grand Zaotar"
-copystats "Zaotar"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-hp 7
-mr 9
-mor 7
-clearweapons
-spellweaponsingle 3 3
-spellweaponsingle 5 3
-meleeweapon 0 0 # Fist
-power  3
-coldres 50
-gathergems
+power 53 3
 
 #
 newmonster "Spenta of Sky and Metals"
@@ -3470,9 +3478,9 @@ allitemslots
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr
+classdescr "^^^^^"
 hometerr ? 
-addstartterr ? 
+addstartterr ? # Village?
 addstartterr # coal mine
 addstartunits "Turan Soldier" 8
 addstartunits "Zhayedan" 5

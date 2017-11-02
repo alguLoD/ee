@@ -144,7 +144,7 @@ armor 0
 mor 4
 mr 7
 str 4
-spellweapon 4 1
+spellweapon 4 1 # Hydromancy
 meleeweapon 0 0 # Fist.
 allitemslots
 nobootslots
@@ -181,6 +181,7 @@ str 4
 meleeweapon 0 26 # Trident.
 allitemslots
 nobootslots
+water
 watershape 1
 
 newmonster "Turtle Chief"
@@ -197,6 +198,7 @@ meleeweapon 0 26 # Trident.
 battlefast
 allitemslots
 nobootslots
+water
 landshape -1
 
 newmonster "Warrior Mage"
@@ -227,25 +229,27 @@ descr "Some students at the academy suffer are known to suffer from deficient at
 newritpow
 
 newritual "Ritual of Mastery"
-descr ""
+descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
 ritpow 48
 level 1
 levelreq 1
 cost 0 150 # Gold
+apcost 3
 terr -56 # Level 2 Libraries
 free
 
 newritual "Ritual of Grand Mastery"
-descr ""
+descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
 ritpow 48
 level 2
 levelreq 2
 cost 0 600 # Gold
+apcost 3
 terr -57 # Level 3 Libraries
 free
 
 newritual "Icecrafting"
-descr ""
+descr "Weapons and armor of magical ice are normally only available to the Airyans themselves, but exceptions can be made for the most loyal followers of a devout Shah. With this the Icecrafter will create full sets of armaments, including a sword and numerous arrows, for up to four Zhayedans."
 ritpow 48
 level 3
 levelreq 3
@@ -342,7 +346,7 @@ descr "With a month's hard labour and at considerable expense, the Master Smith 
 selectritual "Forge Armaments of Earth"
 descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
-newritual "Find Port"
+newritual "Trade Winds"
 ritpow 48
 level 8
 levelreq 8
@@ -351,25 +355,26 @@ soundfx 57
 randnewloc ? # Port
 scryloc 20
 
-newritual "Set Sail"
+newritual "Sail to Port"
 ritpow 48
 level 8
 levelreq 8
 cost 0 50 # Gold
+cost 1 5 # Iron
 # stuff I will need to look in the manual for
 # targetloc/teleportloc and whatnot
 # sailing for ports
 
-selectritual "Find Port"
-descr ""
+selectritual "Trade Winds"
+descr "The caster will use a specialized bit of air magic to chart a safe route to one of Elysium's ports. This will later permit sailors to travel along the route, including the caster."
 
-selectritual "Set Sail"
-descr ""
+selectritual "Sail to Port"
+descr "A fleet is organized and sailed along a well-charter and reasonably safe sea route. This is an expensive and time-consuming endeavour."
 
 newmonster "Chartmaker"
 spr1 "ee/spr/i/"
 spr1 "ee/spr/i/"
-descr ""
+descr "The Chartmaker is a junior member of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
 rank -1
 hp 5
 armor 0
@@ -388,7 +393,7 @@ newmonster "Navigator"
 copystats "Chartmaker"
 spr1 "ee/spr/i/"
 spr2 "ee/spr/i/"
-descr ""
+descr "The Navigator is a journeyman of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
 hp 6
 mr 7
 spellweapon 5 2 # Storm
@@ -398,7 +403,7 @@ newmonster "Stormcaller"
 copystats "Navigator"
 spr1 "ee/spr/i/"
 spr2 "ee/spr/i/"
-descr ""
+descr "The highest-ranking members of the Navigator's Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
 hp 7
 mr 8
 spellweapon 5 3 # Storm
@@ -475,50 +480,54 @@ descr "Knights are elite troops, higher in station and far better trained than n
 #
 newmonster "Unicorn Knight of Fire"
 copystats "Unicorn Knight"
-spr1
-spr2
-hp
-mr
+spr1 "ee/spr/bar/unifknight1"
+spr2 "ee/spr/bar/unifknight2"
+hp 16
+mr 7
 clearweapons
 meleeweaponspec 12 13 # Lance
 meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
 meleeweaponbonus 4 95 # Hoof
 fireres 50
 
 newmonster "Unicorn Knight of Frost"
 copystats "Unicorn Knight"
-spr1
-spr2
-hp
-mr
+spr1 "ee/spr/bar/uniwknight1"
+spr2 "ee/spr/bar/uniwknight2"
+hp 16
+mr 7
 clearweapons
 meleeweaponspec 12 13 # Lance
 meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
 meleeweaponbonus 4 95 # Hoof
 coldres 50
 
 newmonster "Unicorn Knight of Air"
 copystats "Unicorn Knight"
-spr1
-spr2
-hp
-mr
+spr1 "ee/spr/bar/uniaknight1"
+spr2 "ee/spr/bar/uniaknight2"
+hp 16
+mr 7
 clearweapons
 meleeweaponspec 12 13 # Lance
 meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
 meleeweaponbonus 4 95 # Hoof
 shockres 50
 
 newmonster "Unicorn Knight of Earth"
 copystats "Unicorn Knight"
-spr1
-spr2
-hp
-armor
-mr
+spr1 "ee/spr/bar/unieknight1"
+spr2 "ee/spr/bar/unieknight2"
+hp 19
+armor 4
+mr 8
 clearweapons
 meleeweaponspec 12 13 # Lance
 meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
 meleeweaponbonus 4 95 # Hoof
 
 # SPRITE PLACEHOLDER
@@ -541,16 +550,32 @@ selectmonster "Master Smith"
 descr "Master smiths have mastered the craft of forging enchanted armour, which they are willing to do at considerable expense. They are proud and only provide their services to knights. Master smiths are stereotyped as stout and gruff, and due to their skills it is a widespread belief that they all have dwarven blood. This is obviously impossible to anyone who is familiar with dwarven reproduction and who consequently experiences considerable consternation when this myth is mentioned in their vicinity."
 
 selectclass 1
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addcomrec "Master Smith" 3 1 80 20 0
+addcomrec "Master Smith" 3 60 20 0
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [NECROMANCER]
 selectclass 2
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # ?
 #selectritual "Raise Legion
@@ -560,8 +585,17 @@ libraryrec
 #
 # [DEMONOLOGIST]
 selectclass 3
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 selectmonster "Bloodsworn"
 clearmove
@@ -576,17 +610,27 @@ infwander 6
 selectclass 4
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 selectmonster "Swamp Ghost"
 unaging
 
 #
 # [HIGH PRIESTESS]
-
-
 selectclass 5
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 #
 
@@ -1281,6 +1325,12 @@ nametype 50
 selectclass 6
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 newmonster "Oni"
 copystats "Kuro Oni"
@@ -1613,6 +1663,12 @@ reclimiter "+Onyx Queen"
 # generic
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # It works! Didn't entirely expect it to.
 playerevent
@@ -1671,10 +1727,17 @@ unaging
 
 # [SENATOR]
 selectclass 8
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 # Mercenary cavalry access.
 
 selectmonster "Imperial Spirit"
@@ -1685,6 +1748,12 @@ unaging
 selectclass 9
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 addstartunits "Granite Guardian"
 addstartunits "Sentinel" 2
 
@@ -1740,6 +1809,12 @@ unaging
 selectclass 10
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 addstartunits "Venus Trap" 4
 addstartunits "Tree of Crows"
 
@@ -1747,11 +1822,23 @@ addstartunits "Tree of Crows"
 selectclass 11
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [WARLOCK]
 selectclass 12
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 addmercrec "Mercenary Cavalry" 6 4 50 12 0
 addcomrec "Mercenary Captain" -1 45 10 0
 
@@ -1884,17 +1971,23 @@ addstring "c*Mountain Giant"
 selectclass 13
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 #selectritual "Lesser Ceremony of Night"
 
 #newmonster ah itz/way/camazots
 spr1 "ee/spr/pk/"
 spr2 "ee/spr/pk/"
-hp
-armor
-mr
-mor
-str
+hp 4
+armor 0
+mr 7
+mor 4
+str 3
 spellweapon
 meleeweapon
 flying
@@ -1905,12 +1998,12 @@ newmonster "Zotz"
 spr1 "ee/spr/pk/"
 spr2 "ee/spr/pk/"
 descr ""
-hp
-armor
-mr
-mor
-str
-meleeweapon
+hp 4
+armor 0
+mr 5
+mor 3
+str 3
+meleeweapon # Club?
 flying
 allitemslots
 
@@ -1919,11 +2012,11 @@ copystats "Zotz"
 spr1 "ee/spr/pk/"
 spr2 "ee/spr/pk/"
 descr ""
-hp
-mor
+hp 5
+mor 4
 clearweapons
-meleeweaponspec
-meleeweapon
+meleeweaponspec # Lance
+meleeweapon # Spear
 shield
 flying
 allitemslots
@@ -2240,8 +2333,15 @@ addcomrec "Forest Giant" 15 65 20 0
 reclimiter "+Giant King"
 addstartunits "Shadow Tree"
 addstartunits "Devil Fungus" 2
-# ?
-
+# generic
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 #bogus playerevent
 
@@ -2305,8 +2405,9 @@ addcomrec "Enchanter's Apprentice" 5 55 20 0
 libraryrec
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 
 selectritual "Animate Sword"
 free
@@ -2327,7 +2428,7 @@ ritpow 11 # Enchantment
 level 1
 terr -20 # Swamps
 summoning
-cost 0 20 # Gold
+cost 0 10 # Gold
 apcost 2 #
 nexttoo
 addstring "3*Terracotta Soldier"
@@ -2362,7 +2463,7 @@ level 1
 terr -5
 summoning
 cost 1 2 # Iron
-apcost 2
+apcost 5
 nexttoo
 addstring "1*Stone Soldier"
 
@@ -2384,14 +2485,24 @@ descr "The Enchanter crafts a pair Gargoyles from ordinary earth and brings them
 # [HIGH CULTIST]
 selectclass 19
 addcomrec "Warrior Mage" 0 65 20 5
-libraryrec 
+libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [DWARF QUEEN]
 selectclass 20
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addunitrec "Turtle Warrior" 3 15 150 0 0
+addcomrec "Turtle Chief" -1 25 0 0
+addcomrec "Mermage" 0 50 10 0
+libraryrec
 addmercrec "Mercenary Cavalry" 3 8 150 0 0
-addcomrec "Mercenary Captain" -1 1 45 0 0
+addcomrec "Mercenary Captain" -1 25 0 0
 
 # [VOICE OF EL]
 # Are any changes even needed here?
@@ -2400,19 +2511,41 @@ addcomrec "Mercenary Captain" -1 1 45 0 0
 selectclass 21
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 
 # [ILLUSIONIST]
 # Assassination unit/ritual access?
 selectclass 22
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
 
 # [MARKGRAF]
 selectclass 23
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 ritpow 39
 selectritual "Reanimate Animals"
@@ -2434,7 +2567,14 @@ unaging
 selectclass 24
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 # Not sure anything is needed here.
+# Rituals to turn units into Ichty-variants?
 
 # [INDEPENDENTS] / [NON-CLASS SPECIFIC]
 
@@ -2507,38 +2647,51 @@ newritpow
 newritual "Lesser Ritual of Mastery"
 ritpow
 level 1
-rebatelvl 1
-cost
+cost 14 30
 free
 
 newritual "Ritual of Mastery"
 ritpow
 level 1
 rebatelvl 2
-cost
+cost 14 120
 free
 
 newritual "Ritual of Grand Mastery"
 ritpow
 level 2
 rebatelvl 3
-cost
+cost 14 180
 free
 
-newritual ""
+newritual "Lesser Summoning"
+ritpow 
+level 1
+cost 14 30
+summoning
+addstring "c*Seraphine"
+addstring "Iceclad"
+addstring "Kavi Archer"
 
-newritual ""
+newritual "Scry"
+descr ""
+ritpow
+level 1
 
 # Flames of Vafur copy
 newritual "Sacred Fire"
+descr ""
+ritpow
+level 2
 
 # Enchanted gate
 newritual ""
+ritpow
+level 2
 
-# Iceclad promotion
 newritual ""
-
-newritual ""
+ritpow
+level 3
 
 # Karapan / Daeva - costs sacrifices
 newritpow
@@ -2564,7 +2717,14 @@ rebatelvl 3
 cost
 free
 
-newritual ""
+newritual "Lesser Summoning"
+ritpow
+level 1
+summoning
+addstring "c*Harab Elder"
+addstring "Iron Crow"
+addstring "Iron Guard"
+
 
 newritual ""
 
@@ -2583,19 +2743,21 @@ descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 0
-hp
-armor
-mr
-mor
-str
+hp 18
+armor 3
+mr 6
+mor 7
+str 6
 meleeweaponspec
 meleeweapon
 meleeweapon
 battlefast
 human
+leadership 2
 shield
 allitemslots
 nobootslots
+nametype
 
 #created by coronation at king's castle?
 #newmonster "Shahanshah"
@@ -2607,7 +2769,7 @@ spr2 "ee/spr/shah/"
 rank 0
 hp 15
 armor 2
-mr 4
+mr 5
 mor 6
 str 5
 meleeweaponspec # Lance
@@ -2621,20 +2783,18 @@ nobootslots
 
 newmonster "Savaran Spahbed"
 copystats "Spahbed"
-hp
-armor
-mr
-mor
+descr ""
+spr1 "ee/spr/shah"
+spr2 "ee/spr/shah"
+hp 18
+mr 6
+mor 7
 clearweapons
 meleeweaponspec # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Stronger hoof
 fast
-human
-shield
 fireres 100
-allitemslots
-nobootslots
 
 newmonster "Paighan"
 descr ""
@@ -3190,7 +3350,7 @@ armor
 mr
 mor
 str
-spellweapon 
+spellweapon # Pyromancy
 meleeweapon
 flying
 allitemslots
@@ -3205,7 +3365,7 @@ armor
 mr
 mor
 str
-spellweapon 
+spellweapon # Frost
 meleeweapon
 power 48 3
 flying
@@ -3221,8 +3381,8 @@ armor 2
 mr 6
 mor 6
 str 4
-meleeweaponspec 
-meleeweapon 
+meleeweaponspec 10 ""
+meleeweapon 0 ""
 shield
 iceprot 2
 flying
@@ -3307,8 +3467,6 @@ meleeweapon 0 2 # Broadsword
 flying
 allitemslots
 
-
-
 newclass
 setclassname "Shah"
 setmaincom "Shah"
@@ -3321,8 +3479,8 @@ addstartunits "Zhayedan" 5
 addstartcom "Spahbed"
 recherochance
 recasschance
-libbonusdescr ""
-templebonusdescr ""
+libbonusdescr "wizards"
+templebonusdescr "mage-priests"
 nostdtroops
 addcomrec "Shah"
 reclimiter "-Shah"
@@ -3348,5 +3506,12 @@ reclimiter "-Grand Zaotar"
 addmercrec "Mercenary Cavalry" 6 4 50 12 0
 addcomrec "Mercenary Captain" -1 45 10 0
 addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+addcomrec "Mermage" 1 50 10 0
+libraryrec
+reclimiter "+Turtle Chief"
 libraryrec
 

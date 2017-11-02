@@ -51,6 +51,23 @@ Minor fixes and tweaks.
 * Spider Familiars much less common for High Priestess (AI armies were swarming with them).
 
 0.4 Preview/Shah Build 1711xx
+* [Redacted]
+* Second pass at the High Priestess. More-or-less a complete revamp of the class.
+Expanded roster of giants, most accessed through rituals available on their leaders costing gold, sacrifices and extra action points.
+A "blood banquet" line of spells that replicate Blood Feasts for three times the cost in sacrifices and an additional gold cost. These are in addition to blood feasts, not a replacement.
+Lesser blood feast is gone, though High Priestesses have access to the same Blood Banquet as the Anakite Captain that allows them to more expensively replicate it (with a few extra summon results).
+Ceremony/demon-summoning rituals can also be cast in temples.
+Necromancy branch further expanded but mostly for flavour (i.e. spectral Ba'alites). Fossil warriors can also be summoned in deserts. Biggest change is that Zamzummites are no longer directly accessible, instead an Emite must be acquired with the Call Anakites ritual (available to Adons and Melqarts) and upgraded.
+New giants include a Gibbor scout, Qedesim (lvl-1 Dark Prayers), Gibbor archers, occasional Dawn Guard Anakites in smaller numbers than regular Anakites. Anakite Elders accessible as Emites, upgrade in libraries for gold to Sages. Biggest addition is the Belus from T3 Blood Feasts or Banquets. All three of these use High Arcana.
+Ba'al revamped. One spellweapon replaced with Command 3. Only Ba'al can summon Nephilim (in deserts).
+More Nephilim subtypes.
+Watchers completely revamped, [redacted].
+* Spirit sight for Ghost Captains.
+* All spectral undead given Unaging.
+* Master Smiths now give magic swords to promoted knights as well. Unicorn knights can also be upgraded (and are given higher priority).
+* New generic mage, the Chartmaker (who can become a Navigator and then a Stormcaller in libraries). These can scry for ports and allow you to sail between different ports. This costs gold and a lot of AP.
+* Mercenaries tweaked. First a commander is hired and then other mercenary recruitment offers will appear. The basic mercenary line only includes light cavalry for now.
+* Turtle Tribe/Merman mercenaries. Grant limited amphibious capabilities to all classes.
 
 0.4 design
 * Implementing the Shah, finally.

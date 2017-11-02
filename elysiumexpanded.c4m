@@ -37,7 +37,7 @@ sound -1  # No sound on impact
 newweapon "Frost Bow"
 range 5
 init 2
-dmgtype 3 # Piercing
+dmgtype 7 # Piercing
 dmg 3
 mundane
 arrow
@@ -49,10 +49,22 @@ flysound 14  # Arrow
 sound -1  # No sound on impact
 #next ???
 
+newweapon "Ice Lance"
+init 7
+dmgtype 7 # Magic.
+dmg 4
+sound 1
+
+newweapon "Ice Lance Charge"
+init 6
+dmgtype 7 # Magic.
+oneshot
+impact 84
+
 newweapon "Spectral Javelin"
 range 3
 init 1
-dmgtype 7 # Magic
+dmgtype 7 # Magic.
 oneshot
 arrow
 flymode 1
@@ -63,62 +75,58 @@ sound -1
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/merccav1.tga"
 spr2 "ee/spr/merccav2.tga"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 rank 1
 hp 10
 armor 0
 mor 4
 mr 4
 str 4
-rangedweapon 0 24 # Javelin
-meleeweapon 0 4 # Spear
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
 fast
 human
 shield
 allitemslots
 nobootslots
 
-selectmonster "Mercenary Cavalry"
-descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
-
 newmonster "Mercenary Captain"
 copystats "Mercenary Cavalry"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry.  Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 rank 0
 hp 12
 mor 5
 
-selectmonster "Mercenary Captain"
-descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
-
 # Turtle tribe?
-newmonster "Merman"
+newmonster "Turtle Warrior"
 spr1 "ee/spr/i/lmman1"
 spr2 "ee/spr/i/lmman2"
-descr ""
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
 armor 0
 mor 4
 mr 5
 str 4
-rangedweapon
-meleeweapon
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
 human # If Gibbor count, these are close enough.
 shield
 allitemslots
 nobootslots
 watershape 1
 
-newmonster "Merman"
+newmonster "Turtle Warrior"
 spr1 "ee/spr/i/wmman1"
 spr2 "ee/spr/i/wmman2"
-descr ""
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
 armor 0
 mor 4
 mr 5
 str 4
-meleeweapon
+meleeweapon 0 4 # Spear.
 human
 shield
 battlefast
@@ -129,7 +137,7 @@ landshape -1
 newmonster "Mermage"
 spr1 "ee/spr/i/lmmage1"
 spr2 "ee/spr/i/lmmage2"
-descr ""
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
 armor 0
@@ -137,7 +145,7 @@ mor 4
 mr 7
 str 4
 spellweapon 4 1
-meleeweapon
+meleeweapon 0 0 # Fist.
 allitemslots
 nobootslots
 randomitem 25
@@ -146,44 +154,46 @@ watershape 1
 newmonster "Mermage"
 spr1 "ee/spr/i/wmmage1"
 spr2 "ee/spr/i/wmmage2
-descr ""
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
 armor 0
 mor 4
 mr 7
 str 4
-spellweapon 4 1
-meleeweapon
+spellweapon 4 1 # Hydromancy.
+meleeweapon 0 0 # Fist.
 battlefast
 allitemslots
 nobootslots
 landshape -1
 
-newmonster "Merman Captain"
+newmonster "Turtle Chief"
 spr1 "ee/spr/i/lmcap1"
 spr2 "ee/spr/i/lmcap2"
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
-armor 0
+armor 1
 mor 5
 mr 5
 str 4
-meleeweapon
+meleeweapon 0 26 # Trident.
 allitemslots
 nobootslots
 watershape 1
 
-newmonster "Merman Captain"
+newmonster "Turtle Chief"
 spr1
 spr2
+descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
-armor 0
+armor 1
 mor 5
 mr 5
 str 4
-meleeweapon
+meleeweapon 0 26 # Trident.
 battlefast
 allitemslots
 nobootslots
@@ -199,8 +209,8 @@ armor 2
 mor 5
 mr 7
 str 4
-spellweaponbonus 23 1 # Iron Arcana
-meleeweapon 1 474 # Magic Sword
+spellweaponbonus 23 1 # Iron Arcana.
+meleeweapon 1 474 # Magic Sword.
 battlefast
 human
 shield
@@ -211,14 +221,47 @@ randomitem 50
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
 
-# Ritpow 48, Master Smith, Chartmaker
+# Ritpow 48, Master Smith, Chartmaker, Icecrafter, Generic Rituals of Mastery,
+# There's (oddly enough) to command to let a mage upgrade in libraries as a generic mage (or Court Mage etc.), so rituals have to be used for it. It might be possible to copystat it but I'll have to test that later.
 
 newritpow
 
-newritual "Forge Armaments of Flame"
+newritual "Ritual of Mastery"
+descr ""
 ritpow 48
 level 1
 levelreq 1
+cost 0 150 # Gold
+terr -56 # Level 2 Libraries
+free
+
+newritual "Ritual of Grand Mastery"
+descr ""
+ritpow 48
+level 2
+levelreq 2
+cost 0 600 # Gold
+terr -57 # Level 3 Libraries
+free
+
+newritual "Icecrafting"
+descr ""
+ritpow 48
+level 3
+levelreq 3
+cost 13 40 # Gems
+soundfx 57
+promotion 4
+terr -9
+apcost 2
+free
+addstring "Zhayedan"
+addstring "Iceclad Zhayedan"
+
+newritual "Forge Armaments of Flame"
+ritpow 48
+level 9
+levelreq 9
 cost 0 15
 cost 7 30
 soundfx 57
@@ -235,8 +278,8 @@ addstring "Fire Knight"
 
 newritual "Forge Armaments of Frost"
 ritpow 48
-level 1
-levelreq 1
+level 9
+levelreq 9
 cost 0 15
 cost 8 30
 soundfx 57
@@ -253,8 +296,8 @@ addstring "Frost Knight"
 
 newritual "Forge Armaments of Air"
 ritpow 48
-level 1
-levelreq 1
+level 9
+levelreq 9
 cost 0 15
 cost 9 30
 soundfx 57
@@ -271,8 +314,8 @@ addstring "Air Knight"
 
 newritual "Forge Armaments of Earth"
 ritpow 48
-level 1
-levelreq 1
+level 9
+levelreq 9
 cost 0 15
 cost 10 30
 soundfx 57
@@ -301,17 +344,17 @@ descr "With a month's hard labour and at considerable expense, the Master Smith 
 
 newritual "Find Port"
 ritpow 48
-level 2
-levelreq 2
+level 8
+levelreq 8
 cost 0 10 # Gold
 soundfx 57
 randnewloc ? # Port
 scryloc 20
 
-newritual ""
+newritual "Set Sail"
 ritpow 48
-level 2
-levelreq 2
+level 8
+levelreq 8
 cost 0 50 # Gold
 # stuff I will need to look in the manual for
 # targetloc/teleportloc and whatnot
@@ -320,12 +363,12 @@ cost 0 50 # Gold
 selectritual "Find Port"
 descr ""
 
-selectritual ""
+selectritual "Set Sail"
 descr ""
 
 newmonster "Chartmaker"
-spr1
-spr2
+spr1 "ee/spr/i/"
+spr1 "ee/spr/i/"
 descr ""
 rank -1
 hp 5
@@ -335,24 +378,26 @@ mr 6
 str
 spellweapon 5 1 # Storm
 meleeweapon
-power 48 2
+power 48 8
 human
 allitemslots
 miscitem 30
+mastery 1
 
 newmonster "Navigator"
 copystats "Chartmaker"
-spr1
-spr2
+spr1 "ee/spr/i/"
+spr2 "ee/spr/i/"
 descr ""
 hp 6
 mr 7
 spellweapon 5 2 # Storm
+mastery 1
 
 newmonster "Stormcaller"
 copystats "Navigator"
-spr1
-spr2
+spr1 "ee/spr/i/"
+spr2 "ee/spr/i/"
 descr ""
 hp 7
 mr 8
@@ -489,7 +534,7 @@ str 5
 meleeweapon 0 6 # Hammer
 human
 allitemslots
-power 48 1
+power 48 9
 gathergems
 
 selectmonster "Master Smith"
@@ -3171,13 +3216,13 @@ descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
-hp
-armor
-mr
-mor
-str
-meleeweaponspec
-meleeweapon
+hp 8
+armor 2
+mr 6
+mor 6
+str 4
+meleeweaponspec 
+meleeweapon 
 shield
 iceprot 2
 flying
@@ -3189,46 +3234,61 @@ descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 0
-hp
-armor
-mr
-mor
-str
-rangedweapon
-meleeweapon
+hp 5
+armor 2
+mr 6
+mor 5
+str 4
+rangedweapon 0 "Frost Bow"
+meleeweapon 0 1 # Dagger
 iceprot 2
 flying
 coldres 100
 allitemslots
 
-newmonster "Harab"
-descr ""
+newmonster "Harab Elder"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
+descr ""
 rank -1
-hp
+hp 5
 armor
-mr
-mor
-str
-spellweapon # Necromancy?
-meleeweapon 
+mr 6
+mor 4
+str 4
+spellweapon 38 1 # Necromancy 1
+meleeweapon 0 5 # Staff
 flying
 allitemslots
+power 48 1 # Ritual of Mastery in libraries
+mastery 1
+
+newmonster "Harab Seraph"
+copystats "Harab Elder"
+spr1
+spr2
+descr ""
+hp 6
+mr 7
+mor 5
+clearweapons
+spellweapon 38 2 # Necromancy 2
+meleeweapon 0 5 # Staff
+meleeweapon 0 8 # Shortsword
 
 newmonster "Iron Guard"
 descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
-hp
-armor
-mr
-mor
-str
-meleeweaponspec # Lance
-meleeweapon # Spear
-shield
+hp 7
+armor 1
+mr 5
+mor 6
+str 4
+meleeweaponspec 10 13 # Lance 1-10
+meleeweapon 0 4 # Spear
+shield 1
 flying
 allitemslots
 
@@ -3237,13 +3297,13 @@ descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
-hp
-armor
-mr
-mor
-str
-meleeweapon # Sword
-meleeweapon # Sword
+hp 8
+armor 1
+mr 5
+mor 6
+str 4
+meleeweapon 0 2 # Broadsword
+meleeweapon 0 2 # Broadsword
 flying
 allitemslots
 

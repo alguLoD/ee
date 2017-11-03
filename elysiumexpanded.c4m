@@ -99,8 +99,8 @@ mor 5
 
 # Turtle tribe?
 newmonster "Turtle Warrior"
-spr1 "ee/spr/i/lmman1"
-spr2 "ee/spr/i/lmman2"
+spr1 "ee/spr/i/lmman1.tga"
+spr2 "ee/spr/i/lmman2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
@@ -117,8 +117,8 @@ nobootslots
 watershape 1
 
 newmonster "Turtle Warrior"
-spr1 "ee/spr/i/wmman1"
-spr2 "ee/spr/i/wmman2"
+spr1 "ee/spr/i/wmman1.tga"
+spr2 "ee/spr/i/wmman2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
@@ -135,8 +135,8 @@ nobootslots
 landshape -1
 
 newmonster "Mermage"
-spr1 "ee/spr/i/lmmage1"
-spr2 "ee/spr/i/lmmage2"
+spr1 "ee/spr/i/lmmage1.tga"
+spr2 "ee/spr/i/lmmage2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
@@ -152,8 +152,8 @@ randomitem 25
 watershape 1
 
 newmonster "Mermage"
-spr1 "ee/spr/i/wmmage1"
-spr2 "ee/spr/i/wmmage2
+spr1 "ee/spr/i/wmmage1.tga"
+spr2 "ee/spr/i/wmmage2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
@@ -169,8 +169,8 @@ nobootslots
 landshape -1
 
 newmonster "Turtle Chief"
-spr1 "ee/spr/i/lmcap1"
-spr2 "ee/spr/i/lmcap2"
+spr1 "ee/spr/i/lmcap1.tga"
+spr2 "ee/spr/i/lmcap2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
@@ -185,8 +185,8 @@ water
 watershape 1
 
 newmonster "Turtle Chief"
-spr1
-spr2
+spr1 "ee/spr/i/wmcap1.tga"
+spr2 "ee/spr/i/wmcap2.tga"
 descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
@@ -372,8 +372,8 @@ selectritual "Sail to Port"
 descr "A fleet is organized and sailed along a well-charter and reasonably safe sea route. This is an expensive and time-consuming endeavour."
 
 newmonster "Chartmaker"
-spr1 "ee/spr/i/"
-spr1 "ee/spr/i/"
+spr1 "ee/spr/i/chrt1.tga"
+spr1 "ee/spr/i/chrt2.tga"
 descr "The Chartmaker is a junior member of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
 rank -1
 hp 5
@@ -391,8 +391,8 @@ mastery 1
 
 newmonster "Navigator"
 copystats "Chartmaker"
-spr1 "ee/spr/i/"
-spr2 "ee/spr/i/"
+spr1 "ee/spr/i/nav1.tga"
+spr2 "ee/spr/i/nav2.tga"
 descr "The Navigator is a journeyman of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
 hp 6
 mr 7
@@ -401,8 +401,8 @@ mastery 1
 
 newmonster "Stormcaller"
 copystats "Navigator"
-spr1 "ee/spr/i/"
-spr2 "ee/spr/i/"
+spr1 "ee/spr/i/strm1.tga"
+spr2 "ee/spr/i/strm2.tga"
 descr "The highest-ranking members of the Navigator's Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
 hp 7
 mr 8
@@ -598,7 +598,7 @@ libraryrec
 reclimiter "+Turtle Chief"
 
 selectmonster "Bloodsworn"
-clearmove
+descr "Bloodsworn are humans who have sold their souls and now serve the Infernal forces.  They have been given great strength, but their soul is lost forever.  The Infernal Lords typically employ them as guards."
 fireres 50
 coldres 50
 ctrlchance 100
@@ -861,7 +861,12 @@ descr "The Nephilim are the children of the Watchers and in turn begat all the r
 # Most of the Sheol rituals are placeholders and works in progress.
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
-
+newritual "Release Watcher"
+descr ""
+ritpow 8 5 # Ba'al only
+terr 104
+#planereq 
+cost 4 ?
 
 newritpow
 
@@ -897,11 +902,13 @@ newritual "Call the Dead"
 descr "The caster reaches through the Veil between Elysium and Sheol and summons some of its inhabitants to serve the High Priestess."
 ritpow 49 # Sheol
 level 1
-cost 5 5
+cost 5 10
+sum0chance 15
 summoning
-addstring "1d3*Ghost Warrior"
-addstring "1d3*Spectral Archer"
-addstring "1d3*Shade"
+addstring "c*Hierodule Ghost"
+addstring "1d3*Spectral Ba'alite"
+addstring "1d3*Spectral Ba'alite Archer"
+addstring "1d3*Spectral Ba'alite Zealot"
 addstring "1d3*Shade Beast"
 addstring "1d6*Dispossessed Spirit"
 
@@ -982,7 +989,7 @@ addstring "1d3+1*Gibbor Archer"
 
 # Mid-range feasts/banquets need a serious look. Note for later.
 newritual "Call Anakim"
-descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
+descr "The Adon invites a group of Anakim to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, some of the Anakites will join his retinue and serve the High Priestess."
 ritpow 50
 level 2
 cost 0 80
@@ -999,12 +1006,15 @@ addstring "c*Anakite Captain & 1d3+1*Anakite"
 #addstring "2*Dawn Guard"
 
 newritual "Blood Banquet"
+descr ""
 ritpow 50
 level 2
-cost 0
-cost 4
+cost 0 100
+cost 4 300
+terr -9
 summoning
 apcost 5
+addstring "c*Adon & 2*Dawn Guard & 1d3+1*Anakite"
 
 #newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
 
@@ -1081,8 +1091,8 @@ unaging
 # An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
 
 newmonster "Belus"
-spr1 "ee/spr/hp/bel1"
-spr2 "ee/spr/hp/bel2"
+spr1 "ee/spr/hp/bel1.tga"
+spr2 "ee/spr/hp/bel2.tga"
 descr "The Belusim were Rephaite nobles and scholars of the Twin Cities in the Time of Giants, when Ba'al was incarnate.  They were not so ferocious or influential as the Melqarts, but they studied the arcana under the Watchers themselves and possess magic as mighty as that of any wizard that has studied within the walls of the Collegium.  Now they are once more called to serve their dark God and his priestesses, attracted with the lure of hideous banquets overflowing with the flesh of sacrificial victims fresh from the bloodstained altars."
 rank -1
 hp
@@ -1100,15 +1110,15 @@ nametype 49 # Rephaite
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
-spr1 "ee/spr/hp/gsct1"
-spr2 "ee/spr/hp/gsct2"
+spr1 "ee/spr/hp/gsct1.tga"
+spr2 "ee/spr/hp/gsct2.tga"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some of the more keen-eyed Gibbor serve the High Priestess as scouts rather than true warriors."
 rank 0
 acutesenses
 
 newmonster "Gibbor Archer"
-spr1 "ee/spr/hp/garc1"
-spr2 "ee/spr/hp/garc2"
+spr1 "ee/spr/hp/garc1.tga"
+spr2 "ee/spr/hp/garc2.tga"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some Gibborim forgo melee combat entirely and use massive bows instead.  They wear very heavy armour and are considered cowardly by their brethren, but their arrows are like javelins and have unmatched range.  It is fortunate indeed that ranged weapons are despised by most of the giants."
 rank 0
 hp 21
@@ -1121,8 +1131,8 @@ human
 allitemslots
 
 newmonster "Qedesim"
-spr1 "ee/spr/hp/qed1"
-spr2 "ee/spr/hp/qed2"
+spr1 "ee/spr/hp/qed1.tga"
+spr2 "ee/spr/hp/qed2.tga"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedesim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedesim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest."
 rank -1
 hp 18
@@ -1138,8 +1148,8 @@ allitemslots
 nametype 49
 
 newmonster "Emite"
-spr1 "ee/spr/hp/emi1"
-spr2 "ee/spr/hp/emi2"
+spr1 "ee/spr/hp/emi1.tga"
+spr2 "ee/spr/hp/emi2.tga"
 descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
 rank -1
 hp
@@ -1162,8 +1172,8 @@ power 49 2 # Sheol
 gatherhands
 
 newmonster "Anakite Elder"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/anae1.tga"
+spr2 "ee/spr/hp/anae2.tga"
 descr "Anakites that grow old or otherwise unsuitable for battle often turn to study the preserved teachings of the Watchers.  While it is said that these texts have been neglected by the Anakim at large and become fragmented, they are evidently complete enough that these elders become like court mages to the Adonim."
 rank -1
 hp
@@ -1179,8 +1189,8 @@ nametype 49
 
 newmonster "Anakite Sage"
 copystats "Anakite Elder"
-spr1 "ee/spr/hp/"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/anas1.tga"
+spr2 "ee/spr/hp/anas2.tga"
 descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
 hp
 mr
@@ -1193,8 +1203,8 @@ nametype 49
 
 newmonster "Dawn Guard"
 copystats "Anakite"
-spr1 "ee/spr/hp/dgrd1"
-spr2 "ee/spr/hp/dgrd2"
+spr1 "ee/spr/hp/dgrd1.tga"
+spr2 "ee/spr/hp/dgrd2.tga"
 descr ""
 hp 49
 mr 7
@@ -1203,8 +1213,8 @@ clearweapons
 meleeweapon 12 474 # Magic Sword
 
 newmonster "Fossil Warrior"
-spr1 "ee/spr/hp/fwar1"
-spr2 "ee/spr/hp/fwar2"
+spr1 "ee/spr/hp/fwar1.tga"
+spr2 "ee/spr/hp/fwar2.tga"
 descr ""
 rank 1
 hp 35
@@ -1222,8 +1232,8 @@ diseaseres
 undead
 
 newmonster "Spectral Ba'alite"
-spr1 "ee/spr/hp/spbal1"
-spr2 "ee/spr/hp/spbal2"
+spr1 "ee/spr/hp/spbal1.tga"
+spr2 "ee/spr/hp/spbal2.tga"
 descr ""
 rank
 hp 6
@@ -1246,8 +1256,8 @@ allitemslots
 banishsurv
 
 newmonster "Spectral Ba'alite Zealot"
-spr1 "ee/spr/hp/spbaz1"
-spr2 "ee/spr/hp/spbaz2"
+spr1 "ee/spr/hp/spbaz1.tga"
+spr2 "ee/spr/hp/spbaz2.tga"
 descr ""
 rank 1
 hp 8
@@ -1293,8 +1303,8 @@ allitemslots
 banishsurv
 
 newmonster "Hierodule Ghost"
-spr1 "ee/spr/hp/higho"
-spr2 "ee/spr/hp/"
+spr1 "ee/spr/hp/sphi1.tga"
+spr2 "ee/spr/hp/sphi2.tga"
 descr ""
 rank -1
 hp 5
@@ -2004,8 +2014,8 @@ allitemslots
 #holy?
 
 newmonster "Zotz"
-spr1 "ee/spr/pk/"
-spr2 "ee/spr/pk/"
+spr1 "ee/spr/pk/zot1.tga"
+spr2 "ee/spr/pk/zot2.tga"
 descr ""
 hp 4
 armor 0
@@ -2018,8 +2028,8 @@ allitemslots
 
 newmonster "Zotz Warrior"
 copystats "Zotz"
-spr1 "ee/spr/pk/"
-spr2 "ee/spr/pk/"
+spr1 "ee/spr/pk/zotw1.tga"
+spr2 "ee/spr/pk/zotw2.tga"
 descr ""
 hp 5
 mor 4
@@ -2749,8 +2759,8 @@ newritual ""
 
 newmonster "Shah"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/shah1.tga"
+spr2 "ee/spr/shah/shah2.tga"
 rank 0
 hp 18
 armor 3
@@ -3478,7 +3488,7 @@ allitemslots
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr "^^^^^"
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and can use gems to summon them to this world.  The Karapans venerate the Daevas and can summon them with blood sacrifice.  Both orders use fire magic.  The Athravans also use storm magic while the Karapans use blood magic.^^While they no longer war actively with one another, the two orders refuse to work with one another and by aligning himself with either he will forgo the services of the other.^^Abilities:^"
 hometerr ? 
 addstartterr ? # Village?
 addstartterr # coal mine

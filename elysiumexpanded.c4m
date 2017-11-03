@@ -3344,7 +3344,7 @@ flying
 allitemslots
 
 newmonster "Airya Seraph"
-descr ""
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  They are ruled by mages known as Seraphs who really have nothing to do with the Seraphim.  They are powerful mages of storm and frost.  Curiously they do not appear to be considered sacred nor, since it is not thought to be holy in the religion of the Athravans to smite unbelievers with bolts of lightning, do they appear to have any religious duties."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3353,13 +3353,14 @@ armor
 mr
 mor
 str
-spellweapon 
+spellweapon 5 2
+spellweapon 27 1
 meleeweapon
 flying
 allitemslots
 
 newmonster "Seraphine"
-descr ""
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The Seraphines are Airya women who would be very beautiful if not for their wings.  Many laymen seem to consider them beautiful anyway, though they tend to retract these statements under questioning by Inquisitors.  It is commonly suggested that Airya men are sterile as a side-effect of the armour they wear and so the Seraphine are really much like Jahi or Succubi and must seduce human men for the Airya to proliferate.  Mentioning this aloud in the presence of any Airya or devotee of the Spentas is not recommended."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3374,7 +3375,7 @@ flying
 allitemslots
 
 newmonster "Icecrafter"
-descr ""
+descr "The armaments of the Airya warriors are produced by a very specialized caste of mages known as Icecrafters.  The weapons and armor they create are nearly so fine as those of the dwarven Runesmiths, at least when the weather is cold.  When the need is dire they can turn their talents to much more direct uses."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3390,7 +3391,7 @@ flying
 allitemslots
 
 newmonster "Airya Iceclad"
-descr ""
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The warriors of the Airya are known as the Iceclad.  This is a very literal name since their weapons and armor are both made from a kind of enchanted ice.  They wield lances and a wing of Iceclads (which is what the Airya call a squad without the slightest trace of irony) flying right over conventional fortifications is a terrifying sight.  As for their armor, it is reputedly not very comfortable, however, and while the magic ice is nearly as hard as steel even on a warm summer day, it will partially melt.  It will start to drip and soak the wearer through, which is reportedly very uncomfortable and shown to be very irritating."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
@@ -3408,7 +3409,7 @@ coldres 100
 allitemslots
 
 newmonster "Kavi Archer"
-descr ""
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  A militant order known as the Kavi fills the ranged formations of the Airya hosts.  They wear the same armor as the Iceclad but are not called that.  Their bows are made of ordinary wood but the arrows they use are magical and if you are struck by one you will not be happy, as the icy arrowheads will burst into a mist so cold it would probably kill you by itself."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 0
@@ -3427,10 +3428,10 @@ allitemslots
 newmonster "Harab Elder"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
-descr ""
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper."
 rank -1
 hp 5
-armor
+armor 0
 mr 6
 mor 4
 str 4
@@ -3443,9 +3444,9 @@ mastery 1
 
 newmonster "Harab Seraph"
 copystats "Harab Elder"
-spr1
+spr1 
 spr2
-descr ""
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper.  Like the Airyans, the Raptors refer to their most honored leaders as Seraphs, even though they really have nothing in common with the Seraphim."
 hp 6
 mr 7
 mor 5
@@ -3455,7 +3456,7 @@ meleeweapon 0 5 # Staff
 meleeweapon 0 8 # Shortsword
 
 newmonster "Iron Guard"
-descr ""
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, but the personal guards of the Elders typically have the sense to use shields."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
@@ -3471,7 +3472,7 @@ flying
 allitemslots
 
 newmonster "Iron Crow"
-descr ""
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, and the so-called Iron Crows are highly aggressive warriors.  While prone to being riddled with arrows, they can deal tremendous damage to a town's defenders if not swiftly dealt with.  They love to terrorize great swathes of the countryside, pillaging village after village and retreating before any serious opposition can be mustered."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank 1
@@ -3488,7 +3489,7 @@ allitemslots
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and can use gems to summon them to this world.  The Karapans venerate the Daevas and can summon them with blood sacrifice.  Both orders use fire magic.  The Athravans also use storm magic while the Karapans use blood magic.^^While they no longer war actively with one another, the two orders refuse to work with one another and by aligning himself with either he will forgo the services of the other.^^Abilities:^"
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas, while the Karapans venerate the Daevas.  Both orders are united in their veneration of fire.^^While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^Depending on the circumstances the Shah may opt to align himself with either the Athravans and Yazatas in turn or with the Karapans and their Daeva masters. The mage-priests are flexible and can cast spells from two different paths. Both use pyromancy, while the Athravans can also use storm magic and the Karapans can use blood magic.^The Athravans collect all sorts of gems to summon Daevas.^The Karapans collect sacrifices to summon Daevas."
 hometerr ? 
 addstartterr ? # Village?
 addstartterr # coal mine

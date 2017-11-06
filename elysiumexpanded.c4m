@@ -55,7 +55,7 @@ dmgtype 7 # Magic.
 dmg 4
 sound 1
 
-newweapon "Ice Lance Charge"
+newweapon "Magic Lance Charge"
 init 6
 dmgtype 7 # Magic.
 oneshot
@@ -71,6 +71,17 @@ flymode 1
 flylook 1
 flysound 19
 sound -1
+
+newweapon "Project Fear"
+trgrank 9
+range 3
+init 8
+dmgtype 8
+dmg 4
+hardmr
+an
+look 5
+sound 22
 
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/merccav1.tga"
@@ -3612,92 +3623,144 @@ flying
 allitemslots
 
 newmonster "Daeva"
-descr ""
+copystats "Mazzik"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-meleeweaponspec
-meleeweapon
+hp 24
+armor 2
+mr 7
+mor 8
+str 6
+rangedweaponbonus 0 "Project Fear"
+meleeweaponspec 8 "Magic Lance Charge"
+meleeweapon 2 606 # Magic Spear
 fear  # Might be too strong, special fear attack instead?
+fireres 100
 flying
 allitemslots
 
 newmonster "Jahi"
-descr ""
+copystats "Lilot"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
-rank 0
-hp
-armor
-mr
-mor
-str
-meleeweapon
-flying
+descr ""
+rank 1
+hp 22
+armor 0
+mr 6
+mor 6
+str 6
+clearweapons
+meleeweapon 6 12 # Claw
+meleeweapon 6 12 # Claw
+assassinweapon 1 52 # Charm
+rearpos
+fireres 50
+awe
 allitemslots
 
 newmonster "Daeva of Shooting Stars"
-descr ""
+copystats "Mazzik"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 8 2 # Unlife
+spellweapon 52 2 # Moon, could be astrology instead, but for now...
+meleeweapon 5 12 # Claw
+fear
+fireres 50
+allitemslots
+
+newmonster "Yata"
+copystats "Mazzik"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+descr ""
+rank -1
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 3 2 # Pyromancy
+spellweapon 8 2 # Unlife
+meleeweapon 5 12 # Claw
+fireres 100
+fear
 allitemslots
 
 newmonster "Daeva of Frost and Snow"
-descr ""
+copystats "Mazzik"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 8 2 # Unlife
+spellweapon 27 2 # Frost
+meleeweapon 5 12 # Claw
+coldres 100
+fear
 allitemslots
 
 newmonster "Pairika"
-descr ""
+copystats "Lilot"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 20
+armor 0
+mr 8
+mor 6
+str 6
+clearweapons
+spellweapon 13 2 # Garnet Sorcery
+spellweapon 37 2 # Black Magic
+meleeweapon 6 12 # Claw
+assassinweapon 1 729 # Dream Seduction
+fear
+stealthy
+fireres 100
 flying
 allitemslots
 
 newmonster "Ahurani"
-descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+descr ""
+rank 0
+hp 9
+armor 0
+mr 7
+mor 4
+str 4
+spellweapon 4 2 # Hydromancy, but see below
+more1spells 1 #
+more2spells -2 # Should guarantee lots of small water spells being cast, without undesireable consequences should a booster be acquired.
+meleeweapon 4 273 # Waterstrike.
+water
+coldres 100
+poisonres 100
+bluntres
+slashres
+pierceres
+fireres 50
 flying
 allitemslots
 
@@ -3706,14 +3769,14 @@ descr "The white-winged Airya serve the Spentas and are said to descend from Yaz
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 5 2
-spellweapon 27 1
-meleeweapon
+hp 6
+armor 0
+mr 8
+mor 6
+str 4
+spellweapon 5 2 # Storm
+spellweapon 27 1 # Frost
+meleeweapon 0 0 # Fist
 flying
 allitemslots
 
@@ -3722,12 +3785,12 @@ descr "The white-winged Airya serve the Spentas and are said to descend from Yaz
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon # Pyromancy
+hp 5
+armor 0
+mr 7
+mor 6
+str 4
+spellweapon 3 1 # Pyromancy
 meleeweapon
 flying
 allitemslots
@@ -3737,13 +3800,13 @@ descr "The armaments of the Airya warriors are produced by a very specialized ca
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon # Frost
-meleeweapon
+hp 5
+armor 0
+mr 7
+mor 5
+str 4
+spellweapon 27 1 # Frost
+meleeweapon 0 0 # Fist
 power 48 3
 flying
 allitemslots
@@ -3758,8 +3821,8 @@ armor 2
 mr 6
 mor 6
 str 4
-meleeweaponspec 10 ""
-meleeweapon 0 ""
+meleeweaponspec 10 "Magic Lance Charge"
+meleeweapon 0 606 # Magic Spear
 shield
 iceprot 2
 flying

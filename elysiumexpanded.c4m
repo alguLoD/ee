@@ -228,25 +228,25 @@ descr "Some students at the academy suffer are known to suffer from deficient at
 
 newritpow
 
-newritual "Ritual of Mastery"
-descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
-ritpow 48
-level 1
-levelreq 1
-cost 0 150 # Gold
-apcost 3
-terr -56 # Level 2 Libraries
-free
+#newritual "Ritual of Mastery"
+#descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
+#ritpow 48
+#level 1
+#levelreq 1
+#cost 0 150 # Gold
+#apcost 3
+#terr -56 # Level 2 Libraries
+#free
 
-newritual "Ritual of Grand Mastery"
-descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
-ritpow 48
-level 2
-levelreq 2
-cost 0 600 # Gold
-apcost 3
-terr -57 # Level 3 Libraries
-free
+#newritual "Ritual of Grand Mastery"
+#descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
+#ritpow 48
+#level 2
+#levelreq 2
+#cost 0 600 # Gold
+#apcost 3
+#terr -57 # Level 3 Libraries
+#free
 
 newritual "Icecrafting"
 descr "Weapons and armor of magical ice are normally only available to the Airyans themselves, but exceptions can be made for the most loyal followers of a devout Shah. With this the Icecrafter will create full sets of armaments, including a sword and numerous arrows, for up to four Zhayedans."
@@ -372,6 +372,7 @@ selectritual "Sail to Port"
 descr "A fleet is organized and sailed along a well-charter and reasonably safe sea route. This is an expensive and time-consuming endeavour."
 
 newmonster "Chartmaker"
+copystats "Court Mage"
 spr1 "ee/spr/i/chrt1.tga"
 spr1 "ee/spr/i/chrt2.tga"
 descr "The Chartmaker is a junior member of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
@@ -380,33 +381,53 @@ hp 5
 armor 0
 mor 4
 mr 6
-str
+str 4
+clearweapons
 spellweapon 5 1 # Storm
 meleeweapon
 power 48 8
 human
 allitemslots
-miscitem 30
+randommisc 30
 mastery 1
 
 newmonster "Navigator"
-copystats "Chartmaker"
+copystats "Magus"
 spr1 "ee/spr/i/nav1.tga"
 spr2 "ee/spr/i/nav2.tga"
 descr "The Navigator is a journeyman of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
+rank -1
 hp 6
+armor 0
+mor 4
 mr 7
+str 4
+clearweapons
 spellweapon 5 2 # Storm
+meleeweapon
+power 48 8
+human
+allitemslots
+randommisc 30
 mastery 1
 
 newmonster "Stormcaller"
-copystats "Navigator"
 spr1 "ee/spr/i/strm1.tga"
 spr2 "ee/spr/i/strm2.tga"
 descr "The highest-ranking members of the Navigator's Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
+rank -1
 hp 7
+armor 0
+mor 4
 mr 8
+str 4
+clearweapons
 spellweapon 5 3 # Storm
+meleeweapon
+power 48 8
+human
+allitemslots
+randommisc 30
 
 # [BARON]
 # Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
@@ -699,12 +720,14 @@ summoning
 addstring "Large Spider Familiar"
 addstring "1d4*Large Spider"
 addstring "2d5*Small Spider"
+addstring "(-26)2d5-2*Scorpion"
+addstring "(-26)1d4-1*Giant Scorpion"
 addstring "(-27)2d5*Scorpion"
 addstring "(-27)1d4*Giant Scorpion"
 addstring "(-27)1*Scorpion Beast"
 
 selectritual "Summon Creatures of Baal"
-descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are only found in the south."
+descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are uncommon outside of the south."
 
 selectritual "Ceremony to Baal"
 clearritspec
@@ -761,7 +784,7 @@ addstring "(-27)2d3*Scorpion Beast"
 addstring "(-27)1d3*Scorpion Beast & 3d3*Giant Scorpion"
 
 selectritual "Summon Greater Creatures of Baal"
-descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are found only in the south."
+descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but the huge scorpions drawn by this ritual are found only in the south."
 
 selectritual "Grand Ceremony to Baal"
 clearritspec
@@ -780,7 +803,7 @@ addstring "(117)c*Scorpion Man"
 addstring "(117)1d2+1*Shed & 2d3*Se'ir"
 
 selectritual "Grand Ceremony of Baal"
-descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions."
+descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions.  Some of them are found only in deserts, however."
 
 selectritual "Blood Feast"
 clearritspec
@@ -816,7 +839,7 @@ selectritual "Great Blood Feast"
 descr "By sacrificing a few blood slaves in a village the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high status to partake in the feast.  The entire settlement will be destroyed in the blood feast."
 
 selectritual "Bloody Banquet"
-descr ""
+descr "The High Priestess invites a small number of giants to feast with her.  The giants have monstrous apetites and will devour several virgin sacrifices each, but eventually they will swear their allegiance."
 
 selectritual "Grand Blood Feast"
 clearritspec
@@ -862,11 +885,19 @@ descr "The Nephilim are the children of the Watchers and in turn begat all the r
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
 newritual "Release Watcher"
-descr ""
+descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
 ritpow 8 5 # Ba'al only
 terr 104
 #planereq 
-cost 4 ?
+apcost 3
+cost 4 500
+summoning
+addstring "c*Azazel"
+addstring "c*Semyaza"
+addstring "c*Ezekiel"
+addstring "c*Shamshiel"
+addstring "c*Kokabel"
+addstring "c*Arakiel"
 
 newritpow
 
@@ -1002,11 +1033,10 @@ apcost 5
 addstring "c*Emite"
 addstring "c*Anakite Elder"
 addstring "1d3+1*Anakite"
-addstring "c*Anakite Captain & 1d3+1*Anakite"
-#addstring "2*Dawn Guard"
+addstring "2*Dawn Guard"
 
 newritual "Blood Banquet"
-descr ""
+descr "The lord invites another Adon to a vast a grisly banquet.  Numerous gifts will be exchanged and blood will flow more freely than wine.  After a long and horrible feast the Adon will swear to serve the High Priestess."
 ritpow 50
 level 2
 cost 0 100
@@ -1015,8 +1045,6 @@ terr -9
 summoning
 apcost 5
 addstring "c*Adon & 2*Dawn Guard & 1d3+1*Anakite"
-
-#newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
 
 newritual "Call Rephaim"
 descr "The Melqart invites a small group of Rephaim to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
@@ -1079,12 +1107,12 @@ fireres 50
 
 selectmonster "Nephil"
 fireres 50
-#ritpow 8 4
+ritpow 8 4
 #
 
 selectmonster "God"
 unaging
-#ritpow 8 5
+ritpow 8 5
 #
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
@@ -1095,13 +1123,13 @@ spr1 "ee/spr/hp/bel1.tga"
 spr2 "ee/spr/hp/bel2.tga"
 descr "The Belusim were Rephaite nobles and scholars of the Twin Cities in the Time of Giants, when Ba'al was incarnate.  They were not so ferocious or influential as the Melqarts, but they studied the arcana under the Watchers themselves and possess magic as mighty as that of any wizard that has studied within the walls of the Collegium.  Now they are once more called to serve their dark God and his priestesses, attracted with the lure of hideous banquets overflowing with the flesh of sacrificial victims fresh from the bloodstained altars."
 rank -1
-hp
-armor
-mr
-mor
-str
+hp 60
+armor 1
+mr 10
+mor 10
+str 10
 spellweapon 51 3 # High Arcana
-meleeweapon
+meleeweapon 10 0 # Fist
 power 8 1
 power 50 3
 fireres 50
@@ -1110,8 +1138,7 @@ nametype 49 # Rephaite
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
-spr1 "ee/spr/hp/gsct1.tga"
-spr2 "ee/spr/hp/gsct2.tga"
+copyspr "Gibbor"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some of the more keen-eyed Gibbor serve the High Priestess as scouts rather than true warriors."
 rank 0
 acutesenses
@@ -1123,6 +1150,8 @@ descr "The Gibborim are lesser descendants of the primeval giants that walked th
 rank 0
 hp 21
 armor 3
+mr 5
+mor 5
 str 6
 clearweapons
 rangedweapon 1 "Great Bow"
@@ -1137,8 +1166,8 @@ descr "The Gibborim are lesser descendants of the primeval giants that walked th
 rank -1
 hp 18
 armor 0
-mr 5
-mor 6
+mr 6
+mor 5
 str 6
 spellweapon 28 1 # Dark Prayers
 meleeweapon 4 0 # Fist
@@ -1150,21 +1179,21 @@ nametype 49
 newmonster "Emite"
 spr1 "ee/spr/hp/emi1.tga"
 spr2 "ee/spr/hp/emi2.tga"
-descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
+descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers but do not yet have any religious authority of their own.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 40
+armor 0
+mr 8
+mor 6
+str 7
+spellweapon 38 1 
+meleeweapon 6 5 # Staff
 power 49 1
-#mastery ??
+classcost 100
 weaponslots
 gatherhands
+mastery 1
 nametype 49
-#promotesto or whatever
 
 selectmonster "Zamzummite"
 power 1 0 # Gets rid of necromancy
@@ -1172,31 +1201,34 @@ power 49 2 # Sheol
 gatherhands
 
 newmonster "Anakite Elder"
+copystats "Court Mage"
 spr1 "ee/spr/hp/anae1.tga"
 spr2 "ee/spr/hp/anae2.tga"
 descr "Anakites that grow old or otherwise unsuitable for battle often turn to study the preserved teachings of the Watchers.  While it is said that these texts have been neglected by the Anakim at large and become fragmented, they are evidently complete enough that these elders become like court mages to the Adonim."
 rank -1
-hp
-armor
-mr
-mor
-str
+hp 40
+armor 0
+mr 8
+mor 6
+str 7
+clearweapons
 spellweapon 51 1 # High Arcana
-meleeweapon
+meleeweapon 7 0 # Fist
 weaponslots
 nametype 49
-#promotesto or whatever (in a library?)
+mastery 1
 
 newmonster "Anakite Sage"
 copystats "Anakite Elder"
 spr1 "ee/spr/hp/anas1.tga"
 spr2 "ee/spr/hp/anas2.tga"
 descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
-hp
-mr
-mor
+hp 45
+mr 9
+mor 7
+clearweapons
 spellweapon 51 2 # High Arcana
-meleeweapon
+meleeweapon 7 0 # Fist
 nametype 49
 
 #newmonster "Kohen"
@@ -1205,7 +1237,7 @@ newmonster "Dawn Guard"
 copystats "Anakite"
 spr1 "ee/spr/hp/dgrd1.tga"
 spr2 "ee/spr/hp/dgrd2.tga"
-descr ""
+descr "The Dawn Guard are the living equivalents of the famed Ditanim.  While the dawn blades created by the Watchers have all been lost in these days, the Anakite Sages can create replicas that are nearly as good as the originals."
 hp 49
 mr 7
 mor 8
@@ -1215,14 +1247,14 @@ meleeweapon 12 474 # Magic Sword
 newmonster "Fossil Warrior"
 spr1 "ee/spr/hp/fwar1.tga"
 spr2 "ee/spr/hp/fwar2.tga"
-descr ""
+descr "The Rephaim do not possess a natural afterlife, and it is thought that the Sheol Temples whose existence is purported by mostly reliable necromancers constitute an invasion of the natural order.  Ordinarily the souls of the giants have nowhere to go after death.  Instead, they remain trapped within their bones forever.  It is said that they suffer terribly over the first few centuries before they calm down and grow surprisingly amicable.  Their bones are sometimes revealed by the shifting sands of the southern deserts in which the Rephaim were known to roam in the Time of Giants.  They have turned to stone, a phenomenon some scholars believe is entirely ordinary but others insist is a trait unique to the bones of the Rephaim themselves.  The necromancers who dwell among living descendants of these giants are known to sometimes bring them back to unholy service.  Were any servant of Ba'al ever worthy of pity, it would be these, and destroying them is doing them a service."
 rank 1
 hp 35
 armor 5
 mr 7
 mor 8
 str 8
-meleeweapon # ?
+meleeweapon 12 262
 fireres 50
 coldres 100
 poisonres 100
@@ -1234,7 +1266,7 @@ undead
 newmonster "Spectral Ba'alite"
 spr1 "ee/spr/hp/spbal1.tga"
 spr2 "ee/spr/hp/spbal2.tga"
-descr ""
+descr "Spectral Ba'alites are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
 rank
 hp 6
 armor 0
@@ -1258,9 +1290,9 @@ banishsurv
 newmonster "Spectral Ba'alite Zealot"
 spr1 "ee/spr/hp/spbaz1.tga"
 spr2 "ee/spr/hp/spbaz2.tga"
-descr ""
+descr "Spectral Ba'alite Zealots are the apparitions of Ba'alite Zealots fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour.  The Zealots in particular retain faith, though it's hard to say whether they realize they are dead."
 rank 1
-hp 8
+hp 12
 armor 0
 mr 7
 mor 7
@@ -1281,7 +1313,7 @@ banishsurv
 newmonster "Spectral Ba'alite Archer"
 spr1 "ee/spr/hp/spbar1"
 spr2 "ee/spr/hp/spbar2"
-descr ""
+descr "Spectral Ba'alite archers are the apparitions of Ba'alite cultist fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
 rank 0
 hp 4
 armor 0
@@ -1305,7 +1337,7 @@ banishsurv
 newmonster "Hierodule Ghost"
 spr1 "ee/spr/hp/sphi1.tga"
 spr2 "ee/spr/hp/sphi2.tga"
-descr ""
+descr "The ghosts of the Hierodules are much like their living counterparts and remain devoted to Ba'al.  Their magic seems to take on a different tone, however, and necromancers describe their visage as displaying an almost desperate hunger."
 rank -1
 hp 5
 armor 0
@@ -1313,7 +1345,7 @@ mr 7
 mor 6
 str 4
 spellweapon 8 1 # Unlife right now. Should it? Dark? Or Dark Prayers?
-meleeweapon # Drain Life?
+meleeweapon 6 10 # Drain Life
 float
 ethereal
 coldres 100
@@ -1326,6 +1358,121 @@ unaging
 allitemslots
 banishsurv
 nametype 50
+
+newmonster "Azazel"
+spr1 "ee/spr/hp/azazel1.tga"
+spr2 "ee/spr/hp/azazel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  Azazel was the leader of the Watchers and the first one to be seduced by the will of Ba'al.  He convinced his brethren to join him and they swore a pact that they would all commit to sin.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Azazel taught his children of warcraft and cosmetics.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 51 3 # High Arcana
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 15 730 # Magic Greatsword
+flying
+fear
+weaponslots
+unique 1
+
+newmonster "Semyaza"
+spr1 "ee/spr/hp/semyaza1.tga"
+spr2 "ee/spr/hp/semyaza2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Semyaza was the second of the Watchers to fall.  He taught his children of herb-lore and enchantments.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 54 3 # Forest Magic
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear
+weaponslots
+unique 1
+
+newmonster "Ezekiel"
+spr1 "ee/spr/hp/ezekiel1.tga"
+spr2 "ee/spr/hp/ezekiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Ezekiel taught his children of the signs of the clouds and how to control them.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 5 3 # Storm Magic
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear
+weaponslots
+unique 1
+
+newmonster "Shamshiel"
+spr1 "ee/spr/hp/shamshiel1.tga"
+spr2 "ee/spr/hp/shamshiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Shamshiel taught his children about the signs of the sun.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 3 3 # Pyromancy
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear
+weaponslots
+unique 1
+
+newmonster "Kokabel"
+spr1 "ee/spr/hp/kokabel1.tga"
+spr2 "ee/spr/hp/kokabel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Kokabel taught his children about the signs of the stars and farsight.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 61 3 # Astrology
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear
+weaponslots
+unique 1
+
+newmonster "Arakiel"
+spr1 "ee/spr/hp/arakiel1.tga"
+spr2 "ee/spr/hp/arakiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Arakiel taught his children about the signs of the Earth.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 6 3 # Geomancy
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear
+weaponslots
+unique 1
+
 
 # events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.
 #playerevent
@@ -2954,6 +3101,7 @@ armor
 mr
 mor
 str
+huge
 trample ?
 
 newmonster "Athravan"
@@ -3055,7 +3203,71 @@ fireres 50
 power 53 3
 
 #
-newmonster "Spenta of Sky and Metals"
+newmonster "" #"Spenta of Sky and Metals"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+unique
+
+newmonster "" # "Spenta of Animals"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+unique
+
+newmonster "" #"Spenta of Fire"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+unique
+
+newmonster "" # "Spenta of Plants"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp
+armor
+mr
+mor
+str
+spellweapon 
+meleeweapon
+flying
+allitemslots
+unique
+
+newmonster "" # "Spenta of Waters"
 descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
@@ -3070,67 +3282,7 @@ meleeweapon
 flying
 allitemslots
 
-newmonster "Spenta of Animals"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
-allitemslots
-
-newmonster "Spenta of Fire"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
-allitemslots
-
-newmonster "Spenta of Plants"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
-allitemslots
-
-newmonster "Spenta of Waters"
-descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
-allitemslots
-
-newmonster "Spenta of the Earth"
+newmonster "" # "Spenta of the Earth"
 descr ""
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
@@ -3426,6 +3578,7 @@ coldres 100
 allitemslots
 
 newmonster "Harab Elder"
+copystats "Court Mage"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper."
@@ -3435,11 +3588,11 @@ armor 0
 mr 6
 mor 4
 str 4
+clearweapons
 spellweapon 38 1 # Necromancy 1
-meleeweapon 0 5 # Staff
+meleeweapon 3 0 # Fist
 flying
 allitemslots
-power 48 1 # Ritual of Mastery in libraries
 mastery 1
 
 newmonster "Harab Seraph"
@@ -3453,7 +3606,6 @@ mor 5
 clearweapons
 spellweapon 38 2 # Necromancy 2
 meleeweapon 0 5 # Staff
-meleeweapon 0 8 # Shortsword
 
 newmonster "Iron Guard"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, but the personal guards of the Elders typically have the sense to use shields."
@@ -3533,4 +3685,5 @@ addcomrec "Mermage" 1 50 10 0
 libraryrec
 reclimiter "+Turtle Chief"
 libraryrec
+
 

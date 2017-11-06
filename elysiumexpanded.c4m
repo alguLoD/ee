@@ -101,7 +101,7 @@ mor 5
 newmonster "Turtle Warrior"
 spr1 "ee/spr/i/lmman1.tga"
 spr2 "ee/spr/i/lmman2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
 armor 0
@@ -119,7 +119,7 @@ watershape 1
 newmonster "Turtle Warrior"
 spr1 "ee/spr/i/wmman1.tga"
 spr2 "ee/spr/i/wmman2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
 rank 1
 hp 6
 armor 0
@@ -137,7 +137,7 @@ landshape -1
 newmonster "Mermage"
 spr1 "ee/spr/i/lmmage1.tga"
 spr2 "ee/spr/i/lmmage2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
 armor 0
@@ -154,7 +154,7 @@ watershape 1
 newmonster "Mermage"
 spr1 "ee/spr/i/wmmage1.tga"
 spr2 "ee/spr/i/wmmage2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
 rank -1
 hp 5
 armor 0
@@ -171,7 +171,7 @@ landshape -1
 newmonster "Turtle Chief"
 spr1 "ee/spr/i/lmcap1.tga"
 spr2 "ee/spr/i/lmcap2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
 armor 1
@@ -187,7 +187,7 @@ watershape 1
 newmonster "Turtle Chief"
 spr1 "ee/spr/i/wmcap1.tga"
 spr2 "ee/spr/i/wmcap2.tga"
-descr "The Turtle tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
 rank 0
 hp 8
 armor 1
@@ -223,49 +223,14 @@ randomitem 50
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
 
-# Ritpow 48, Master Smith, Chartmaker, Icecrafter, Generic Rituals of Mastery,
-# There's (oddly enough) to command to let a mage upgrade in libraries as a generic mage (or Court Mage etc.), so rituals have to be used for it. It might be possible to copystat it but I'll have to test that later.
+# Ritpow 48, Master Smith, Icecrafter, Chartmaker
 
 newritpow
 
-#newritual "Ritual of Mastery"
-#descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
-#ritpow 48
-#level 1
-#levelreq 1
-#cost 0 150 # Gold
-#apcost 3
-#terr -56 # Level 2 Libraries
-#free
-
-#newritual "Ritual of Grand Mastery"
-#descr "The mage spends a great deal of time in the library studying the scripts relevant to their form of magic.  Emerging one month later, they will be much more powerful."
-#ritpow 48
-#level 2
-#levelreq 2
-#cost 0 600 # Gold
-#apcost 3
-#terr -57 # Level 3 Libraries
-#free
-
-newritual "Icecrafting"
-descr "Weapons and armor of magical ice are normally only available to the Airyans themselves, but exceptions can be made for the most loyal followers of a devout Shah. With this the Icecrafter will create full sets of armaments, including a sword and numerous arrows, for up to four Zhayedans."
-ritpow 48
-level 3
-levelreq 3
-cost 13 40 # Gems
-soundfx 57
-promotion 4
-terr -9
-apcost 2
-free
-addstring "Zhayedan"
-addstring "Iceclad Zhayedan"
-
 newritual "Forge Armaments of Flame"
 ritpow 48
-level 9
-levelreq 9
+level 1
+levelreq 1
 cost 0 15
 cost 7 30
 soundfx 57
@@ -282,8 +247,8 @@ addstring "Fire Knight"
 
 newritual "Forge Armaments of Frost"
 ritpow 48
-level 9
-levelreq 9
+level 1
+levelreq 1
 cost 0 15
 cost 8 30
 soundfx 57
@@ -300,8 +265,8 @@ addstring "Frost Knight"
 
 newritual "Forge Armaments of Air"
 ritpow 48
-level 9
-levelreq 9
+level 1
+levelreq 1
 cost 0 15
 cost 9 30
 soundfx 57
@@ -318,8 +283,8 @@ addstring "Air Knight"
 
 newritual "Forge Armaments of Earth"
 ritpow 48
-level 9
-levelreq 9
+level 1
+levelreq 1
 cost 0 15
 cost 10 30
 soundfx 57
@@ -348,8 +313,8 @@ descr "With a month's hard labour and at considerable expense, the Master Smith 
 
 newritual "Trade Winds"
 ritpow 48
-level 8
-levelreq 8
+level 2
+levelreq 2
 cost 0 10 # Gold
 soundfx 57
 randnewloc ? # Port
@@ -357,13 +322,15 @@ scryloc 20
 
 newritual "Sail to Port"
 ritpow 48
-level 8
-levelreq 8
+level 2
+levelreq 2
 cost 0 50 # Gold
 cost 1 5 # Iron
-# stuff I will need to look in the manual for
-# targetloc/teleportloc and whatnot
-# sailing for ports
+terr # Port
+chooseterrloc # Port
+teleportloc
+soundfx 23
+closewin
 
 selectritual "Trade Winds"
 descr "The caster will use a specialized bit of air magic to chart a safe route to one of Elysium's ports. This will later permit sailors to travel along the route, including the caster."
@@ -371,11 +338,25 @@ descr "The caster will use a specialized bit of air magic to chart a safe route 
 selectritual "Sail to Port"
 descr "A fleet is organized and sailed along a well-charter and reasonably safe sea route. This is an expensive and time-consuming endeavour."
 
+newritual "Icecrafting"
+descr "Weapons and armor of magical ice are normally only available to the Airyans themselves, but exceptions can be made for the most loyal followers of a devout Shah. With this the Icecrafter will create full sets of armaments, including a sword and numerous arrows, for up to four Zhayedans."
+ritpow 48
+level 3
+levelreq 3
+cost 13 40 # Gems
+soundfx 57
+promotion 4
+terr -9 # Walled citadels only.
+apcost 2
+free
+addstring "Zhayedan"
+addstring "Iceclad Zhayedan"
+
 newmonster "Chartmaker"
 copystats "Court Mage"
 spr1 "ee/spr/i/chrt1.tga"
 spr1 "ee/spr/i/chrt2.tga"
-descr "The Chartmaker is a junior member of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
+descr "The Chartmaker is a junior member of the Navigators' Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
 rank -1
 hp 5
 armor 0
@@ -385,17 +366,16 @@ str 4
 clearweapons
 spellweapon 5 1 # Storm
 meleeweapon
-power 48 8
+power 48 2
 human
 allitemslots
-randommisc 30
 mastery 1
 
 newmonster "Navigator"
 copystats "Magus"
 spr1 "ee/spr/i/nav1.tga"
 spr2 "ee/spr/i/nav2.tga"
-descr "The Navigator is a journeyman of the Navigator's Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
+descr "The Navigator is a journeyman of the Navigators' Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
 rank -1
 hp 6
 armor 0
@@ -405,16 +385,15 @@ str 4
 clearweapons
 spellweapon 5 2 # Storm
 meleeweapon
-power 48 8
+power 48 2
 human
 allitemslots
-randommisc 30
 mastery 1
 
 newmonster "Stormcaller"
 spr1 "ee/spr/i/strm1.tga"
 spr2 "ee/spr/i/strm2.tga"
-descr "The highest-ranking members of the Navigator's Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
+descr "The highest-ranking members of the Navigators' Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
 rank -1
 hp 7
 armor 0
@@ -424,10 +403,11 @@ str 4
 clearweapons
 spellweapon 5 3 # Storm
 meleeweapon
-power 48 8
+power 48 2
 human
 allitemslots
-randommisc 30
+randomrare 10
+randomitem 25
 
 # [BARON]
 # Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
@@ -437,6 +417,7 @@ newmonster "Fire Knight"
 copystats "Knight"
 spr1 "ee/spr/fireknight1.tga"
 spr2 "ee/spr/fireknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
 clearweapons
@@ -445,13 +426,11 @@ meleeweapon 1 474 # Magic Sword
 meleeweaponbonus 4 95 # Hoof
 fireres 50
 
-selectmonster "Fire Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
-
 newmonster "Earth Knight"
 copystats "Knight"
 spr1 "ee/spr/earthknight1.tga"
 spr2 "ee/spr/earthknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 15
 mr 6
 clearweapons
@@ -460,13 +439,11 @@ meleeweapon 1 474 # Magic Sword
 meleeweaponbonus 4 95 # Hoof
 armor 4
 
-selectmonster "Earth Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
-
 newmonster "Air Knight"
 copystats "Knight"
 spr1 "ee/spr/airknight1.tga"
 spr2 "ee/spr/airknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
 clearweapons
@@ -475,13 +452,11 @@ meleeweapon 1 474 # Magic Sword
 meleeweaponbonus 4 95 # Hoof
 shockres 50
 
-selectmonster "Air Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
-
 newmonster "Frost Knight"
 copystats "Knight"
 spr1 "ee/spr/waterknight1.tga"
 spr2 "ee/spr/waterknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
 clearweapons
@@ -490,19 +465,11 @@ meleeweapon 1 474 # Magic Sword
 meleeweaponbonus 4 95 # Hoof
 coldres 50
 
-selectmonster "Frost Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
-
-# Dummy pseudocode: I considered giving the upgraded knights magic swords as well. Since I'm lazy and will probably return to that idea at some point...
-#clearweapons
-#meleeweaponspec 12 13 # Lance?
-#meleeweapon 1 474 # Magic sword
-#meleeweaponbonus 4 95 # Hoof
-#
 newmonster "Unicorn Knight of Fire"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/unifknight1"
-spr2 "ee/spr/bar/unifknight2"
+spr1 "ee/spr/bar/ufk1"
+spr2 "ee/spr/bar/unfk2"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
 clearweapons
@@ -514,8 +481,9 @@ fireres 50
 
 newmonster "Unicorn Knight of Frost"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/uniwknight1"
-spr2 "ee/spr/bar/uniwknight2"
+spr1 "ee/spr/bar/uwk1"
+spr2 "ee/spr/bar/uwk2"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.This knight has also been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
 clearweapons
@@ -527,8 +495,9 @@ coldres 50
 
 newmonster "Unicorn Knight of Air"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/uniaknight1"
-spr2 "ee/spr/bar/uniaknight2"
+spr1 "ee/spr/bar/uak1"
+spr2 "ee/spr/bar/uak2"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
 clearweapons
@@ -540,8 +509,9 @@ shockres 50
 
 newmonster "Unicorn Knight of Earth"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/unieknight1"
-spr2 "ee/spr/bar/unieknight2"
+spr1 "ee/spr/bar/uek1"
+spr2 "ee/spr/bar/uek2"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 19
 armor 4
 mr 8
@@ -564,37 +534,45 @@ str 5
 meleeweapon 0 6 # Hammer
 human
 allitemslots
-power 48 9
+power 48 1
 gathergems
 
 selectmonster "Master Smith"
 descr "Master smiths have mastered the craft of forging enchanted armour, which they are willing to do at considerable expense. They are proud and only provide their services to knights. Master smiths are stereotyped as stout and gruff, and due to their skills it is a widespread belief that they all have dwarven blood. This is obviously impossible to anyone who is familiar with dwarven reproduction and who consequently experiences considerable consternation when this myth is mentioned in their vicinity."
 
 selectclass 1
+addcomrec "Master Smith" 3 60 20 0
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
-addcomrec "Master Smith" 3 60 20 0
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
 # [NECROMANCER]
 selectclass 2
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -606,15 +584,19 @@ reclimiter "+Turtle Chief"
 #
 # [DEMONOLOGIST]
 selectclass 3
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -629,12 +611,15 @@ infwander 6
 #
 # [WITCH]
 selectclass 4
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -644,24 +629,27 @@ unaging
 #
 # [HIGH PRIESTESS]
 selectclass 5
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
 #
 
 
-selectritual "Lesser Ceremony to Baal"
+selectritual "Lesser Ceremony to Ba'al"
 clearritspec
 level 9
 nostart
 
-newritual "Lesser Ceremony of Baal"
+newritual "Lesser Ceremony of Ba'al"
 ritpow 8 # Baalite Rituals
 level 1
 nexttoo
@@ -683,7 +671,7 @@ summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
-selectritual "Lesser Ceremony of Baal"
+selectritual "Lesser Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
 
 selectritual "Lesser Temple Ceremony"
@@ -696,7 +684,7 @@ nostart
 
 # Blood Feasts level 2+ from now on?
 #newritual "Common Blood Feast"
-#ritpow 8 # Baalite
+#ritpow 8 # Ba'alite
 #level 1
 #cost 4 30 # Sacrifices
 #terr -29 # Hamlets and up.
@@ -710,7 +698,7 @@ nostart
 #selectritual "Common Blood Feast"
 #descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
 
-newritual "Summon Creatures of Baal"
+newritual "Summon Creatures of Ba'al"
 ritpow 8 # Baalite Rituals
 level 1
 cost 4 10 # Sacrifices
@@ -726,7 +714,7 @@ addstring "(-27)2d5*Scorpion"
 addstring "(-27)1d4*Giant Scorpion"
 addstring "(-27)1*Scorpion Beast"
 
-selectritual "Summon Creatures of Baal"
+selectritual "Summon Creatures of Ba'al"
 descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are uncommon outside of the south."
 
 selectritual "Ceremony to Baal"
@@ -734,7 +722,7 @@ clearritspec
 level 9
 nostart
 
-newritual "Ceremony of Baal"
+newritual "Ceremony of Ba'al"
 ritpow 8 # Baalite Rituals
 level 2
 cost 4 75 # Sacrifices
@@ -750,7 +738,7 @@ addstring "2d3*Se'ir"
 addstring "1d2*Shed"
 addstring "1d3*Lilot"
 
-newritual "Temple Ceremony of Baal"
+newritual "Temple Ceremony of Ba'al"
 ritpow 8
 level 2
 nostart
@@ -766,13 +754,13 @@ addstring "2d3*Se'ir"
 addstring "1d2*Shed"
 addstring "1d3*Lilot"
 
-selectritual "Ceremony of Baal"
+selectritual "Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
 
-selectritual "Ceremony of Baal"
+selectritual "Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
 
-newritual "Summon Greater Creatures of Baal"
+newritual "Summon Greater Creatures of Ba'al"
 ritpow 8 # Baalite
 level 2
 cost 4 50 # Sacrifices
@@ -783,7 +771,7 @@ addstring "2d6+2*Large Spider"
 addstring "(-27)2d3*Scorpion Beast"
 addstring "(-27)1d3*Scorpion Beast & 3d3*Giant Scorpion"
 
-selectritual "Summon Greater Creatures of Baal"
+selectritual "Summon Greater Creatures of Ba'al"
 descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but the huge scorpions drawn by this ritual are found only in the south."
 
 selectritual "Grand Ceremony to Baal"
@@ -791,7 +779,7 @@ clearritspec
 level 9
 nostart
 
-newritual "Grand Ceremony of Baal"
+newritual "Grand Ceremony of Ba'al"
 ritpow 8 # Baalite
 level 3
 cost 4 100 # Sacrifices
@@ -802,7 +790,7 @@ addstring "c*Manticore"
 addstring "(117)c*Scorpion Man"
 addstring "(117)1d2+1*Shed & 2d3*Se'ir"
 
-selectritual "Grand Ceremony of Baal"
+selectritual "Grand Ceremony of Ba'al"
 descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions.  Some of them are found only in deserts, however."
 
 selectritual "Blood Feast"
@@ -811,7 +799,7 @@ level 9
 nostart
 
 newritual "Great Blood Feast"
-ritpow 8 # Baalite
+ritpow 8 # Ba'alite
 level 2
 cost 4 100 # Sacrifices
 terr -32 # Village or larger
@@ -848,7 +836,7 @@ level 9
 
 # I've considered setting Royal Blood Feast to being city-only and turning the city into a ruin or into a haunted city (and the same for the Banquet to the Dead) and having reqterr city for the High Priestess, but for now...
 newritual "Royal Blood Feast"
-ritpow 8 # Baalite
+ritpow 8 # Ba'alite
 level 3
 cost 4 150 # Sacrifices
 terr -28 # Towns and cities.
@@ -1311,8 +1299,8 @@ allitemslots
 banishsurv
 
 newmonster "Spectral Ba'alite Archer"
-spr1 "ee/spr/hp/spbar1"
-spr2 "ee/spr/hp/spbar2"
+spr1 "ee/spr/hp/spbar1.tga"
+spr2 "ee/spr/hp/spbar2.tga"
 descr "Spectral Ba'alite archers are the apparitions of Ba'alite cultist fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
 rank 0
 hp 4
@@ -1489,12 +1477,15 @@ unique 1
 # Should have more proper Oni.
 # Other changes may be in the pipeline.
 selectclass 6
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -1516,7 +1507,7 @@ coldres 50
 poisonres -50 # Results in a neutral value.
 diseaseres
 allitemslots
-banishsurv
+banishsurv # Might be unnecessary, but to be safe.
 firstshape 1
 
 selectmonster "Oni"
@@ -1826,13 +1817,15 @@ addcomrec "Onyx Sorceress" 6 80 20 0
 reclimiter "+Onyx Queen"
 addunitrec "Nightmare" 10 4 80 0 15
 reclimiter "+Onyx Queen"
-# generic
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -1893,18 +1886,21 @@ unaging
 
 # [SENATOR]
 selectclass 8
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
-# Mercenary cavalry access.
 
 selectmonster "Imperial Spirit"
 unaging
@@ -1912,21 +1908,31 @@ unaging
 # [PALE ONE]
 
 selectclass 9
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 addstartunits "Granite Guardian"
 addstartunits "Sentinel" 2
 
-
-
 selectritual "Lesser Lava Summoning"
 addstring "1d3+1*Lesser Fire"
+addstring "Magma Child"
+
+newritual "Lesser Lava Summoning"
+ritpow 15
+level 1
+cost 7 15
+rebatefx25 1
+summoning
+addstring "1d3+1*Magma Warrior
 addstring "Magma Child"
 
 selectritual "Olm Conclave"
@@ -1946,9 +1952,9 @@ level 2
 cost 7 60
 rebatefx25 1
 summoning
-addstring "3d4*Magma Warrior"
-addstring "1d3*Fire Elemental"
-addstring "1d3*Magma Child"
+addstring "3d6*Magma Warrior"
+addstring "1d3*Fire Elemental & 1d3+1*Lesser Fire"
+addstring "1d3+2*Magma Child & 1d3+1*Lesser Fire"
 
 selectritual "Ritual of Grand Mastery"
 cost 10 180 # Emeralds
@@ -1973,12 +1979,15 @@ unaging
 # ?
 
 selectclass 10
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 addstartunits "Venus Trap" 4
@@ -1986,27 +1995,39 @@ addstartunits "Tree of Crows"
 
 # [HOBURG] / [BURGMEISTER]
 selectclass 11
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
 # [WARLOCK]
 selectclass 12
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
 
 # Spells revised to make T1 summoning more palatable for non-Air Warlocks.
 
@@ -2038,7 +2059,7 @@ summoning
 sum0chance 25
 rebateterr20 -48 # Elemental Citadel
 addstring "Flame Spirit"
-addstring "1d6+2*Ember Warrior"
+addstring "2d4+1*Ember Warrior"
 addstring "Fire Elemental"
 
 newritual "Lesser Water Summoning"
@@ -2049,7 +2070,7 @@ summoning
 sum0chance 25
 rebateterr20 -49 # Elemental Citadel
 addstring "Undine"
-addstring "1d6+2*Wave Warrior"
+addstring "2d4+1*Wave Warrior"
 addstring "Water Elemental"
 
 newritual "Lesser Air Summoning"
@@ -2060,7 +2081,7 @@ summoning
 sum0chance 25
 rebateterr20 -50 # Elemental Citadel
 addstring "Sylph"
-addstring "1d6+2*Cloud Warrior"
+addstring "2d4+1*Cloud Warrior"
 addstring "Air Elemental"
 
 newritual "Lesser Earth Summoning"
@@ -2071,7 +2092,7 @@ summoning
 sum0chance 25
 rebateterr20 -51 # Elemental Citadel
 addstring "Earth Gnome"
-addstring "1d6+2*Stone Warrior"
+addstring "2d4+1*Stone Warrior"
 addstring "Earth Elemental"
 
 selectritual "Summon Champion of Fire"
@@ -2135,20 +2156,25 @@ addstring "c*Mountain Giant"
 
 # [PRIEST KING]
 selectclass 13
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
 #selectritual "Lesser Ceremony of Night"
 
-#newmonster ah itz/way/camazots
-spr1 "ee/spr/pk/"
-spr2 "ee/spr/pk/"
+newmonster "Chilan"
+spr1 "ee/spr/pk/chil1"
+spr2 "ee/spr/pk/chil2"
+descr ""
+rank -1
 hp 4
 armor 0
 mr 7
@@ -2158,12 +2184,13 @@ spellweapon
 meleeweapon
 flying
 allitemslots
-#holy?
+holy
 
 newmonster "Zotz"
 spr1 "ee/spr/pk/zot1.tga"
 spr2 "ee/spr/pk/zot2.tga"
 descr ""
+rank 1
 hp 4
 armor 0
 mr 5
@@ -2178,12 +2205,13 @@ copystats "Zotz"
 spr1 "ee/spr/pk/zotw1.tga"
 spr2 "ee/spr/pk/zotw2.tga"
 descr ""
+rank 1
 hp 5
+armor 1
 mor 4
 clearweapons
-meleeweaponspec # Lance
-meleeweapon # Spear
-shield
+meleeweaponspec 7 13 # Lance 1-7
+meleeweapon -1 4 # Spear
 flying
 allitemslots
 
@@ -2499,15 +2527,18 @@ addcomrec "Forest Giant" 15 65 20 0
 reclimiter "+Giant King"
 addstartunits "Shadow Tree"
 addstartunits "Devil Fungus" 2
-# generic
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
+# Should eventually get some form of lake/sea troll access.
 
 #bogus playerevent
 
@@ -2568,12 +2599,21 @@ selectclass 15
 clearrec
 stdtroops
 addcomrec "Enchanter's Apprentice" 5 55 20 0
-libraryrec
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 selectritual "Animate Sword"
 free
@@ -2650,66 +2690,86 @@ descr "The Enchanter crafts a pair Gargoyles from ordinary earth and brings them
 
 # [HIGH CULTIST]
 selectclass 19
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
 # [DWARF QUEEN]
 selectclass 20
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Dwarf-specific mercenaries, more gold, no iron.
 addunitrec "Turtle Warrior" 3 15 150 0 0
 addcomrec "Turtle Chief" -1 25 0 0
-addcomrec "Mermage" 0 50 10 0
-libraryrec
 addmercrec "Mercenary Cavalry" 3 8 150 0 0
 addcomrec "Mercenary Captain" -1 25 0 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
 
 # [VOICE OF EL]
 # Are any changes even needed here?
 # Special recruitables available in certain terrains, maybe. (Turns out that's not moddable, though.)
+# (Or more playerevents/class-restricted square events)
 
 selectclass 21
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
-addcomrec "Turtle Chief" 5 40 10 0
-addunitrec "Turtle Warrior" 20 5 45 10 0
-reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
-libraryrec
-reclimiter "+Turtle Chief"
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [ILLUSIONIST]
 # Assassination unit/ritual access?
 selectclass 22
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
-addcomrec "Turtle Chief" 5 40 10 0
-addunitrec "Turtle Warrior" 20 5 45 10 0
-reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
-libraryrec
-reclimiter "+Turtle Chief"
+# Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0
 reclimiter "+Mercenary Captain"
-
-# [MARKGRAF]
-selectclass 23
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
+# [MARKGRAF]
+selectclass 23
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
@@ -2731,12 +2791,15 @@ unaging
 
 # [DRYAD QUEEN]
 selectclass 24
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 # Not sure anything is needed here.
@@ -2744,8 +2807,7 @@ reclimiter "+Turtle Chief"
 
 # [INDEPENDENTS] / [NON-CLASS SPECIFIC]
 
-
-# ethereal undead unaging
+# Ethereal Undead Unaging
 selectmonster "Ghost Captain"
 spiritsight
 unaging
@@ -2804,105 +2866,248 @@ unaging
 selectmonster "Dusk Elder"
 unaging
 
-
 # [SHAH]
-
 # Athravan / Yazata - costs gems like an illusionist
+
+selectmonster "Raven Spy"
+descr "The Raven is a cunning and pleasantly wicked bird.  Properly trained and fed with index fingers, it will bring tidings and reports on far away lands."
+
+selectmonster "Raven Familiar"
+descr "Some ravens just refuse to fly away for long, but are constantly drawn back to their summoner.  These ravens are known as familiars and are almost useless.  At least they can scout the nearby areas, their sharp eyes piercing the disguises of stealthy beings."
+
 newritpow
 
 newritual "Lesser Ritual of Mastery"
-ritpow
+ritpow 52
 level 1
 cost 14 30
+newrit 1
+soundfx 57
 free
 
 newritual "Ritual of Mastery"
-ritpow
+ritpow 52
 level 1
-rebatelvl 2
 cost 14 120
+newrit 2
+levelup 2
+soundfx 57
+rebatelvl 2
 free
 
 newritual "Ritual of Grand Mastery"
-ritpow
+ritpow 52
 level 2
+cost 14 240
+newrit 3
+levelup 3
+soundfx 57
 rebatelvl 3
-cost 14 180
 free
 
-newritual "Lesser Summoning"
-ritpow 
+newritual "Call Airya"
+descr ""
+ritpow 52
 level 1
 cost 14 30
+sum0chance 20
 summoning
 addstring "c*Seraphine"
-addstring "Iceclad"
-addstring "Kavi Archer"
+addstring "1d3+1*Iceclad"
+addstring "1d3+1*Kavi Archer"
 
 newritual "Scry"
 descr ""
-ritpow
+ritpow 52
 level 1
+cost 14 5
+soundfx 57
+#
+#
+#scrystuff
 
-# Flames of Vafur copy
+newritual "Call Ravens"
+descr
+ritpow 52
+level 1
+cost 14 10
+sum0chance 20
+summoning
+addstring "Raven Familiar"
+addstring "Raven Spy"
+
 newritual "Sacred Fire"
 descr ""
-ritpow
+ritpow 52
 level 2
+cost 14 50
+apcost 5
+terr -31 # Walls.
+squareench 8 # Vafur Flames
+
+newritual "Greater Airya Calling"
+descr ""
+ritpow 52
+level 2
+cost 14 60
+summoning
+addstring "c*Airya Seraph"
+addstring "c*Icecrafter"
+addstring "1d4+1*Iceclad & 1d4+1*Kavi Archer"
+
+newritual "Summon Yazata"
+descr ""
+ritpow 52
+level 2
+cost 14 60
+sum0chance 40
+summoning
+addstring "Ahurani"
+addstring "1d4*Yazad"
 
 # Enchanted gate
-newritual ""
-ritpow
+newritual "Enchant Gate"
+descr ""
+ritpow 52
 level 2
+cost 14 50
+terr -31 # Walls.
+soundfx 57
+squareench 6 # Enchanted gate.
 
-newritual ""
-ritpow
+newritual "Summon Celestial Yazad"
+descr ""
+ritpow 52
 level 3
+cost 14 180
+summoning
+addstring "c*Yazad of Fire"
+addstring "c*Yazad of Justice"
+addstring "c*Yazad of the Stars"
+addstring "c*Yazad of the Sky"
+addstring "c*Yazad of Water"
+addstring "c*Yazad of the Earth"
+
+newritual "Summon Amesha Spenta"
+descr ""
+ritpow 52
+level 3
+cost 14 300
+addstring "c*Khshathra Vairya"
+addstring "c*Vohu Manah"
+addstring "c*Asha Vahishta"
+addstring "c*Ameretat"
+addstring "c*Haurvatat"
+addstring "c*Spenta Armaiti"
 
 # Karapan / Daeva - costs sacrifices
 newritpow
 
 newritual "Lesser Ritual of Mastery"
-ritpow
+descr ""
+ritpow 53
 level 1
-rebatelvl 1
-cost
+cost 4 20
+newrit 1
+soundfx 57
 free
 
 newritual "Ritual of Mastery"
-ritpow
+descr ""
+ritpow 53
 level 1
+cost 4 120
+newrit 2
+levelup 2
+soundfx 57
 rebatelvl 2
-cost
 free
 
 newritual "Ritual of Grand Mastery"
-ritpow
+descr ""
+ritpow 53
 level 2
+cost 4 480
+newrit 3
+levelup 3
+soundfx 57
 rebatelvl 3
-cost
 free
 
-newritual "Lesser Summoning"
-ritpow
+newritual "Call Raptors"
+descr ""
+ritpow 53
 level 1
+cost 4 30
+sum0chance 20
 summoning
 addstring "c*Harab Elder"
-addstring "Iron Crow"
-addstring "Iron Guard"
+addstring "1d3+1*Iron Crow"
+addstring "1d3+1*Iron Guard"
 
+newritual "Call Crows"
+descr ""
+ritpow 53
+level 1
+cost 4 10
+summoning
+addstring "Messenger Crows"
 
-newritual ""
-
-# Flames of Vafur copy
 newritual "Sacred Fire"
+descr ""
+ritpow 53
+level 2
+cost 4 50
+apcost 5
+terr -31 # Walls.
+squareench 8 # Vafur Flames
 
 # Savaran promotion
-newritual ""
+newritual "Nisean Horses"
+descr ""
+ritpow 53
+level 2
+cost 4 30
+soundfx 57
+promotion 3
+addstring "Spahbed"
+addstring "Savaran Spahbed"
+addstring "Cataphract"
+addstring "Savaran Guard"
 
-newritual ""
+newritual "Daevic Summoning"
+descr ""
+ritpow 53
+level 2
+cost 4 60
+sum0chance 40
+summoning
+addstring "Jahi"
+addstring "1d4*Daeva"
 
-newritual ""
+newritual "Summon Yata"
+descr ""
+ritpow 53
+level 3
+cost 4 180
+summoning
+addstring "c*Daeva of Shooting Stars"
+addstring "c*Yata"
+addstring "c*Daeva of Frost and Snow"
+addstring "c*Pairika"
+
+newritual "Call Daevic Heptad"
+descr ""
+ritpow 53
+level 3
+cost 4 300
+summoning
+addstring "c*Akem Manah"
+addstring "c*Indra"
+addstring "c*Saurva"
+addstring "c*Nanghaihtya"
+addstring "c*Taurvi"
+addstring "c*Zaurvi"
 
 newmonster "Shah"
 descr ""
@@ -2914,9 +3119,10 @@ armor 3
 mr 6
 mor 7
 str 6
-meleeweaponspec
-meleeweapon
-meleeweapon
+meleeweaponspec 16 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Hoof
 battlefast
 human
 leadership 2
@@ -2925,7 +3131,7 @@ allitemslots
 nobootslots
 nametype
 
-#created by coronation at king's castle?
+#created by coronation at king's castle or capitolium?
 #newmonster "Shahanshah"
 
 newmonster "Spahbed"
@@ -2938,7 +3144,7 @@ armor 2
 mr 5
 mor 6
 str 5
-meleeweaponspec # Lance
+meleeweaponspec 15 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 4 95 # Hoof
 battlefast
@@ -2956,7 +3162,7 @@ hp 18
 mr 6
 mor 7
 clearweapons
-meleeweaponspec # Lance
+meleeweaponspec 15 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Stronger hoof
 fast
@@ -3022,7 +3228,7 @@ armor 2
 mr 6
 mor 7
 str 5
-rangedweapon # Frost Bow
+rangedweapon 1 "Frost Bow"
 meleeweapon 1 522 # Frost-branded Sword
 #rearpos
 human
@@ -3042,7 +3248,7 @@ mr 4
 mor 5
 str 4
 rangedweapon 0 7 # Bow
-meleeweaponspec # Weak Lance
+meleeweaponspec 9 13 # Weak Lance
 meleeweapon 0 4 # Spear
 human
 shield
@@ -3061,7 +3267,7 @@ mr 4
 mor 5
 str 5
 rangedweapon 0 7 # Bow
-meleeweaponspec # Lance
+meleeweaponspec 12 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 4 95 # Hoof
 human
@@ -3081,7 +3287,7 @@ mr 5
 mor 6
 str 5
 rangedweapon 0 7 # Bow
-meleeweaponspec # Lance
+meleeweaponspec 12 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Strong hoof
 human
@@ -3657,12 +3863,12 @@ addcomrec "Shah"
 reclimiter "-Shah"
 #reclimiter "Shahanshah"
 addcomrec "Spahbed"
-addunitrec "Paighan" 100 8 40 0 0
+addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
 addunitrec "Turan Soldier" 100 5 50 0 5
-addunitrec "Zhayedan" 100 4 50 0 15
+addunitrec "Zhayedan" 100 5 50 0 15
 addunitrec "Turan Rider" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20
-addunitrec "War Elephant" 10 1 65 15 10
+addunitrec "War Elephant" 10 1 100 0 10
 addmercrec "Scout" 10 1 25 10 0
 addcomrec "Athravan" 5 45 10 0
 templerec
@@ -3674,16 +3880,20 @@ templerec
 reclimiter "-Athravan"
 reclimiter "-Zaotar"
 reclimiter "-Grand Zaotar"
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
-addcomrec "Warrior Mage" 0 65 20 5
-libraryrec
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
 addcomrec "Turtle Chief" 5 40 10 0
 addunitrec "Turtle Warrior" 20 5 45 10 0
 reclimiter "+Turtle Chief"
-addcomrec "Mermage" 1 50 10 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
-libraryrec
 
 

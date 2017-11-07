@@ -426,8 +426,8 @@ randomitem 25
 # ALL KNIGHT NAMES PLACEHOLDERS
 newmonster "Fire Knight"
 copystats "Knight"
-spr1 "ee/spr/fireknight1.tga"
-spr2 "ee/spr/fireknight2.tga"
+spr1 "ee/spr/bar/fireknight1.tga"
+spr2 "ee/spr/bar/fireknight2.tga"
 descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
@@ -439,8 +439,8 @@ fireres 50
 
 newmonster "Earth Knight"
 copystats "Knight"
-spr1 "ee/spr/earthknight1.tga"
-spr2 "ee/spr/earthknight2.tga"
+spr1 "ee/spr/bar/earthknight1.tga"
+spr2 "ee/spr/bar/earthknight2.tga"
 descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 15
 mr 6
@@ -452,8 +452,8 @@ armor 4
 
 newmonster "Air Knight"
 copystats "Knight"
-spr1 "ee/spr/airknight1.tga"
-spr2 "ee/spr/airknight2.tga"
+spr1 "ee/spr/bar/airknight1.tga"
+spr2 "ee/spr/bar/airknight2.tga"
 descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
@@ -465,8 +465,8 @@ shockres 50
 
 newmonster "Frost Knight"
 copystats "Knight"
-spr1 "ee/spr/waterknight1.tga"
-spr2 "ee/spr/waterknight2.tga"
+spr1 "ee/spr/bar/waterknight1.tga"
+spr2 "ee/spr/bar/waterknight2.tga"
 descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 13
 mr 5
@@ -478,8 +478,8 @@ coldres 50
 
 newmonster "Unicorn Knight of Fire"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/ufk1"
-spr2 "ee/spr/bar/unfk2"
+spr1 "ee/spr/bar/ufk1.tga"
+spr2 "ee/spr/bar/unk2.tga"
 descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
@@ -492,8 +492,8 @@ fireres 50
 
 newmonster "Unicorn Knight of Frost"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/uwk1"
-spr2 "ee/spr/bar/uwk2"
+spr1 "ee/spr/bar/uwk1.tga"
+spr2 "ee/spr/bar/uwk2.tga"
 descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.This knight has also been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
@@ -506,8 +506,8 @@ coldres 50
 
 newmonster "Unicorn Knight of Air"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/uak1"
-spr2 "ee/spr/bar/uak2"
+spr1 "ee/spr/bar/uak1.tga"
+spr2 "ee/spr/bar/uak2.tga"
 descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
@@ -520,8 +520,8 @@ shockres 50
 
 newmonster "Unicorn Knight of Earth"
 copystats "Unicorn Knight"
-spr1 "ee/spr/bar/uek1"
-spr2 "ee/spr/bar/uek2"
+spr1 "ee/spr/bar/uek1.tga"
+spr2 "ee/spr/bar/uek2.tga"
 descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 19
 armor 4
@@ -534,8 +534,8 @@ meleeweaponbonus 4 95 # Hoof
 
 # SPRITE PLACEHOLDER
 newmonster "Master Smith"
-spr1 "ee/spr/msmith1.tga"
-spr2 "ee/spr/msmith2.tga"
+spr1 "ee/spr/bar/msmith1.tga"
+spr2 "ee/spr/bar/msmith2.tga"
 rank -1
 hp 6
 armor 0
@@ -883,6 +883,8 @@ descr "The Nephilim are the children of the Watchers and in turn begat all the r
 # Most of the Sheol rituals are placeholders and works in progress.
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
+# TODO infernal gate ritual
+
 newritual "Release Watcher"
 descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
 ritpow 8 5 # Ba'al only
@@ -1104,14 +1106,16 @@ selectmonster "Melqart"
 power 49 3
 fireres 50
 
+
+# TODO Ritpowers don't work!
 selectmonster "Nephil"
 fireres 50
-ritpow 8 4
+#ritpow 8 4
 #
 
 selectmonster "God"
 unaging
-ritpow 8 5
+#ritpow 8 5
 #
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
@@ -1175,6 +1179,7 @@ human
 allitemslots
 nametype 49
 
+# TODO SPRITE
 newmonster "Emite"
 spr1 "ee/spr/hp/emi1.tga"
 spr2 "ee/spr/hp/emi2.tga"
@@ -1756,7 +1761,7 @@ addcomrec "Crystal Priestess" 3 40 20 0
 templerec
 reclimiter "-Crystal Queen"
 addcomrec "Crystal Sorceress"3 80 20 0
-reclimiter"+Crystal Priestess"
+reclimiter "+Crystal Priestess"
 reclimiter "-Crystal Queen"
 addunitrec "Crystal Amazon" 25 8 50 0 0
 reclimiter "+Crystal Priestess"
@@ -2181,9 +2186,10 @@ reclimiter "+Turtle Chief"
 
 #selectritual "Lesser Ceremony of Night"
 
+# TODO Chilan sprite/stats, ceremony of night, change zwar sprite and exchange shield for armour
 newmonster "Chilan"
-spr1 "ee/spr/pk/chil1"
-spr2 "ee/spr/pk/chil2"
+spr1 "ee/spr/pk/chil1.tga"
+spr2 "ee/spr/pk/chil2.tga"
 descr ""
 rank -1
 hp 4
@@ -2226,7 +2232,7 @@ meleeweapon -1 4 # Spear
 flying
 allitemslots
 
-selectmonster "Civatateo"
+selectmonster "Civateteo"
 unaging
 
 # [TROLL KING]
@@ -2865,7 +2871,7 @@ unaging
 selectmonster "Ghost Mage"
 unaging
 
-selecmonster "Ghost King"
+selectmonster "Ghost King"
 unaging
 
 selectmonster "Stygian Ghost"
@@ -3130,6 +3136,7 @@ armor 3
 mr 6
 mor 7
 str 6
+rangedweapon 2 7 # Bow
 meleeweaponspec 16 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 1 2 # Broadsword
@@ -3147,14 +3154,15 @@ nametype
 
 newmonster "Spahbed"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/spah1.tga"
+spr2 "ee/spr/shah/spah2.tga"
 rank 0
 hp 15
 armor 2
 mr 5
 mor 6
 str 5
+rangedweapon 1 7 # Bow
 meleeweaponspec 15 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 4 95 # Hoof
@@ -3167,12 +3175,13 @@ nobootslots
 newmonster "Savaran Spahbed"
 copystats "Spahbed"
 descr ""
-spr1 "ee/spr/shah"
-spr2 "ee/spr/shah"
+spr1 "ee/spr/shah/savspah1.tga"
+spr2 "ee/spr/shah/savspah2.tga"
 hp 18
 mr 6
 mor 7
 clearweapons
+rangedweapon 0 7 # Bow
 meleeweaponspec 15 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Stronger hoof
@@ -3181,8 +3190,8 @@ fireres 100
 
 newmonster "Paighan"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/paighan1.tga"
+spr2 "ee/spr/shah/paighan2.tga"
 rank 1
 hp 5
 armor 0
@@ -3197,11 +3206,11 @@ allitemslots
 
 newmonster "Turan Infantry"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/turinfantry1.tga"
+spr2 "ee/spr/shah/turinfantry2.tga"
 rank 1
 hp 6
-armor # ?
+armor 1
 mr 4
 mor 4
 str 4
@@ -3213,8 +3222,8 @@ allitemslots
 
 newmonster "Zhayedan"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/zhayedan1.tga"
+spr2 "ee/spr/shah/zhayedan2.tga"
 rank 1
 hp 8
 armor 2
@@ -3231,8 +3240,8 @@ allitemslots
 
 newmonster "Iceclad Zhayedan"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/icezhayedan1.tga"
+spr2 "ee/spr/shah/icezhayedan2.tga"
 rank 1
 hp 10
 armor 2
@@ -3250,8 +3259,8 @@ allitemslots
 
 newmonster "Turan Cavalry"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/turancav1.tga"
+spr2 "ee/spr/shah/turancav2.tga"
 rank 1
 hp 10
 armor 1
@@ -3269,8 +3278,8 @@ nobootslots
 
 newmonster "Cataphract"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/cataphract1.tga"
+spr2 "ee/spr/shah/cataphract2.tga"
 rank
 hp 12
 armor 2
@@ -3289,8 +3298,8 @@ nobootslots
 
 newmonster "Savaran Guard"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/savguard1.tga"
+spr2 "ee/spr/shah/savguard2.tga"
 rank 1
 hp 15
 armor 2
@@ -3309,21 +3318,14 @@ allitemslots
 nobootslots
 
 newmonster "War Elephant"
+copystats "Elephant"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank 1
-hp
-armor
-mr
-mor
-str
-huge
-trample ?
+spr1 "ee/spr/shah/warelephant1.tga"
+spr2 "ee/spr/shah/warelephant2.tga"
 
 newmonster "Athravan"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/athravan1.tga"
+spr2 "ee/spr/shah/athravan2.tga"
 descr ""
 rank -1
 hp 5
@@ -3337,13 +3339,14 @@ meleeweapon 0 0 # Fist
 power 52 1
 human
 allitemslots
-mastery
+mastery 1
 gathergems
+nametype 48
 
 newmonster "Zaotar"
 copystats "Athravan"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/zaotar1.tga"
+spr2 "ee/spr/shah/zaotar2.tga"
 descr ""
 hp 6
 mr 8
@@ -3353,12 +3356,12 @@ spellweaponsingle 3 2
 spellweaponsingle 5 2
 meleeweapon 0 0 # Fist
 power 52 2
-mastery
+mastery 1
 
 newmonster "Grand Zaotar"
 copystats "Zaotar"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/grandzaotar1.tga"
+spr2 "ee/spr/shah/grandzaotar2.tga"
 descr ""
 hp 7
 mr 9
@@ -3374,8 +3377,8 @@ gathergems
 #
 newmonster "Karapan"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/karapan1.tga"
+spr2 "ee/spr/shah/karapan2.tga"
 rank -1
 hp 6
 armor 0
@@ -3389,12 +3392,14 @@ power 53 1
 human
 allitemslots
 mastery 1
-gathersacrifices
+gathersacr
+nametype 48
 
 newmonster "Dastur"
+copystats "Kaprapan"
+spr1 "ee/spr/shah/dastur1.tga"
+spr2 "ee/spr/shah/dastur2.tga"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
 hp 7
 mr 8
 mor 7
@@ -3406,9 +3411,10 @@ power 53 2
 mastery 1
 
 newmonster "Grand Dastur"
+copystats "Dastur"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/granddastur1.tga"
+spr2 "ee/spr/shah/granddastur2.tga"
 hp 8
 mr 9
 mor 8
@@ -3422,8 +3428,8 @@ power 53 3
 #
 newmonster "" #"Spenta of Sky and Metals"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/skymetalspenta1.tga"
+spr2 "ee/spr/shah/skymetalspenta2.tga"
 rank -1
 hp
 armor
@@ -3438,8 +3444,8 @@ unique
 
 newmonster "" # "Spenta of Animals"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/animalspenta1.tga"
+spr2 "ee/spr/shah/animalspenta2.tga"
 rank -1
 hp
 armor
@@ -3454,8 +3460,8 @@ unique
 
 newmonster "" #"Spenta of Fire"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/fspenta1.tga"
+spr2 "ee/spr/shah/fspenta2.tga"
 rank -1
 hp
 armor
@@ -3470,8 +3476,8 @@ unique
 
 newmonster "" # "Spenta of Plants"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/plantspenta1.tga"
+spr2 "ee/spr/shah/plantspenta2.tga"
 rank -1
 hp
 armor
@@ -3486,8 +3492,8 @@ unique
 
 newmonster "" # "Spenta of Waters"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/wspenta1.tga"
+spr2 "ee/spr/shah/wspenta2.tga"
 rank -1
 hp
 armor
@@ -3501,8 +3507,8 @@ allitemslots
 
 newmonster "" # "Spenta of the Earth"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/espenta1.tga"
+spr2 "ee/spr/shah/espenta2.tga"
 rank -1
 hp
 armor
@@ -3516,14 +3522,15 @@ allitemslots
 
 newmonster "Yazad"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/yazad1.tga"
+spr2 "ee/spr/shah/yazad2.tga"
 rank -1
 hp
 armor
 mr
 mor
 str
+meleeweaponspec
 meleeweapon
 awe 1
 flying
@@ -3531,8 +3538,8 @@ allitemslots
 
 newmonster "Daeva of Evil Intentions"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/eidaeva1.tga"
+spr2 "ee/spr/shah/eidaeva2.tga"
 rank -1
 hp
 armor
@@ -3547,8 +3554,8 @@ allitemslots
 
 newmonster "Daeva of Frozen Minds"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/fmdaeva1.tga"
+spr2 "ee/spr/shah/fmdaeva2.tga"
 rank -1
 hp
 armor
@@ -3564,8 +3571,8 @@ allitemslots
 
 newmonster "Daeva of Oppression"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/oppdaeva1.tga"
+spr2 "ee/spr/shah/oppdaeva2.tga"
 rank -1
 hp
 armor
@@ -3579,8 +3586,8 @@ allitemslots
 
 newmonster "Daeva of Discontent"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/disdaeva1.tga"
+spr2 "ee/spr/shah/disdaeva2.tga"
 rank -1
 hp
 armor
@@ -3594,8 +3601,8 @@ allitemslots
 
 newmonster "Daeva of Destruction"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/destdaeva1.tga"
+spr2 "ee/spr/shah/destdaeva2.tga"
 rank -1
 hp
 armor
@@ -3609,8 +3616,8 @@ allitemslots
 
 newmonster "Daeva of Aging"
 descr ""
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/agedaeva1.tga"
+spr2 "ee/spr/shah/agedaeva2.tga"
 rank -1
 hp
 armor
@@ -3624,8 +3631,8 @@ allitemslots
 
 newmonster "Daeva"
 copystats "Mazzik"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/daeva1.tga"
+spr2 "ee/spr/shah/daeva2.tga"
 descr ""
 rank -1
 hp 24
@@ -3643,8 +3650,8 @@ allitemslots
 
 newmonster "Jahi"
 copystats "Lilot"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/jahi1.tga"
+spr2 "ee/spr/shah/jahi2.tga"
 descr ""
 rank 1
 hp 22
@@ -3663,8 +3670,8 @@ allitemslots
 
 newmonster "Daeva of Shooting Stars"
 copystats "Mazzik"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/stardaeva1.tga"
+spr2 "ee/spr/shah/stardaeva2.tga"
 descr ""
 rank -1
 hp 24
@@ -3682,8 +3689,8 @@ allitemslots
 
 newmonster "Yata"
 copystats "Mazzik"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/yata1.tga"
+spr2 "ee/spr/shah/yata2.tga"
 descr ""
 rank -1
 hp 24
@@ -3701,8 +3708,8 @@ allitemslots
 
 newmonster "Daeva of Frost and Snow"
 copystats "Mazzik"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/fsdaeva1.tga"
+spr2 "ee/spr/shah/fsdaeva2.tga"
 descr ""
 rank -1
 hp 24
@@ -3720,8 +3727,8 @@ allitemslots
 
 newmonster "Pairika"
 copystats "Lilot"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/pairika1.tga"
+spr2 "ee/spr/shah/pairika2.tga"
 descr ""
 rank -1
 hp 20
@@ -3735,14 +3742,14 @@ spellweapon 37 2 # Black Magic
 meleeweapon 6 12 # Claw
 assassinweapon 1 729 # Dream Seduction
 fear
-stealthy
+stealth
 fireres 100
 flying
 allitemslots
 
 newmonster "Ahurani"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/ahurani1.tga"
+spr2 "ee/spr/shah/ahurani2.tga"
 descr ""
 rank 0
 hp 9
@@ -3766,8 +3773,8 @@ allitemslots
 
 newmonster "Airya Seraph"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  They are ruled by mages known as Seraphs who really have nothing to do with the Seraphim.  They are powerful mages of storm and frost.  Curiously they do not appear to be considered sacred nor, since it is not thought to be holy in the religion of the Athravans to smite unbelievers with bolts of lightning, do they appear to have any religious duties."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/seraph1.tga"
+spr2 "ee/spr/shah/seraph2.tga"
 rank -1
 hp 6
 armor 0
@@ -3782,8 +3789,8 @@ allitemslots
 
 newmonster "Seraphine"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The Seraphines are Airya women who would be very beautiful if not for their wings.  Many laymen seem to consider them beautiful anyway, though they tend to retract these statements under questioning by Inquisitors.  It is commonly suggested that Airya men are sterile as a side-effect of the armour they wear and so the Seraphine are really much like Jahi or Succubi and must seduce human men for the Airya to proliferate.  Mentioning this aloud in the presence of any Airya or devotee of the Spentas is not recommended."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/seraphine1.tga"
+spr2 "ee/spr/shah/seraphine2.tga"
 rank -1
 hp 5
 armor 0
@@ -3791,7 +3798,7 @@ mr 7
 mor 6
 str 4
 spellweapon 3 1 # Pyromancy
-meleeweapon
+meleeweapon 0 0 # Fist
 flying
 allitemslots
 
@@ -3813,8 +3820,8 @@ allitemslots
 
 newmonster "Airya Iceclad"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The warriors of the Airya are known as the Iceclad.  This is a very literal name since their weapons and armor are both made from a kind of enchanted ice.  They wield lances and a wing of Iceclads (which is what the Airya call a squad without the slightest trace of irony) flying right over conventional fortifications is a terrifying sight.  As for their armor, it is reputedly not very comfortable, however, and while the magic ice is nearly as hard as steel even on a warm summer day, it will partially melt.  It will start to drip and soak the wearer through, which is reportedly very uncomfortable and shown to be very irritating."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/iceclad1.tga"
+spr2 "ee/spr/shah/iceclad2.tga"
 rank 1
 hp 8
 armor 2
@@ -3831,8 +3838,8 @@ allitemslots
 
 newmonster "Kavi Archer"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  A militant order known as the Kavi fills the ranged formations of the Airya hosts.  They wear the same armor as the Iceclad but are not called that.  Their bows are made of ordinary wood but the arrows they use are magical and if you are struck by one you will not be happy, as the icy arrowheads will burst into a mist so cold it would probably kill you by itself."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/airyaarcher1.tga"
+spr2 "ee/spr/shah/airyaarcher2.tga"
 rank 0
 hp 5
 armor 2
@@ -3848,8 +3855,8 @@ allitemslots
 
 newmonster "Harab Elder"
 copystats "Court Mage"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/harab1.tga"
+spr2 "ee/spr/shah/harab2.tga"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper."
 rank -1
 hp 5
@@ -3866,8 +3873,8 @@ mastery 1
 
 newmonster "Harab Seraph"
 copystats "Harab Elder"
-spr1 
-spr2
+spr1 "ee/spr/shah/harabseraph1.tga"
+spr2 "ee/spr/shah/harabseraph2.tga"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper.  Like the Airyans, the Raptors refer to their most honored leaders as Seraphs, even though they really have nothing in common with the Seraphim."
 hp 6
 mr 7
@@ -3878,8 +3885,8 @@ meleeweapon 0 5 # Staff
 
 newmonster "Iron Guard"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, but the personal guards of the Elders typically have the sense to use shields."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/ironguard1.tga"
+spr2 "ee/spr/shah/ironguard2.tga"
 rank 1
 hp 7
 armor 1
@@ -3892,29 +3899,16 @@ shield 1
 flying
 allitemslots
 
-newmonster "Iron Crow"
-descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, and the so-called Iron Crows are highly aggressive warriors.  While prone to being riddled with arrows, they can deal tremendous damage to a town's defenders if not swiftly dealt with.  They love to terrorize great swathes of the countryside, pillaging village after village and retreating before any serious opposition can be mustered."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
-rank 1
-hp 8
-armor 1
-mr 5
-mor 6
-str 4
-meleeweapon 0 2 # Broadsword
-meleeweapon 0 2 # Broadsword
-flying
-allitemslots
+# TODO unclunk abilities lines
 
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas, while the Karapans venerate the Daevas.  Both orders are united in their veneration of fire.^^While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^Depending on the circumstances the Shah may opt to align himself with either the Athravans and Yazatas in turn or with the Karapans and their Daeva masters. The mage-priests are flexible and can cast spells from two different paths. Both use pyromancy, while the Athravans can also use storm magic and the Karapans can use blood magic.^The Athravans collect all sorts of gems to summon Daevas.^The Karapans collect sacrifices to summon Daevas."
-hometerr ? 
-addstartterr ? # Village?
-addstartterr # coal mine
-addstartunits "Turan Soldier" 8
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas, while the Karapans venerate the Daevas.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^Depending on the circumstances the Shah may opt to align himself with either the Athravans and Yazatas in turn or with the Karapans and their Daeva masters. The mage-priests are flexible and can cast spells from two different paths. Both use pyromancy, while the Athravans can also use storm magic and the Karapans can use blood magic.^The Athravans collect all sorts of gems to summon Daevas.^The Karapans collect sacrifices to summon Daevas."
+hometerr 22 # Castle?b
+addstartterr 18 # Village?
+addstartterr 105 # coal mine
+addstartunits "Turan Cavalry" 8
 addstartunits "Zhayedan" 5
 addstartcom "Spahbed"
 recherochance
@@ -3927,9 +3921,9 @@ reclimiter "-Shah"
 #reclimiter "Shahanshah"
 addcomrec "Spahbed"
 addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
-addunitrec "Turan Soldier" 100 5 50 0 5
+addunitrec "Turan Infantry" 100 5 50 0 5
 addunitrec "Zhayedan" 100 5 50 0 15
-addunitrec "Turan Rider" 100 3 50 0 10
+addunitrec "Turan Cavalry" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20
 addunitrec "War Elephant" 10 1 100 0 10
 addmercrec "Scout" 10 1 25 10 0

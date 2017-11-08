@@ -3596,7 +3596,7 @@ allitemslots
 unique
 
 newmonster "Yazad"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The warriors of the Yazata hosts bear enchanted weapons and armour.  They favour lances which are devastating in their hands.  It is said that the sight of a Yazata host sweeping over a castle's walls may literally blind the onlooker, but this is probably exaggeration."
 spr1 "ee/spr/shah/yazad1.tga"
 spr2 "ee/spr/shah/yazad2.tga"
 rank -1
@@ -3617,7 +3617,7 @@ allitemslots
 
 # Celestial Yazad, 4 spell levels
 newmonster "Yazad of Fire"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  Fire is considered protective and cleansing by the Yazata and the fire wielded by the Yazata of Fires certainly seems to be."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3638,7 +3638,7 @@ awe 2
 allitemslots
 
 newmonster "Yazad of Justice"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Justice wield fire and light and excel at battling unholy beings.  Unfortunately they are themselves unholy in the eye of the proper gods, otherwise they would make excellent allies to modern civilization."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3659,7 +3659,7 @@ awe 2
 allitemslots
 
 newmonster "Yazad of the Stars"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Stars wield the power of the heavens and the heavens are very powerful."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3681,7 +3681,7 @@ allitemslots
 newmonster "Yazad of the Sky"
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Skies can control the weather which might explain why Astrologers can't predict it, and also why droughts afflict the faithful."
 rank -1
 hp 20
 armor 0
@@ -3699,7 +3699,7 @@ awe 2
 allitemslots
 
 newmonster "Yazad of Water"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Waters are said to be very gentle and kind, but they are mostly remarkable for being able to drown even those who are already dead."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3718,8 +3718,8 @@ flying
 awe 2
 allitemslots
 
-newmonster "Yazad of the Eart"
-descr ""
+newmonster "Yazad of the Earth"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Earth seem to possess power over not just the earth, but nature as well.  They will speak at great length about preserving the natural beauty and value of both.  Even the most faithful of the Turans do not seem to heed this dogma and one of the finer points of their culture is their appreciation of forest fires."
 spr1 "ee/spr/shah/"
 spr2 "ee/spr/shah/"
 rank -1
@@ -3745,6 +3745,7 @@ newmonster "Akem Manah" # Daeva of Evil Intentions
 copystats "Mazzik"
 spr1 "ee/spr/shah/eidaeva1.tga"
 spr2 "ee/spr/shah/eidaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Akem Manah is the Daeva of Evil Intentions and progenitor of Daevas.  He is opposed to Vohu Manah, Spenta of Animals and the principle of good thoughts.  The presence of Akem Manah will cause strife and disorder."
 rank -1
 hp 60
 armor 2
@@ -3764,7 +3765,7 @@ newmonster "Indra" # Daeva of Frozen Minds
 copystats "Mazzik"
 spr1 "ee/spr/shah/fmdaeva1.tga"
 spr2 "ee/spr/shah/fmdaeva2.tga"
-descr ""
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Indra is the Daeva of frozen minds who makes the righteous unable practice the truth.  He is opposed to Asha Vahishta, Spenta of Fire and principle of truth."
 rank -1
 hp 60
 armor 2
@@ -3789,7 +3790,7 @@ newmonster "Saurva" # Daeva of Oppression
 copystats "Mazzik"
 spr1 "ee/spr/shah/oppdaeva1.tga"
 spr2 "ee/spr/shah/oppdaeva2.tga"
-descr ""
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Saurva is the Daeva of Oppression.  He is opposed to Khshathra Vairya, Spenta of Sky and Metals and principle of righteous power."
 rank -1
 hp 60
 armor 2
@@ -3810,7 +3811,7 @@ newmonster "Nanghaithya" # Daeva of Discontent
 copystats "Mazzik"
 spr1 "ee/spr/shah/disdaeva1.tga"
 spr2 "ee/spr/shah/disdaeva2.tga"
-descr ""
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Nanghaithya is the Daeva of Discontent.  She is opposed to Spenta Armaiti, Spenta of the Earth and principle of devotion.  Nanghaithya will spread unrest where she dwells."
 rank -1
 hp 54
 armor 2
@@ -3831,7 +3832,7 @@ newmonster "Taurvi" # Daeva of Destruction
 copystats "Mazzik"
 spr1 "ee/spr/shah/destdaeva1.tga"
 spr2 "ee/spr/shah/destdaeva2.tga"
-descr ""
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom. Taurvi is the Daeva of Destruction.  She is opposed to Haurvatat, Spenta of Waters and principle of wholeness.  Taurvi will cause destruction and turmoil where she dwells."
 rank -1
 hp 54
 armor 2
@@ -3852,7 +3853,7 @@ newmonster "Zauri" # Daeva of Aging
 copystats "Mazzik"
 spr1 "ee/spr/shah/agedaeva1.tga"
 spr2 "ee/spr/shah/agedaeva2.tga"
-descr ""
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Zauri is the Daeva of Aging and the bane of plants.  She is opposed to Ameretat, Spenta of Plants and principle of immortality.  The presence of Zauri will cause plants to wither and people to age and die."
 rank -1
 hp 54
 armor 2
@@ -3875,7 +3876,7 @@ newmonster "Daeva"
 copystats "Mazzik"
 spr1 "ee/spr/shah/daeva1.tga"
 spr2 "ee/spr/shah/daeva2.tga"
-descr "For all of recorded history the Turanic peoples have worshipped two warring pantheons,"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  When the Lord and originator of all Daevas was destroyed by Ahura Mazda and the Shahs fled to Elysium the Daevas came with them.  It is not known where they dwell now, but the Karapans can summon them with blood sacrifice.^^The Daevic hosts fiery enchanted weapons and armor.  They are entirely immune to fire and can cause fear in the hearts of mortals."
 rank -1
 hp 24
 armor 2
@@ -3895,7 +3896,7 @@ newmonster "Jahi"
 copystats "Lilot"
 spr1 "ee/spr/shah/jahi1.tga"
 spr2 "ee/spr/shah/jahi2.tga"
-descr ""
+descr "The Jahi is a Daeva woman of lesser stature and power.  Their name means 'whore' in the Turanic tongue, but the Jahi do not appear to mind the appelation.  They resemble the infernal Succubi and Lilim who serve Ba'al in many ways.  They lack the disfigurements of the other daemonic seductresses, but have a much less pleasant disposition.  They are much less likely to seduce a man than they are to take him by force, though the Turans do not seem to draw any distinction between the two behaviours."
 rank 1
 hp 22
 armor 0

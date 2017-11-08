@@ -2184,7 +2184,20 @@ addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
-#selectritual "Lesser Ceremony of Night"
+selectritual "Ceremony of the Lord of Night"
+clearritspec
+level 9
+nostart
+
+newritual "Ceremony of the Lord of Night"
+ritpow 37
+level 1
+cost 4 25
+summoning
+addstring "c*Chilan"
+addstring "1d4+2*Zotz Warrior"
+addstring "2d4+1*Zotz"
+addstring "1d3*Beast Bat"
 
 # TODO Chilan sprite/stats, ceremony of night, change zwar sprite and exchange shield for armour
 newmonster "Chilan"
@@ -2197,8 +2210,9 @@ armor 0
 mr 7
 mor 4
 str 3
-spellweapon
-meleeweapon
+spellweapon 32 1 # Night
+meleeweapon 0 0 # Fist
+noeyes
 flying
 allitemslots
 holy
@@ -2214,6 +2228,7 @@ mr 5
 mor 3
 str 3
 meleeweapon # Club?
+noeyes
 flying
 allitemslots
 
@@ -2229,6 +2244,7 @@ mor 4
 clearweapons
 meleeweaponspec 7 13 # Lance 1-7
 meleeweapon -1 4 # Spear
+noeyes
 flying
 allitemslots
 

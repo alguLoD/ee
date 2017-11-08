@@ -1,6 +1,6 @@
 icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
-# For those wondering why I separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
+# For those wondering why I sometimes separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
 #
 #
 #
@@ -3452,6 +3452,7 @@ armor
 mr
 mor
 str
+spellweapon
 spellweapon 
 meleeweapon
 flying
@@ -3468,6 +3469,7 @@ armor
 mr
 mor
 str
+spellweapon
 spellweapon 
 meleeweapon
 flying
@@ -3484,6 +3486,7 @@ armor
 mr
 mor
 str
+spellweapon
 spellweapon 
 meleeweapon
 flying
@@ -3500,6 +3503,7 @@ armor
 mr
 mor
 str
+spellweapon
 spellweapon 
 meleeweapon
 flying
@@ -3516,21 +3520,23 @@ armor
 mr
 mor
 str
+spellweapon
 spellweapon 
 meleeweapon
 flying
 allitemslots
 
-newmonster "" # "Spenta of the Earth"
-descr ""
+newmonster "Spenta Armaiti" # "Spenta of the Earth"
 spr1 "ee/spr/shah/espenta1.tga"
 spr2 "ee/spr/shah/espenta2.tga"
+descr ""
 rank -1
 hp
 armor
 mr
 mor
 str
+spellweapon 
 spellweapon 
 meleeweapon
 flying
@@ -3541,109 +3547,149 @@ descr ""
 spr1 "ee/spr/shah/yazad1.tga"
 spr2 "ee/spr/shah/yazad2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-meleeweaponspec
-meleeweapon
+hp 20
+armor 2
+mr 7
+mor 7
+str 6
+meleeweaponspec 10 "Magic Lance Charge"
+meleeweapon 2 806 # Magic Spear
 awe 1
+shield
 flying
+coldres 50
+shockres 100
 allitemslots
 
-newmonster "Daeva of Evil Intentions"
-descr ""
+newmonster "Akem Manah" # Daeva of Evil Intentions
+copystats "Mazzik"
 spr1 "ee/spr/shah/eidaeva1.tga"
 spr2 "ee/spr/shah/eidaeva2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-spellweapon 
-meleeweapon
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+spellweapon 8 3 # Unlife
+spellweapon 11 3 # Blood
+meleeweapon 2 385 # Magic Staff
+fear 2
+fireres 100
 flying
 allitemslots
+unique
 
-newmonster "Daeva of Frozen Minds"
-descr ""
+newmonster "Indra" # Daeva of Frozen Minds
+copystats "Mazzik"
 spr1 "ee/spr/shah/fmdaeva1.tga"
 spr2 "ee/spr/shah/fmdaeva2.tga"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 36 3 # Command - not entirely happy with this selection but close enough.
+meleeweapon 2 385 # Magic Staff
+#prebatweapon 0 "Frozen Minds" - doesn't seem like a snap to make this work
+fear 2
+fireres 100
 flying
+stealth
 allitemslots
+unique
 
 # confusion weapon?
 
-newmonster "Daeva of Oppression"
-descr ""
+newmonster "Saurva" # Daeva of Oppression
+copystats "Mazzik"
 spr1 "ee/spr/shah/oppdaeva1.tga"
 spr2 "ee/spr/shah/oppdaeva2.tga"
-rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
-flying
-allitemslots
-
-newmonster "Daeva of Discontent"
 descr ""
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 11 3 # Blood
+meleeweapon 2 385 # Magic Staff
+fear 2
+flying
+fireres 100
+allitemslots
+unique
+
+newmonster "Nanghaithya" # Daeva of Discontent
+copystats "Mazzik"
 spr1 "ee/spr/shah/disdaeva1.tga"
 spr2 "ee/spr/shah/disdaeva2.tga"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 6 3 # Geomancy
+spellweapon 8 3 # Unlife
+meleeweapon 5 0 # Fist
+fear 2
+fireres 100
 flying
 allitemslots
+unique
 
-newmonster "Daeva of Destruction"
-descr ""
+newmonster "Taurvi" # Daeva of Destruction
+copystats "Mazzik"
 spr1 "ee/spr/shah/destdaeva1.tga"
 spr2 "ee/spr/shah/destdaeva2.tga"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 6 3 # Geomancy
+meleeweapon 5 0 # Fist
+fear 2
+fireres 100
 flying
 allitemslots
+unique
 
-newmonster "Daeva of Aging"
-descr ""
+newmonster "Zauri" # Daeva of Aging
+copystats "Mazzik"
 spr1 "ee/spr/shah/agedaeva1.tga"
 spr2 "ee/spr/shah/agedaeva2.tga"
+descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 8 3 # Unlife
+spellweapon 37 3 # Black Magic
+meleeweapon 5 0 # Fist
+fear 2
+resfire 100
+stealth
 flying
 allitemslots
+unaging
+unique
 
 newmonster "Daeva"
 copystats "Mazzik"
@@ -3657,10 +3703,11 @@ mr 7
 mor 8
 str 6
 rangedweaponbonus 0 "Project Fear"
-meleeweaponspec 8 "Magic Lance Charge"
+meleeweaponspec 10 "Magic Lance Charge"
 meleeweapon 2 606 # Magic Spear
-fear  # Might be too strong, special fear attack instead?
+#fear - Might be too strong, special fear attack instead?
 fireres 100
+shield
 flying
 allitemslots
 

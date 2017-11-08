@@ -1223,16 +1223,17 @@ nametype 49
 mastery 1
 
 newmonster "Anakite Sage"
-copystats "Anakite Elder"
 spr1 "ee/spr/hp/anas1.tga"
 spr2 "ee/spr/hp/anas2.tga"
 descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
 hp 45
+armor 0
 mr 9
 mor 7
-clearweapons
+str 7
 spellweapon 51 2 # High Arcana
 meleeweapon 7 0 # Fist
+weaponslots
 nametype 49
 
 #newmonster "Kohen"
@@ -1317,7 +1318,7 @@ banishsurv
 newmonster "Spectral Ba'alite Archer"
 spr1 "ee/spr/hp/spbar1.tga"
 spr2 "ee/spr/hp/spbar2.tga"
-descr "Spectral Ba'alite archers are the apparitions of Ba'alite cultist fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
+descr "Spectral Ba'alite Archers are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
 rank 0
 hp 4
 armor 0
@@ -1378,7 +1379,7 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 15 730 # Magic Greatsword
 flying
-fear
+fear 2
 weaponslots
 unique 1
 
@@ -1397,7 +1398,7 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 10 0 # Fist
 flying
-fear
+fear 1
 weaponslots
 unique 1
 
@@ -1416,7 +1417,7 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 10 0 # Fist
 flying
-fear
+fear 1
 weaponslots
 unique 1
 
@@ -1435,7 +1436,7 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 10 0 # Fist
 flying
-fear
+fear 1
 weaponslots
 unique 1
 
@@ -1454,7 +1455,7 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 10 0 # Fist
 flying
-fear
+fear 1
 weaponslots
 unique 1
 
@@ -1473,11 +1474,19 @@ spellweaponsingle 61 3 # Astrology
 spellweaponsingle 11 3 # Blood Magic
 meleeweapon 10 0 # Fist
 flying
-fear
+fear 1
 weaponslots
 unique 1
 
-
+#selectmonster "Nephil"
+#name "Son of Arakiel"
+#clearweapons
+#newmonster "Son of Azazel"
+#newmonster "Son of Semyaza"
+#newmonster "Son of Ezekiel"
+#newmonster "Son of Shamshiel"
+#newmonster "Son of Kokabel"
+#
 # events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.
 #playerevent
 #+turn 0
@@ -3220,7 +3229,7 @@ human
 shield
 allitemslots
 
-newmonster "Turan Infantry"
+newmonster "Turan Spearman"
 descr ""
 spr1 "ee/spr/shah/turinfantry1.tga"
 spr2 "ee/spr/shah/turinfantry2.tga"
@@ -3232,6 +3241,23 @@ mor 4
 str 4
 rangedweapon 0 24  # Javelin
 meleeweapon 0 2 # Broadsword
+human
+shield
+allitemslots
+
+# TODO sprite
+newmonster "Turan Archer"
+spr1 "ee/spr/shah/turarcher1.tga"
+spr2 "ee/spr/shah/turarcher2.tga"
+descr ""
+rank 0
+hp 5
+armor 0
+mr 4
+mor 4
+str 4
+rangedweapon 0 7 # Bow
+meleeweapon 0 8 # Shortsword
 human
 shield
 allitemslots
@@ -3273,7 +3299,7 @@ iceprot 1
 coldres 100
 allitemslots
 
-newmonster "Turan Cavalry"
+newmonster "Turan Cavalryman"
 descr ""
 spr1 "ee/spr/shah/turancav1.tga"
 spr2 "ee/spr/shah/turancav2.tga"
@@ -3296,7 +3322,7 @@ newmonster "Cataphract"
 descr ""
 spr1 "ee/spr/shah/cataphract1.tga"
 spr2 "ee/spr/shah/cataphract2.tga"
-rank
+rank 1
 hp 12
 armor 2
 mr 4
@@ -3442,105 +3468,132 @@ fireres 50
 power 53 3
 
 #
-newmonster "" #"Spenta of Sky and Metals"
+newmonster "Khshathra Vairya" #"Spenta of Sky and Metals"
 descr ""
 spr1 "ee/spr/shah/skymetalspenta1.tga"
 spr2 "ee/spr/shah/skymetalspenta2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-spellweapon 
-meleeweapon
+hp 60
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 5 3 # Storm
+spellweapon 6 3 # Geomancy
+meleeweapon 1 385 # Magic Staff
 flying
+shockres 100
+diseaseres
+awe 3
 allitemslots
 unique
 
-newmonster "" # "Spenta of Animals"
+newmonster "Vohu Manah" # "Spenta of Animals"
 descr ""
 spr1 "ee/spr/shah/animalspenta1.tga"
 spr2 "ee/spr/shah/animalspenta2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-spellweapon 
-meleeweapon
+hp 60
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 39 3 # Druidism
+spellweapon 54 3 # Forest
+meleeweapon 1 385 # Magic Staff
 flying
+shockres 100
+poisonres 100
+diseaseres
+awe 3
 allitemslots
 unique
 
-newmonster "" #"Spenta of Fire"
+newmonster "Asha Vahishta" # "Spenta of Fire"
 descr ""
 spr1 "ee/spr/shah/fspenta1.tga"
 spr2 "ee/spr/shah/fspenta2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-spellweapon 
-meleeweapon
+hp 60
+armor 2
+mr 10
+mor 10
+str 5
+spellweapon 3 3 # Pyromancy
+spellweapon 22 3 # Golden Magic
+meleeweapon 1 385 # Magic Staff
+shockres 100
+fireres 100
+diseaseres
+awe 3
 flying
 allitemslots
 unique
 
-newmonster "" # "Spenta of Plants"
+newmonster "Ameratat" # "Spenta of Plants"
 descr ""
 spr1 "ee/spr/shah/plantspenta1.tga"
 spr2 "ee/spr/shah/plantspenta2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 54 3 # Forest
+spellweapon 60 3 # Tree
+meleeweapon 4 0 # Fist
+immortal
+immortalap 4
+shockres 100
+poisonres 100
+diseaseres
+awe 3
 flying
+unaging
 allitemslots
 unique
 
-newmonster "" # "Spenta of Waters"
+newmonster "Haurvatat" # "Spenta of Waters"
 descr ""
 spr1 "ee/spr/shah/wspenta1.tga"
 spr2 "ee/spr/shah/wspenta2.tga"
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 4 3 # Hydromancy
+spellweapon 20 3 # Mysticism
+meleeweapon 4 0 # Fist
+shockres 100
+coldres 50
+diseaseres
 flying
+awe 3
 allitemslots
+unique
 
 newmonster "Spenta Armaiti" # "Spenta of the Earth"
 spr1 "ee/spr/shah/espenta1.tga"
 spr2 "ee/spr/shah/espenta2.tga"
 descr ""
 rank -1
-hp
-armor
-mr
-mor
-str
-spellweapon 
-spellweapon 
-meleeweapon
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 6 3 # Geomancy
+spellweapon 54 3 # Forest
+meleeweapon 4 0 # Fist
+shockres 100
+diseaseres
 flying
+awe 3
 allitemslots
+unique
 
 newmonster "Yazad"
 descr ""
@@ -3558,8 +3611,135 @@ awe 1
 shield
 flying
 coldres 50
+diseaseres
 shockres 100
 allitemslots
+
+# Celestial Yazad, 4 spell levels
+newmonster "Yazad of Fire"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 3 2 # Pyromancy
+spellweapon 22 2 # Golden Magic
+meleeweapon 0 4 # Fist
+shockres 100
+fireres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+newmonster "Yazad of Justice"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 16 2 # White
+spellweapon 22 2 # Golden
+meleeweapon 0 4 # Fist
+shockres 100
+fireres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+newmonster "Yazad of the Stars"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 61 3 # Astrology
+spellweapon 3 1 # Storm
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+newmonster "Yazad of the Sky"
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+descr ""
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 3 3 # Storm
+spellweapon 61 1 # Astrology
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+newmonster "Yazad of Water"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 4 2 # Hydromancy
+spellweapon 20 2 # Mysticism
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+newmonster "Yazad of the Eart"
+descr ""
+spr1 "ee/spr/shah/"
+spr2 "ee/spr/shah/"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 6 2 # Geomancy
+spellweapon 54 2 # Forest
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+poisonres 50
+diseaseres
+flying
+awe 2
+allitemslots
+
+# Greater Daevas
 
 newmonster "Akem Manah" # Daeva of Evil Intentions
 copystats "Mazzik"
@@ -3695,7 +3875,7 @@ newmonster "Daeva"
 copystats "Mazzik"
 spr1 "ee/spr/shah/daeva1.tga"
 spr2 "ee/spr/shah/daeva2.tga"
-descr ""
+descr "For all of recorded history the Turanic peoples have worshipped two warring pantheons,"
 rank -1
 hp 24
 armor 2
@@ -3813,7 +3993,7 @@ allitemslots
 newmonster "Ahurani"
 spr1 "ee/spr/shah/ahurani1.tga"
 spr2 "ee/spr/shah/ahurani2.tga"
-descr ""
+descr "Supposedly a type of Yazad, the Ahurani distinguish themselves by being made of water.  They closely resemble Undines, but Undines were not known to inhabit Terra as the Yazata did.  What relationship they have with one another, if any, is unknown.  The Ahurani cannot use its wings to fly but is more powerful than most Undines."
 rank 0
 hp 9
 armor 0
@@ -3962,18 +4142,17 @@ shield 1
 flying
 allitemslots
 
-# TODO unclunk abilities lines
-
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas, while the Karapans venerate the Daevas.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^Depending on the circumstances the Shah may opt to align himself with either the Athravans and Yazatas in turn or with the Karapans and their Daeva masters. The mage-priests are flexible and can cast spells from two different paths. Both use pyromancy, while the Athravans can also use storm magic and the Karapans can use blood magic.^The Athravans collect all sorts of gems to summon Daevas.^The Karapans collect sacrifices to summon Daevas."
-hometerr 22 # Castle?b
-addstartterr 18 # Village?
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and use storm magic, while the Karapans venerate the Daevas and use blood magic.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^The Shah may align himself with one of two orders of magi.^The Athravans collect all sorts of gems to summon Yazatas.^The Karapans collect sacrifices to summon Daevas."
+hometerr 22 # Castle - may be revised at a later date
+addstartterr 18 # Village
 addstartterr 105 # coal mine
-addstartunits "Turan Cavalry" 8
-addstartunits "Zhayedan" 5
+addstartunits "Turan Spearman" 8
+addstartunits "Turan Archer" 5
 addstartcom "Spahbed"
+addstartunit "Turan Cavalryman" 4
 recherochance
 recasschance
 libbonusdescr "wizards"
@@ -3984,9 +4163,10 @@ reclimiter "-Shah"
 #reclimiter "Shahanshah"
 addcomrec "Spahbed"
 addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
-addunitrec "Turan Infantry" 100 5 50 0 5
+addunitrec "Turan Archer" 100 5 50 0 5
+addunitrec "Turan Spearman" 100 5 50 0 5
 addunitrec "Zhayedan" 100 5 50 0 15
-addunitrec "Turan Cavalry" 100 3 50 0 10
+addunitrec "Turan Cavalryman" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20
 addunitrec "War Elephant" 10 1 100 0 10
 addmercrec "Scout" 10 1 25 10 0

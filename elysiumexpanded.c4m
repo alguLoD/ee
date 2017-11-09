@@ -5,6 +5,16 @@ description "A mod that seeks to tweak and expand on the game without changing i
 # WARNING WARNING WARNING WARNING
 # I DID *NOT* REMEMBER TO UPLOAD THE LATEST CHANGES FROM HOME THIS MORNING
 # SO MANUALLY COMPARE THE TWO DIFFERENT VERSIONS WHEN YOU GET HOME
+# 
+# [RITPOWERS]
+# 48: Mastersmith, Navigator, Icecrafter
+# 49: Sheol
+# 50: Rephaite
+# 51: Nephil, Ba'al
+# 52: Goblins
+# 53: Athravan
+# 54: Dastur
+#
 # [NEW WEAPONS]
 #
 
@@ -21,6 +31,7 @@ flymode 1 # Arrow
 flylook 0 # Arrow
 flysound 14  # Arrow
 sound -1  # No sound on impact
+# Used by Crystal Amazons, may be used by other elite non-longbow archers in the future.
 
 newweapon "Great Bow"
 range 7
@@ -35,7 +46,9 @@ flymode 1 # Arrow
 flylook 0 # Arrow
 flysound 14  # Arrow
 sound -1  # No sound on impact
+# Used by Gibbor Archers.
 
+#TODO next effect
 newweapon "Frost Bow"
 range 5
 init 2
@@ -50,18 +63,21 @@ flylook 0 # Arrow
 flysound 14  # Arrow
 sound -1  # No sound on impact
 #next ???
+# Used by Kavi Archers, Iceclad Zhayedans
 
 newweapon "Ice Lance"
 init 7
 dmgtype 7 # Magic.
 dmg 4
 sound 1
+# Used by Iceclads
 
 newweapon "Magic Lance Charge"
 init 6
 dmgtype 7 # Magic.
 oneshot
 impact 84
+# Used by Iceclads, Daevas.
 
 newweapon "Spectral Javelin"
 range 3
@@ -73,6 +89,7 @@ flymode 1
 flylook 1
 flysound 19
 sound -1
+# Used by Spectral Ba'alites.
 
 newweapon "Project Fear"
 trgrank 9
@@ -84,6 +101,7 @@ hardmr
 an
 look 5
 sound 22
+# Used by Daevas
 
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/merccav1.tga"
@@ -591,7 +609,7 @@ reclimiter "+Turtle Chief"
 
 # ?
 #selectritual "Raise Legion
-#addstring "(-27)c*Fossil Guard? & 5d6*Fossil Warrior"
+#addstring "(-27)c*Fossil Guard? Fossilized Adon? Seren? & 5d6*Fossil Warrior"
 # setvar ??? 1 # pay no attention to this move along
 #
 #
@@ -653,9 +671,7 @@ libraryrec
 addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
-
 #
-
 
 selectritual "Lesser Ceremony to Ba'al"
 clearritspec
@@ -673,6 +689,7 @@ summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
+#TODO test if this actually works in the Temple of Ba'al
 newritual "Lesser Temple Ceremony"
 ritpow 8 # Baalite Rituals
 level 1
@@ -867,41 +884,6 @@ ritpow 8
 selectritual "Summon God"
 free
 
-newritual "Blood to Blood" # Scry for Watchers
-cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it's mostly a token.
-ritpow 8 4 # Nephil-only
-planeloc 2 # Inferno
-randnewloc 104 # Pit
-
-selectritual "Blood to Blood"
-descr "The Nephilim are the children of the Watchers and in turn begat all the races of giants who serve Ba'al.  With this pure blood a scrying ritual can be performed to locate the fathers of the Nephilim.  The blood of the Nephil is the key and the ten sacrificed maidens provides the power."
-
-#
-##selectritual "Second Sun"
-#ritpow 8 5
-#cost 4 0
-#apcost 3
-#
-# Most of the Sheol rituals are placeholders and works in progress.
-# IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
-
-# TODO infernal gate ritual
-
-newritual "Release Watcher"
-descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
-ritpow 8 5 # Ba'al only
-terr 104
-#planereq 
-apcost 3
-cost 4 500
-summoning
-addstring "c*Azazel"
-addstring "c*Semyaza"
-addstring "c*Ezekiel"
-addstring "c*Shamshiel"
-addstring "c*Kokabel"
-addstring "c*Arakiel"
-
 newritpow
 
 newritual "Lesser Ritual of Mastery"
@@ -1061,8 +1043,9 @@ apcost 5
 addstring "1d3+1*Rephaite"
 #addstring - ?
 
+#TODO Description
 newritual "Royal Banquet"
-descr ""
+descr "The"
 ritpow 50
 level 3
 cost 0 180
@@ -1096,28 +1079,77 @@ unaging
 gatherhands
 
 selectmonster "Anakite Captain"
-power 49 1
+power 50 1
 
 selectmonster "Adon"
-power 49 2
+power 50 2
 
 selectmonster "Rephaite"
 fireres 50
 
 selectmonster "Melqart"
-power 49 3
+power 50 3
 fireres 50
+newritual "Blood to Blood" # Scry for Watchers
+cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it's mostly a token.
+ritpow 51 1 # Nephil-only
+planeloc 2 # Inferno
+randnewloc 104 # Pit
 
+selectritual "Blood to Blood"
+descr "The Nephilim are the children of the Watchers and in turn begat all the races of giants who serve Ba'al.  With this pure blood a scrying ritual can be performed to locate the fathers of the Nephilim.  The blood of the Nephil is the key and the ten sacrificed maidens provides the power."
 
-# TODO Ritpowers don't work!
+#
+##selectritual "Second Sun"
+#ritpow 51
+#cost 4 0
+#apcost 3
+#
+# Most of the Sheol rituals are placeholders and works in progress.
+# IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
+
+newritpow
+# TODO infernal gate ritual (should work now)
+newritual "Infernal Breach"
+ritpow 51 # Ba'al only
+level 2
+cost 4 120
+apcost 2
+planereq 0
+terr # Desert?
+alterloc 201 # Infernal gate
+portal 1000 # Unlinked, unique
+setplane 2 # Inferno
+chooseloc
+soundfx 57
+makeportal
+centerloc 
+
+newritual "Release Watcher"
+descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
+ritpow 51 # Ba'al only
+level 2
+terr 104
+planereq 2
+apcost 3
+cost 4 500
+summoning
+addstring "c*Azazel"
+addstring "c*Semyaza"
+addstring "c*Ezekiel"
+addstring "c*Shamshiel"
+addstring "c*Kokabel"
+addstring "c*Arakiel"
+
+# TODO Ritpowers should work now, but test!
 selectmonster "Nephil"
 fireres 50
-#ritpow 8 4
+#ritpow 51 1
 #
 
 selectmonster "God"
 unaging
-#ritpow 8 5
+ritpow 51 2
 #
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
@@ -2264,7 +2296,6 @@ unaging
 
 # [TROLL KING]
 
-# Svartalf, 53
 #newritpow 
 
 #newritual
@@ -2402,13 +2433,13 @@ meleeweapon 3 4
 #newmonster "Ettin Reaver"
 #copystats "Ettin"
 
-# Goblins, 51
+# Goblins, 52
 
 newritpow
 
 
 newritual "Poisoned Arrows"
-ritpow 51
+ritpow 52
 level 1
 cost 3 50
 soundfx 57
@@ -2422,7 +2453,7 @@ selectritual "Poisoned Arrows"
 descr ""
 
 newritual "Wolfhowl"
-ritpow 51
+ritpow 52
 level 1
 cost 1 5 # Iron
 cost 3 30 # Fungi
@@ -2435,7 +2466,7 @@ selectritual "Wolfhowl"
 descr "The goblin shaman gathers up a group of wolf kin and shouts really loudly at them while a heavy mist rises from a nearby cauldron full of burning fungi. This will frighten the wolf kin so badly that they will lose much of their cowardice. They are then given finer armaments on behalf of the Troll King."
 
 newritual "Minor Summons"
-ritpow 51
+ritpow 52
 level 1
 cost 3 30 # Fungi
 terr -7 # Forests, jungles or mountains.
@@ -2450,12 +2481,13 @@ selectritual "Minor Summons"
 descr "Summons a small number of animals that get along well with goblins."
 
 selectritual "Golden Nose"
-ritpow 51
+ritpow 52
 
 #Dummying out all the advanced promotions for now. They may be scrapped entirely, at any rate they're bogging down progress on 0.3.
 
 newritual "Fungal Incense"
 level 2
+ritpow 52
 cost 3 50
 soundfx 57
 promotion 10
@@ -2478,10 +2510,10 @@ selectritual "Fungal Incense"
 descr "The witch doctor exposes a group of up to ten goblins to a horrible fungal incense. This will make the goblins more stubborn and let them ignore injuries that would kill most of their kind."
 
 selectmonster "Goblin Shaman"
-power 51 1 # Goblin rituals
+power 52 1 # Goblin rituals
 
 selectmonster "Goblin Witch Doctor"
-power 51 2 # Goblin rituals
+power 52 2 # Goblin rituals
 
 selectclass 14
 clearrec
@@ -2919,6 +2951,7 @@ descr "The Raven is a cunning and pleasantly wicked bird.  Properly trained and 
 selectmonster "Raven Familiar"
 descr "Some ravens just refuse to fly away for long, but are constantly drawn back to their summoner.  These ravens are known as familiars and are almost useless.  At least they can scout the nearby areas, their sharp eyes piercing the disguises of stealthy beings."
 
+# Athravan, 52
 newritpow
 
 newritual "Lesser Ritual of Mastery"
@@ -3044,7 +3077,7 @@ addstring "c*Ameretat"
 addstring "c*Haurvatat"
 addstring "c*Spenta Armaiti"
 
-# Karapan / Daeva - costs sacrifices
+# Karapan / Daeva, ritpow 53 - costs sacrifices
 newritpow
 
 newritual "Lesser Ritual of Mastery"
@@ -3384,7 +3417,7 @@ str 4
 spellweaponsingle 3 1 # Pyromancy
 spellweaponsingle 5 1 # Storm
 meleeweapon 0 0 # Fist
-power 52 1
+power 53 1
 human
 allitemslots
 mastery 1
@@ -3403,7 +3436,7 @@ clearweapons
 spellweaponsingle 3 2
 spellweaponsingle 5 2
 meleeweapon 0 0 # Fist
-power 52 2
+power 53 2
 mastery 1
 
 newmonster "Grand Zaotar"
@@ -3418,7 +3451,7 @@ clearweapons
 spellweaponsingle 3 3
 spellweaponsingle 5 3
 meleeweapon 0 0 # Fist
-power 52 3
+power 53 3
 coldres 50
 gathergems
 
@@ -3436,7 +3469,7 @@ str 4
 spellweaponsingle 3 1 # Pyromancy
 spellweaponsingle 11 1 # Blood
 meleeweapon 0 1 # Dagger
-power 53 1
+power 54 1
 human
 allitemslots
 mastery 1
@@ -3455,7 +3488,7 @@ clearweapons
 spellweaponsingle 3 2
 spellweaponsingle 11 2
 meleeweapon 0 1 # Dagger
-power 53 2
+power 54 2
 mastery 1
 
 newmonster "Grand Dastur"
@@ -3471,7 +3504,7 @@ spellweaponsingle 3 3
 spellweaponsingle 11 3
 meleeweapon 0 1 # Dagger
 fireres 50
-power 53 3
+power 54 3
 
 #
 newmonster "Khshathra Vairya" #"Spenta of Sky and Metals"

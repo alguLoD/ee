@@ -17,6 +17,7 @@ description "A mod that seeks to tweak and expand on the game without changing i
 #
 # [NEW WEAPONS]
 #
+# TODO Teaser image
 
 newweapon "Composite Bow"
 range 5
@@ -2439,7 +2440,7 @@ newritpow
 
 
 newritual "Poisoned Arrows"
-ritpow 52
+ritpow 51
 level 1
 cost 3 50
 soundfx 57
@@ -3508,9 +3509,9 @@ power 54 3
 
 #
 newmonster "Khshathra Vairya" #"Spenta of Sky and Metals"
-descr ""
 spr1 "ee/spr/shah/skymetalspenta1.tga"
 spr2 "ee/spr/shah/skymetalspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Khshathra Vairya is the Spenta of the Stone, Sky and Metals.  He is the principle of divine dominion, righteous power and self-control."
 rank -1
 hp 60
 armor 2
@@ -3528,9 +3529,9 @@ allitemslots
 unique
 
 newmonster "Vohu Manah" # "Spenta of Animals"
-descr ""
 spr1 "ee/spr/shah/animalspenta1.tga"
 spr2 "ee/spr/shah/animalspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Vohu Manah is the Spenta of Animals.  He has great powers of Nature and no animal would ever strike him.  He is the principle of intelligence and good thoughts."
 rank -1
 hp 60
 armor 2
@@ -3549,9 +3550,9 @@ allitemslots
 unique
 
 newmonster "Asha Vahishta" # "Spenta of Fire"
-descr ""
 spr1 "ee/spr/shah/fspenta1.tga"
 spr2 "ee/spr/shah/fspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Asha Vahishta is the Spenta of Fire.  He is the principle of truth and justice.  He is the enemy of demons and the wicked."
 rank -1
 hp 60
 armor 2
@@ -3570,9 +3571,9 @@ allitemslots
 unique
 
 newmonster "Ameratat" # "Spenta of Plants"
-descr ""
 spr1 "ee/spr/shah/plantspenta1.tga"
 spr2 "ee/spr/shah/plantspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Ameretat is the Spenta of Plants.  She is the principle of deathlessness and immortality.  Like a plant in spring, she will be reborn when she dies."
 rank -1
 hp 54
 armor 2
@@ -3594,9 +3595,9 @@ allitemslots
 unique
 
 newmonster "Haurvatat" # "Spenta of Waters"
-descr ""
 spr1 "ee/spr/shah/wspenta1.tga"
 spr2 "ee/spr/shah/wspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Haurvatat is the Spenta of Waters.  She is the principle of wholeness, health and perfection."
 rank -1
 hp 54
 armor 2
@@ -3617,7 +3618,7 @@ unique
 newmonster "Spenta Armaiti" # "Spenta of the Earth"
 spr1 "ee/spr/shah/espenta1.tga"
 spr2 "ee/spr/shah/espenta2.tga"
-descr ""
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord.  Spenta Armaiti is the Spenta of the Earth. She is the principle of fertility, serenity and devotion."
 rank -1
 hp 54
 armor 2
@@ -3657,8 +3658,8 @@ allitemslots
 # Celestial Yazad, 4 spell levels
 newmonster "Yazad of Fire"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  Fire is considered protective and cleansing by the Yazata and the fire wielded by the Yazata of Fires certainly seems to be."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/fyazad1.tga"
+spr2 "ee/spr/shah/fyazad2.tga"
 rank -1
 hp 20
 armor 0
@@ -3678,8 +3679,8 @@ allitemslots
 
 newmonster "Yazad of Justice"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Justice wield fire and light and excel at battling unholy beings.  Unfortunately they are themselves unholy in the eye of the proper gods, otherwise they would make excellent allies to modern civilization."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/justyazad1.tga"
+spr2 "ee/spr/shah/justyazad2.tga"
 rank -1
 hp 20
 armor 0
@@ -3699,8 +3700,8 @@ allitemslots
 
 newmonster "Yazad of the Stars"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Stars wield the power of the heavens and the heavens are very powerful."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/staryazad1.tga"
+spr2 "ee/spr/shah/staryazad2.tga"
 rank -1
 hp 20
 armor 0
@@ -3718,8 +3719,8 @@ awe 2
 allitemslots
 
 newmonster "Yazad of the Sky"
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/skyyazad1.tga"
+spr2 "ee/spr/shah/skyyazad2.tga"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Skies can control the weather which might explain why Astrologers can't predict it, and also why droughts afflict the faithful."
 rank -1
 hp 20
@@ -3739,8 +3740,8 @@ allitemslots
 
 newmonster "Yazad of Water"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Waters are said to be very gentle and kind, but they are mostly remarkable for being able to drown even those who are already dead."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/wyazad1.tga"
+spr2 "ee/spr/shah/wyazad2.tga"
 rank -1
 hp 20
 armor 0
@@ -3759,8 +3760,8 @@ allitemslots
 
 newmonster "Yazad of the Earth"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Earth seem to possess power over not just the earth, but nature as well.  They will speak at great length about preserving the natural beauty and value of both.  Even the most faithful of the Turans do not seem to heed this dogma and one of the finer points of their culture is their appreciation of forest fires."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/eyazad1.tga"
+spr2 "ee/spr/shah/eyazad2.tga"
 rank -1
 hp 20
 armor 0
@@ -3804,7 +3805,7 @@ newmonster "Indra" # Daeva of Frozen Minds
 copystats "Mazzik"
 spr1 "ee/spr/shah/fmdaeva1.tga"
 spr2 "ee/spr/shah/fmdaeva2.tga"
-descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Indra is the Daeva of frozen minds who makes the righteous unable practice the truth.  He is opposed to Asha Vahishta, Spenta of Fire and principle of truth."
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Indra is the Daeva of Frozen Minds who makes the righteous unable practice the truth.  He is opposed to Asha Vahishta, Spenta of Fire and principle of truth."
 rank -1
 hp 60
 armor 2
@@ -3935,7 +3936,7 @@ newmonster "Jahi"
 copystats "Lilot"
 spr1 "ee/spr/shah/jahi1.tga"
 spr2 "ee/spr/shah/jahi2.tga"
-descr "The Jahi is a Daeva woman of lesser stature and power.  Their name means 'whore' in the Turanic tongue, but the Jahi do not appear to mind the appelation.  They resemble the infernal Succubi and Lilim who serve Ba'al in many ways.  They lack the disfigurements of the other daemonic seductresses, but have a much less pleasant disposition.  They are much less likely to seduce a man than they are to take him by force, though the Turans do not seem to draw any distinction between the two behaviours."
+descr "The Jahi is a Daeva woman of lesser stature and power.  Their name means 'whore' in the Turanic tongue, but the Jahi do not appear to mind the appelation.  They resemble the infernal Succubi and Lilim who serve Ba'al in many ways, though they bear a particular hatred for the Lilim and will attack them on sight.  They lack the disfigurements of other demonic seductresses, but have a much less pleasant disposition.  They are much less likely to seduce a man than they are to take him by force, though the Turans do not seem to draw any distinction between the two behaviours."
 rank 1
 hp 22
 armor 0
@@ -3955,7 +3956,7 @@ newmonster "Daeva of Shooting Stars"
 copystats "Mazzik"
 spr1 "ee/spr/shah/stardaeva1.tga"
 spr2 "ee/spr/shah/stardaeva2.tga"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Daevas of Shooting Stars are demon sorcerers supposedly with the power to inflict suffering and misfortune.  They are generally considered make-believe."
 rank -1
 hp 24
 armor 0
@@ -3963,8 +3964,8 @@ mr 8
 mor 6
 str 5
 clearweapons
-spellweapon 8 2 # Unlife
-spellweapon 52 2 # Moon, could be astrology instead, but for now...
+spellweapon 46 2 # Maladies
+spellweapon 61 2 # Astrology
 meleeweapon 5 12 # Claw
 fear
 fireres 50
@@ -3974,7 +3975,7 @@ newmonster "Yata"
 copystats "Mazzik"
 spr1 "ee/spr/shah/yata1.tga"
 spr2 "ee/spr/shah/yata2.tga"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  Yatas are demon sorcerers of a straightforward though unpleasant sort."
 rank -1
 hp 24
 armor 0
@@ -3993,7 +3994,7 @@ newmonster "Daeva of Frost and Snow"
 copystats "Mazzik"
 spr1 "ee/spr/shah/fsdaeva1.tga"
 spr2 "ee/spr/shah/fsdaeva2.tga"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Daevas of Frost and Snow have a very literal title and as one might expect they use magics of death and ice, almost exclusively for destructive purposes."
 rank -1
 hp 24
 armor 0
@@ -4012,7 +4013,7 @@ newmonster "Pairika"
 copystats "Lilot"
 spr1 "ee/spr/shah/pairika1.tga"
 spr2 "ee/spr/shah/pairika2.tga"
-descr ""
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Pairikas are much like the Jahi, but they use horrible magics rather than brute force to achieve their ends."
 rank -1
 hp 20
 armor 0
@@ -4185,7 +4186,7 @@ allitemslots
 newclass
 setclassname "Shah"
 setmaincom "Shah"
-classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and use storm magic, while the Karapans venerate the Daevas and use blood magic.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^The Shah may align himself with one of two orders of magi.^The Athravans collect all sorts of gems to summon Yazatas.^The Karapans collect sacrifices to summon Daevas."
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many tribes and petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and use storm magic, while the Karapans venerate the Daevas and use blood magic.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^The Shah may align himself with one of two orders of magi.^The Athravans collect all sorts of gems to summon Yazatas.^The Karapans collect sacrifices to summon Daevas."
 hometerr 22 # Castle - may be revised at a later date
 addstartterr 18 # Village
 addstartterr 105 # coal mine
@@ -4235,5 +4236,6 @@ libraryrec
 addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
+
 
 

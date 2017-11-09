@@ -2,9 +2,11 @@ icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
 # For those wondering why I sometimes separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
 #
-#
-#
+# WARNING WARNING WARNING WARNING
+# I DID *NOT* REMEMBER TO UPLOAD THE LATEST CHANGES FROM HOME THIS MORNING
+# SO MANUALLY COMPARE THE TWO DIFFERENT VERSIONS WHEN YOU GET HOME
 # [NEW WEAPONS]
+#
 
 newweapon "Composite Bow"
 range 5
@@ -3034,7 +3036,7 @@ newritual "Summon Amesha Spenta"
 descr ""
 ritpow 52
 level 3
-cost 14 300
+cost 14 500
 addstring "c*Khshathra Vairya"
 addstring "c*Vohu Manah"
 addstring "c*Asha Vahishta"
@@ -3142,7 +3144,7 @@ newritual "Call Daevic Heptad"
 descr ""
 ritpow 53
 level 3
-cost 4 300
+cost 4 600
 summoning
 addstring "c*Akem Manah"
 addstring "c*Indra"
@@ -3152,13 +3154,13 @@ addstring "c*Taurvi"
 addstring "c*Zaurvi"
 
 newmonster "Shah"
-descr ""
+descr "The Turanic peoples are broadly divided into a number of tribal kingdoms.  The tribes are loosely organized and the leading elders and chiefs have little direct power, but each recognizes and heeds the authority of a single Shah.  A Shah usually rules over several tribes and takes a wife from the ruling caste of each, and many, particularly those who worship the Daevas, take numerous concubines from each tribe and from conquered peoples as well.  The Shah passes his title and power down to a favoured son, though it is not always the case that all his sons and all the subject tribes approve of his choice.  This usually results in a great deal of trouble and may be the reason why there is more than a single Shah to begin with.^^While most Shahs have many sons, few have many brothers.  The Shah himself is usually one of the fiercest warriors in the kingdom.  The Shah is clad in a suit of ornate enchanted armor passed down for many generations and seems to be warded against both fire and thunder.  The source of the armor is unknown as it protects against the magics used most commonly by both the Daevas and Yazatas."
 spr1 "ee/spr/shah/shah1.tga"
 spr2 "ee/spr/shah/shah2.tga"
 rank 0
 hp 18
-armor 3
-mr 6
+armor 4
+mr 8
 mor 7
 str 6
 rangedweapon 2 7 # Bow
@@ -3168,6 +3170,9 @@ meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Hoof
 battlefast
 human
+fireres 100
+shocres 100
+coldres 50
 leadership 2
 shield
 allitemslots
@@ -3178,7 +3183,7 @@ nametype
 #newmonster "Shahanshah"
 
 newmonster "Spahbed"
-descr ""
+descr "The Spahbed is a Turan general of high birth, though the Turan military hierarchy is very meritocratic.  While armed much like the High Lords of more civilized lands, the Spahbeds seem to be much more clever as they also carry bows and will fight like horse archers instead of knights.  The Turans seem to consider this behaviour wise but strangely enough it is also considered honorable.  The Turans reason that a leader that dies on the field of battle fails his army and his people.  Consequently there are a lot of nobleborn Turans which is probably why the position of Spahbed is based on merit.  Most nobleborn warriors join the armies as cataphracts instead."
 spr1 "ee/spr/shah/spah1.tga"
 spr2 "ee/spr/shah/spah2.tga"
 rank 0
@@ -3214,7 +3219,7 @@ fast
 fireres 100
 
 newmonster "Paighan"
-descr ""
+descr "The Turanic people is fierce and warlike.  While the appearance of the Paighan could seem to indicate otherwise, it should be noted that they are drawn directly out of the populace without any further training.  While cowardly and treated as fodder, the Paighan are as skilled as the common spearmen fielded by most warlords."
 spr1 "ee/spr/shah/paighan1.tga"
 spr2 "ee/spr/shah/paighan2.tga"
 rank 1
@@ -3229,15 +3234,15 @@ human
 shield
 allitemslots
 
-newmonster "Turan Spearman"
-descr ""
+newmonster "Turan Warrior"
+descr "The Turanic people is fierce and warlike.  While they have no dedicated military caste, even the common soldier is well-trained and equipped.  Before being brought into the army most have experienced and participated in the intertribal wars so common in Tur.  The common soldier of Tur resembles the legionary, but they prefer lighter shields and heavier blades."
 spr1 "ee/spr/shah/turinfantry1.tga"
 spr2 "ee/spr/shah/turinfantry2.tga"
 rank 1
 hp 6
 armor 1
 mr 4
-mor 4
+mor 5
 str 4
 rangedweapon 0 24  # Javelin
 meleeweapon 0 2 # Broadsword
@@ -3249,12 +3254,12 @@ allitemslots
 newmonster "Turan Archer"
 spr1 "ee/spr/shah/turarcher1.tga"
 spr2 "ee/spr/shah/turarcher2.tga"
-descr ""
+descr "The Turanic people is fierce and warlike.  While they have no dedicated military caste, even the common soldier is well-trained and equipped.  Before being brought into the army most have experienced and participated in the intertribal wars so common in Tur.  The archers of Tur strap a light shield to their left arm and carry shortswords.  While the shield is somewhat cumbersome, it helps protect them in archery duels and they are surprisingly competent in close quarters as well."
 rank 0
 hp 5
 armor 0
 mr 4
-mor 4
+mor 5
 str 4
 rangedweapon 0 7 # Bow
 meleeweapon 0 8 # Shortsword
@@ -3263,7 +3268,7 @@ shield
 allitemslots
 
 newmonster "Zhayedan"
-descr ""
+descr "The Zhayedan form the personal retinue of the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  They are trained from childhood and grow to be brave and stubborn in their service to the Shah.  While they are swordsmen, they also carry and use bows.  While defending a castle or stuck behind the rest of the troops, they will relentlessly pelt the enemy with arrows."
 spr1 "ee/spr/shah/zhayedan1.tga"
 spr2 "ee/spr/shah/zhayedan2.tga"
 rank 1
@@ -3281,7 +3286,7 @@ allitemslots
 
 
 newmonster "Iceclad Zhayedan"
-descr ""
+descr "The Zhayedan form the personal retinue of the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  They are trained from childhood and grow to be brave and stubborn in their service to the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  A Shah who aligns himself with the Yazatas may draw the attention of the Airyan Icecrafters.  Due to the loyalty of the Zhayedans they may then be given armaments of the same magical ice that the Airya use.  Their armour is very tough when the air is cold and their swords and arrows are light, swift, and impact with bursts of frost.  They are themselves perfectly warded against the cold."
 spr1 "ee/spr/shah/icezhayedan1.tga"
 spr2 "ee/spr/shah/icezhayedan2.tga"
 rank 1
@@ -3300,7 +3305,7 @@ coldres 100
 allitemslots
 
 newmonster "Turan Cavalryman"
-descr ""
+descr "The cavalry of Tur is much like the Barbarian cavalry of the northlands.  They are much less numerous, however, and seem to act as both lancers and horse archers.  Consequently they are not as good as fighting in the melee as proper cavalry and too expensive to make good archers.  They are very good at terrorizing poorly-defended provinces and, more generously, at defending remote settlements against the wildlife."
 spr1 "ee/spr/shah/turancav1.tga"
 spr2 "ee/spr/shah/turancav2.tga"
 rank 1
@@ -3319,14 +3324,14 @@ allitemslots
 nobootslots
 
 newmonster "Cataphract"
-descr ""
+descr "The Turanic cataphracts are nobleborn warriors with enough wealth to buy a horse and a heft amount of armor.  They closely resemble the knights of more civilized lands but are not quite so strong and brave and their armor is lighter.  They seem to be aware of this, as they prefer to soften up their enemies with bow and arrow before closing in for a more decisive engagement."
 spr1 "ee/spr/shah/cataphract1.tga"
 spr2 "ee/spr/shah/cataphract2.tga"
 rank 1
 hp 12
 armor 2
 mr 4
-mor 5
+mor 6
 str 5
 rangedweapon 0 7 # Bow
 meleeweaponspec 12 13 # Lance
@@ -3339,16 +3344,16 @@ allitemslots
 nobootslots
 
 newmonster "Savaran Guard"
-descr ""
+descr "The Savaran Guard is a military unit that has only recently appeared within the armies of the Shah.  They are the mounted personal guard of the Shah and ride Nisean warhorses first bred into being by the Daevas and now cared for by the Dastur priest-mages."
 spr1 "ee/spr/shah/savguard1.tga"
 spr2 "ee/spr/shah/savguard2.tga"
 rank 1
 hp 15
-armor 2
+armor 3
 mr 5
-mor 6
+mor 7
 str 5
-rangedweapon 0 7 # Bow
+rangedweapon 1 7 # Bow
 meleeweaponspec 12 13 # Lance
 meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Strong hoof
@@ -3359,16 +3364,17 @@ fast
 allitemslots
 nobootslots
 
-newmonster "War Elephant"
-copystats "Elephant"
-descr ""
+newmonster "Turan War Elephant"
+copystats "War Elephant"
 spr1 "ee/spr/shah/warelephant1.tga"
 spr2 "ee/spr/shah/warelephant2.tga"
+descr "The Elephant is a friendly beast, and Elephants are often tamed by humans.  They are sometimes used in warfare, and particularly by the Turans.  They are said to have discovered and cultivated a species of exotic nut known as the peanut, which the Elephants adore.  The peanut farms are a vital asset to the Turan warmachine and so their locations are well-guarded secrets.  Entire villages are founded around these and entire generations live and die without ever seeing the outside world, dedicated to the care of the peanuts.  This is probably to their benefit since the outside world is very dangerous."
+huge
 
 newmonster "Athravan"
 spr1 "ee/spr/shah/athravan1.tga"
 spr2 "ee/spr/shah/athravan2.tga"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The order of the Athravans worship the Amesha Spentas and maintain and revere sacred and cleansing fires and still pools of water.  They use storm magic as well as pyromancy.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue.  The Athravans collect gems which are used in sacred rites and also to ravens.  Ravens act as psychopomps in their religion, where the treatment of the dead is quite ghastly.  The dead are left exposed in tall, hollow towers from where they are quite literally taken by a variety of avian creatures.  Cremation is considered sacriligeous and in these days the Turans no longer have any neighbours which practice it."
 rank -1
 hp 5
 armor 0
@@ -3389,7 +3395,7 @@ newmonster "Zaotar"
 copystats "Athravan"
 spr1 "ee/spr/shah/zaotar1.tga"
 spr2 "ee/spr/shah/zaotar2.tga"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The Zaotar is a higher-ranking Keeper and thus more powerful, as is right and proper.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue.  They are known to wear funny hats by custom, as well.  The Zaotar can use gems in sacred rites to create wards, enchantments and to summon the lesser divine servants of the Spentas."
 hp 6
 mr 8
 mor 6
@@ -3404,7 +3410,7 @@ newmonster "Grand Zaotar"
 copystats "Zaotar"
 spr1 "ee/spr/shah/grandzaotar1.tga"
 spr2 "ee/spr/shah/grandzaotar2.tga"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The Grand Zaotars are high-priests whose hats are partly made of gold, which absolutely does not succeed in making them look any less ridiculous.  They use storm magic as well as pyromancy.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue."
 hp 7
 mr 9
 mor 7
@@ -3418,7 +3424,7 @@ gathergems
 
 #
 newmonster "Karapan"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  The Karapans serve and sometimes revere the Daevas, in whose name they practice blood sacrifice.  While most societies which practice blood sacrifice do so in a civilized fashion, the Karapans throw their victims into large and terrible braziers.  Turan tribes who worship the Daevas also cremate their dead, which is a common point of contention with those tribes who worship the Spentas and Ahuras."
 spr1 "ee/spr/shah/karapan1.tga"
 spr2 "ee/spr/shah/karapan2.tga"
 rank -1
@@ -3441,7 +3447,7 @@ newmonster "Dastur"
 copystats "Kaprapan"
 spr1 "ee/spr/shah/dastur1.tga"
 spr2 "ee/spr/shah/dastur2.tga"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  Dasturs are known for their arrogant demeanours, their funny hats, and their tendency to set anyone who mocks them on fire."
 hp 7
 mr 8
 mor 7
@@ -3454,7 +3460,7 @@ mastery 1
 
 newmonster "Grand Dastur"
 copystats "Dastur"
-descr ""
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  Dasturs are known for their arrogant demeanours, their funny hats, and their tendency to set anyone who mocks them on fire.  The Grand Dastur has a hat partly made of gold, which only makes it look more ridiculous.  The considerable power and malice of the Grand Dasturs means that this is rarely mentioned in their vicinity."
 spr1 "ee/spr/shah/granddastur1.tga"
 spr2 "ee/spr/shah/granddastur2.tga"
 hp 8
@@ -4165,7 +4171,7 @@ reclimiter "-Shah"
 addcomrec "Spahbed"
 addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
 addunitrec "Turan Archer" 100 5 50 0 5
-addunitrec "Turan Spearman" 100 5 50 0 5
+addunitrec "Turan Warrior" 100 5 50 0 5
 addunitrec "Zhayedan" 100 5 50 0 15
 addunitrec "Turan Cavalryman" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20

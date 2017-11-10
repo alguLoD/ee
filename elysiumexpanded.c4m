@@ -133,6 +133,9 @@ rank 0
 hp 12
 mor 5
 
+# Armored mercenary javelin/spearman.
+#newmonster "Thyreophoroi"
+
 # Turtle tribe?
 newmonster "Turtle Warrior"
 spr1 "ee/spr/i/lmman1.tga"
@@ -4252,8 +4255,8 @@ addstartunits "Turan Warrior" 8
 addstartunits "Turan Archer" 5
 addstartcom "Spahbed"
 addstartunits "Turan Cavalryman" 4
-recherochance
-recasschance
+recherochance 1
+recasschance 2
 libbonusdescr "wizards"
 templebonusdescr "mage-priests"
 nostdtroops
@@ -4296,5 +4299,246 @@ addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
+# NEW, TODO DO NOT MERGE WITH THE OFFLINE FILES YET
 
+# Ritpow 55, Wizards
+newritpow
+
+newritual "Study Lesser Rituals"
+
+newritual "Study Minor Spells"
+
+newritual "Scry"
+
+newritual "Bind Familiar"
+
+newritual "Icarian Wings"
+
+newritual "Study Rituals"
+
+newritual "Study Spells"
+
+newritual "Enchanted Gate"
+
+newritual "Bind Warden"
+
+newritual "Craft Guardian"
+
+newritual "Study Grand Rituals"
+
+newritual "Study Greater Spells"
+
+#newritual "Tower of Power"
+
+#newritual "Create Portal"
+
+newmonster "Apprentice Wizard"
+copystats "Alchemist"
+spr1
+spr2
+descr ""
+rank -1
+hp 5
+armor 0
+mr 7
+mor 4
+str 4
+clearweapons
+spellweapon 29 1
+meleeweapon
+power 55 1
+allitemslots
+human
+mastery 1
+startitem "Staff of the Magi"
+
+newmonster "Wizard"
+copystats "Magus"
+spr1
+spr2
+descr ""
+rank -1
+hp 6
+armor 0
+mr 8
+mor 5
+str 4
+clearweapons
+spellweapon 29 2
+meleeweapon
+power 55 2
+allitemslots
+human
+mastery 1
+startitem "Staff of the Magi"
+
+newmonster "Archwizard"
+spr1
+spr2
+descr ""
+rank -1
+hp 7
+armor 0
+mr 10
+mor 6
+str 4
+spellweapon 29 3
+meleeweapon
+power 55 3
+allitemslots
+human
+unaging
+startitem "Staff of the Magi"
+
+newmonster "Warden"
+spr1
+spr2
+descr ""
+rank
+hp 
+armor
+mr
+mor
+str
+rangedweapon
+meleeweapon
+human
+allitemslots
+
+newmonster "Scholar"
+copystats "Alchemist"
+spr1
+spr2
+descr ""
+rank -1
+hp 5
+armor 0
+mr 6
+mor 4
+str 4
+clearweapons
+spellweapon 44 1
+meleeweapon
+allitemslots
+human
+
+newmonster "Sage"
+spr1
+spr2
+descr ""
+rank -1
+hp 6
+armor 0
+mr 8
+mor 5
+str 4
+spellweapon 44 2
+meleeweapon
+allitemslots
+human
+
+newmonster "Cardace"
+spr1
+spr2
+descr ""
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+allitemslots
+human
+
+newmonster "Hoplite"
+spr1
+spr2
+descr ""
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+allitemslots
+human
+
+#TODO Illusions/Phantasms
+#newmonster "Hoplite Illusion"
+#newmonster "Hoplite Phantasm"
+
+newmonster "Myrmidon"
+spr1
+spr2
+descr ""
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+allitemslots
+human
+
+#newmonster "Myrmidon Illusion"
+#newmonster "Myrmidon Phantasm"
+
+newmonster "Icarid"
+spr1
+spr2
+descr ""
+rank
+hp
+armor
+mr
+mor
+str
+meleeweapon
+allitemslots
+human
+
+#newmonster "Icarid Illusion"
+#newmonster "Icarid Phantasm"
+
+newclass
+setclassname "Wizard"
+maincom "Wizard"
+classdescr
+hometerr # Academy, or variant /w citadel if Academy isn't a citadel (I don't remember right now)
+addstartterr
+addstartunits
+addstartunits
+recherochance 1
+recasschance 2
+libbonusdescr "apprentices and wizard mercenaries"
+nostdtroops
+addcomrec "Apprentice Wizard" 4
+libraryrec
+addcomrec "Scholar" 4
+libraryrec
+addcomrec "Alchemist" 3
+libraryrec
+addunitrec "Cardace"
+addunitrec "Slinger"
+addunitrec "Hoplite"
+addunitrec "Myrmidon"
+addmercrec "Scout"
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 

@@ -1,48 +1,245 @@
 icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
+# For those wondering why I sometimes separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
+#
+# WARNING WARNING WARNING WARNING
+# I DID *NOT* REMEMBER TO UPLOAD THE LATEST CHANGES FROM HOME THIS MORNING
+# SO MANUALLY COMPARE THE TWO DIFFERENT VERSIONS WHEN YOU GET HOME
 # 
-# Other: Recoffers for mercenary light cavalry (and captains) with javelins and spears for most human classes.
+# [RITPOWERS]
+# 48: Mastersmith, Navigator, Icecrafter
+# 49: Sheol
+# 50: Rephaite
+# 51: Nephil, Ba'al
+# 52: Goblins
+# 53: Athravan
+# 54: Dastur
 #
-# Warrior Mage: New generic cavalry mage. Frontline combat caster.
-# (Baron) Master Smith: low reqfreqency. Can upgrade knights for gems. Efficiency is much lower than Runesmith.
-# (Baron/Senator/Other?) Artificer: low reqfreqency. can make a small variety of magic trinkets (i.e. make chests that come with items much like how other mods have done it), mostly useful for casters. Can only perform the ritual of mastery in libraries? Resource types used?
-# War Elephants: low reqfreqency option in Desert Palaces?
+# [NEW WEAPONS]
 #
-#
-# For those wondering why I separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
-#
+# TODO Teaser image
+
+newweapon "Composite Bow"
+range 5
+init 3
+dmgtype 3 # Piercing
+dmg 4
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+# Used by Crystal Amazons, may be used by other elite non-longbow archers in the future.
+
+newweapon "Great Bow"
+range 7
+init 1
+dmgtype 3 # Piercing
+dmg 5 # Will usually do more, but that's done through unit stats.
+mundane
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+# Used by Gibbor Archers.
+
+#TODO next effect
+newweapon "Frost Bow"
+range 5
+init 2
+dmgtype 7 # Piercing
+dmg 3
+arrow
+lob
+rangepen
+flymode 1 # Arrow
+flylook 0 # Arrow
+flysound 14  # Arrow
+sound -1  # No sound on impact
+next
+nextdmg 4
+# Used by Kavi Archers, Iceclad Zhayedans
+
+newweapon "Frost Arrow"
+dmgtype 5
+sound -1
+
+newweapon "Ice Lance"
+init 7
+dmgtype 7 # Magic.
+dmg 4
+sound 1
+# Used by Iceclads
+
+newweapon "Magic Lance Charge"
+init 6
+dmgtype 7 # Magic.
+oneshot
+sound 84
+# Used by Iceclads, Daevas.
+
+newweapon "Spectral Javelin"
+range 3
+init 1
+dmgtype 7 # Magic.
+oneshot
+arrow
+flymode 1
+flylook 1
+flysound 19
+sound -1
+# Used by Spectral Ba'alites.
+
+newweapon "Project Fear"
+trgrank 9
+range 3
+init 8
+dmgtype 8
+dmg 4
+hardmr
+an
+look 5
+sound 22
+# Used by Daevas
+
 newmonster "Mercenary Cavalry"
-spr1 "ee/sprites/merccav1.tga"
-spr2 "ee/sprites/merccav2.tga"
+spr1 "ee/spr/i/merccav1.tga"
+spr2 "ee/spr/i/merccav2.tga"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 rank 1
 hp 10
 armor 0
 mor 4
 mr 4
 str 4
-rangedweapon 0 24 # Javelin
-meleeweapon 0 4 # Spear
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
 fast
 human
 shield
 allitemslots
 nobootslots
 
-selectmonster "Mercenary Cavalry"
-descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
-
 newmonster "Mercenary Captain"
 copystats "Mercenary Cavalry"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry.  Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 rank 0
 hp 12
 mor 5
 
-selectmonster "Mercenary Captain"
-descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
+# Turtle tribe?
+newmonster "Turtle Warrior"
+spr1 "ee/spr/i/lmman1.tga"
+spr2 "ee/spr/i/lmman2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
+human # If Gibbor count, these are close enough.
+shield
+allitemslots
+nobootslots
+watershape 1
+
+newmonster "Turtle Warrior"
+spr1 "ee/spr/i/wmman1.tga"
+spr2 "ee/spr/i/wmman2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+meleeweapon 0 4 # Spear.
+human
+shield
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
+newmonster "Mermage"
+spr1 "ee/spr/i/lmmage1.tga"
+spr2 "ee/spr/i/lmmage2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
+rank -1
+hp 5
+armor 0
+mor 4
+mr 7
+str 4
+spellweapon 4 1 # Hydromancy
+meleeweapon 0 0 # Fist.
+allitemslots
+nobootslots
+randomitem 25
+watershape 1
+
+newmonster "Mermage"
+spr1 "ee/spr/i/wmmage1.tga"
+spr2 "ee/spr/i/wmmage2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  Some of them even study magic in our academies, where they display an odd talent for hydromancy, in contrast to ordinary humans who possess no particular acumen for storm magic."
+rank -1
+hp 5
+armor 0
+mor 4
+mr 7
+str 4
+spellweapon 4 1 # Hydromancy.
+meleeweapon 0 0 # Fist.
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
+newmonster "Turtle Chief"
+spr1 "ee/spr/i/lmcap1.tga"
+spr2 "ee/spr/i/lmcap2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+rank 0
+hp 8
+armor 1
+mor 5
+mr 5
+str 4
+meleeweapon 0 26 # Trident.
+allitemslots
+nobootslots
+water
+watershape 1
+
+newmonster "Turtle Chief"
+spr1 "ee/spr/i/wmcap1.tga"
+spr2 "ee/spr/i/wmcap2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+rank 0
+hp 8
+armor 1
+mor 5
+mr 5
+str 4
+meleeweapon 0 26 # Trident.
+battlefast
+allitemslots
+nobootslots
+water
+landshape -1
 
 newmonster "Warrior Mage"
-spr1 "ee/sprites/warmage1.tga"
-spr2 "ee/sprites/warmage2.tga"
+spr1 "ee/spr/i/warmage1.tga"
+spr2 "ee/spr/i/warmage2.tga"
 rank 1
 rearpos # (maybe?)
 hp 12
@@ -50,8 +247,8 @@ armor 2
 mor 5
 mr 7
 str 4
-spellweaponbonus 23 1 # Iron Arcana
-meleeweapon 1 474 # Magic Sword
+spellweaponbonus 23 1 # Iron Arcana.
+meleeweapon 1 474 # Magic Sword.
 battlefast
 human
 shield
@@ -62,161 +259,308 @@ randomitem 50
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
 
-# [BARON]
-# Mercenary cavalry access.
-# Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
-# Keep the Master Smith idea.
-#
-# ALL KNIGHT NAMES PLACEHOLDERS
-newmonster "Fire Knight"
-copystats "Knight"
-spr1 "ee/sprites/fireknight1.tga"
-spr2 "ee/sprites/fireknight2.tga"
-hp 13
-mr 5
-fireres 50
-
-selectmonster "Fire Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
-
-newmonster "Earth Knight"
-copystats "Knight"
-spr1 "ee/sprites/earthknight1.tga"
-spr2 "ee/sprites/earthknight2.tga"
-hp 15
-mr 6
-armor 4
-
-selectmonster "Earth Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
-
-newmonster "Air Knight"
-copystats "Knight"
-spr1 "ee/sprites/airknight1.tga"
-spr2 "ee/sprites/airknight2.tga"
-hp 13
-mr 5
-shockres 50
-
-selectmonster "Air Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
-
-newmonster "Frost Knight"
-copystats "Knight"
-spr1 "ee/sprites/waterknight1.tga"
-spr2 "ee/sprites/waterknight2.tga"
-hp 13
-mr 5
-coldres 50
-
-selectmonster "Frost Knight"
-descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
-
-# Dummy pseudocode: I considered giving the upgraded knights magic swords as well. Since I'm lazy and will probably return to that idea at some point...
-#clearweapons
-#meleeweaponspec 12 13
-#meleeweapon 1 474
-#meleeweaponbonus 4 95
-#
-#newmonster "Unicorn Knight of Fire"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Frost"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Air"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
-#
-#newmonster "Unicorn Knight of Earth"
-#copystats "Unicorn Knight"
-#spr1
-#spr2
+# Ritpow 48, Master Smith, Icecrafter, Chartmaker
 
 newritpow
 
 newritual "Forge Armaments of Flame"
 ritpow 48
 level 1
+levelreq 1
 cost 0 15
-cost 7 20
+cost 7 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Fire"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Fire"
 addstring "Knight"
 addstring "Fire Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Fire"
-
-selectritual "Forge Armaments of Flame"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Frost"
 ritpow 48
 level 1
+levelreq 1
 cost 0 15
-cost 8 20
+cost 8 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Frost"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Frost"
 addstring "Knight"
 addstring "Frost Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Frost"
-
-selectritual "Forge Armaments of Frost"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Air"
 ritpow 48
 level 1
+levelreq 1
 cost 0 15
-cost 9 20
+cost 9 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Air"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Air"
 addstring "Knight"
 addstring "Air Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Air"
-
-selectritual "Forge Armaments of Air"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 newritual "Forge Armaments of Earth"
 ritpow 48
 level 1
+levelreq 1
 cost 0 15
-cost 10 20
+cost 10 30
 soundfx 57
 promotion 3
 terr -9
 apcost 2
 free
+#addstring "High Lord"
+#addstring "High Lord of Earth"
+addstring "Unicorn Knight"
+addstring "Unicorn Knight of Earth"
 addstring "Knight"
 addstring "Earth Knight"
-#addstring "Unicorn Knight"
-#addstring "Unicorn Knight of Earth"
 
+selectritual "Forge Armaments of Flame"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of fire-resistant armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+selectritual "Forge Armaments of Frost"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of frost-resistant armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+
+selectritual "Forge Armaments of Air"
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of thunder-warded armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
 selectritual "Forge Armaments of Earth"
-descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
+descr "With a month's hard labour and at considerable expense, the Master Smith will produce three full suits of runic armor and magic swords for the use of his patron's vassals.  The process requires constant attention and involves the use of a large and specially equipped forge.  Thus it cannot be performed on the move or in the wild."
 
- #SPRITE PLACEHOLDER
+newritual "Trade Winds"
+ritpow 48
+level 2
+levelreq 2
+cost 0 10 # Gold
+soundfx 57
+randnewloc ? # Port
+scryloc 20
+
+newritual "Sail to Port"
+ritpow 48
+level 2
+levelreq 2
+cost 0 50 # Gold
+cost 1 5 # Iron
+terr # Port
+chooseterrloc # Port
+teleportloc
+soundfx 23
+closewin
+
+selectritual "Trade Winds"
+descr "The caster will use a specialized bit of air magic to chart a safe route to one of Elysium's ports. This will later permit sailors to travel along the route, including the caster."
+
+selectritual "Sail to Port"
+descr "A fleet is organized and sailed along a well-charter and reasonably safe sea route. This is an expensive and time-consuming endeavour."
+
+newritual "Icecrafting"
+descr "Weapons and armor of magical ice are normally only available to the Airyans themselves, but exceptions can be made for the most loyal followers of a devout Shah. With this the Icecrafter will create full sets of armaments, including a sword and numerous arrows, for up to four Zhayedans."
+ritpow 48
+level 3
+levelreq 3
+cost 13 40 # Gems
+soundfx 57
+promotion 4
+terr -9 # Walled citadels only.
+apcost 2
+free
+addstring "Zhayedan"
+addstring "Iceclad Zhayedan"
+
+newmonster "Chartmaker"
+copystats "Court Mage"
+spr1 "ee/spr/i/chrt1.tga"
+spr1 "ee/spr/i/chrt2.tga"
+descr "The Chartmaker is a junior member of the Navigators' Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel."
+rank -1
+hp 5
+armor 0
+mor 4
+mr 6
+str 4
+clearweapons
+spellweapon 5 1 # Storm
+meleeweapon
+power 48 2
+human
+allitemslots
+mastery 1
+
+newmonster "Navigator"
+copystats "Magus"
+spr1 "ee/spr/i/nav1.tga"
+spr2 "ee/spr/i/nav2.tga"
+descr "The Navigator is a journeyman of the Navigators' Guild. While the guild has lost much since arriving in Elysium and now only practices storm magic, it is still highly respected and its services essential for safe maritime trade and travel.  Fully-fledged Navigators are quite powerful and more than capable of serving their contractor in battle should the need arise."
+rank -1
+hp 6
+armor 0
+mor 4
+mr 7
+str 4
+clearweapons
+spellweapon 5 2 # Storm
+meleeweapon
+power 48 2
+human
+allitemslots
+mastery 1
+
+newmonster "Stormcaller"
+spr1 "ee/spr/i/strm1.tga"
+spr2 "ee/spr/i/strm2.tga"
+descr "The highest-ranking members of the Navigators' Guild are known as Stormcallers. They are very powerful and this is really quite curious, as storm magic is not very helpful should the ship be attacked from underneath."
+rank -1
+hp 7
+armor 0
+mor 4
+mr 8
+str 4
+clearweapons
+spellweapon 5 3 # Storm
+meleeweapon
+power 48 2
+human
+allitemslots
+randomrare 10
+randomitem 25
+
+# [BARON]
+# Been overcomplicating the knightly order thing. I think they should operate largely autonomously - i.e. you get more knights and stuff than you would otherwise and in more places but they have the Stupid tag and you can't use their Chapter Stronghold as a citadel anymore.
+#
+# ALL KNIGHT NAMES PLACEHOLDERS
+newmonster "Fire Knight"
+copystats "Knight"
+spr1 "ee/spr/bar/fireknight1.tga"
+spr2 "ee/spr/bar/fireknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 13
+mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+fireres 50
+
+newmonster "Earth Knight"
+copystats "Knight"
+spr1 "ee/spr/bar/earthknight1.tga"
+spr2 "ee/spr/bar/earthknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 15
+mr 6
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+armor 4
+
+newmonster "Air Knight"
+copystats "Knight"
+spr1 "ee/spr/bar/airknight1.tga"
+spr2 "ee/spr/bar/airknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 13
+mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+shockres 50
+
+newmonster "Frost Knight"
+copystats "Knight"
+spr1 "ee/spr/bar/waterknight1.tga"
+spr2 "ee/spr/bar/waterknight2.tga"
+descr "Knights are elite troops, higher in station and far better trained than normal soldiers.  They are of noble birth or at least ennobled land owners, and of sufficient wealth to provide themselves with the finest armor and steeds.  The abundance of unclaimed land in Elysium makes it possible for the Baron to create many new nobles who in turn will provide him with knights and soldiers.  This knight has been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 13
+mr 5
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 4 95 # Hoof
+coldres 50
+
+newmonster "Unicorn Knight of Fire"
+copystats "Unicorn Knight"
+spr1 "ee/spr/bar/ufk1.tga"
+spr2 "ee/spr/bar/ufk2.tga"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 16
+mr 7
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
+meleeweaponbonus 4 95 # Hoof
+fireres 50
+
+newmonster "Unicorn Knight of Frost"
+copystats "Unicorn Knight"
+spr1 "ee/spr/bar/uwk1.tga"
+spr2 "ee/spr/bar/uwk2.tga"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.This knight has also been provided with frost-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 16
+mr 7
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
+meleeweaponbonus 4 95 # Hoof
+coldres 50
+
+newmonster "Unicorn Knight of Air"
+copystats "Unicorn Knight"
+spr1 "ee/spr/bar/uak1.tga"
+spr2 "ee/spr/bar/uak2.tga"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with thunder-warded armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 16
+mr 7
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
+meleeweaponbonus 4 95 # Hoof
+shockres 50
+
+newmonster "Unicorn Knight of Earth"
+copystats "Unicorn Knight"
+spr1 "ee/spr/bar/uek1.tga"
+spr2 "ee/spr/bar/uek2.tga"
+descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with runic armor forged by a master smith at the Baron's behest, and also at his expense."
+hp 19
+armor 4
+mr 8
+clearweapons
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 474 # Magic Sword
+meleeweaponbonus 7 519 # Alicorn
+meleeweaponbonus 4 95 # Hoof
+
+# SPRITE PLACEHOLDER
 newmonster "Master Smith"
-spr1 "ee/sprites/msmith1.tga"
-spr2 "ee/sprites/msmith2.tga"
+spr1 "ee/spr/bar/msmith1.tga"
+spr2 "ee/spr/bar/msmith2.tga"
 rank -1
 hp 6
 armor 0
@@ -233,82 +577,116 @@ selectmonster "Master Smith"
 descr "Master smiths have mastered the craft of forging enchanted armour, which they are willing to do at considerable expense. They are proud and only provide their services to knights. Master smiths are stereotyped as stout and gruff, and due to their skills it is a widespread belief that they all have dwarven blood. This is obviously impossible to anyone who is familiar with dwarven reproduction and who consequently experiences considerable consternation when this myth is mentioned in their vicinity."
 
 selectclass 1
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Master Smith" 3 60 20 0
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addcomrec "Master Smith" 3 1 80 20 0
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [NECROMANCER]
 selectclass 2
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # ?
 #selectritual "Raise Legion
-#addstring "(-27)c*? & 5d6*Fossil Warrior"
-# setvar # pay no attention to this move along
+#addstring "(-27)c*Fossil Guard? Fossilized Adon? Seren? & 5d6*Fossil Warrior"
+# setvar ??? 1 # pay no attention to this move along
+#
+#
 # [DEMONOLOGIST]
 selectclass 3
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 selectmonster "Bloodsworn"
-clearmove
+descr "Bloodsworn are humans who have sold their souls and now serve the Infernal forces.  They have been given great strength, but their soul is lost forever.  The Infernal Lords typically employ them as guards."
 fireres 50
 coldres 50
 ctrlchance 100
 infwander 6
 
+# Mod most/all summoning rituals to have a rebate in the home citadel, slightly increase base cost to compensate?
 #
 # [WITCH]
 selectclass 4
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
+selectmonster "Swamp Ghost"
+unaging
 
 #
 # [HIGH PRIESTESS]
-
-#selectmonster "Nephil"
-#ritpow 8 4
-#
-#selectmonster "God"
-#ritpow 8 5
-#
 selectclass 5
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-# Undecided on whether Rephaite lords should enable the recruitment of Rephaites or whether I should give them a new ritpow with rituals that are fort-only, high AP and cost gold plus sacrifices. For now implemented as rituals.
-#addunitrec "Gibbor"
-#reclimiter "+Anointed Priestess"
-#addunitrec "Anakite"
-#reclimiter "+Adon"
-#addcomrec "Anakite Captain"
-#reclimiter "+Adon"
-#addunitrec "Rephaite"
-#reclimiter "+Melqart"
-#addcomrec "Emite"
-#reclimiter "+Zamzummite"
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 #
-#newmonster "Belus"
-#newmonster "Gibbor Scout"
-#newmonster "Gibbor Archer"
-#newmonster "Qedesim"
-#newmonster "Emite"
-#newmonster "Anakite Elder"
-#newmonster "Anakite Sage"
-#newmonster "Kohen"
-#newmonster "Dawn Guard"
-#newmonster "Fossil Warrior"
 
 selectritual "Lesser Ceremony to Baal"
 clearritspec
 level 9
 nostart
 
-newritual "Lesser Ceremony of Baal"
+newritual "Lesser Ceremony of Ba'al"
 ritpow 8 # Baalite Rituals
 level 1
+nexttoo
 cost 4 20 # Sacrifices
 terr 117 # Desert
 noundead
@@ -316,30 +694,46 @@ summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
-selectritual "Lesser Ceremony of Baal"
+#TODO test if this actually works in the Temple of Ba'al
+newritual "Lesser Temple Ceremony"
+ritpow 8 # Baalite Rituals
+level 1
+nostart
+cost 4 20 # Sacrifices
+terr -2 # Temples
+noundead
+summoning
+addstring "1d4+2*Mazzik"
+addstring "1d2*Se'ir"
+
+selectritual "Lesser Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
+
+selectritual "Lesser Temple Ceremony"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
 
 selectritual "Lesser Blood Feast"
 clearritspec
 level 9
 nostart
 
-newritual "Common Blood Feast"
-ritpow 8 # Baalite
-level 1
-cost 4 30 # Sacrifices
-terr -29 # Hamlets and up.
-noundead
-sum0chance 75
-summoning
-destroyterr 100
-addstring "c*Anakite Captain & 1d2+1*Anakite"
+# Blood Feasts level 2+ from now on?
+#newritual "Common Blood Feast"
+#ritpow 8 # Ba'alite
+#level 1
+#cost 4 30 # Sacrifices
+#terr -29 # Hamlets and up.
+#noundead
+#sum0chance 75
+#summoning
+#destroyterr 100
+#addstring "c*Anakite Captain & 1d2+1*Anakite"
 #addstring "c*Emite"
+#
+#selectritual "Common Blood Feast"
+#descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
 
-selectritual "Common Blood Feast"
-descr "By sacrificing a few blood slaves in a hamlet the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high rank to partake in the feast.  The entire settlement will be destroyed in the blood feast."
-
-newritual "Summon Creatures of Baal"
+newritual "Summon Creatures of Ba'al"
 ritpow 8 # Baalite Rituals
 level 1
 cost 4 10 # Sacrifices
@@ -349,23 +743,26 @@ summoning
 addstring "Large Spider Familiar"
 addstring "1d4*Large Spider"
 addstring "2d5*Small Spider"
+addstring "(-26)2d5-2*Scorpion"
+addstring "(-26)1d4-1*Giant Scorpion"
 addstring "(-27)2d5*Scorpion"
 addstring "(-27)1d4*Giant Scorpion"
 addstring "(-27)1*Scorpion Beast"
 
-selectritual "Summon Creatures of Baal"
-descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are only found in the south."
+selectritual "Summon Creatures of Ba'al"
+descr "The Priestess performs a blood sacrifice and calls out to the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are uncommon outside of the south."
 
 selectritual "Ceremony to Baal"
 clearritspec
 level 9
 nostart
 
-newritual "Ceremony of Baal"
+newritual "Ceremony of Ba'al"
 ritpow 8 # Baalite Rituals
 level 2
 cost 4 75 # Sacrifices
 terr 117 # Deserts only
+nexttoo
 noundead
 sum0chance 15
 sum1chance 15
@@ -376,10 +773,29 @@ addstring "2d3*Se'ir"
 addstring "1d2*Shed"
 addstring "1d3*Lilot"
 
-selectritual "Ceremony of Baal"
+newritual "Temple Ceremony of Ba'al"
+ritpow 8
+level 2
+nostart
+cost 4 75
+terr -2 # Temples
+noundead
+sum0chance 15
+sum1chance 15
+summoning
+addstring "1d2+1*Se'ir & 3d4*Mazzik"
+addstring "Lilot & 3d4*Mazzik"
+addstring "2d3*Se'ir"
+addstring "1d2*Shed"
+addstring "1d3*Lilot"
+
+selectritual "Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
 
-newritual "Summon Greater Creatures of Baal"
+selectritual "Ceremony of Ba'al"
+descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some of Baal's demonic minions.  Usually called out of the wastes, they can also be summoned directly from Ba'al's realm into a temple."
+
+newritual "Summon Greater Creatures of Ba'al"
 ritpow 8 # Baalite
 level 2
 cost 4 50 # Sacrifices
@@ -390,15 +806,15 @@ addstring "2d6+2*Large Spider"
 addstring "(-27)2d3*Scorpion Beast"
 addstring "(-27)1d3*Scorpion Beast & 3d3*Giant Scorpion"
 
-selectritual "Summon Greater Creatures of Baal"
-descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but scorpions are found only in the south."
+selectritual "Summon Greater Creatures of Ba'al"
+descr "The Priestess performs a blood sacrifice and calls out to the most monstrous of the spiders and scorpions blessed by Baal in ancient times.  Spiders may be summoned anywhere, but the huge scorpions drawn by this ritual are found only in the south."
 
 selectritual "Grand Ceremony to Baal"
 clearritspec
 level 9
 nostart
 
-newritual "Grand Ceremony of Baal"
+newritual "Grand Ceremony of Ba'al"
 ritpow 8 # Baalite
 level 3
 cost 4 100 # Sacrifices
@@ -407,9 +823,10 @@ summoning
 addstring "Sirrush"
 addstring "c*Manticore"
 addstring "(117)c*Scorpion Man"
+addstring "(117)1d2+1*Shed & 2d3*Se'ir"
 
-selectritual "Grand Ceremony of Baal"
-descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions."
+selectritual "Grand Ceremony of Ba'al"
+descr "The Priestess performs a large blood sacrifice to Baal and in return she will be granted command over one of Baal's more powerful minions.  Some of them are found only in deserts, however."
 
 selectritual "Blood Feast"
 clearritspec
@@ -417,19 +834,35 @@ level 9
 nostart
 
 newritual "Great Blood Feast"
-ritpow 8 # Baalite
+ritpow 8 # Ba'alite
 level 2
 cost 4 100 # Sacrifices
 terr -32 # Village or larger
 noundead
-sum0chance 75
+nexttoo
 summoning
 destroyterr 100
-addstring "c*Adon & 2d3+1*Anakite"
-addstring "c*Zamzummite"
+addstring "c*Adon & 2*Dawn Guard & 1d3+1*Anakite"
+
+newritual "Bloody Banquet"
+ritpow 8
+level 2
+nostart
+cost 0 20 # Gold
+cost 4 30 # Sacrifices
+apcost 2
+terr -9 # Fortified citadels
+noundead 
+summoning
+addstring "c*Anakite Captain"
+addstring "1d3+1*Gibbor"
+addstring "Gibbor Scout"
 
 selectritual "Great Blood Feast"
 descr "By sacrificing a few blood slaves in a village the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a giant of high status to partake in the feast.  The entire settlement will be destroyed in the blood feast."
+
+selectritual "Bloody Banquet"
+descr "The High Priestess invites a small number of giants to feast with her.  The giants have monstrous apetites and will devour several virgin sacrifices each, but eventually they will swear their allegiance."
 
 selectritual "Grand Blood Feast"
 clearritspec
@@ -438,17 +871,16 @@ level 9
 
 # I've considered setting Royal Blood Feast to being city-only and turning the city into a ruin or into a haunted city (and the same for the Banquet to the Dead) and having reqterr city for the High Priestess, but for now...
 newritual "Royal Blood Feast"
-ritpow 8 # Baalite
+ritpow 8 # Ba'alite
 level 3
 cost 4 150 # Sacrifices
 terr -28 # Towns and cities.
 noundead
-sum0chance 80
+sum0chance 75
 summoning
 destroyterr 100
 addstring "c*Melqart & 2d4*Rephaite"
-addstring "c*Nephil"
-#addstring "c*Belus & 2d4*Rephaite"
+addstring "c*Belus & 1d4+1*Rephaite"
 
 selectritual "Royal Blood Feast"
 descr "By sacrificing a few blood slaves in a town the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a Rephaite lord and his retinue to partake in the feast.  The entire settlement will be destroyed in the blood feast."
@@ -456,18 +888,6 @@ descr "By sacrificing a few blood slaves in a town the Priestess will attract th
 ritpow 8
 selectritual "Summon God"
 free
-
-
-#
-#newritual "" - scry for Watchers
-#ritpow 8 4
-# planeloc 2
-# randnewloc 104 # Pit
-#
-##newritual "Second Sun"
-#ritpow 8 5
-# Most of the Sheol rituals are placeholders and works in progress.
-# IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
 newritpow
 
@@ -503,22 +923,24 @@ newritual "Call the Dead"
 descr "The caster reaches through the Veil between Elysium and Sheol and summons some of its inhabitants to serve the High Priestess."
 ritpow 49 # Sheol
 level 1
-cost 5 5
+cost 5 10
+sum0chance 15
 summoning
-addstring "1d3*Ghost Warrior"
-addstring "1d3*Spectral Archer"
-addstring "1d3*Shade"
+addstring "c*Hierodule Ghost"
+addstring "1d3*Spectral Ba'alite"
+addstring "1d3*Spectral Ba'alite Archer"
+addstring "1d3*Spectral Ba'alite Zealot"
 addstring "1d3*Shade Beast"
 addstring "1d6*Dispossessed Spirit"
 
-#newritual "Seek the Dead"
-#descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
-#ritpow 49
-#level 1
-#cost 5 5
-#planeloc 3
-#randnewloc 224 # Sheol Temple
-#scryloc 20
+newritual "Seek the Dead"
+descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
+ritpow 49
+level 1
+cost 5 5
+planeloc 3
+randnewloc 224 # Sheol Temple
+scryloc 20
 
 newritual "Dirge for the Dead"
 descr "The caster holds a grand dirge for the honored dead.  The servants of the Malikum will hear the dirge and return to serve the cause of the High Priestess."
@@ -545,7 +967,7 @@ cost 4 50 # Sacrifices
 terr -28 # Towns or cities
 sum0chance 75
 summoning
-destroyterr 100
+destroyterr 100 # Remove?
 killtarg 9999
 addstring "c*Malik & 2d3+1*Ditanu"
 #addstring "c*Ditan & 3d3*Ditanu"
@@ -575,56 +997,80 @@ newritual "Call Gibborim"
 descr "The Anakite Captain invites a group of Gibborim to a grisly banquet.  While the lords of the Anakim and Rephaim are loathe to associate with degenerates, not all of their servants share their scruples.  After partaking in the feast and being plied with wine and fine gifts the Gibborim will serve the High Priestess."
 ritpow 50
 level 1
-cost 0 60
+cost 0 40
 cost 4 20
 terr -9
 levelreq 1
 summoning
-apcost 5
-#addstring - qedesim?
-addstring "4*Gibbor"
-#addstring "Gibbor Scout & 2*Gibbor"
-#addstring - archers?
+apcost 2
+addstring "c*Qedesim"
+addstring "1d3+1*Gibbor"
+addstring "Gibbor Scout & 2*Gibbor"
+addstring "1d3+1*Gibbor Archer"
 
+# Mid-range feasts/banquets need a serious look. Note for later.
 newritual "Call Anakim"
-descr "The Adon invites a group of Anakite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Anakites will join his retinue and serve the High Priestess."
+descr "The Adon invites a group of Anakim to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, some of the Anakites will join his retinue and serve the High Priestess."
 ritpow 50
 level 2
 cost 0 80
-cost 4 40
+cost 4 60
+terr -9
+sum0chance 20
+sum1chance 20
+summoning
+apcost 5
+addstring "c*Emite"
+addstring "c*Anakite Elder"
+addstring "1d3+1*Anakite"
+addstring "2*Dawn Guard"
+
+newritual "Blood Banquet"
+descr "The lord invites another Adon to a vast a grisly banquet.  Numerous gifts will be exchanged and blood will flow more freely than wine.  After a long and horrible feast the Adon will swear to serve the High Priestess."
+ritpow 50
+level 2
+cost 0 100
+cost 4 300
 terr -9
 summoning
 apcost 5
-#addstring - emite
-#addstring - anakite elder
-addstring "4*Anakite"
-#addstring - ?
-
-#newritual - invite sorcerer/sage/emite/zamzummite/other - destroys village or req library?
+addstring "c*Adon & 2*Dawn Guard & 1d3+1*Anakite"
 
 newritual "Call Rephaim"
-descr "The Melqart invites a small group of Rephaite warriors to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
+descr "The Melqart invites a small group of Rephaim to a grisly banquet.  After partaking in the feast and being plied with wine and fine gifts, the Rephaites will join his retinue and serve the High Priestess."
 ritpow 50
 level 3
 cost 0 120
-cost 4 60
+cost 4 80
 terr -9
 summoning
 apcost 5 
-addstring "3*Rephaite"
+addstring "1d3+1*Rephaite"
+#addstring - ?
 
-selectmonster "Zamzummite"
-power 1 0 # Gets rid of necromancy
-power 49 2 # Sheol
-gatherhands
+newritual "Royal Banquet"
+descr "The Rephaite lord invites one of his peers to a vast and grisly banquet.  Blood will flow through the streets and screams of terror will plague the populace for days.  Royal gifts will be exchanged and in the end another Rephaite lord will swear to the service of the Anointed Priestess."
+ritpow 50
+level 3
+cost 0 180
+cost 4 450
+terr -9
+apcost 5
+summoning
+addstring "c*Melqart & 2d4 Rephaite"
+addstring "c*Belus & 1d4+1 Rephaite"
 
 selectmonster "Shed"
 rearpos
+
+selectmonster "Lammashta"
+unaging
 
 selectmonster "Ditanu"
 clearweapons
 meleeweapon 19 474 # Magic sword, damage 1-26
 mr 7
+unaging
 
 selectmonster "Malik"
 spiritsight
@@ -633,40 +1079,499 @@ spellweapon 38 3 # Necromancy
 meleeweapon 22 474 # Magic sword, damage 1-29
 power 1 0 # Gets rid of Necromancy.
 power 49 3 # Sheol
+unaging
 gatherhands
 
 selectmonster "Anakite Captain"
-power 49 1
+power 50 1
 
 selectmonster "Adon"
-power 49 2
+power 50 2
 
 selectmonster "Rephaite"
 fireres 50
 
 selectmonster "Melqart"
-power 49 3
+power 50 3
 fireres 50
 
+newritual "Blood to Blood" # Scry for Watchers
+cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it's mostly a token.
+ritpow 51 1 # Nephil-only
+planeloc 2 # Inferno
+randnewloc 104 # Pit
+free
+
+selectritual "Blood to Blood"
+descr "The Nephilim are the children of the Watchers and in turn begat all the races of giants who serve Ba'al.  With this pure blood a scrying ritual can be performed to locate the fathers of the Nephilim.  The blood of the Nephil is the key and the ten sacrificed maidens provides the power."
+
+#
+##selectritual "Second Sun"
+#ritpow 51
+#cost 4 0
+#apcost 3
+#
+# Most of the Sheol rituals are placeholders and works in progress.
+# IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
+
+newritpow
+
+newritual "Call Nephil"
+descr "The Nephilim are the sons of the Grigori, the mightiest servants of Ba'al.  They obey none save their fathers and Ba'al himself.  While they long since left their own children and their descendants to wander the Earth's hidden places, Ba'al himself can call them back, and then their blood may be used to scry for the prison of the Watchers."
+ritpow 51
+level 2 # Ba'al only
+cost 4 400
+apcost 2
+planereq 0
+terr 117 # Desert
+summoning
+addstring "c*Nephil"
+
+# TODO infernal gate ritual (should work now)
+newritual "Infernal Breach"
+descr "With an awesome application of power, Ba'al may create a passageway between Elysium and Inferno, provided that the path has been discovered through the blood of the Nephilim.  Only by warring with the Infernal Powers themselves may the Watchers be released."
+ritpow 51 # Ba'al only
+level 2
+cost 4 120
+apcost 2
+planereq 0 # Elysium
+terr 117 # Desert
+alterloc 201 # Infernal gate
+makeportal 1000 # new, unique
+setplane 2 # Inferno
+chooseterrloc -42 # Any land, hopefully won't allow you to break anything.
+soundfx 57
+makeportal 1000 # new, unique
+centerloc 
+free
+
+newritual "Release Watcher"
+descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
+ritpow 51 # Ba'al only
+level 2
+terr 104
+planereq 2
+apcost 3
+cost 4 500
+summoning
+addstring "c*Azazel"
+addstring "c*Semyaza"
+addstring "c*Ezekiel"
+addstring "c*Shamshiel"
+addstring "c*Kokabel"
+addstring "c*Arakiel"
+free
+
+# TODO Ritpowers should work now, but test!
 selectmonster "Nephil"
 fireres 50
-#power 49 4
+power 51 1
+#
 
-#selectmonster "God"
+selectmonster "God"
+unaging
+power 51 2
+#
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
+# An experiment - according to the example mod monsters can be created after rituals that reference them. Since none of these are recruitable...
+
+newmonster "Belus"
+spr1 "ee/spr/hp/bel1.tga"
+spr2 "ee/spr/hp/bel2.tga"
+descr "The Belusim were Rephaite nobles and scholars of the Twin Cities in the Time of Giants, when Ba'al was incarnate.  They were not so ferocious or influential as the Melqarts, but they studied the arcana under the Watchers themselves and possess magic as mighty as that of any wizard that has studied within the walls of the Collegium.  Now they are once more called to serve their dark God and his priestesses, attracted with the lure of hideous banquets overflowing with the flesh of sacrificial victims fresh from the bloodstained altars."
+rank -1
+hp 60
+armor 1
+mr 10
+mor 10
+str 10
+spellweapon 51 3 # High Arcana
+meleeweapon 10 0 # Fist
+power 8 1
+power 50 3
+fireres 50
+weaponslots
+nametype 49 # Rephaite
+
+newmonster "Gibbor Scout"
+copystats "Gibbor"
+copyspr "Gibbor"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some of the more keen-eyed Gibbor serve the High Priestess as scouts rather than true warriors."
+rank 0
+acutesenses
+
+newmonster "Gibbor Archer"
+spr1 "ee/spr/hp/garc1.tga"
+spr2 "ee/spr/hp/garc2.tga"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some Gibborim forgo melee combat entirely and use massive bows instead.  They wear very heavy armour and are considered cowardly by their brethren, but their arrows are like javelins and have unmatched range.  It is fortunate indeed that ranged weapons are despised by most of the giants."
+rank 0
+hp 21
+armor 3
+mr 5
+mor 5
+str 6
+clearweapons
+rangedweapon 1 "Great Bow"
+meleeweapon 2 8 # Shortsword
+human
+allitemslots
+
+newmonster "Qedesim"
+spr1 "ee/spr/hp/qed1.tga"
+spr2 "ee/spr/hp/qed2.tga"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedesim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedesim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest."
+rank -1
+hp 18
+armor 0
+mr 6
+mor 5
+str 6
+spellweapon 28 1 # Dark Prayers
+meleeweapon 4 0 # Fist
+localleadership 1
+human
+allitemslots
+nametype 49
+
+newmonster "Emite"
+spr1 "ee/spr/hp/emite1.tga"
+spr2 "ee/spr/hp/emite2.tga"
+descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers but do not yet have any religious authority of their own.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
+rank -1
+hp 40
+armor 0
+mr 8
+mor 6
+str 7
+spellweapon 38 1 
+meleeweapon 6 5 # Staff
+power 49 1
+classcost 100
+weaponslots
+gatherhands
+mastery 1
+nametype 49
+
+selectmonster "Zamzummite"
+power 1 0 # Gets rid of necromancy
+power 49 2 # Sheol
+gatherhands
+
+newmonster "Anakite Elder"
+copystats "Court Mage"
+spr1 "ee/spr/hp/anae1.tga"
+spr2 "ee/spr/hp/anae2.tga"
+descr "Anakites that grow old or otherwise unsuitable for battle often turn to study the preserved teachings of the Watchers.  While it is said that these texts have been neglected by the Anakim at large and become fragmented, they are evidently complete enough that these elders become like court mages to the Adonim."
+rank -1
+hp 40
+armor 0
+mr 8
+mor 6
+str 7
+clearweapons
+spellweapon 51 1 # High Arcana
+meleeweapon 7 0 # Fist
+weaponslots
+nametype 49
+mastery 1
+
+newmonster "Anakite Sage"
+spr1 "ee/spr/hp/anas1.tga"
+spr2 "ee/spr/hp/anas2.tga"
+descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
+hp 45
+armor 0
+mr 9
+mor 7
+str 7
+spellweapon 51 2 # High Arcana
+meleeweapon 7 0 # Fist
+weaponslots
+nametype 49
+
+#newmonster "Kohen"
+
+newmonster "Dawn Guard"
+copystats "Anakite"
+spr1 "ee/spr/hp/dgrd1.tga"
+spr2 "ee/spr/hp/dgrd2.tga"
+descr "The Dawn Guard are the living equivalents of the famed Ditanim.  While the dawn blades created by the Watchers have all been lost in these days, the Anakite Sages can create replicas that are nearly as good as the originals."
+hp 49
+mr 7
+mor 8
+clearweapons
+meleeweapon 12 474 # Magic Sword
+
+newmonster "Fossil Warrior"
+spr1 "ee/spr/hp/fwar1.tga"
+spr2 "ee/spr/hp/fwar2.tga"
+descr "The Rephaim do not possess a natural afterlife, and it is thought that the Sheol Temples whose existence is purported by mostly reliable necromancers constitute an invasion of the natural order.  Ordinarily the souls of the giants have nowhere to go after death.  Instead, they remain trapped within their bones forever.  It is said that they suffer terribly over the first few centuries before they calm down and grow surprisingly amicable.  Their bones are sometimes revealed by the shifting sands of the southern deserts in which the Rephaim were known to roam in the Time of Giants.  They have turned to stone, a phenomenon some scholars believe is entirely ordinary but others insist is a trait unique to the bones of the Rephaim themselves.  The necromancers who dwell among living descendants of these giants are known to sometimes bring them back to unholy service.  Were any servant of Ba'al ever worthy of pity, it would be these, and destroying them is doing them a service."
+rank 1
+hp 35
+armor 5
+mr 7
+mor 8
+str 8
+meleeweapon 12 262
+fireres 50
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+
+newmonster "Spectral Ba'alite"
+spr1 "ee/spr/hp/spbal1.tga"
+spr2 "ee/spr/hp/spbal2.tga"
+descr "Spectral Ba'alites are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
+rank
+hp 6
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 0 "Spectral Javelin"
+meleeweapon 4 222 # Spectral Spear
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Spectral Ba'alite Zealot"
+spr1 "ee/spr/hp/spbaz1.tga"
+spr2 "ee/spr/hp/spbaz2.tga"
+descr "Spectral Ba'alite Zealots are the apparitions of Ba'alite Zealots fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour.  The Zealots in particular retain faith, though it's hard to say whether they realize they are dead."
+rank 1
+hp 12
+armor 0
+mr 7
+mor 7
+str 4
+meleeweapon 6 158 # Spectral Sword
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Spectral Ba'alite Archer"
+spr1 "ee/spr/hp/spbar1.tga"
+spr2 "ee/spr/hp/spbar2.tga"
+descr "Spectral Ba'alite Archers are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
+rank 0
+hp 4
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 3 223 # Spectral Bow
+meleeweapon 2 222 # Spectral Dagger/Weapon
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Hierodule Ghost"
+spr1 "ee/spr/hp/sphi1.tga"
+spr2 "ee/spr/hp/sphi2.tga"
+descr "The ghosts of the Hierodules are much like their living counterparts and remain devoted to Ba'al.  Their magic seems to take on a different tone, however, and necromancers describe their visage as displaying an almost desperate hunger."
+rank -1
+hp 5
+armor 0
+mr 7
+mor 6
+str 4
+spellweapon 8 1 # Unlife right now. Should it? Dark? Or Dark Prayers?
+meleeweapon 6 10 # Drain Life
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+nametype 50
+
+newmonster "Azazel"
+spr1 "ee/spr/hp/azazel1.tga"
+spr2 "ee/spr/hp/azazel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  Azazel was the leader of the Watchers and the first one to be seduced by the will of Ba'al.  He convinced his brethren to join him and they swore a pact that they would all commit to sin.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Azazel taught his children of warcraft and cosmetics.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 51 3 # High Arcana
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 15 730 # Magic Greatsword
+flying
+fear 2
+weaponslots
+unique 1
+
+newmonster "Semyaza"
+spr1 "ee/spr/hp/semyaza1.tga"
+spr2 "ee/spr/hp/semyaza2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Semyaza was the second of the Watchers to fall.  He taught his children of herb-lore and enchantments.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 54 3 # Forest Magic
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear 1
+weaponslots
+unique 1
+
+newmonster "Ezekiel"
+spr1 "ee/spr/hp/ezekiel1.tga"
+spr2 "ee/spr/hp/ezekiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Ezekiel taught his children of the signs of the clouds and how to control them.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 5 3 # Storm Magic
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear 1
+weaponslots
+unique 1
+
+newmonster "Shamshiel"
+spr1 "ee/spr/hp/shamshiel1.tga"
+spr2 "ee/spr/hp/shamshiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Shamshiel taught his children about the signs of the sun.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 3 3 # Pyromancy
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear 1
+weaponslots
+unique 1
+
+newmonster "Kokabel"
+spr1 "ee/spr/hp/kokabel1.tga"
+spr2 "ee/spr/hp/kokabel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Kokabel taught his children about the signs of the stars and farsight.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 61 3 # Astrology
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear 1
+weaponslots
+unique 1
+
+newmonster "Arakiel"
+spr1 "ee/spr/hp/arakiel1.tga"
+spr2 "ee/spr/hp/arakiel2.tga"
+descr "In a primeval era of antiquity the god Ba'al incarnated for the first time and made the world taste fear and destruction.  Even Angels succumbed under the sway of his will and sinned.  The Watchers took wives among men and begat the Nephilim, giants of almost godlike power.  Arakiel taught his children about the signs of the Earth.  When the Celestial Powers lashed out in fury, the Watchers were banished to the Infernal realms where they still linger, fettered by bonds of iron tempered in the blood and tears of those slain by their gifts of civilization."
+rank -1
+hp 144
+armor 2
+mr 10
+mor 10
+str 9
+spellweapon 6 3 # Geomancy
+spellweaponsingle 61 3 # Astrology
+spellweaponsingle 11 3 # Blood Magic
+meleeweapon 10 0 # Fist
+flying
+fear 1
+weaponslots
+unique 1
+
+#selectmonster "Nephil"
+#name "Son of Arakiel"
+#clearweapons
+#newmonster "Son of Azazel"
+#newmonster "Son of Semyaza"
+#newmonster "Son of Ezekiel"
+#newmonster "Son of Shamshiel"
+#newmonster "Son of Kokabel"
+#
+# events to clear Sheol Temples of generics and replace them with spectral Ba'alites. May cause performance drain.
+#playerevent
+#+turn 0
+#+player 19 # Are Sheolites independents or Hades-aligned?
+#+ownsloc -1 ???  # Sheol Temple
+#+hasunithere 
+#
+#playerevent
+#
+#
 
 # [BAKEMONO]
 # Should have more proper Oni.
 # Other changes may be in the pipeline.
 selectclass 6
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 newmonster "Oni"
 copystats "Kuro Oni"
-spr1 "ee/sprites/oni1.tga"
-spr2 "ee/sprites/oni2.tga"
+spr1 "ee/spr/bs/oni1.tga"
+spr2 "ee/spr/bs/oni2.tga"
 rank 1
 hp 33
 armor 0
@@ -676,12 +1581,12 @@ str 6
 clearweapons
 rangedweapon 3 24 # Javelin
 meleeweapon 3 21 # Greatsword
-fireres -50
+fireres -50 # Results in a neutral value.
 coldres 50
-poisonres -50
+poisonres -50 # Results in a neutral value.
 diseaseres
 allitemslots
-banishsurv
+banishsurv # Might be unnecessary, but to be safe.
 firstshape 1
 
 selectmonster "Oni"
@@ -689,8 +1594,8 @@ descr descr "Oni are ugly, wild demons with pot-bellies and unkempt hair.  They 
 
 newmonster "Spectral Oni"
 copystats "Oni"
-spr1 "ee/sprites/soni1.tga"
-spr2 "ee/sprites/soni2.tga"
+spr1 "ee/spr/bs/soni1.tga"
+spr2 "ee/spr/bs/soni2.tga"
 hp 20
 mor 3
 clearweapons
@@ -742,20 +1647,6 @@ descr "This ritual will summon and try to take control over a king and his guard
 # [BARBARIAN]
 # Guaranteed herb-gatherer access around year three? Or gramps comes back if you show up at an Ancient Battlefield?
 
-newweapon "Composite Bow"
-range 6
-init 3
-dmgtype 3 # Piercing
-dmg 4
-mundane
-arrow
-lob
-rangepen
-flymode 1 # Arrow
-flylook 0 # Arrow
-flysound 14  # Arrow
-sound -1  # No sound on impact
-
 selectmonster "Garnet Amazon"
 armor 1
 
@@ -783,31 +1674,31 @@ armor 2
 
 newmonster "Garnet Queen"
 copystats "Garnet Sorceress"
-spr1 "ee/sprites/garnetqueen1.tga"
-spr2 "ee/sprites/garnetqueen2.tga"
+spr1 "ee/spr/barb/garnetqueen1.tga"
+spr2 "ee/spr/barb/garnetqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Jade Queen"
 copystats "Jade Sorceress"
-spr1 "ee/sprites/jadequeen1.tga"
-spr2 "ee/sprites/jadequeen2.tga"
+spr1 "ee/spr/barb/jadequeen1.tga"
+spr2 "ee/spr/barb/jadequeen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Crystal Queen"
 copystats "Crystal Sorceress"
-spr1 "ee/sprites/crystalqueen1.tga"
-spr2 "ee/sprites/crystalqueen2.tga"
+spr1 "ee/spr/barb/crystalqueen1.tga"
+spr2 "ee/spr/barb/crystalqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Onyx Queen"
 copystats "Onyx Sorceress"
-spr1 "ee/sprites/onyxqueen1.tga"
-spr2 "ee/sprites/onyxqueen2.tga"
+spr1 "ee/spr/barb/onyxqueen1.tga"
+spr2 "ee/spr/barb/onyxqueen2.tga"
 descr "The highest authorities among the Amazons are their queens. They are equally savage as their subordinates. Sometimes they marry with prominent barbarian leaders and likewise their armies are joined together. Our baffled and horrified scouts tell us that this is quite literal and that the marriage ceremony is accompanied by wild and orgiastic feasting. Savage as these two peoples are, they still have the sense to practice monogamy, so fortunately only one Amazon tribe at a time will ever join forces completely with the latest Barbarian horde."
 
 newmonster "Gryphon Rider"
-spr1 "ee/sprites/garrid1.tga"
-spr2 "ee/sprites/garrid2.tga"
+spr1 "ee/spr/barb/garrid1.tga"
+spr2 "ee/spr/barb/garrid2.tga"
 descr "The elites of the Garnet tribe are the most horrifying of all Amazon warriors. They apparently know how to safely steal Gryphon eggs and raise the hatchlings as mounts for their sacred warriors. Fortunately these Gryphon Riders are very rare. None have ever been captured alive, a fact that seems to disappoint many knights who dream of riding gryphons of their own."
 rank 1 
 hp 106
@@ -829,8 +1720,8 @@ allitemslots
 nobootslots
 
 newmonster "Jade Maiden"
-spr1 "ee/sprites/jadrid1.tga"
-spr2 "ee/sprites/jadrid2.tga"
+spr1 "ee/spr/barb/jadrid1.tga"
+spr2 "ee/spr/barb/jadrid2.tga"
 descr "The elites of the Jade tribe ride strange, swamp-born two-legged lizards with tiny arms. They are more ferocious than they appear, and the lizard will bite and claw at the maiden's enemies."
 rank 1
 hp 12
@@ -850,8 +1741,8 @@ allitemslots
 nobootslots
 
 newmonster "Wind Rider"
-spr1 "ee/sprites/winrid1.tga"
-spr2 "ee/sprites/winrid2.tga"
+spr1 "ee/spr/barb/winrid1.tga"
+spr2 "ee/spr/barb/winrid2.tga"
 descr "The elites of the Crystal tribe ride atop winged horses. These horses can fly, in contradiction to all common sense. The origin of these horses is unknown but speculated to rise from a crossing between a horse and a very large swan. While not as dangerous as the Gryphon Riders, the Wind Riders are more numerous and can simply fly over conventional fortifications."
 rank 1
 hp 15
@@ -870,8 +1761,8 @@ allitemslots
 nobootslots
 
 newmonster "Nightmare"
-spr1 "ee/sprites/onyrid1.tga"
-spr2 "ee/sprites/onyrid2.tga"
+spr1 "ee/spr/barb/onyrid1.tga"
+spr2 "ee/spr/barb/onyrid2.tga"
 descr "The elites of the Onyx tribe ride horrifying undead horses raised by the tribe's priestesses. These are surrounded by an aura of terror that seems to be at least partially magical. Aside from this they differ little from conventional cavalry."
 rank 1
 hp 18
@@ -917,53 +1808,53 @@ reclimiter "-Garnet Queen"
 reclimiter "-Jade Queen"
 reclimiter "-Crystal Queen"
 reclimiter "-Onyx Queen"
-addunitrec  "Barbarian Warrior" 100 7 50 0 0
-addunitrec  "Barbarian Bowman" 100 7 50  0 0
-addunitrec  "Barbarian Swordsman" 100 7 50  0 10
-addunitrec  "Barbarian Cavalry" 100 4 50 0 0
-addunitrec  "Barbarian Lancer" 100 4 50 0 10
-addunitrec  "Barbarian Werebear" 10 1 25 0 0
-addcomrec   "Spirit Guide" 8  75 20 0
+addunitrec "Barbarian Warrior" 100 7 50 0 0
+addunitrec "Barbarian Bowman" 100 7 50  0 0
+addunitrec "Barbarian Swordsman" 100 7 50  0 10
+addunitrec "Barbarian Cavalry" 100 4 50 0 0
+addunitrec "Barbarian Lancer" 100 4 50 0 10
+addunitrec "Barbarian Werebear" 10 1 25 0 0
+addcomrec  "Spirit Guide" 8  75 20 0
 templerec
-addcomrec   "Soothsayer"   8 40 20 0
+addcomrec "Soothsayer"   8 40 20 0
 templerec
-addcomrec   "Mounted Chief" 10 25 10 0
-addmercrec  "Mounted Scout" 15 1 15 10 0
-addcomrec   "Crystal Priestess" 3 40 20 0
+addcomrec "Mounted Chief" 10 25 10 0
+addmercrec "Mounted Scout" 15 1 15 10 0
+addcomrec "Crystal Priestess" 3 40 20 0
 templerec
 reclimiter "-Crystal Queen"
-addcomrec   "Crystal Sorceress"3 80 20 0
-reclimiter  "+Crystal Priestess"
+addcomrec "Crystal Sorceress"3 80 20 0
+reclimiter "+Crystal Priestess"
 reclimiter "-Crystal Queen"
-addunitrec  "Crystal Amazon" 25 8 50 0 0
-reclimiter  "+Crystal Priestess"
+addunitrec "Crystal Amazon" 25 8 50 0 0
+reclimiter "+Crystal Priestess"
 reclimiter "-Crystal Queen"
-addcomrec   "Garnet Priestess" 3 40 20 0
+addcomrec "Garnet Priestess" 3 40 20 0
 templerec
 reclimiter "-Garnet Queen"
-addcomrec   "Garnet Sorceress"  3 80 20 0
-reclimiter  "+Garnet Priestess"
+addcomrec "Garnet Sorceress"  3 80 20 0
+reclimiter "+Garnet Priestess"
 reclimiter "-Garnet Queen"
-addunitrec  "Garnet Amazon"  25 8 50  0 5
-reclimiter  "+Garnet Priestess"
+addunitrec "Garnet Amazon"  25 8 50  0 5
+reclimiter "+Garnet Priestess"
 reclimiter "-Garnet Queen"
-addcomrec   "Jade Priestess" 3 40 20 0
+addcomrec "Jade Priestess" 3 40 20 0
 templerec
 reclimiter "-Jade Queen"
-addcomrec   "Jade Sorceress" 3 80 20 0
-reclimiter  "+Jade Priestess"
+addcomrec "Jade Sorceress" 3 80 20 0
+reclimiter "+Jade Priestess"
 reclimiter "-Jade Queen"
-addunitrec  "Jade Amazon" 25 8 50 0 5
-reclimiter  "+Jade Priestess"
+addunitrec "Jade Amazon" 25 8 50 0 5
+reclimiter "+Jade Priestess"
 reclimiter "-Jade Queen"
-addcomrec   "Onyx Priestess" 3 40 20 0
+addcomrec "Onyx Priestess" 3 40 20 0
 templerec
 reclimiter "-Onyx Queen"
-addcomrec   "Onyx Sorceress" 3 80 20 0
-reclimiter  "+Onyx Priestess"
+addcomrec "Onyx Sorceress" 3 80 20 0
+reclimiter "+Onyx Priestess"
 reclimiter "-Onyx Queen"
-addunitrec  "Onyx Amazon" 25 8 50 0 10
-reclimiter  "+Onyx Priestess"
+addunitrec "Onyx Amazon" 25 8 50 0 10
+reclimiter "+Onyx Priestess"
 reclimiter "-Onyx Queen"
 # Garnet Queen Recruitment
 addunitrec "Garnet Amazon" 100 8 50 0 5
@@ -1005,9 +1896,17 @@ addcomrec "Onyx Sorceress" 6 80 20 0
 reclimiter "+Onyx Queen"
 addunitrec "Nightmare" 10 4 80 0 15
 reclimiter "+Onyx Queen"
-# generic
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # It works! Didn't entirely expect it to.
 playerevent
@@ -1035,28 +1934,84 @@ cost 2 1000
 selectritual "Army of Legends"
 cost 2 800
 
+selectmonster "Ancestral Archer"
+descr ""
+unaging
+
+selectmonster "Ancestral Warrior"
+descr ""
+unaging
+
+selectmonster "Ancestral Hero"
+descr ""
+unaging
+
+selectmonster "Ancestor Guide"
+descr ""
+unaging
+
+selectmonster "Ancestral Shaman"
+descr ""
+unaging
+
+selectmonster "Ancestral Chief"
+descr ""
+unaging
+
+selectmonster "Ancestral Lancer"
+descr ""
+unaging
 
 
 # [SENATOR]
 selectclass 8
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-# Mercenary cavalry access.
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
+selectmonster "Imperial Spirit"
+unaging
 
 # [PALE ONE]
 
 selectclass 9
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 addstartunits "Granite Guardian"
 addstartunits "Sentinel" 2
 
-
-
 selectritual "Lesser Lava Summoning"
 addstring "1d3+1*Lesser Fire"
+addstring "Magma Child"
+
+newritual "Lesser Lava Summoning"
+ritpow 15
+level 1
+cost 7 15
+rebatefx25 1
+summoning
+addstring "1d3+1*Magma Warrior
 addstring "Magma Child"
 
 selectritual "Olm Conclave"
@@ -1076,9 +2031,9 @@ level 2
 cost 7 60
 rebatefx25 1
 summoning
-addstring "3d4*Magma Warrior"
-addstring "1d3*Fire Elemental"
-addstring "1d3*Magma Child"
+addstring "3d6*Magma Warrior"
+addstring "1d3*Fire Elemental & 1d3+1*Lesser Fire"
+addstring "1d3+2*Magma Child & 1d3+1*Lesser Fire"
 
 selectritual "Ritual of Grand Mastery"
 cost 10 180 # Emeralds
@@ -1092,27 +2047,66 @@ cost 10 60
 selectritual "Awaken Onyx Oracle"
 cost 10 180
 
+selectmonster "Penumbral"
+unaging
+
+selectmonster "Umbral"
+unaging
+
 # [DRUID]
 # Starting defenders 1 tree of crows + 2 venus traps
 # ?
 
 selectclass 10
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 addstartunits "Venus Trap" 4
 addstartunits "Tree of Crows"
 
 # [HOBURG] / [BURGMEISTER]
 selectclass 11
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [WARLOCK]
 selectclass 12
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # Spells revised to make T1 summoning more palatable for non-Air Warlocks.
 
@@ -1144,7 +2138,7 @@ summoning
 sum0chance 25
 rebateterr20 -48 # Elemental Citadel
 addstring "Flame Spirit"
-addstring "1d6+2*Ember Warrior"
+addstring "2d4+1*Ember Warrior"
 addstring "Fire Elemental"
 
 newritual "Lesser Water Summoning"
@@ -1155,7 +2149,7 @@ summoning
 sum0chance 25
 rebateterr20 -49 # Elemental Citadel
 addstring "Undine"
-addstring "1d6+2*Wave Warrior"
+addstring "2d4+1*Wave Warrior"
 addstring "Water Elemental"
 
 newritual "Lesser Air Summoning"
@@ -1166,7 +2160,7 @@ summoning
 sum0chance 25
 rebateterr20 -50 # Elemental Citadel
 addstring "Sylph"
-addstring "1d6+2*Cloud Warrior"
+addstring "2d4+1*Cloud Warrior"
 addstring "Air Elemental"
 
 newritual "Lesser Earth Summoning"
@@ -1177,7 +2171,7 @@ summoning
 sum0chance 25
 rebateterr20 -51 # Elemental Citadel
 addstring "Earth Gnome"
-addstring "1d6+2*Stone Warrior"
+addstring "2d4+1*Stone Warrior"
 addstring "Earth Elemental"
 
 selectritual "Summon Champion of Fire"
@@ -1241,12 +2235,88 @@ addstring "c*Mountain Giant"
 
 # [PRIEST KING]
 selectclass 13
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
+selectritual "Ceremony of the Lord of Night"
+clearritspec
+level 9
+nostart
+
+newritual "Ceremony of the Lord of Night"
+ritpow 37
+level 1
+cost 4 25
+summoning
+addstring "c*Chilan"
+addstring "1d4+2*Zotz Warrior"
+addstring "2d4+1*Zotz"
+addstring "1d3*Beast Bat"
+
+newmonster "Chilan"
+spr1 "ee/spr/pk/chilan1.tga"
+spr2 "ee/spr/pk/chilan2.tga"
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value.  The Chilan is a priest of the bat people, and is often found leading their raiding parties."
+rank -1
+hp 4
+armor 0
+mr 7
+mor 4
+str 3
+spellweapon 32 1 # Night
+meleeweapon -1 0 # Fist
+noeyes
+coldblood
+flying
+allitemslots
+holy
+
+newmonster "Zotz"
+spr1 "ee/spr/pk/zot1.tga"
+spr2 "ee/spr/pk/zot2.tga"
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value."
+rank 1
+hp 4
+armor 0
+mr 5
+mor 3
+str 3
+meleeweapon -1 228 # Obsidian clubsword
+noeyes
+coldblood
+flying
+allitemslots
+
+newmonster "Zotz Warrior"
+copystats "Zotz"
+spr1 "ee/spr/pk/zotw1.tga"
+spr2 "ee/spr/pk/zotw2.tga"
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value.  The Zots do not like shields as this inhibits their flight.  The warriors instead wear relatively heavy armor, but Zotz are weak that this armor would still be considered light by a human."
+rank 1
+hp 5
+armor 1
+mor 4
+clearweapons
+meleeweapon -1 228 # Obsidian Clubsword
+noeyes
+coldblood
+flying
+allitemslots
+
+selectmonster "Civateteo"
+unaging
 
 # [TROLL KING]
 
-# Svartalf, 53
 #newritpow 
 
 #newritual
@@ -1360,8 +2430,8 @@ rangedweapon 0 34 # Poison Bow
 
 newmonster "Giant King"
 copystats "Hill Giant"
-spr1 "ee/sprites/giantking1.tga"
-spr2 "ee/sprites/giantking2.tga"
+spr1 "ee/spr/tk/giantking1.tga"
+spr2 "ee/spr/tk/giantking2.tga"
 descr "Lately there has been word of a particularly big and stubborn hill giant who wears gaudy and slightly undersized jewelry. The origin of these accoutrements are a mystery, as they clearly cannot have been made specifically for the giant, but there also are no other creatures known for which they would fit given their reputed size. Supposedly this giant has declared himself a king among his fellows, much as his smaller brethren call themselves barons. We would dismiss his existence entirely were it not for the tireless work of our student interrogators on captured goblins. They are terrified of the giant and he is said to devour their kind by the handful as a deer would eat berries."
 clearweapons
 mr 5
@@ -1375,8 +2445,8 @@ meleeweapon 32 632 # Great Club
 
 newmonster "Ogre Poacher"
 copystats "Ogre"
-spr1 "ee/sprites/ogrepoach1.tga"
-spr2 "ee/sprites/ogrepoach2.tga"
+spr1 "ee/spr/tk/ogrepoach1.tga"
+spr2 "ee/spr/tk/ogrepoach2.tga"
 descr "The smallest of the Giants lives in small tribes that often raid our farmlands.  Having had a close relationship with Trolls and Hill Giants, they have developed a dire craving for human flesh, but in being more cunning than their cousins, they often execute well planned raids on human villages or waylay travelers at crossroads in order to fill up their larders. Some of them seem to prefer deer, boar, and other wildlife. As a trend it could be worthy to encourage through carefully direct social manipulation, but they never seem to hesitate to use their crudely-fashioned spears on humans as well. Ogre poachers consider themselves highly intelligent and are very proud of the fact."
 rangedweapon 3 24
 meleeweapon 3 4
@@ -1384,7 +2454,7 @@ meleeweapon 3 4
 #newmonster "Ettin Reaver"
 #copystats "Ettin"
 
-# Goblins, 51
+# Goblins, 52
 
 newritpow
 
@@ -1404,7 +2474,7 @@ selectritual "Poisoned Arrows"
 descr ""
 
 newritual "Wolfhowl"
-ritpow 51
+ritpow 52
 level 1
 cost 1 5 # Iron
 cost 3 30 # Fungi
@@ -1417,7 +2487,7 @@ selectritual "Wolfhowl"
 descr "The goblin shaman gathers up a group of wolf kin and shouts really loudly at them while a heavy mist rises from a nearby cauldron full of burning fungi. This will frighten the wolf kin so badly that they will lose much of their cowardice. They are then given finer armaments on behalf of the Troll King."
 
 newritual "Minor Summons"
-ritpow 51
+ritpow 52
 level 1
 cost 3 30 # Fungi
 terr -7 # Forests, jungles or mountains.
@@ -1432,12 +2502,13 @@ selectritual "Minor Summons"
 descr "Summons a small number of animals that get along well with goblins."
 
 selectritual "Golden Nose"
-ritpow 51
+ritpow 52
 
 #Dummying out all the advanced promotions for now. They may be scrapped entirely, at any rate they're bogging down progress on 0.3.
 
 newritual "Fungal Incense"
 level 2
+ritpow 52
 cost 3 50
 soundfx 57
 promotion 10
@@ -1460,10 +2531,10 @@ selectritual "Fungal Incense"
 descr "The witch doctor exposes a group of up to ten goblins to a horrible fungal incense. This will make the goblins more stubborn and let them ignore injuries that would kill most of their kind."
 
 selectmonster "Goblin Shaman"
-power 51 1 # Goblin rituals
+power 52 1 # Goblin rituals
 
 selectmonster "Goblin Witch Doctor"
-power 51 2 # Goblin rituals
+power 52 2 # Goblin rituals
 
 selectclass 14
 clearrec
@@ -1553,8 +2624,18 @@ addcomrec "Forest Giant" 15 65 20 0
 reclimiter "+Giant King"
 addstartunits "Shadow Tree"
 addstartunits "Devil Fungus" 2
-# ?
-
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+# Should eventually get some form of lake/sea troll access.
 
 #bogus playerevent
 
@@ -1564,8 +2645,8 @@ addstartunits "Devil Fungus" 2
 
 newmonster "Wooden Soldier"
 descr "The Wooden Soldier is skillfully carved from wood and then enchanted to come to life.  It is vulnerable to fire, but quite resistant to spears and arrows."
-spr1 "ee/sprites/wsold1.tga"
-spr2 "ee/sprites/wsold2.tga"
+spr1 "ee/spr/e/wsold1.tga"
+spr2 "ee/spr/e/wsold2.tga"
 rank 1
 hp 15
 armor 1
@@ -1586,8 +2667,8 @@ fireres -50
 
 newmonster "Stone Soldier"
 descr "The Stone Soldier is skillfully sculpted from stone and then enchanted to come to life.  It is strong and sturdy. It is slow on the march but cares little for snow or mountainous terrain."
-spr1 "ee/sprites/ssold1.tga"
-spr2 "ee/sprites/ssold2.tga"
+spr1 "ee/spr/e/ssold1.tga"
+spr2 "ee/spr/e/ssold2.tga"
 rank 1
 hp 12
 armor 2
@@ -1615,11 +2696,21 @@ selectclass 15
 clearrec
 stdtroops
 addcomrec "Enchanter's Apprentice" 5 55 20 0
-libraryrec
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 selectritual "Animate Sword"
 free
@@ -1640,7 +2731,7 @@ ritpow 11 # Enchantment
 level 1
 terr -20 # Swamps
 summoning
-cost 0 20 # Gold
+cost 0 10 # Gold
 apcost 2 #
 nexttoo
 addstring "3*Terracotta Soldier"
@@ -1675,7 +2766,7 @@ level 1
 terr -5
 summoning
 cost 1 2 # Iron
-apcost 2
+apcost 5
 nexttoo
 addstring "1*Stone Soldier"
 
@@ -1696,36 +2787,88 @@ descr "The Enchanter crafts a pair Gargoyles from ordinary earth and brings them
 
 # [HIGH CULTIST]
 selectclass 19
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
-libraryrec 
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [DWARF QUEEN]
 selectclass 20
+# Dwarf-specific mercenaries, more gold, no iron.
+addunitrec "Turtle Warrior" 3 15 150 0 0
+addcomrec "Turtle Chief" -1 25 0 0
+addmercrec "Mercenary Cavalry" 3 8 150 0 0
+addcomrec "Mercenary Captain" -1 25 0 0
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 3 8 150 0 0
-addcomrec "Mercenary Captain" -1 1 45 0 0
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
 
 # [VOICE OF EL]
 # Are any changes even needed here?
 # Special recruitables available in certain terrains, maybe. (Turns out that's not moddable, though.)
+# (Or more playerevents/class-restricted square events)
 
 selectclass 21
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [ILLUSIONIST]
 # Assassination unit/ritual access?
 selectclass 22
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
-addmercrec "Mercenary Cavalry" 6 4 50 12 0
-addcomrec "Mercenary Captain" -1 45 10 0
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 # [MARKGRAF]
 selectclass 23
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 
 ritpow 39
 selectritual "Reanimate Animals"
@@ -1737,10 +2880,1399 @@ level 1
 
 # Guarantee flesh golem access?
 
+selectmonster "Small Ghost"
+unaging
+
+selectmonster "Ghost Nekromant"
+unaging
+
 # [DRYAD QUEEN]
 selectclass 24
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
 addcomrec "Warrior Mage" 0 65 20 5
 libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
 # Not sure anything is needed here.
+# Rituals to turn units into Ichty-variants?
+
+# [INDEPENDENTS] / [NON-CLASS SPECIFIC]
+
+# Ethereal Undead Unaging
+selectmonster "Ghost Captain"
+spiritsight
+unaging
+
+selectmonster "Dispossessed Spirit"
+unaging
+
+selectmonster "Ghost Warrior"
+unaging
+
+selectmonster "Spectral Archer"
+unaging
+
+selectmonster "Spectral Horseman"
+unaging
+
+selectmonster "Shade"
+unaging
+
+selectmonster "Shade Lord"
+unaging
+
+selectmonster "Shade Mage"
+unaging
+
+selectmonster "Shade Beast"
+unaging
+
+selectmonster "Ghost"
+unaging
+
+selectmonster "Banshee"
+unaging
+
+selectmonster "Wraith"
+unaging
+
+selectmonster "Wraith Lord"
+unaging
+
+selectmonster "Wraith King"
+unaging
+
+selectmonster "Ghost Mage"
+unaging
+
+selectmonster "Ghost King"
+unaging
+
+selectmonster "Stygian Ghost"
+unaging
+
+selectmonster "Stygian King"
+unaging
+
+selectmonster "Dusk Elder"
+unaging
+
+# [SHAH]
+# Athravan / Yazata - costs gems like an illusionist
+
+selectmonster "Raven Spy"
+descr "The Raven is a cunning and pleasantly wicked bird.  Properly trained and fed with index fingers, it will bring tidings and reports on far away lands."
+
+selectmonster "Raven Familiar"
+descr "Some ravens just refuse to fly away for long, but are constantly drawn back to their summoner.  These ravens are known as familiars and are almost useless.  At least they can scout the nearby areas, their sharp eyes piercing the disguises of stealthy beings."
+
+# Athravan, 52
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+ritpow 52
+level 1
+cost 14 30
+newrit 1
+soundfx 57
+free
+
+newritual "Ritual of Mastery"
+ritpow 52
+level 1
+cost 14 120
+newrit 2
+levelup 2
+soundfx 57
+rebatelvl 2
+free
+
+newritual "Ritual of Grand Mastery"
+ritpow 52
+level 2
+cost 14 240
+newrit 3
+levelup 3
+soundfx 57
+rebatelvl 3
+free
+
+newritual "Call Airya"
+descr ""
+ritpow 52
+level 1
+cost 14 30
+sum0chance 20
+summoning
+addstring "c*Seraphine"
+addstring "1d3+1*Iceclad"
+addstring "1d3+1*Kavi Archer"
+
+newritual "Scry"
+descr ""
+ritpow 52
+level 1
+cost 14 5
+soundfx 57
+#
+#
+#scrystuff
+
+newritual "Call Ravens"
+descr
+ritpow 52
+level 1
+cost 14 10
+sum0chance 20
+summoning
+addstring "Raven Familiar"
+addstring "Raven Spy"
+
+newritual "Sacred Fire"
+descr ""
+ritpow 52
+level 2
+cost 14 50
+apcost 5
+terr -31 # Walls.
+squareench 8 # Vafur Flames
+
+newritual "Greater Airya Calling"
+descr ""
+ritpow 52
+level 2
+cost 14 60
+summoning
+addstring "c*Airya Seraph"
+addstring "c*Icecrafter"
+addstring "1d4+1*Iceclad & 1d4+1*Kavi Archer"
+
+newritual "Summon Yazata"
+descr ""
+ritpow 52
+level 2
+cost 14 60
+sum0chance 40
+summoning
+addstring "Ahurani"
+addstring "1d4*Yazad"
+
+# Enchanted gate
+newritual "Enchant Gate"
+descr ""
+ritpow 52
+level 2
+cost 14 50
+terr -31 # Walls.
+soundfx 57
+squareench 6 # Enchanted gate.
+
+newritual "Summon Celestial Yazad"
+descr ""
+ritpow 52
+level 3
+cost 14 180
+summoning
+addstring "c*Yazad of Fire"
+addstring "c*Yazad of Justice"
+addstring "c*Yazad of the Stars"
+addstring "c*Yazad of the Sky"
+addstring "c*Yazad of Water"
+addstring "c*Yazad of the Earth"
+
+newritual "Summon Amesha Spenta"
+descr ""
+ritpow 52
+level 3
+cost 14 500
+addstring "c*Khshathra Vairya"
+addstring "c*Vohu Manah"
+addstring "c*Asha Vahishta"
+addstring "c*Ameretat"
+addstring "c*Haurvatat"
+addstring "c*Spenta Armaiti"
+
+# Karapan / Daeva, ritpow 53 - costs sacrifices
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+descr ""
+ritpow 53
+level 1
+cost 4 20
+newrit 1
+soundfx 57
+free
+
+newritual "Ritual of Mastery"
+descr ""
+ritpow 53
+level 1
+cost 4 120
+newrit 2
+levelup 2
+soundfx 57
+rebatelvl 2
+free
+
+newritual "Ritual of Grand Mastery"
+descr ""
+ritpow 53
+level 2
+cost 4 480
+newrit 3
+levelup 3
+soundfx 57
+rebatelvl 3
+free
+
+newritual "Call Raptors"
+descr ""
+ritpow 53
+level 1
+cost 4 30
+sum0chance 20
+summoning
+addstring "c*Harab Elder"
+addstring "1d3+1*Iron Crow"
+addstring "1d3+1*Iron Guard"
+
+newritual "Call Crows"
+descr ""
+ritpow 53
+level 1
+cost 4 10
+summoning
+addstring "Messenger Crows"
+
+newritual "Sacred Fire"
+descr ""
+ritpow 53
+level 2
+cost 4 50
+apcost 5
+terr -31 # Walls.
+squareench 8 # Vafur Flames
+
+# Savaran promotion
+newritual "Nisean Horses"
+descr ""
+ritpow 53
+level 2
+cost 4 30
+soundfx 57
+promotion 3
+addstring "Spahbed"
+addstring "Savaran Spahbed"
+addstring "Cataphract"
+addstring "Savaran Guard"
+
+newritual "Daevic Summoning"
+descr ""
+ritpow 53
+level 2
+cost 4 60
+sum0chance 40
+summoning
+addstring "Jahi"
+addstring "1d4*Daeva"
+
+newritual "Summon Yata"
+descr ""
+ritpow 53
+level 3
+cost 4 180
+summoning
+addstring "c*Daeva of Shooting Stars"
+addstring "c*Yata"
+addstring "c*Daeva of Frost and Snow"
+addstring "c*Pairika"
+
+newritual "Call Daevic Heptad"
+descr ""
+ritpow 53
+level 3
+cost 4 600
+summoning
+addstring "c*Akem Manah"
+addstring "c*Indra"
+addstring "c*Saurva"
+addstring "c*Nanghaihtya"
+addstring "c*Taurvi"
+addstring "c*Zaurvi"
+
+newmonster "Shah"
+descr "The Turanic peoples are broadly divided into a number of tribal kingdoms.  The tribes are loosely organized and the leading elders and chiefs have little direct power, but each recognizes and heeds the authority of a single Shah.  A Shah usually rules over several tribes and takes a wife from the ruling caste of each, and many, particularly those who worship the Daevas, take numerous concubines from each tribe and from conquered peoples as well.  The Shah passes his title and power down to a favoured son, though it is not always the case that all his sons and all the subject tribes approve of his choice.  This usually results in a great deal of trouble and may be the reason why there is more than a single Shah to begin with.^^While most Shahs have many sons, few have many brothers.  The Shah himself is usually one of the fiercest warriors in the kingdom.  The Shah is clad in a suit of ornate enchanted armor passed down for many generations and seems to be warded against both fire and thunder.  The source of the armor is unknown as it protects against the magics used most commonly by both the Daevas and Yazatas."
+spr1 "ee/spr/shah/shah1.tga"
+spr2 "ee/spr/shah/shah2.tga"
+rank 0
+hp 18
+armor 4
+mr 8
+mor 7
+str 6
+rangedweapon 2 7 # Bow
+meleeweaponspec 16 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Hoof
+battlefast
+human
+fireres 100
+shockres 100
+coldres 50
+leadership 2
+shield
+allitemslots
+nobootslots
+nametype 48
+
+#created by coronation at king's castle or capitolium?
+#newmonster "Shahanshah"
+
+newmonster "Spahbed"
+descr "The Spahbed is a Turan general of high birth, though the Turan military hierarchy is very meritocratic.  While armed much like the High Lords of more civilized lands, the Spahbeds seem to be much more clever as they also carry bows and will fight like horse archers instead of knights.  The Turans seem to consider this behaviour wise but strangely enough it is also considered honorable.  The Turans reason that a leader that dies on the field of battle fails his army and his people.  Consequently there are a lot of nobleborn Turans which is probably why the position of Spahbed is based on merit.  Most nobleborn warriors join the armies as cataphracts instead."
+spr1 "ee/spr/shah/spah1.tga"
+spr2 "ee/spr/shah/spah2.tga"
+rank 0
+hp 15
+armor 2
+mr 5
+mor 6
+str 5
+rangedweapon 1 7 # Bow
+meleeweaponspec 15 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 4 95 # Hoof
+battlefast
+human
+shield
+allitemslots
+nobootslots
+nametype 48
+
+newmonster "Savaran Spahbed"
+copystats "Spahbed"
+descr ""
+spr1 "ee/spr/shah/savspah1.tga"
+spr2 "ee/spr/shah/savspah2.tga"
+hp 18
+mr 6
+mor 7
+clearweapons
+rangedweapon 0 7 # Bow
+meleeweaponspec 15 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Stronger hoof
+fast
+fireres 100
+nametype 48
+
+newmonster "Paighan"
+descr "The Turanic people is fierce and warlike.  While the appearance of the Paighan could seem to indicate otherwise, it should be noted that they are drawn directly out of the populace without any further training.  While cowardly and treated as fodder, the Paighan are as skilled as the common spearmen fielded by most warlords."
+spr1 "ee/spr/shah/paighan1.tga"
+spr2 "ee/spr/shah/paighan2.tga"
+rank 1
+hp 5
+armor 0
+mr 4
+mor 3
+str 4
+meleeweapon 0 4 # Spear
+frontpos
+human
+shield
+allitemslots
+
+newmonster "Turan Warrior"
+descr "The Turanic people is fierce and warlike.  While they have no dedicated military caste, even the common soldier is well-trained and equipped.  Before being brought into the army most have experienced and participated in the intertribal wars so common in Tur.  The common soldier of Tur resembles the legionary, but they prefer lighter shields and heavier blades."
+spr1 "ee/spr/shah/turinfantry1.tga"
+spr2 "ee/spr/shah/turinfantry2.tga"
+rank 1
+hp 6
+armor 1
+mr 4
+mor 5
+str 4
+rangedweapon 0 24  # Javelin
+meleeweapon 0 2 # Broadsword
+human
+shield
+allitemslots
+
+newmonster "Turan Archer"
+spr1 "ee/spr/shah/turarcher1.tga"
+spr2 "ee/spr/shah/turarcher2.tga"
+descr "The Turanic people is fierce and warlike.  While they have no dedicated military caste, even the common soldier is well-trained and equipped.  Before being brought into the army most have experienced and participated in the intertribal wars so common in Tur.  The archers of Tur strap a light shield to their left arm and carry shortswords.  While the shield is somewhat cumbersome, it helps protect them in archery duels and they are surprisingly competent in close quarters as well."
+rank 0
+hp 5
+armor 0
+mr 4
+mor 5
+str 4
+rangedweapon 0 7 # Bow
+meleeweapon 0 8 # Shortsword
+human
+shield
+allitemslots
+
+newmonster "Zhayedan"
+descr "The Zhayedan form the personal retinue of the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  They are trained from childhood and grow to be brave and stubborn in their service to the Shah.  While they are swordsmen, they also carry and use bows.  While defending a castle or stuck behind the rest of the troops, they will relentlessly pelt the enemy with arrows."
+spr1 "ee/spr/shah/zhayedan1.tga"
+spr2 "ee/spr/shah/zhayedan2.tga"
+rank 1
+hp 8
+armor 2
+mr 5
+mor 6
+str 5
+rangedweapon 0 7 # Bow
+meleeweapon 1 2 # Broadsword
+#rearpos
+human
+shield
+allitemslots
+
+
+newmonster "Iceclad Zhayedan"
+descr "The Zhayedan form the personal retinue of the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  They are trained from childhood and grow to be brave and stubborn in their service to the Shah.  They are among the most elite infantry found in any human army and are swift on the march despite wearing heavy armor.  A Shah who aligns himself with the Yazatas may draw the attention of the Airyan Icecrafters.  Due to the loyalty of the Zhayedans they may then be given armaments of the same magical ice that the Airya use.  Their armour is very tough when the air is cold and their swords and arrows are light, swift, and impact with bursts of frost.  They are themselves perfectly warded against the cold."
+spr1 "ee/spr/shah/icezhayedan1.tga"
+spr2 "ee/spr/shah/icezhayedan2.tga"
+rank 1
+hp 10
+armor 2
+mr 6
+mor 7
+str 5
+rangedweapon 1 "Frost Bow"
+meleeweapon 1 522 # Frost-branded Sword
+#rearpos
+human
+shield
+iceprot 1
+coldres 100
+allitemslots
+
+newmonster "Turan Cavalryman"
+descr "The cavalry of Tur is much like the Barbarian cavalry of the northlands.  They are much less numerous, however, and seem to act as both lancers and horse archers.  Consequently they are not as good as fighting in the melee as proper cavalry and too expensive to make good archers.  They are very good at terrorizing poorly-defended provinces and, more generously, at defending remote settlements against the wildlife."
+spr1 "ee/spr/shah/turancav1.tga"
+spr2 "ee/spr/shah/turancav2.tga"
+rank 1
+hp 10
+armor 1
+mr 4
+mor 5
+str 4
+rangedweapon 0 7 # Bow
+meleeweaponspec 9 13 # Weak Lance
+meleeweapon 0 4 # Spear
+human
+shield
+fast
+allitemslots
+nobootslots
+
+newmonster "Cataphract"
+descr "The Turanic cataphracts are nobleborn warriors with enough wealth to buy a horse and a heft amount of armor.  They closely resemble the knights of more civilized lands but are not quite so strong and brave and their armor is lighter.  They seem to be aware of this, as they prefer to soften up their enemies with bow and arrow before closing in for a more decisive engagement."
+spr1 "ee/spr/shah/cataphract1.tga"
+spr2 "ee/spr/shah/cataphract2.tga"
+rank 1
+hp 12
+armor 2
+mr 4
+mor 6
+str 5
+rangedweapon 0 7 # Bow
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 4 95 # Hoof
+human
+shield
+battlefast
+allitemslots
+nobootslots
+
+newmonster "Savaran Guard"
+descr "The Savaran Guard is a military unit that has only recently appeared within the armies of the Shah.  They are the mounted personal guard of the Shah and ride Nisean warhorses first bred into being by the Daevas and now cared for by the Dastur priest-mages."
+spr1 "ee/spr/shah/savguard1.tga"
+spr2 "ee/spr/shah/savguard2.tga"
+rank 1
+hp 15
+armor 3
+mr 5
+mor 7
+str 5
+rangedweapon 1 7 # Bow
+meleeweaponspec 12 13 # Lance
+meleeweapon 1 2 # Broadsword
+meleeweapon 6 95 # Strong hoof
+human
+shield
+fireres 100
+fast
+allitemslots
+nobootslots
+
+newmonster "Turan War Elephant"
+copystats "War Elephant"
+spr1 "ee/spr/shah/warelephant1.tga"
+spr2 "ee/spr/shah/warelephant2.tga"
+descr "The Elephant is a friendly beast, and Elephants are often tamed by humans.  They are sometimes used in warfare, and particularly by the Turans.  They are said to have discovered and cultivated a species of exotic nut known as the peanut, which the Elephants adore.  The peanut farms are a vital asset to the Turan warmachine and so their locations are well-guarded secrets.  Entire villages are founded around these and entire generations live and die without ever seeing the outside world, dedicated to the care of the peanuts.  This is probably to their benefit since the outside world is very dangerous."
+huge
+
+newmonster "Athravan"
+spr1 "ee/spr/shah/athravan1.tga"
+spr2 "ee/spr/shah/athravan2.tga"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The order of the Athravans worship the Amesha Spentas and maintain and revere sacred and cleansing fires and still pools of water.  They use storm magic as well as pyromancy.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue.  The Athravans collect gems which are used in sacred rites and also to ravens.  Ravens act as psychopomps in their religion, where the treatment of the dead is quite ghastly.  The dead are left exposed in tall, hollow towers from where they are quite literally taken by a variety of avian creatures.  Cremation is considered sacriligeous and in these days the Turans no longer have any neighbours which practice it."
+rank -1
+hp 5
+armor 0
+mr 7
+mor 5
+str 4
+spellweaponsingle 3 1 # Pyromancy
+spellweaponsingle 5 1 # Storm
+meleeweapon 0 0 # Fist
+power 53 1
+human
+allitemslots
+mastery 1
+gathergems
+nametype 48
+
+newmonster "Zaotar"
+copystats "Athravan"
+spr1 "ee/spr/shah/zaotar1.tga"
+spr2 "ee/spr/shah/zaotar2.tga"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The Zaotar is a higher-ranking Keeper and thus more powerful, as is right and proper.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue.  They are known to wear funny hats by custom, as well.  The Zaotar can use gems in sacred rites to create wards, enchantments and to summon the lesser divine servants of the Spentas."
+hp 6
+mr 8
+mor 6
+clearweapons
+spellweaponsingle 3 2
+spellweaponsingle 5 2
+meleeweapon 0 0 # Fist
+power 53 2
+mastery 1
+
+newmonster "Grand Zaotar"
+copystats "Zaotar"
+spr1 "ee/spr/shah/grandzaotar1.tga"
+spr2 "ee/spr/shah/grandzaotar2.tga"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  The Grand Zaotars are high-priests whose hats are partly made of gold, which absolutely does not succeed in making them look any less ridiculous.  They use storm magic as well as pyromancy.  They dress in white and gold, though some confused souls insist that their robes are actually black and blue."
+hp 7
+mr 9
+mor 7
+clearweapons
+spellweaponsingle 3 3
+spellweaponsingle 5 3
+meleeweapon 0 0 # Fist
+power 53 3
+coldres 50
+gathergems
+
+#
+newmonster "Karapan"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  The Karapans serve and sometimes revere the Daevas, in whose name they practice blood sacrifice.  While most societies which practice blood sacrifice do so in a civilized fashion, the Karapans throw their victims into large and terrible braziers.  Turan tribes who worship the Daevas also cremate their dead, which is a common point of contention with those tribes who worship the Spentas and Ahuras."
+spr1 "ee/spr/shah/karapan1.tga"
+spr2 "ee/spr/shah/karapan2.tga"
+rank -1
+hp 6
+armor 0
+mr 7
+mor 6
+str 4
+spellweaponsingle 3 1 # Pyromancy
+spellweaponsingle 11 1 # Blood
+meleeweapon 0 1 # Dagger
+power 54 1
+human
+allitemslots
+mastery 1
+gathersacr
+nametype 48
+
+newmonster "Dastur"
+copystats "Karapan"
+spr1 "ee/spr/shah/dastur1.tga"
+spr2 "ee/spr/shah/dastur2.tga"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  Dasturs are known for their arrogant demeanours, their funny hats, and their tendency to set anyone who mocks them on fire."
+hp 7
+mr 8
+mor 7
+clearweapons
+spellweaponsingle 3 2
+spellweaponsingle 11 2
+meleeweapon 0 1 # Dagger
+power 54 2
+mastery 1
+
+newmonster "Grand Dastur"
+copystats "Dastur"
+descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  Dasturs are known for their arrogant demeanours, their funny hats, and their tendency to set anyone who mocks them on fire.  The Grand Dastur has a hat partly made of gold, which only makes it look more ridiculous.  The considerable power and malice of the Grand Dasturs means that this is rarely mentioned in their vicinity."
+spr1 "ee/spr/shah/granddastur1.tga"
+spr2 "ee/spr/shah/granddastur2.tga"
+hp 8
+mr 9
+mor 8
+clearweapons
+spellweaponsingle 3 3
+spellweaponsingle 11 3
+meleeweapon 0 1 # Dagger
+fireres 50
+power 54 3
+
+#
+newmonster "Khshathra Vairya" #"Spenta of Sky and Metals"
+spr1 "ee/spr/shah/skymetalspenta1.tga"
+spr2 "ee/spr/shah/skymetalspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Khshathra Vairya is the Spenta of the Stone, Sky and Metals.  He is the principle of divine dominion, righteous power and self-control."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 5 3 # Storm
+spellweapon 6 3 # Geomancy
+meleeweapon 1 385 # Magic Staff
+flying
+shockres 100
+diseaseres
+awe 3
+allitemslots
+unique
+
+newmonster "Vohu Manah" # "Spenta of Animals"
+spr1 "ee/spr/shah/animalspenta1.tga"
+spr2 "ee/spr/shah/animalspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Vohu Manah is the Spenta of Animals.  He has great powers of Nature and no animal would ever strike him.  He is the principle of intelligence and good thoughts."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 39 3 # Druidism
+spellweapon 54 3 # Forest
+meleeweapon 1 385 # Magic Staff
+flying
+shockres 100
+poisonres 100
+diseaseres
+awe 3
+allitemslots
+unique
+
+newmonster "Asha Vahishta" # "Spenta of Fire"
+spr1 "ee/spr/shah/fspenta1.tga"
+spr2 "ee/spr/shah/fspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Asha Vahishta is the Spenta of Fire.  He is the principle of truth and justice.  He is the enemy of demons and the wicked."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 10
+str 5
+spellweapon 3 3 # Pyromancy
+spellweapon 22 3 # Golden Magic
+meleeweapon 1 385 # Magic Staff
+shockres 100
+fireres 100
+diseaseres
+awe 3
+flying
+allitemslots
+unique
+
+newmonster "Ameratat" # "Spenta of Plants"
+spr1 "ee/spr/shah/plantspenta1.tga"
+spr2 "ee/spr/shah/plantspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Ameretat is the Spenta of Plants.  She is the principle of deathlessness and immortality.  Like a plant in spring, she will be reborn when she dies."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 54 3 # Forest
+spellweapon 60 3 # Tree
+meleeweapon 4 0 # Fist
+immortal
+immortalap 4
+shockres 100
+poisonres 100
+diseaseres
+awe 3
+flying
+unaging
+allitemslots
+unique
+
+newmonster "Haurvatat" # "Spenta of Waters"
+spr1 "ee/spr/shah/wspenta1.tga"
+spr2 "ee/spr/shah/wspenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord and possess god-like power in their own right.  Haurvatat is the Spenta of Waters.  She is the principle of wholeness, health and perfection."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 4 3 # Hydromancy
+spellweapon 20 3 # Mysticism
+meleeweapon 4 0 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 3
+allitemslots
+unique
+
+newmonster "Spenta Armaiti" # "Spenta of the Earth"
+spr1 "ee/spr/shah/espenta1.tga"
+spr2 "ee/spr/shah/espenta2.tga"
+descr "The Amesha Spentas are the masters of the Yazata and are said to be the emanations of Ahura Mazda.  In a distant past Ahura Mazda was approached by the deceiver Azazel who seemed then to be an emissary of El.  The Grigori joined with the Yazata and destroyed Angra Mainyu, but in the aftermath Ba'al manifested and destroyed Ahura Mazda in turn.  Ba'al misunderstood the nature of Ahura Mazda, however, who now survives in the form of the Spentas.^^Each Spenta represents an aspect of their Lord.  Spenta Armaiti is the Spenta of the Earth. She is the principle of fertility, serenity and devotion."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 5
+spellweapon 6 3 # Geomancy
+spellweapon 54 3 # Forest
+meleeweapon 4 0 # Fist
+shockres 100
+diseaseres
+flying
+awe 3
+allitemslots
+unique
+
+newmonster "Yazad"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The warriors of the Yazata hosts bear enchanted weapons and armour.  They favour lances which are devastating in their hands.  It is said that the sight of a Yazata host sweeping over a castle's walls may literally blind the onlooker, but this is probably exaggeration."
+spr1 "ee/spr/shah/yazad1.tga"
+spr2 "ee/spr/shah/yazad2.tga"
+rank -1
+hp 20
+armor 2
+mr 7
+mor 7
+str 6
+meleeweaponspec 10 "Magic Lance Charge"
+meleeweapon 2 806 # Magic Spear
+awe 1
+shield
+flying
+coldres 50
+diseaseres
+shockres 100
+allitemslots
+
+# Celestial Yazad, 4 spell levels
+newmonster "Yazad of Fire"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  Fire is considered protective and cleansing by the Yazata and the fire wielded by the Yazata of Fires certainly seems to be."
+spr1 "ee/spr/shah/fyazad1.tga"
+spr2 "ee/spr/shah/fyazad2.tga"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 3 2 # Pyromancy
+spellweapon 22 2 # Golden Magic
+meleeweapon 0 4 # Fist
+shockres 100
+fireres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 48
+
+newmonster "Yazad of Justice"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Justice wield fire and light and excel at battling unholy beings.  Unfortunately they are themselves unholy in the eye of the proper gods, otherwise they would make excellent allies to modern civilization."
+spr1 "ee/spr/shah/justyazad1.tga"
+spr2 "ee/spr/shah/justyazad2.tga"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 16 2 # White
+spellweapon 22 2 # Golden
+meleeweapon 0 4 # Fist
+shockres 100
+fireres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 48
+
+newmonster "Yazad of the Stars"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Stars wield the power of the heavens and the heavens are very powerful."
+spr1 "ee/spr/shah/staryazad1.tga"
+spr2 "ee/spr/shah/staryazad2.tga"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 61 3 # Astrology
+spellweapon 3 1 # Storm
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 48
+
+newmonster "Yazad of the Sky"
+spr1 "ee/spr/shah/skyyazad1.tga"
+spr2 "ee/spr/shah/skyyazad2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Skies can control the weather which might explain why Astrologers can't predict it, and also why droughts afflict the faithful."
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 3 3 # Storm
+spellweapon 61 1 # Astrology
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 50
+
+newmonster "Yazad of Water"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Waters are said to be very gentle and kind, but they are mostly remarkable for being able to drown even those who are already dead."
+spr1 "ee/spr/shah/wyazad1.tga"
+spr2 "ee/spr/shah/wyazad2.tga"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 4 2 # Hydromancy
+spellweapon 20 2 # Mysticism
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 50
+
+newmonster "Yazad of the Earth"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Earth seem to possess power over not just the earth, but nature as well.  They will speak at great length about preserving the natural beauty and value of both.  Even the most faithful of the Turans do not seem to heed this dogma and one of the finer points of their culture is their appreciation of forest fires."
+spr1 "ee/spr/shah/eyazad1.tga"
+spr2 "ee/spr/shah/eyazad2.tga"
+rank -1
+hp 20
+armor 0
+mr 9
+mor 6
+str 5
+spellweapon 6 2 # Geomancy
+spellweapon 54 2 # Forest
+meleeweapon 0 4 # Fist
+shockres 100
+coldres 50
+poisonres 50
+diseaseres
+flying
+awe 2
+allitemslots
+nametype 50
+
+# Greater Daevas
+
+newmonster "Akem Manah" # Daeva of Evil Intentions
+copystats "Mazzik"
+spr1 "ee/spr/shah/eidaeva1.tga"
+spr2 "ee/spr/shah/eidaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Akem Manah is the Daeva of Evil Intentions and progenitor of Daevas.  He is opposed to Vohu Manah, Spenta of Animals and the principle of good thoughts.  The presence of Akem Manah will cause strife and disorder."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+spellweapon 8 3 # Unlife
+spellweapon 11 3 # Blood
+meleeweapon 2 385 # Magic Staff
+fear 2
+fireres 100
+flying
+allitemslots
+unique
+
+newmonster "Indra" # Daeva of Frozen Minds
+copystats "Mazzik"
+spr1 "ee/spr/shah/fmdaeva1.tga"
+spr2 "ee/spr/shah/fmdaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Indra is the Daeva of Frozen Minds who makes the righteous unable practice the truth.  He is opposed to Asha Vahishta, Spenta of Fire and principle of truth."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 36 3 # Command - not entirely happy with this selection but close enough.
+meleeweapon 2 385 # Magic Staff
+#prebatweapon 0 "Frozen Minds" - doesn't seem like a snap to make this work
+fear 2
+fireres 100
+flying
+stealth
+allitemslots
+unique
+
+# confusion weapon?
+
+newmonster "Saurva" # Daeva of Oppression
+copystats "Mazzik"
+spr1 "ee/spr/shah/oppdaeva1.tga"
+spr2 "ee/spr/shah/oppdaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Saurva is the Daeva of Oppression.  He is opposed to Khshathra Vairya, Spenta of Sky and Metals and principle of righteous power."
+rank -1
+hp 60
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 11 3 # Blood
+meleeweapon 2 385 # Magic Staff
+fear 2
+flying
+fireres 100
+allitemslots
+unique
+
+newmonster "Nanghaithya" # Daeva of Discontent
+copystats "Mazzik"
+spr1 "ee/spr/shah/disdaeva1.tga"
+spr2 "ee/spr/shah/disdaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Nanghaithya is the Daeva of Discontent.  She is opposed to Spenta Armaiti, Spenta of the Earth and principle of devotion.  Nanghaithya will spread unrest where she dwells."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 6 3 # Geomancy
+spellweapon 8 3 # Unlife
+meleeweapon 5 0 # Fist
+fear 2
+fireres 100
+flying
+allitemslots
+unique
+
+newmonster "Taurvi" # Daeva of Destruction
+copystats "Mazzik"
+spr1 "ee/spr/shah/destdaeva1.tga"
+spr2 "ee/spr/shah/destdaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom. Taurvi is the Daeva of Destruction.  She is opposed to Haurvatat, Spenta of Waters and principle of wholeness.  Taurvi will cause destruction and turmoil where she dwells."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 3 3 # Pyromancy
+spellweapon 6 3 # Geomancy
+meleeweapon 5 0 # Fist
+fear 2
+fireres 100
+flying
+allitemslots
+unique
+
+newmonster "Zauri" # Daeva of Aging
+copystats "Mazzik"
+spr1 "ee/spr/shah/agedaeva1.tga"
+spr2 "ee/spr/shah/agedaeva2.tga"
+descr "The mightiest Daevas comprise the Heptad, said to be emanations of the Angra Mainyu.  Though the main body and will of Angra Mainyu was destroyed by the coalition between Azazel and Ahura Mazda by the manipulations of Ba'al, it seems Ba'al did not entirely understand the nature of the Daevas and Ahuras.  Angra Mainyu survives within the Heptad and some speculate that he could one day return.^^Each Daeva of the Heptad represents an aspect of their Lord, opposed to the Amesha Spentas of the Lord of Wisdom.  Zauri is the Daeva of Aging and the bane of plants.  She is opposed to Ameretat, Spenta of Plants and principle of immortality.  The presence of Zauri will cause plants to wither and people to age and die."
+rank -1
+hp 54
+armor 2
+mr 10
+mor 8
+str 6
+clearweapons
+spellweapon 8 3 # Unlife
+spellweapon 37 3 # Black Magic
+meleeweapon 5 0 # Fist
+fear 2
+fireres 100
+stealth
+flying
+allitemslots
+unaging
+unique
+
+newmonster "Daeva"
+copystats "Mazzik"
+spr1 "ee/spr/shah/daeva1.tga"
+spr2 "ee/spr/shah/daeva2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  When the Lord and originator of all Daevas was destroyed by Ahura Mazda and the Shahs fled to Elysium the Daevas came with them.  It is not known where they dwell now, but the Karapans can summon them with blood sacrifice.^^The Daevic hosts fiery enchanted weapons and armor.  They are entirely immune to fire and can cause fear in the hearts of mortals."
+rank -1
+hp 24
+armor 2
+mr 7
+mor 8
+str 6
+rangedweaponbonus 0 "Project Fear"
+meleeweaponspec 10 "Magic Lance Charge"
+meleeweapon 2 606 # Magic Spear
+#fear - Might be too strong, special fear attack instead?
+fireres 100
+shield
+flying
+allitemslots
+
+newmonster "Jahi"
+copystats "Lilot"
+spr1 "ee/spr/shah/jahi1.tga"
+spr2 "ee/spr/shah/jahi2.tga"
+descr "The Jahi is a Daeva woman of lesser stature and power.  Their name means 'whore' in the Turanic tongue, but the Jahi do not appear to mind the appelation.  They resemble the infernal Succubi and Lilim who serve Ba'al in many ways, though they bear a particular hatred for the Lilim and will attack them on sight.  They lack the disfigurements of other demonic seductresses, but have a much less pleasant disposition.  They are much less likely to seduce a man than they are to take him by force, though the Turans do not seem to draw any distinction between the two behaviours."
+rank 1
+hp 22
+armor 0
+mr 6
+mor 6
+str 6
+clearweapons
+meleeweapon 6 12 # Claw
+meleeweapon 6 12 # Claw
+assassinweapon 1 52 # Charm
+rearpos
+fireres 50
+awe
+allitemslots
+
+newmonster "Daeva of Shooting Stars"
+copystats "Mazzik"
+spr1 "ee/spr/shah/stardaeva1.tga"
+spr2 "ee/spr/shah/stardaeva2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Daevas of Shooting Stars are demon sorcerers supposedly with the power to inflict suffering and misfortune.  They are generally considered make-believe."
+rank -1
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 46 2 # Maladies
+spellweapon 61 2 # Astrology
+meleeweapon 5 12 # Claw
+fear
+fireres 50
+allitemslots
+nametype 48
+
+newmonster "Yata"
+copystats "Mazzik"
+spr1 "ee/spr/shah/yata1.tga"
+spr2 "ee/spr/shah/yata2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  Yatas are demon sorcerers of a straightforward though unpleasant sort."
+rank -1
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 3 2 # Pyromancy
+spellweapon 8 2 # Unlife
+meleeweapon 5 12 # Claw
+fireres 100
+fear
+allitemslots
+nametype 50
+
+newmonster "Daeva of Frost and Snow"
+copystats "Mazzik"
+spr1 "ee/spr/shah/fsdaeva1.tga"
+spr2 "ee/spr/shah/fsdaeva2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Daevas of Frost and Snow have a very literal title and as one might expect they use magics of death and ice, almost exclusively for destructive purposes."
+rank -1
+hp 24
+armor 0
+mr 8
+mor 6
+str 5
+clearweapons
+spellweapon 8 2 # Unlife
+spellweapon 27 2 # Frost
+meleeweapon 5 12 # Claw
+coldres 100
+fear
+allitemslots
+nametype 48
+
+newmonster "Pairika"
+copystats "Lilot"
+spr1 "ee/spr/shah/pairika1.tga"
+spr2 "ee/spr/shah/pairika2.tga"
+descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  Daevas are a type of demonic entity who once inhabited the volcanoes and harshest deserts of Terra.  They are aligned with fire and death and draw power from the suffering of men.  The Pairikas are much like the Jahi, but they use horrible magics rather than brute force to achieve their ends."
+rank -1
+hp 20
+armor 0
+mr 8
+mor 6
+str 6
+clearweapons
+spellweapon 13 2 # Garnet Sorcery
+spellweapon 37 2 # Black Magic
+meleeweapon 6 12 # Claw
+assassinweapon 1 729 # Dream Seduction
+fear
+stealth
+fireres 100
+flying
+allitemslots
+nametype 50
+
+newmonster "Ahurani"
+spr1 "ee/spr/shah/ahurani1.tga"
+spr2 "ee/spr/shah/ahurani2.tga"
+descr "Supposedly a type of Yazad, the Ahurani distinguish themselves by being made of water.  They closely resemble Undines, but Undines were not known to inhabit Terra as the Yazata did.  What relationship they have with one another, if any, is unknown.  The Ahurani cannot use its wings to fly but is more powerful than most Undines."
+rank 0
+hp 9
+armor 0
+mr 7
+mor 4
+str 4
+spellweapon 4 2 # Hydromancy, but see below
+more1spells 1 #
+more2spells -2 # Should guarantee lots of small water spells being cast, without undesireable consequences should a booster be acquired.
+meleeweapon 4 273 # Waterstrike.
+water
+coldres 100
+poisonres 100
+bluntres
+slashres
+pierceres
+fireres 50
+flying
+allitemslots
+nametype 48
+
+newmonster "Airya Seraph"
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  They are ruled by mages known as Seraphs who really have nothing to do with the Seraphim.  They are powerful mages of storm and frost.  Curiously they do not appear to be considered sacred nor, since it is not thought to be holy in the religion of the Athravans to smite unbelievers with bolts of lightning, do they appear to have any religious duties."
+spr1 "ee/spr/shah/seraph1.tga"
+spr2 "ee/spr/shah/seraph2.tga"
+rank -1
+hp 6
+armor 0
+mr 8
+mor 6
+str 4
+spellweapon 5 2 # Storm
+spellweapon 27 1 # Frost
+meleeweapon 0 0 # Fist
+flying
+allitemslots
+nametype 50
+
+newmonster "Seraphine"
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The Seraphines are Airya women who would be very beautiful if not for their wings.  Many laymen seem to consider them beautiful anyway, though they tend to retract these statements under questioning by Inquisitors.  It is commonly suggested that Airya men are sterile as a side-effect of the armour they wear and so the Seraphine are really much like Jahi or Succubi and must seduce human men for the Airya to proliferate.  Mentioning this aloud in the presence of any Airya or devotee of the Spentas is not recommended."
+spr1 "ee/spr/shah/seraphine1.tga"
+spr2 "ee/spr/shah/seraphine2.tga"
+rank -1
+hp 5
+armor 0
+mr 7
+mor 6
+str 4
+spellweapon 3 1 # Pyromancy
+meleeweapon 0 0 # Fist
+flying
+allitemslots
+nametype 50
+
+newmonster "Icecrafter"
+descr "The armaments of the Airya warriors are produced by a very specialized caste of mages known as Icecrafters.  The weapons and armor they create are nearly so fine as those of the dwarven Runesmiths, at least when the weather is cold.  When the need is dire they can turn their talents to much more direct uses."
+spr1 "ee/spr/shah/icecrafter1.tga"
+spr2 "ee/spr/shah/icecrafter2.tga"
+rank -1
+hp 5
+armor 0
+mr 7
+mor 5
+str 4
+spellweapon 27 1 # Frost
+meleeweapon 0 0 # Fist
+power 48 3
+flying
+allitemslots
+nametype 48
+
+newmonster "Airya Iceclad"
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The warriors of the Airya are known as the Iceclad.  This is a very literal name since their weapons and armor are both made from a kind of enchanted ice.  They wield lances and a wing of Iceclads (which is what the Airya call a squad without the slightest trace of irony) flying right over conventional fortifications is a terrifying sight.  As for their armor, it is reputedly not very comfortable, however, and while the magic ice is nearly as hard as steel even on a warm summer day, it will partially melt.  It will start to drip and soak the wearer through, which is reportedly very uncomfortable and shown to be very irritating."
+spr1 "ee/spr/shah/iceclad1.tga"
+spr2 "ee/spr/shah/iceclad2.tga"
+rank 1
+hp 8
+armor 2
+mr 6
+mor 6
+str 4
+meleeweaponspec 10 "Magic Lance Charge"
+meleeweapon 0 606 # Magic Spear
+shield
+iceprot 2
+flying
+coldres 100
+allitemslots
+
+newmonster "Kavi Archer"
+descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  A militant order known as the Kavi fills the ranged formations of the Airya hosts.  They wear the same armor as the Iceclad but are not called that.  Their bows are made of ordinary wood but the arrows they use are magical and if you are struck by one you will not be happy, as the icy arrowheads will burst into a mist so cold it would probably kill you by itself."
+spr1 "ee/spr/shah/airyaarcher1.tga"
+spr2 "ee/spr/shah/airyaarcher2.tga"
+rank 0
+hp 5
+armor 2
+mr 6
+mor 5
+str 4
+rangedweapon 0 "Frost Bow"
+meleeweapon 0 1 # Dagger
+iceprot 2
+flying
+coldres 100
+allitemslots
+
+newmonster "Harab Elder"
+copystats "Court Mage"
+spr1 "ee/spr/shah/harab1.tga"
+spr2 "ee/spr/shah/harab2.tga"
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper."
+rank -1
+hp 5
+armor 0
+mr 6
+mor 4
+str 4
+clearweapons
+spellweapon 38 1 # Necromancy 1
+meleeweapon 3 0 # Fist
+flying
+allitemslots
+mastery 1
+nametype 50
+
+newmonster "Harab Seraph"
+copystats "Harab Elder"
+spr1 "ee/spr/shah/harabseraph1.tga"
+spr2 "ee/spr/shah/harabseraph2.tga"
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The Mairya are ruled by a caste of necromancers who rule by consensus with their peers and not by right of blood as is proper.  Like the Airyans, the Raptors refer to their most honored leaders as Seraphs, even though they really have nothing in common with the Seraphim."
+hp 6
+mr 7
+mor 5
+clearweapons
+spellweapon 38 2 # Necromancy 2
+meleeweapon 0 5 # Staff
+nametype 50
+
+newmonster "Iron Guard"
+descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, but the personal guards of the Elders typically have the sense to use shields."
+spr1 "ee/spr/shah/ironguard1.tga"
+spr2 "ee/spr/shah/ironguard2.tga"
+rank 1
+hp 7
+armor 1
+mr 5
+mor 6
+str 4
+meleeweaponspec 10 13 # Lance 1-10
+meleeweapon 0 4 # Spear
+shield 1
+flying
+allitemslots
+
+newclass
+setclassname "Shah"
+setmaincom "Shah"
+classdescr "Before men arrived in Elysium, a people known as the Tur lived in the southernmost deserts of Terra.  These were a fierce and war-like people split into many tribes and petty kingdoms which warred ceaselessly with one another.  Their kings are known as Shahs.  When Ba'al made himself manifest they were his first victims, but several of the Shahs led the remainder of their people to Elysium.^^The Shah lacks the administrative acumen of the Baron and the technology available to him is not quite as advanced, but his warriors are flexible and can fight both at a distance and in close quarters.  When the elephants of Elysium were discovered to be one of the few friendly animals native to Elysium they were soon tamed and repurposed for war.  They can trample through enemy lines and serve as mobile towers for archers.^^Mage-priests of the old faiths supplement that Shah's forces.  They are divided into two orders.  The Athravans venerate the Yazads and Spentas and use storm magic, while the Karapans venerate the Daevas and use blood magic.  Both orders are united in their veneration of fire.  While they no longer war actively with one another, the two orders refuse to work side-by-side with one another.^^Abilities:^Starts in a very well fortified citadel.^Diverse troops including expendable Paighans, elite and flexible Zhayedans and Cataphracts, and massive War Elephants.^The Shah may align himself with one of two orders of magi.^The Athravans collect all sorts of gems to summon Yazatas.^The Karapans collect sacrifices to summon Daevas."
+hometerr 22 # Castle - may be revised at a later date
+addstartterr 18 # Village
+addstartterr 105 # coal mine
+addstartunits "Turan Warrior" 8
+addstartunits "Turan Archer" 5
+addstartcom "Spahbed"
+addstartunits "Turan Cavalryman" 4
+recherochance
+recasschance
+libbonusdescr "wizards"
+templebonusdescr "mage-priests"
+nostdtroops
+addcomrec "Shah"
+reclimiter "-Shah"
+#reclimiter "Shahanshah"
+addcomrec "Spahbed"
+addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
+addunitrec "Turan Archer" 100 5 50 0 0
+addunitrec "Turan Warrior" 100 5 50 0 5
+addunitrec "Zhayedan" 100 5 60 0 15
+addunitrec "Turan Cavalryman" 100 3 50 0 10
+addunitrec "Cataphract" 100 3 50 0 20
+addunitrec "War Elephant" 10 1 100 0 10
+addmercrec "Scout" 10 1 25 10 0
+addcomrec "Athravan" 5 45 10 0
+templerec
+reclimiter "-Karapan"
+reclimiter "-Dastur"
+reclimiter "-Grand Dastur"
+addcomrec "Karapan" 5 45 10 0
+templerec
+reclimiter "-Athravan"
+reclimiter "-Zaotar"
+reclimiter "-Grand Zaotar"
+# Generic Civilized
+addcomrec "Mercenary Captain" 5 45 10 0
+addmercrec "Mercenary Cavalry" 10 4 50 12 0
+reclimiter "+Mercenary Captain"
+# Universal Generic
+addcomrec "Turtle Chief" 5 40 10 0
+addunitrec "Turtle Warrior" 20 5 45 10 0
+reclimiter "+Turtle Chief"
+# Generic Mages
+addcomrec "Chartmaker" 0 40 20 0
+addcomrec "Warrior Mage" 0 65 20 5
+libraryrec
+addcomrec "Mermage" 1 40 20 0
+libraryrec
+reclimiter "+Turtle Chief"
+
 
 

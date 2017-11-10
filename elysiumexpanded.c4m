@@ -55,7 +55,6 @@ range 5
 init 2
 dmgtype 7 # Piercing
 dmg 3
-mundane
 arrow
 lob
 rangepen
@@ -63,8 +62,13 @@ flymode 1 # Arrow
 flylook 0 # Arrow
 flysound 14  # Arrow
 sound -1  # No sound on impact
-#next ???
+next
+nextdmg 4
 # Used by Kavi Archers, Iceclad Zhayedans
+
+newweapon "Frost Arrow"
+dmgtype 5
+sound -1
 
 newweapon "Ice Lance"
 init 7
@@ -77,7 +81,7 @@ newweapon "Magic Lance Charge"
 init 6
 dmgtype 7 # Magic.
 oneshot
-impact 84
+sound 84
 # Used by Iceclads, Daevas.
 
 newweapon "Spectral Javelin"
@@ -105,8 +109,8 @@ sound 22
 # Used by Daevas
 
 newmonster "Mercenary Cavalry"
-spr1 "ee/spr/merccav1.tga"
-spr2 "ee/spr/merccav2.tga"
+spr1 "ee/spr/i/merccav1.tga"
+spr2 "ee/spr/i/merccav2.tga"
 descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
 rank 1
 hp 10
@@ -500,7 +504,7 @@ coldres 50
 newmonster "Unicorn Knight of Fire"
 copystats "Unicorn Knight"
 spr1 "ee/spr/bar/ufk1.tga"
-spr2 "ee/spr/bar/unk2.tga"
+spr2 "ee/spr/bar/ufk2.tga"
 descr "Elysium has many creatures that would make much better battle mounts than a horse, but unfortunately none of them have turned out to be sufficiently friendly to be tamed.  However, there is one exception, the Unicorn.  The Unicorn seems to have some defect that makes it like young girls, so by sacrificing a young girl, it is possible to gain this truly magnificent beast as a mount.  The magic of the Unicorn rubs off on its rider and makes him immune to poison and he will recover from wounds at an amazing speed.  This knight has also been provided with fire-resistant armor forged by a master smith at the Baron's behest, and also at his expense."
 hp 16
 mr 7
@@ -674,7 +678,7 @@ libraryrec
 reclimiter "+Turtle Chief"
 #
 
-selectritual "Lesser Ceremony to Ba'al"
+selectritual "Lesser Ceremony to Baal"
 clearritspec
 level 9
 nostart
@@ -1044,9 +1048,8 @@ apcost 5
 addstring "1d3+1*Rephaite"
 #addstring - ?
 
-#TODO Description
 newritual "Royal Banquet"
-descr "The"
+descr "The Rephaite lord invites one of his peers to a vast and grisly banquet.  Blood will flow through the streets and screams of terror will plague the populace for days.  Royal gifts will be exchanged and in the end another Rephaite lord will swear to the service of the Anointed Priestess."
 ritpow 50
 level 3
 cost 0 180
@@ -1091,11 +1094,13 @@ fireres 50
 selectmonster "Melqart"
 power 50 3
 fireres 50
+
 newritual "Blood to Blood" # Scry for Watchers
 cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it's mostly a token.
 ritpow 51 1 # Nephil-only
 planeloc 2 # Inferno
 randnewloc 104 # Pit
+free
 
 selectritual "Blood to Blood"
 descr "The Nephilim are the children of the Watchers and in turn begat all the races of giants who serve Ba'al.  With this pure blood a scrying ritual can be performed to locate the fathers of the Nephilim.  The blood of the Nephil is the key and the ten sacrificed maidens provides the power."
@@ -1110,21 +1115,35 @@ descr "The Nephilim are the children of the Watchers and in turn begat all the r
 # IMPORTANT TO NOTE! Zamzummite and Malik have a classcost value. To minimize fiddliness I let them keep it and just set the costs for the rituals to be lower than you'd expect and how you'll see them in-game.
 
 newritpow
+
+newritual "Call Nephil"
+descr "The Nephilim are the sons of the Grigori, the mightiest servants of Ba'al.  They obey none save their fathers and Ba'al himself.  While they long since left their own children and their descendants to wander the Earth's hidden places, Ba'al himself can call them back, and then their blood may be used to scry for the prison of the Watchers."
+ritpow 51
+level 2 # Ba'al only
+cost 4 400
+apcost 2
+planereq 0
+terr 117 # Desert
+summoning
+addstring "c*Nephil"
+
 # TODO infernal gate ritual (should work now)
 newritual "Infernal Breach"
+descr "With an awesome application of power, Ba'al may create a passageway between Elysium and Inferno, provided that the path has been discovered through the blood of the Nephilim.  Only by warring with the Infernal Powers themselves may the Watchers be released."
 ritpow 51 # Ba'al only
 level 2
 cost 4 120
 apcost 2
-planereq 0
-terr # Desert?
+planereq 0 # Elysium
+terr 117 # Desert
 alterloc 201 # Infernal gate
-portal 1000 # Unlinked, unique
+makeportal 1000 # new, unique
 setplane 2 # Inferno
-chooseloc
+chooseterrloc -42 # Any land, hopefully won't allow you to break anything.
 soundfx 57
-makeportal
+makeportal 1000 # new, unique
 centerloc 
+free
 
 newritual "Release Watcher"
 descr "The Watchers were high-ranking angels of tremendous power sent from the heavens to guide mankind.  They were the first to fall to Ba'al's influence and by far his most powerful servants.  They were sealed in Inferno by the servants of El, but should Ba'al reach the pit in which they were chained he can break these seals, but the seals are very powerful and even with a generous quantity of sacrifices brought along Ba'al will be drained by the effort.  There are six Watchers in total."
@@ -1141,16 +1160,17 @@ addstring "c*Ezekiel"
 addstring "c*Shamshiel"
 addstring "c*Kokabel"
 addstring "c*Arakiel"
+free
 
 # TODO Ritpowers should work now, but test!
 selectmonster "Nephil"
 fireres 50
-#ritpow 51 1
+power 51 1
 #
 
 selectmonster "God"
 unaging
-ritpow 51 2
+power 51 2
 #
 
 # Release Watcher event - should be possible to finagle this but would need lots of testing. Neat, though.
@@ -1214,10 +1234,9 @@ human
 allitemslots
 nametype 49
 
-# TODO SPRITE
 newmonster "Emite"
-spr1 "ee/spr/hp/emi1.tga"
-spr2 "ee/spr/hp/emi2.tga"
+spr1 "ee/spr/hp/emite1.tga"
+spr2 "ee/spr/hp/emite2.tga"
 descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers but do not yet have any religious authority of their own.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
 rank -1
 hp 40
@@ -2243,11 +2262,10 @@ addstring "1d4+2*Zotz Warrior"
 addstring "2d4+1*Zotz"
 addstring "1d3*Beast Bat"
 
-# TODO Chilan sprite/stats, ceremony of night, change zwar sprite and exchange shield for armour
 newmonster "Chilan"
-spr1 "ee/spr/pk/chil1.tga"
-spr2 "ee/spr/pk/chil2.tga"
-descr ""
+spr1 "ee/spr/pk/chilan1.tga"
+spr2 "ee/spr/pk/chilan2.tga"
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value.  The Chilan is a priest of the bat people, and is often found leading their raiding parties."
 rank -1
 hp 4
 armor 0
@@ -2255,8 +2273,9 @@ mr 7
 mor 4
 str 3
 spellweapon 32 1 # Night
-meleeweapon 0 0 # Fist
+meleeweapon -1 0 # Fist
 noeyes
+coldblood
 flying
 allitemslots
 holy
@@ -2264,15 +2283,16 @@ holy
 newmonster "Zotz"
 spr1 "ee/spr/pk/zot1.tga"
 spr2 "ee/spr/pk/zot2.tga"
-descr ""
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value."
 rank 1
 hp 4
 armor 0
 mr 5
 mor 3
 str 3
-meleeweapon # Club?
+meleeweapon -1 228 # Obsidian clubsword
 noeyes
+coldblood
 flying
 allitemslots
 
@@ -2280,15 +2300,15 @@ newmonster "Zotz Warrior"
 copystats "Zotz"
 spr1 "ee/spr/pk/zotw1.tga"
 spr2 "ee/spr/pk/zotw2.tga"
-descr ""
+descr "Zots are a bizarre bat-like race that live in the caves of Agartha and serve the Teotl of Night.  They have long lifespan, but unlike most long-lived beings they are also very fecund and these two facts combine to grant them a positively explosive population growth.  They mainly leave their caves at the calling of their Lord or one of the Priests of the Moon.  They are weak, cowardly and blind and fare poorly in the cold, but their abilities of flight grant them considerable strategic value.  The Zots do not like shields as this inhibits their flight.  The warriors instead wear relatively heavy armor, but Zotz are weak that this armor would still be considered light by a human."
 rank 1
 hp 5
 armor 1
 mor 4
 clearweapons
-meleeweaponspec 7 13 # Lance 1-7
-meleeweapon -1 4 # Spear
+meleeweapon -1 228 # Obsidian Clubsword
 noeyes
+coldblood
 flying
 allitemslots
 
@@ -3205,13 +3225,13 @@ meleeweapon 6 95 # Hoof
 battlefast
 human
 fireres 100
-shocres 100
+shockres 100
 coldres 50
 leadership 2
 shield
 allitemslots
 nobootslots
-nametype
+nametype 48
 
 #created by coronation at king's castle or capitolium?
 #newmonster "Shahanshah"
@@ -3235,6 +3255,7 @@ human
 shield
 allitemslots
 nobootslots
+nametype 48
 
 newmonster "Savaran Spahbed"
 copystats "Spahbed"
@@ -3251,6 +3272,7 @@ meleeweapon 1 2 # Broadsword
 meleeweapon 6 95 # Stronger hoof
 fast
 fireres 100
+nametype 48
 
 newmonster "Paighan"
 descr "The Turanic people is fierce and warlike.  While the appearance of the Paighan could seem to indicate otherwise, it should be noted that they are drawn directly out of the populace without any further training.  While cowardly and treated as fodder, the Paighan are as skilled as the common spearmen fielded by most warlords."
@@ -3284,7 +3306,6 @@ human
 shield
 allitemslots
 
-# TODO sprite
 newmonster "Turan Archer"
 spr1 "ee/spr/shah/turarcher1.tga"
 spr2 "ee/spr/shah/turarcher2.tga"
@@ -3478,7 +3499,7 @@ gathersacr
 nametype 48
 
 newmonster "Dastur"
-copystats "Kaprapan"
+copystats "Karapan"
 spr1 "ee/spr/shah/dastur1.tga"
 spr2 "ee/spr/shah/dastur2.tga"
 descr "As there are two opposing pantheons worshipped by the Tur, so there are two corresponding orders of mortal mage-priests.  The orders form large clans in effect, as the only way to join one of the orders is to be born into it.  While the lowest rank of the Athravan or Keeper order carries the same name above which the Zaotar are exalted, in the order of the Dasturs the lowest rank is the Karapan who stands beneath the Dasturs.  Dasturs are known for their arrogant demeanours, their funny hats, and their tendency to set anyone who mocks them on fire."
@@ -3676,6 +3697,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 48
 
 newmonster "Yazad of Justice"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Justice wield fire and light and excel at battling unholy beings.  Unfortunately they are themselves unholy in the eye of the proper gods, otherwise they would make excellent allies to modern civilization."
@@ -3697,6 +3719,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 48
 
 newmonster "Yazad of the Stars"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Stars wield the power of the heavens and the heavens are very powerful."
@@ -3717,6 +3740,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 48
 
 newmonster "Yazad of the Sky"
 spr1 "ee/spr/shah/skyyazad1.tga"
@@ -3737,6 +3761,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 50
 
 newmonster "Yazad of Water"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of Waters are said to be very gentle and kind, but they are mostly remarkable for being able to drown even those who are already dead."
@@ -3757,6 +3782,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 50
 
 newmonster "Yazad of the Earth"
 descr "For all of recorded history each of the Turanic tribes have worshipped one of two warring pantheons.  The Yazata are a supernatural race of beings which draw power from the sky.  They sparkle so intensely that mortal warriors may be forced to avert or close their eyes to strike at them.  The mightier they are, the more they sparkle.  All Yazatas are resistant to shock and many are resistant to cold as well.^^The Celestial Yazata are the leaders of their kin and all posses considerable magical powers.  The Yazata of the Earth seem to possess power over not just the earth, but nature as well.  They will speak at great length about preserving the natural beauty and value of both.  Even the most faithful of the Turans do not seem to heed this dogma and one of the finer points of their culture is their appreciation of forest fires."
@@ -3778,6 +3804,7 @@ diseaseres
 flying
 awe 2
 allitemslots
+nametype 50
 
 # Greater Daevas
 
@@ -3905,7 +3932,7 @@ spellweapon 8 3 # Unlife
 spellweapon 37 3 # Black Magic
 meleeweapon 5 0 # Fist
 fear 2
-resfire 100
+fireres 100
 stealth
 flying
 allitemslots
@@ -3970,6 +3997,7 @@ meleeweapon 5 12 # Claw
 fear
 fireres 50
 allitemslots
+nametype 48
 
 newmonster "Yata"
 copystats "Mazzik"
@@ -3989,6 +4017,7 @@ meleeweapon 5 12 # Claw
 fireres 100
 fear
 allitemslots
+nametype 50
 
 newmonster "Daeva of Frost and Snow"
 copystats "Mazzik"
@@ -4008,6 +4037,7 @@ meleeweapon 5 12 # Claw
 coldres 100
 fear
 allitemslots
+nametype 48
 
 newmonster "Pairika"
 copystats "Lilot"
@@ -4030,6 +4060,7 @@ stealth
 fireres 100
 flying
 allitemslots
+nametype 50
 
 newmonster "Ahurani"
 spr1 "ee/spr/shah/ahurani1.tga"
@@ -4054,6 +4085,7 @@ pierceres
 fireres 50
 flying
 allitemslots
+nametype 48
 
 newmonster "Airya Seraph"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  They are ruled by mages known as Seraphs who really have nothing to do with the Seraphim.  They are powerful mages of storm and frost.  Curiously they do not appear to be considered sacred nor, since it is not thought to be holy in the religion of the Athravans to smite unbelievers with bolts of lightning, do they appear to have any religious duties."
@@ -4070,6 +4102,7 @@ spellweapon 27 1 # Frost
 meleeweapon 0 0 # Fist
 flying
 allitemslots
+nametype 50
 
 newmonster "Seraphine"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The Seraphines are Airya women who would be very beautiful if not for their wings.  Many laymen seem to consider them beautiful anyway, though they tend to retract these statements under questioning by Inquisitors.  It is commonly suggested that Airya men are sterile as a side-effect of the armour they wear and so the Seraphine are really much like Jahi or Succubi and must seduce human men for the Airya to proliferate.  Mentioning this aloud in the presence of any Airya or devotee of the Spentas is not recommended."
@@ -4085,11 +4118,12 @@ spellweapon 3 1 # Pyromancy
 meleeweapon 0 0 # Fist
 flying
 allitemslots
+nametype 50
 
 newmonster "Icecrafter"
 descr "The armaments of the Airya warriors are produced by a very specialized caste of mages known as Icecrafters.  The weapons and armor they create are nearly so fine as those of the dwarven Runesmiths, at least when the weather is cold.  When the need is dire they can turn their talents to much more direct uses."
-spr1 "ee/spr/shah/"
-spr2 "ee/spr/shah/"
+spr1 "ee/spr/shah/icecrafter1.tga"
+spr2 "ee/spr/shah/icecrafter2.tga"
 rank -1
 hp 5
 armor 0
@@ -4101,6 +4135,7 @@ meleeweapon 0 0 # Fist
 power 48 3
 flying
 allitemslots
+nametype 48
 
 newmonster "Airya Iceclad"
 descr "The white-winged Airya serve the Spentas and are said to descend from Yazata who have lain with mortal women.  The warriors of the Airya are known as the Iceclad.  This is a very literal name since their weapons and armor are both made from a kind of enchanted ice.  They wield lances and a wing of Iceclads (which is what the Airya call a squad without the slightest trace of irony) flying right over conventional fortifications is a terrifying sight.  As for their armor, it is reputedly not very comfortable, however, and while the magic ice is nearly as hard as steel even on a warm summer day, it will partially melt.  It will start to drip and soak the wearer through, which is reportedly very uncomfortable and shown to be very irritating."
@@ -4154,6 +4189,7 @@ meleeweapon 3 0 # Fist
 flying
 allitemslots
 mastery 1
+nametype 50
 
 newmonster "Harab Seraph"
 copystats "Harab Elder"
@@ -4166,6 +4202,7 @@ mor 5
 clearweapons
 spellweapon 38 2 # Necromancy 2
 meleeweapon 0 5 # Staff
+nametype 50
 
 newmonster "Iron Guard"
 descr "The black-winged Mairya are servants of the Daevas and are said to be descended from Jahis who have lain with mortal men.  The clan warriors despise ranged weapons, but the personal guards of the Elders typically have the sense to use shields."
@@ -4190,10 +4227,10 @@ classdescr "Before men arrived in Elysium, a people known as the Tur lived in th
 hometerr 22 # Castle - may be revised at a later date
 addstartterr 18 # Village
 addstartterr 105 # coal mine
-addstartunits "Turan Spearman" 8
+addstartunits "Turan Warrior" 8
 addstartunits "Turan Archer" 5
 addstartcom "Spahbed"
-addstartunit "Turan Cavalryman" 4
+addstartunits "Turan Cavalryman" 4
 recherochance
 recasschance
 libbonusdescr "wizards"
@@ -4204,9 +4241,9 @@ reclimiter "-Shah"
 #reclimiter "Shahanshah"
 addcomrec "Spahbed"
 addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
-addunitrec "Turan Archer" 100 5 50 0 5
+addunitrec "Turan Archer" 100 5 50 0 0
 addunitrec "Turan Warrior" 100 5 50 0 5
-addunitrec "Zhayedan" 100 5 50 0 15
+addunitrec "Zhayedan" 100 5 60 0 15
 addunitrec "Turan Cavalryman" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20
 addunitrec "War Elephant" 10 1 100 0 10

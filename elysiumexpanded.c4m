@@ -1147,6 +1147,12 @@ planereq 0
 terr 117 # Desert
 summoning
 addstring "c*Nephil"
+#addstring "c*Son of Azazel"
+#addstring "c*Son of Semyaza"
+#addstring "c*Son of Ezekiel"
+#addstring "c*Son of Shamshiel"
+#addstring "c*Son of Kokabel"
+#addstring "c*Son of Arakiel"
 
 # TODO infernal gate ritual (should work now)
 newritual "Infernal Breach"
@@ -1213,6 +1219,7 @@ power 8 1
 power 50 3
 fireres 50
 weaponslots
+size2x2
 nametype 49 # Rephaite
 
 newmonster "Gibbor Scout"
@@ -2041,7 +2048,7 @@ level 1
 cost 7 15
 rebatefx25 1
 summoning
-addstring "1d3+1*Magma Warrior
+addstring "1d3+1*Magma Warrior"
 addstring "Magma Child"
 
 selectritual "Olm Conclave"

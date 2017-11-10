@@ -108,6 +108,15 @@ look 5
 sound 22
 # Used by Daevas
 
+newweapon "Longspear"
+range 2
+init 2
+dmgtype 3 # Pierce
+dmg 4
+mundane
+sound 1
+# Used by Phalangites
+
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/i/merccav1.tga"
 spr2 "ee/spr/i/merccav2.tga"
@@ -4305,32 +4314,88 @@ reclimiter "+Turtle Chief"
 newritpow
 
 newritual "Study Lesser Rituals"
+descr
+ritpow 55
+level 1
+cost
 
 newritual "Study Minor Spells"
+descr
+ritpow 55
+level 1
+cost
 
 newritual "Scry"
+descr
+ritpow 55
+level 1
+cost
 
 newritual "Bind Familiar"
+descr
+ritpow 55
+level 1
+cost
 
 newritual "Icarian Wings"
+descr
+ritpow 55
+level 1
+cost
 
 newritual "Study Rituals"
+descr
+ritpow 55
+level 2
+cost
 
 newritual "Study Spells"
+descr
+ritpow 55
+level 2
+cost
 
 newritual "Enchanted Gate"
+descr
+ritpow 55
+level 2
+cost
 
 newritual "Bind Warden"
+descr
+ritpow 55
+level 2
+cost
 
 newritual "Craft Guardian"
+descr
+ritpow 55
+level 2
+cost
 
 newritual "Study Grand Rituals"
+descr
+ritpow 55
+level 3
+cost
 
 newritual "Study Greater Spells"
+descr
+ritpow 55
+level 3
+cost
 
-#newritual "Tower of Power"
+newritual "Tower of Power"
+descr
+ritpow 55
+level 3
+cost
 
-#newritual "Create Portal"
+newritual "Create Portal"
+descr
+ritpow 55
+level 3
+cost
 
 newmonster "Apprentice Wizard"
 copystats "Alchemist"
@@ -4344,7 +4409,7 @@ mr 7
 mor 4
 str 4
 clearweapons
-spellweapon 29 1
+spellweapon 29 1 # Wizardry
 meleeweapon
 power 55 1
 allitemslots
@@ -4364,7 +4429,7 @@ mr 8
 mor 5
 str 4
 clearweapons
-spellweapon 29 2
+spellweapon 29 2 # Wizardry
 meleeweapon
 power 55 2
 allitemslots
@@ -4382,7 +4447,7 @@ armor 0
 mr 10
 mor 6
 str 4
-spellweapon 29 3
+spellweapon 29 3 # Wizardry
 meleeweapon
 power 55 3
 allitemslots
@@ -4394,10 +4459,10 @@ newmonster "Warden"
 spr1
 spr2
 descr ""
-rank
-hp 
-armor
-mr
+rank # 0 or -1
+hp 10
+armor 2
+mr 6
 mor
 str
 rangedweapon
@@ -4417,8 +4482,8 @@ mr 6
 mor 4
 str 4
 clearweapons
-spellweapon 44 1
-meleeweapon
+spellweapon 44 1 # Sage
+meleeweapon 0 0 # Fist
 allitemslots
 human
 
@@ -4432,56 +4497,76 @@ armor 0
 mr 8
 mor 5
 str 4
-spellweapon 44 2
-meleeweapon
+spellweapon 44 2 # Sage
+meleeweapon 0 0 # Fist
 allitemslots
 human
 
-newmonster "Cardace"
+newmonster "Peltast"
 spr1
 spr2
 descr ""
-rank
-hp
-armor
-mr
-mor
-str
-meleeweapon
+rank 1
+hp 5
+armor 0
+mr 4
+mor 4
+str 4
+rangedweapon 0 24 # Javelin
+meleeweapon 0 4 # Spear
 allitemslots
 human
+shield
 
 newmonster "Hoplite"
 spr1
 spr2
 descr ""
-rank
-hp
-armor
-mr
-mor
-str
-meleeweapon
+rank 1
+hp 7
+armor 1
+mr 4
+mor 5
+str 4
+meleeweapon 0 4 # Spear
 allitemslots
 human
+largeshield
+
+newmonster "Phalangite"
+spr1
+spr2
+descr ""
+rank 1
+hp 
+armor 
+mr 4
+mor 5
+str 4
+meleeweapon 0 "Longspear"
+allitemslots
+human
+largeshield
 
 #TODO Illusions/Phantasms
 #newmonster "Hoplite Illusion"
 #newmonster "Hoplite Phantasm"
 
+# Expensive as heavy infantry, but not slow, but not as well-armoured. Only non-Icarid non-ballista unit with more than 1-4 damage/hit.
 newmonster "Myrmidon"
 spr1
 spr2
 descr ""
-rank
+rank 1
 hp
-armor
+armor 1
 mr
 mor
 str
-meleeweapon
+meleeweapon 0 2 # Broadsword
 allitemslots
 human
+largeshield
 
 #newmonster "Myrmidon Illusion"
 #newmonster "Myrmidon Phantasm"
@@ -4496,9 +4581,11 @@ armor
 mr
 mor
 str
-meleeweapon
+meleeweapon 0 8 # Shortsword
 allitemslots
 human
+flying
+fireres -50
 
 #newmonster "Icarid Illusion"
 #newmonster "Icarid Phantasm"
@@ -4511,6 +4598,7 @@ hometerr # Academy, or variant /w citadel if Academy isn't a citadel (I don't re
 addstartterr
 addstartunits
 addstartunits
+addstartcom "Apprentice Wizard"
 recherochance 1
 recasschance 2
 libbonusdescr "apprentices and wizard mercenaries"
@@ -4521,10 +4609,13 @@ addcomrec "Scholar" 4
 libraryrec
 addcomrec "Alchemist" 3
 libraryrec
-addunitrec "Cardace"
+addunitrec "Peltast"
 addunitrec "Slinger"
+#addunitrec "Gastraphetes"
 addunitrec "Hoplite"
+addunitrec "Phalangite"
 addunitrec "Myrmidon"
+addunitrec "Ballista"
 addmercrec "Scout"
 # Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0

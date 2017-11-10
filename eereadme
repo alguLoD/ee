@@ -50,8 +50,13 @@ Minor fixes and tweaks.
 * Warrior Mage cost fixed. 
 * Spider Familiars much less common for High Priestess (AI armies were swarming with them).
 
-0.4 Preview/Shah Build 1711xx
-* [Redacted]
+0.4 Preview/Shah Build 171109
+* Shah class released.
+A hybrid class, the Shah has less elite units than the Baron but they are more versatile. Most units have both melee and ranged attacks and his elite infantry is now slow.
+Does not start with any mages but can recruit gem-using Athravans OR sacrifice-using Karapans. If you have one of either or their upgraded forms you cannot recruit their counterparts.
+Athravans can cast one of storm magic or pyromancy in combat per turn, while Karapans and Dasturs either blood magic or pyromancy.
+Athravans summon Iceclad Airyans and Storm/Frost mages and awe-inspiring Yazata.
+Dasturs summon Raptors and Necromancers, and fearsome Daevas.
 * Second pass at the High Priestess. More-or-less a complete revamp of the class.
 Expanded roster of giants, most accessed through rituals available on their leaders costing gold, sacrifices and extra action points.
 A "blood banquet" line of spells that replicate Blood Feasts for three times the cost in sacrifices and an additional gold cost. These are in addition to blood feasts, not a replacement.
@@ -60,8 +65,7 @@ Ceremony/demon-summoning rituals can also be cast in temples.
 Necromancy branch further expanded but mostly for flavour (i.e. spectral Ba'alites). Fossil warriors can also be summoned in deserts. Biggest change is that Zamzummites are no longer directly accessible, instead an Emite must be acquired with the Call Anakites ritual (available to Adons and Melqarts) and upgraded.
 New giants include a Gibbor scout, Qedesim (lvl-1 Dark Prayers), Gibbor archers, occasional Dawn Guard Anakites in smaller numbers than regular Anakites. Anakite Elders accessible as Emites, upgrade in libraries for gold to Sages. Biggest addition is the Belus from T3 Blood Feasts or Banquets. All three of these use High Arcana.
 Ba'al revamped. One spellweapon replaced with Command 3. Only Ba'al can summon Nephilim (in deserts).
-More Nephilim subtypes.
-Watchers completely revamped, [redacted].
+Watchers completely revamped. Now you must scry for their infernal prison using the Nephilim. Ba'al can create an infernal gateway in deserts and target the area around the Pit. There are six unique Watchers which can be summoned at the Pit itself by Ba'al, all of which are very powerful. You will have to fight the Infernal Powers, though.
 * Spirit sight for Ghost Captains.
 * All spectral undead given Unaging.
 * Master Smiths now give magic swords to promoted knights as well. Unicorn knights can also be upgraded (and are given higher priority).
@@ -69,29 +73,5 @@ Watchers completely revamped, [redacted].
 * Mercenaries tweaked. First a commander is hired and then other mercenary recruitment offers will appear. The basic mercenary line only includes light cavalry for now.
 * Turtle Tribe/Merman mercenaries. Grant limited amphibious capabilities to all classes.
 
-0.4 design
-* Implementing the Shah, finally.
-
-* Terracotta cost -> 10 gold (from 20).
-* Second run at the High Priestess. More-or-less a complete revamp of the class' mechanics once I'm done. 
-Blood feasts revamped, lesser blood feast gone completely, though a Blood Banquet ritual at T2 (more expensive) emulates its functionality.
-Expanded roster of giants accessed through their leaders. Blood Feast spells leave ruins. Spells available to giant lords (Adon, Melqart, the new Belus) allow duplication of Blood Spell effect at dramatically higher cost.
-Qedesim, gibbor archers and scouts. Anakite Emites, which upgrade into Zamzummim. High Arcana Anakite Elders, Sages, and Rephaite Belusim. Anakite Dawn Guards. Blood feasts more expensive?
-New undead units. Fossil warriors. More appropriate spectral units. 
-Add central-only scorpion summons to Creatures rituals, less efficient than southern.
-T1 & T2 Ceremonies have temple-only variant copies (learned at the same time) at a slight increase in cost, so you can always summon demons in your starting citadel and in any temples you find outside the south.
-Baal replaces one spellweapon /w Command 3. New levels for Ba'alite rituals, Nephil and Ba'al-exclusive, respectively. Invade Hell to release revamped Grigori?
-Watchers can only be summoned at a Pit in the Inferno.
-
-Polish up the Barbarian's and Troll King's new stuff.
-Zotz for the Priest King.
-Spirit Sight for Hades recruitables.
-Unaging for most spectral undead.
-Master Smith gives magic swords as well and can also upgrade Unicorn Knights (and will prioritize them first).
-Generic Chartmaker/Navigator/Stormcaller that can scry for ports and "sail" (teleport at high AP cost) from port to port at a suitable fee in gold.
-Mermen mercenaries. Low probability of recruiting a Turtle Chief, in turn gives recruitment offers for Turtle Warriors and Mermages (even without libraries, though quite rare).
-Mercenary cavalry tweaked to follow the same model. Recruit a Mercenary Captain first to get offers for mercenary cavalry. More units may follow in the future.
-Stone Soldiers for the Enchanter significantly slower, 6 AP per. (That's what you get for unmatched cost-efficiency.)
-
-0.5?
-More terrains and indies spawned in turn 0?
+0.41 Shah Hotfix Build 171110
+* Bugfixes, ritual descriptions.

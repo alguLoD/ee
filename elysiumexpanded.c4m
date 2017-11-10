@@ -919,6 +919,15 @@ free
 
 #newritual "Walk through Sheol"
 
+newritual "Awaken Fossil"
+descr "The souls of the Rephaim do not naturally pass from their bodies after death.  Anakite necromancers who study ancient records may discover sites where their ancestors once fell in batttle and call these fallen warriors to once again move and fight for the Sons of the Fallen."
+ritpow 49
+level 1
+cost 5 15
+terr 117 # Desert
+summoning
+addstring "Fossil Warrior"
+
 newritual "Call the Dead"
 descr "The caster reaches through the Veil between Elysium and Sheol and summons some of its inhabitants to serve the High Priestess."
 ritpow 49 # Sheol
@@ -936,7 +945,7 @@ addstring "1d6*Dispossessed Spirit"
 newritual "Seek the Dead"
 descr "The Zamzummite reaches through the connection he shares with one of his dead gods that he might speak with it."
 ritpow 49
-level 1
+level 2
 cost 5 5
 planeloc 3
 randnewloc 224 # Sheol Temple
@@ -1216,6 +1225,7 @@ rangedweapon 1 "Great Bow"
 meleeweapon 2 8 # Shortsword
 human
 allitemslots
+size1x1
 
 newmonster "Qedesim"
 spr1 "ee/spr/hp/qed1.tga"
@@ -1233,6 +1243,7 @@ localleadership 1
 human
 allitemslots
 nametype 49
+size1x1
 
 newmonster "Emite"
 spr1 "ee/spr/hp/emite1.tga"
@@ -1252,6 +1263,7 @@ weaponslots
 gatherhands
 mastery 1
 nametype 49
+size2x2
 
 selectmonster "Zamzummite"
 power 1 0 # Gets rid of necromancy
@@ -1274,12 +1286,14 @@ spellweapon 51 1 # High Arcana
 meleeweapon 7 0 # Fist
 weaponslots
 nametype 49
+size2x2
 mastery 1
 
 newmonster "Anakite Sage"
 spr1 "ee/spr/hp/anas1.tga"
 spr2 "ee/spr/hp/anas2.tga"
 descr "There are scholars among the Anakim that grow very old and very wise.  If they were not man-eaters devoted to the subjugation of Elysium, they would certainly be welcome in the Collegium."
+rank -1
 hp 45
 armor 0
 mr 9
@@ -1321,6 +1335,7 @@ sleepres
 charmres
 diseaseres
 undead
+size 2x2
 
 newmonster "Spectral Ba'alite"
 spr1 "ee/spr/hp/spbal1.tga"
@@ -1739,6 +1754,7 @@ shield
 human
 allitemslots
 nobootslots
+size 1x1
 
 newmonster "Wind Rider"
 spr1 "ee/spr/barb/winrid1.tga"
@@ -1759,6 +1775,7 @@ shield
 human
 allitemslots
 nobootslots
+size 2x2
 
 newmonster "Nightmare"
 spr1 "ee/spr/barb/onyrid1.tga"
@@ -1779,6 +1796,7 @@ shield
 human
 allitemslots
 nobootslots
+size 1x1
 
 selectclass 7
 clearrec
@@ -2976,6 +2994,7 @@ descr "Some ravens just refuse to fly away for long, but are constantly drawn ba
 newritpow
 
 newritual "Lesser Ritual of Mastery"
+descr "This ritual grants the caster a new first level ritual."
 ritpow 52
 level 1
 cost 14 30
@@ -2984,6 +3003,7 @@ soundfx 57
 free
 
 newritual "Ritual of Mastery"
+descr "This ritual grants the caster a new second level ritual.  If the caster is currently unable to cast second level rituals, it will be leveled up as well."
 ritpow 52
 level 1
 cost 14 120
@@ -2994,6 +3014,7 @@ rebatelvl 2
 free
 
 newritual "Ritual of Grand Mastery"
+descr "This ritual grants the caster a new third level ritual.  If the caster is currently unable to cast third level rituals, it will be leveled up as well."
 ritpow 52
 level 2
 cost 14 240
@@ -3004,7 +3025,7 @@ rebatelvl 3
 free
 
 newritual "Call Airya"
-descr ""
+descr "The Airya are the mortal descendants of the Yazata.  Ordinarily they dwell in hidden mountain villages, but they readily respond to the call of the faithful Athravans."
 ritpow 52
 level 1
 cost 14 30
@@ -3015,17 +3036,17 @@ addstring "1d3+1*Iceclad"
 addstring "1d3+1*Kavi Archer"
 
 newritual "Scry"
-descr ""
+descr "With this ritual the Athravan can use a bowl of water to freely scry anywhere in the world."
 ritpow 52
 level 1
-cost 14 5
-soundfx 57
-#
-#
-#scrystuff
+cost 14 4
+chooseloc 1
+soundfx 23
+scryloc 15
+closewin
 
 newritual "Call Ravens"
-descr
+descr "Ravens are honored in the traditions of the Athravans, and they can be summoned and bound with magic.  They serve the Athravans as spies and companions."
 ritpow 52
 level 1
 cost 14 10
@@ -3035,7 +3056,7 @@ addstring "Raven Familiar"
 addstring "Raven Spy"
 
 newritual "Sacred Fire"
-descr ""
+descr "Fire is sacred and cleansing to both faiths of the Tur, and both the Athravans and the Dasturs can enchant fortified locations with a wall of fire that will harm foes but let friends pass through without harm.  It is a very time-consuming ritual."
 ritpow 52
 level 2
 cost 14 50
@@ -3044,7 +3065,7 @@ terr -31 # Walls.
 squareench 8 # Vafur Flames
 
 newritual "Greater Airya Calling"
-descr ""
+descr "The Airya are the mortal descendants of the Yazata.  Ordinarily they dwell in hidden mountain villages, but they readily respond to the call of the faithful Athravans."
 ritpow 52
 level 2
 cost 14 60
@@ -3054,18 +3075,18 @@ addstring "c*Icecrafter"
 addstring "1d4+1*Iceclad & 1d4+1*Kavi Archer"
 
 newritual "Summon Yazata"
-descr ""
+descr "The Yazatas are awe-inspiring winged beings of considerable physical and magical might.  They are the lesser divinities revered and worshipped by the Athravans and their following among the Tur.  The warriors of the Yazata can be summoned with the use of magical gems."
 ritpow 52
 level 2
 cost 14 60
-sum0chance 40
+sum0chance 30
 summoning
 addstring "Ahurani"
-addstring "1d4*Yazad"
+addstring "1d4+1*Yazad"
 
 # Enchanted gate
 newritual "Enchant Gate"
-descr ""
+descr "In ages past, the Athravans were taught how to create wards and enchantments by Khshathra Vairya, the Spenta of Sky and Metals.  With a large number of gems they can make nearly impenetrable iron gates."
 ritpow 52
 level 2
 cost 14 50
@@ -3074,9 +3095,9 @@ soundfx 57
 squareench 6 # Enchanted gate.
 
 newritual "Summon Celestial Yazad"
-descr ""
+descr "The Celestial Yazata are the lords and mages of the Yazata.  They are quite powerful and can cast spells from two different paths at once, though they are more fragile than most beings of similar power.  They answer the call of the Athravans when the correct rites are performed."
 ritpow 52
-level 3
+level 2
 cost 14 180
 summoning
 addstring "c*Yazad of Fire"
@@ -3087,7 +3108,7 @@ addstring "c*Yazad of Water"
 addstring "c*Yazad of the Earth"
 
 newritual "Summon Amesha Spenta"
-descr ""
+descr "The mightiest and most noble of the Zaotar can attempt to summon one of the Amesha Spentas, who are the emanations of the shattered Ahura Mazda.  There are six of them in total and all of them are very powerful."
 ritpow 52
 level 3
 cost 14 500
@@ -3102,7 +3123,7 @@ addstring "c*Spenta Armaiti"
 newritpow
 
 newritual "Lesser Ritual of Mastery"
-descr ""
+descr "This ritual grants the caster a new first level ritual."
 ritpow 53
 level 1
 cost 4 20
@@ -3111,7 +3132,7 @@ soundfx 57
 free
 
 newritual "Ritual of Mastery"
-descr ""
+descr "This ritual grants the caster a new second level ritual.  If the caster is currently unable to cast second level rituals, it will be leveled up as well."
 ritpow 53
 level 1
 cost 4 120
@@ -3122,7 +3143,7 @@ rebatelvl 2
 free
 
 newritual "Ritual of Grand Mastery"
-descr ""
+descr "This ritual grants the caster a new third level ritual.  If the caster is currently unable to cast third level rituals, it will be leveled up as well."
 ritpow 53
 level 2
 cost 4 480
@@ -3133,7 +3154,7 @@ rebatelvl 3
 free
 
 newritual "Call Raptors"
-descr ""
+descr "The Raptors are the mortal descendants of the Daevas.  Ordinarily they dwell in hidden villages in the mountains of Elysium, but they will respond to the sacrificial rites of the Dastur and align themselves with the Shah."
 ritpow 53
 level 1
 cost 4 30
@@ -3144,7 +3165,7 @@ addstring "1d3+1*Iron Crow"
 addstring "1d3+1*Iron Guard"
 
 newritual "Call Crows"
-descr ""
+descr "As the Athravans can call on ravens, the Dasturs can call on crows.  Crows are much less disciplined than ravens and will fly around and attack all intruders they can lay their eyes on."
 ritpow 53
 level 1
 cost 4 10
@@ -3152,7 +3173,7 @@ summoning
 addstring "Messenger Crows"
 
 newritual "Sacred Fire"
-descr ""
+descr "Fire is sacred and cleansing to both faiths of the Tur, and both the Athravans and the Dasturs can enchant fortified locations with a wall of fire that will harm foes but let friends pass through without harm.  It is a very time-consuming ritual."
 ritpow 53
 level 2
 cost 4 50
@@ -3162,7 +3183,7 @@ squareench 8 # Vafur Flames
 
 # Savaran promotion
 newritual "Nisean Horses"
-descr ""
+descr "The horses of Nisea on Terra were famed for their size, stamina and beauty.  The Daevas bred them with infernal steeds and ever since the Dasturs have been their caretakers.  They are sometimes gifted to a Shah who in turn will gift them to his most loyal cataphracts."
 ritpow 53
 level 2
 cost 4 30
@@ -3174,19 +3195,19 @@ addstring "Cataphract"
 addstring "Savaran Guard"
 
 newritual "Daevic Summoning"
-descr ""
+descr "The Daevas are fearsome winged beings of considerable physical and magical power.  They are the subject to the veneration and fear of the Dasturs, who can summon them at a modest cost in blood."
 ritpow 53
 level 2
 cost 4 60
-sum0chance 40
+sum0chance 30
 summoning
 addstring "Jahi"
-addstring "1d4*Daeva"
+addstring "1d4+1*Daeva"
 
 newritual "Summon Yata"
-descr ""
+descr "The Yata are the lords and mage-priests of the Daeva.  They are quite powerful and can cast spells from two paths at once, but are somewhat fragile compared to most beings of similar power.  The Dastur can summon them at a considerable cost in blood."
 ritpow 53
-level 3
+level 2
 cost 4 180
 summoning
 addstring "c*Daeva of Shooting Stars"
@@ -3195,7 +3216,7 @@ addstring "c*Daeva of Frost and Snow"
 addstring "c*Pairika"
 
 newritual "Call Daevic Heptad"
-descr ""
+descr "The mightiest and most ambitious of the Dastur can attempt to summon a member of the Daevic Heptad, who are emanations of the shattered Angrya Mainyu.  There are six of them in total and they are nearly as powerful as demon lords."
 ritpow 53
 level 3
 cost 4 600
@@ -3424,7 +3445,7 @@ copystats "War Elephant"
 spr1 "ee/spr/shah/warelephant1.tga"
 spr2 "ee/spr/shah/warelephant2.tga"
 descr "The Elephant is a friendly beast, and Elephants are often tamed by humans.  They are sometimes used in warfare, and particularly by the Turans.  They are said to have discovered and cultivated a species of exotic nut known as the peanut, which the Elephants adore.  The peanut farms are a vital asset to the Turan warmachine and so their locations are well-guarded secrets.  Entire villages are founded around these and entire generations live and die without ever seeing the outside world, dedicated to the care of the peanuts.  This is probably to their benefit since the outside world is very dangerous."
-huge
+size2x2
 
 newmonster "Athravan"
 spr1 "ee/spr/shah/athravan1.tga"
@@ -4236,17 +4257,18 @@ recasschance
 libbonusdescr "wizards"
 templebonusdescr "mage-priests"
 nostdtroops
-addcomrec "Shah"
+addcomrec "Shah" 10 60 10 15
 reclimiter "-Shah"
 #reclimiter "Shahanshah"
-addcomrec "Spahbed"
+addcomrec "Spahbed" 20 50 10 10
 addunitrec "Paighan" 100 8 40 0 0 # Should be possible to script a conscription-style set of events but might be computationally inoptimal.
 addunitrec "Turan Archer" 100 5 50 0 0
 addunitrec "Turan Warrior" 100 5 50 0 5
 addunitrec "Zhayedan" 100 5 60 0 15
 addunitrec "Turan Cavalryman" 100 3 50 0 10
 addunitrec "Cataphract" 100 3 50 0 20
-addunitrec "War Elephant" 10 1 100 0 10
+addunitrec "Catapult" 100 1 25 0 50
+addunitrec "Turan War Elephant" 10 1 100 0 10
 addmercrec "Scout" 10 1 25 10 0
 addcomrec "Athravan" 5 45 10 0
 templerec

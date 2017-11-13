@@ -698,25 +698,25 @@ nostart
 newritual "Lesser Ceremony of Ba'al"
 ritpow 8 # Baalite Rituals
 level 1
-nexttoo
 cost 4 20 # Sacrifices
 terr 117 # Desert
+nexttoo
 noundead
 summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
 
-#TODO test if this actually works in the Temple of Ba'al
 newritual "Lesser Temple Ceremony"
 ritpow 8 # Baalite Rituals
 level 1
-nostart
+free
 cost 4 20 # Sacrifices
 terr -2 # Temples
 noundead
 summoning
 addstring "1d4+2*Mazzik"
 addstring "1d2*Se'ir"
+#TODO test if this actually works in the Temple of Ba'al
 
 selectritual "Lesser Ceremony of Ba'al"
 descr "The Priestess performs a blood sacrifice to Baal and in return she will be granted command over some Baal's demonic minions.  These dwell in wastelands and so this ritual can only be performed in a desert."
@@ -897,10 +897,6 @@ addstring "c*Belus & 1d4+1*Rephaite"
 selectritual "Royal Blood Feast"
 descr "By sacrificing a few blood slaves in a town the Priestess will attract the attention of Baal and announce a terrible banquet.  In return for the sacrifice, Baal will send a Rephaite lord and his retinue to partake in the feast.  The entire settlement will be destroyed in the blood feast."
 
-ritpow 8
-selectritual "Summon God"
-free
-
 newritpow
 
 newritual "Lesser Ritual of Mastery"
@@ -913,9 +909,10 @@ free
 
 newritual "Ritual of Mastery"
 ritpow 49 # Sheol
-level 2
+level 1
 cost 5 30 # Hands
 newrit 2
+levelup 2
 soundfx 57 # orchhit.smp
 rebatelvl 2
 free
@@ -1037,6 +1034,7 @@ level 2
 cost 0 80
 cost 4 60
 terr -9
+free
 sum0chance 20
 sum1chance 20
 summoning
@@ -1052,6 +1050,7 @@ ritpow 50
 level 2
 cost 0 100
 cost 4 300
+free
 terr -9
 summoning
 apcost 5
@@ -1066,6 +1065,7 @@ cost 4 80
 terr -9
 summoning
 apcost 5 
+free
 addstring "1d3+1*Rephaite"
 #addstring - ?
 
@@ -1077,9 +1077,10 @@ cost 0 180
 cost 4 450
 terr -9
 apcost 5
+free
 summoning
-addstring "c*Melqart & 2d4 Rephaite"
-addstring "c*Belus & 1d4+1 Rephaite"
+addstring "c*Melqart & 2d4*Rephaite"
+addstring "c*Belus & 1d4+1*Rephaite"
 
 selectmonster "Shed"
 rearpos
@@ -1121,6 +1122,8 @@ cost 4 10 # Sacrifices, a pretty modest cost, but this ritual is setup and so it
 ritpow 51 1 # Nephil-only
 planeloc 2 # Inferno
 randnewloc 104 # Pit
+scryloc 15
+noundead
 free
 
 selectritual "Blood to Blood"
@@ -1165,6 +1168,7 @@ planereq 0 # Elysium
 terr 117 # Desert
 alterloc 201 # Infernal gate
 makeportal 1000 # new, unique
+planeloc
 setplane 2 # Inferno
 chooseterrloc -42 # Any land, hopefully won't allow you to break anything.
 soundfx 57
@@ -1197,6 +1201,9 @@ power 51 1
 
 selectmonster "God"
 unaging
+clearweapons
+spellweapon 28 3
+spellweapon 36 3
 power 51 2
 #
 
@@ -1289,6 +1296,11 @@ power 1 0 # Gets rid of necromancy
 power 49 2 # Sheol
 gatherhands
 
+newmonster "Zamzummite"
+copystats "Zamzummite"
+copyspr "Zamzummite"
+descr "The Zamzummite, or the Murmurer, is an Anakite sorcerer and shepherd of the dead.  During the Time of Giants they presided at the cultic funerary festivals and the banquets for the dead Rephaite kings.  Now they are called by the servants of Ba'al to prepare the world for the second coming of the dark God."
+
 newmonster "Anakite Elder"
 copystats "Court Mage"
 spr1 "ee/spr/hp/anae1.tga"
@@ -1354,7 +1366,7 @@ sleepres
 charmres
 diseaseres
 undead
-size 2x2
+size2x2
 
 newmonster "Spectral Ba'alite"
 spr1 "ee/spr/hp/spbal1.tga"
@@ -1773,7 +1785,7 @@ shield
 human
 allitemslots
 nobootslots
-size 1x1
+size1x1
 
 newmonster "Wind Rider"
 spr1 "ee/spr/barb/winrid1.tga"
@@ -1794,7 +1806,7 @@ shield
 human
 allitemslots
 nobootslots
-size 2x2
+size2x2
 
 newmonster "Nightmare"
 spr1 "ee/spr/barb/onyrid1.tga"
@@ -1815,7 +1827,7 @@ shield
 human
 allitemslots
 nobootslots
-size 1x1
+size1x1
 
 selectclass 7
 clearrec
@@ -2497,7 +2509,7 @@ newritpow
 
 
 newritual "Poisoned Arrows"
-ritpow 51
+ritpow 52
 level 1
 cost 3 50
 soundfx 57
@@ -3008,6 +3020,9 @@ descr "The Raven is a cunning and pleasantly wicked bird.  Properly trained and 
 
 selectmonster "Raven Familiar"
 descr "Some ravens just refuse to fly away for long, but are constantly drawn back to their summoner.  These ravens are known as familiars and are almost useless.  At least they can scout the nearby areas, their sharp eyes piercing the disguises of stealthy beings."
+
+#TODO Terrain, Shah's castle
+#Add fiery bits. There's a colour and command for that.
 
 # Athravan, 52
 newritpow
@@ -4315,9 +4330,13 @@ addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
 
-# NEW, TODO DO NOT MERGE WITH THE OFFLINE FILES YET
-
 # Ritpow 55, Wizards
+# Changing my mind about these guys, I think. Get rid of Arco stuff, make it more of a LotR/WoT homage. Wardens, the use of weed as a resource, hoburg allies.
+
+# Terrains
+# Wizard's Keep - or w/e
+# Tower of Power
+
 newritpow
 
 newritual "Study Lesser Rituals"
@@ -4325,89 +4344,110 @@ descr
 ritpow 55
 level 1
 cost
+free
 
-newritual "Study Minor Spells"
-descr
-ritpow 55
-level 1
-cost
+#newritual "Study Minor Spells"
+#descr
+#ritpow 55
+#level 1
+#cost
 
 newritual "Scry"
 descr
 ritpow 55
 level 1
-cost
+cost 0 5 # Gold
+apcost 2
+
+soundfx 57
 
 newritual "Bind Familiar"
-descr
+descr ""
 ritpow 55
 level 1
 cost
-
-newritual "Icarian Wings"
-descr
-ritpow 55
-level 1
-cost
+apcost 2
+summoning
+addstring "Raven Familiar"
+addstring "Snake Familiar"
+addstring "Rabbit Familiar"
 
 newritual "Study Rituals"
-descr
+descr ""
 ritpow 55
 level 2
-cost
+cost 0 ?
+terr -56 # Level 2 libraries - might exclude level 1 libraries, I'm not sure. If so, just change to -3.
+apcost 2
+soundfx 57
+free
 
-newritual "Study Spells"
-descr
-ritpow 55
-level 2
-cost
+#newritual "Study Spells"
+#descr
+#ritpow 55
+#level 2
+#cost
 
 newritual "Enchanted Gate"
-descr
+descr ""
 ritpow 55
 level 2
 cost
 
 newritual "Bind Warden"
-descr
+descr ""
 ritpow 55
 level 2
 cost
+apcost 2
+# Summoning or promotion?
+addstring "Warden"
 
 newritual "Craft Guardian"
-descr
+descr "With this ritual the Wizard creates an immobile Guardian statue. The Guardian sees everything and blasts unwanted intruders with lightning."
 ritpow 55
 level 2
-cost
+cost 0 15
+cost 1 5
+summoning
+apcost 3
+addstring "Guardian"
 
 newritual "Study Grand Rituals"
-descr
+descr ""
 ritpow 55
 level 3
-cost
+cost 0 ?
+terr -57 # Level 3 libraries
+apcost 2
+newrit 3
+soundfx 57
+free
 
-newritual "Study Greater Spells"
-descr
-ritpow 55
-level 3
-cost
+#newritual "Study Greater Spells"
+#descr
+#ritpow 55
+#level 3
+#cost
 
 newritual "Tower of Power"
-descr
+descr ""
 ritpow 55
 level 3
 cost
 
+#can only be cast at magical/special sites? Faerie circles?
+
 newritual "Create Portal"
-descr
+descr ""
 ritpow 55
 level 3
 cost
 
 newmonster "Apprentice Wizard"
 copystats "Alchemist"
-spr1
-spr2
+spr1 "ee/spr/wiz/apprentice1.tga"
+spr2 "ee/spr/wiz/apprentice2.tga"
 descr ""
 rank -1
 hp 5
@@ -4423,11 +4463,12 @@ allitemslots
 human
 mastery 1
 startitem "Staff of the Magi"
+randomitem 50
 
 newmonster "Wizard"
 copystats "Magus"
-spr1
-spr2
+spr1 "ee/spr/wiz/wizard1.tga"
+spr2 "ee/spr/wiz/wizard2.tga"
 descr ""
 rank -1
 hp 6
@@ -4445,8 +4486,8 @@ mastery 1
 startitem "Staff of the Magi"
 
 newmonster "Archwizard"
-spr1
-spr2
+spr1 ""
+spr2 ""
 descr ""
 rank -1
 hp 7
@@ -4463,19 +4504,21 @@ unaging
 startitem "Staff of the Magi"
 
 newmonster "Warden"
-spr1
-spr2
+spr1 ""
+spr2 ""
 descr ""
-rank # 0 or -1
+rank -1
 hp 10
 armor 2
-mr 6
-mor
-str
-rangedweapon
-meleeweapon
-human
+mr 5 # 6?
+mor 7
+str 5 # 6?
+rangedweapon # Crossbow
+meleeweapon # Greatsword
 allitemslots
+acutesenses
+human
+rearpos # Bodyguard unit, basically. Advanced familiar.
 
 newmonster "Scholar"
 copystats "Alchemist"
@@ -4509,121 +4552,24 @@ meleeweapon 0 0 # Fist
 allitemslots
 human
 
-newmonster "Peltast"
-spr1
-spr2
-descr ""
-rank 1
-hp 5
-armor 0
-mr 4
-mor 4
-str 4
-rangedweapon 0 24 # Javelin
-meleeweapon 0 4 # Spear
-allitemslots
-human
-shield
-
-newmonster "Hoplite"
-spr1
-spr2
-descr ""
-rank 1
-hp 7
-armor 1
-mr 4
-mor 5
-str 4
-meleeweapon 0 4 # Spear
-allitemslots
-human
-largeshield
-
-newmonster "Phalangite"
-spr1
-spr2
-descr ""
-rank 1
-hp 
-armor 
-mr 4
-mor 5
-str 4
-meleeweapon 0 "Longspear"
-allitemslots
-human
-largeshield
-
-#TODO Illusions/Phantasms
-#newmonster "Hoplite Illusion"
-#newmonster "Hoplite Phantasm"
-
-# Expensive as heavy infantry, but not slow, but not as well-armoured. Only non-Icarid non-ballista unit with more than 1-4 damage/hit.
-newmonster "Myrmidon"
-spr1
-spr2
-descr ""
-rank 1
-hp
-armor 1
-mr
-mor
-str
-meleeweapon 0 2 # Broadsword
-allitemslots
-human
-largeshield
-
-#newmonster "Myrmidon Illusion"
-#newmonster "Myrmidon Phantasm"
-
-newmonster "Icarid"
-spr1
-spr2
-descr ""
-rank
-hp
-armor
-mr
-mor
-str
-meleeweapon 0 8 # Shortsword
-allitemslots
-human
-flying
-fireres -50
-
-#newmonster "Icarid Illusion"
-#newmonster "Icarid Phantasm"
-
 newclass
 setclassname "Wizard"
 maincom "Wizard"
 classdescr
-hometerr # Academy, or variant /w citadel if Academy isn't a citadel (I don't remember right now)
-addstartterr
-addstartunits
-addstartunits
+hometerr 88 # Academy of Higher Magics. As an unwanted side effect, starts with an enchanted gate. I could fix that easily enough, but... effort.
+addstartterr ? # Hamlet, probably.
+addstartunits "Peltast" 8
+addstartunits "Slinger" 5
 addstartcom "Apprentice Wizard"
 recherochance 1
 recasschance 2
 libbonusdescr "apprentices and wizard mercenaries"
-nostdtroops
 addcomrec "Apprentice Wizard" 4
 libraryrec
-addcomrec "Scholar" 4
+addcomrec "Scholar" 2
 libraryrec
-addcomrec "Alchemist" 3
+addcomrec "Alchemist" 0
 libraryrec
-addunitrec "Peltast"
-addunitrec "Slinger"
-#addunitrec "Gastraphetes"
-addunitrec "Hoplite"
-addunitrec "Phalangite"
-addunitrec "Myrmidon"
-addunitrec "Ballista"
-addmercrec "Scout"
 # Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0

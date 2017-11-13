@@ -1,0 +1,25 @@
+icon "ee/eetiles.tga"
+description "A mini-mod that guarantees the presence of certain terrains and sites on the map."
+modprio 6
+
+squareevent
++turnnbr 0
++player 16
++terr 88 # Academy
+setvar 100 1 # Academy present	
+endevent
+
+squareevent
++turnnbr 0
++player  16
++varequal 100 0
++terr 13 # Magic Library
+alterterrain 88
+newunits -16 "Archmage"
+newunits -16 "Pyromancer"
+newunits -16 "5*Crossbowman"
+newunits -16 "5*Halberdier"
+setvar 100 1 # Academy present
+endevent
+# Should add new independent defenders before actually publishing this.
+

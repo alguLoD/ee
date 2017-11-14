@@ -14,6 +14,7 @@ description "A mod that seeks to tweak and expand on the game without changing i
 # 52: Goblins
 # 53: Athravan
 # 54: Dastur
+# 55: Wizard
 #
 # [NEW WEAPONS]
 #
@@ -270,6 +271,39 @@ randomitem 50
 
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
+
+newmonster "Scholar"
+copystats "Alchemist"
+spr1 "ee/spr/i/scholar1.tga"
+spr2 "ee/spr/i/scholar2.tga"
+descr ""
+rank -1
+hp 5
+armor 0
+mr 6
+mor 4
+str 4
+clearweapons
+spellweapon 44 1 # Sage
+meleeweapon 0 0 # Fist
+gold -2
+allitemslots
+human
+
+newmonster "Sage"
+spr1 "ee/spr/i/sage1.tga"
+spr2 "ee/spr/i/sage2.tga"
+descr ""
+rank -1
+hp 6
+armor 0
+mr 8
+mor 5
+str 4
+spellweapon 44 2 # Sage
+meleeweapon 0 0 # Fist
+allitemslots
+human
 
 # Ritpow 48, Master Smith, Icecrafter, Chartmaker
 
@@ -4331,9 +4365,9 @@ libraryrec
 reclimiter "+Turtle Chief"
 
 # Ritpow 55, Wizards
-# Changing my mind about these guys, I think. Get rid of Arco stuff, make it more of a LotR/WoT homage. Wardens, the use of weed as a resource, hoburg allies.
+# Changing my mind about these guys, I think. Get rid of Arco stuff, make it more of a LotR/WoT homage. Wardens, Hoburg allies, the use of weed as a resource?
 
-# Terrains
+# Terrains - may have to be done by selecting "blank" or unused terrain numbers? Not sure, don't think so.
 # Wizard's Keep - or w/e
 # Tower of Power
 
@@ -4343,7 +4377,11 @@ newritual "Study Lesser Rituals"
 descr
 ritpow 55
 level 1
-cost
+cost 0 ?
+newrit 1
+terr -3 # Any library
+apcost 2
+soundfx 57
 free
 
 #newritual "Study Minor Spells"
@@ -4359,7 +4397,7 @@ level 1
 cost 0 5 # Gold
 apcost 2
 
-soundfx 57
+soundfx ?
 
 newritual "Bind Familiar"
 descr ""
@@ -4377,6 +4415,7 @@ descr ""
 ritpow 55
 level 2
 cost 0 ?
+newrit 2
 terr -56 # Level 2 libraries - might exclude level 1 libraries, I'm not sure. If so, just change to -3.
 apcost 2
 soundfx 57
@@ -4392,7 +4431,12 @@ newritual "Enchanted Gate"
 descr ""
 ritpow 55
 level 2
-cost
+cost 0 50
+cost 1 25
+terr -31 # Walls.
+soundfx 57
+squareench 6 # Enchanted gate.
+apcost 2
 
 newritual "Bind Warden"
 descr ""
@@ -4434,15 +4478,38 @@ newritual "Tower of Power"
 descr ""
 ritpow 55
 level 3
+terr # Faerie Circle?
 cost
+alterloc "Tower of Power"
+start
 
 #can only be cast at magical/special sites? Faerie circles?
+#TODO examine how the Enchanter's portals actually work and behave in the game.
 
-newritual "Create Portal"
-descr ""
+newritual "Create Home Portal"
 ritpow 55
 level 3
-cost
+cost 0 60
+cost 1 60
+terr "Wizard's Keep"
+makeportal 20
+apcost 5
+soundfx 57
+nexttoo
+
+newritual "Create Portal"
+ritpow 55
+level 3
+cost 0 60
+cost 1 60
+terr "Tower of Power"
+makeportal 20
+apcost 5
+soundfx 57
+hasportalreq 20
+nostart
+
+#newritual "Extraplanar Scrying"
 
 newmonster "Apprentice Wizard"
 copystats "Alchemist"
@@ -4457,8 +4524,9 @@ mor 4
 str 4
 clearweapons
 spellweapon 29 1 # Wizardry
-meleeweapon
+meleeweapon 0 5 # Staff
 power 55 1
+gold -2
 allitemslots
 human
 mastery 1
@@ -4478,7 +4546,7 @@ mor 5
 str 4
 clearweapons
 spellweapon 29 2 # Wizardry
-meleeweapon
+meleeweapon 0 5 # Staff
 power 55 2
 allitemslots
 human
@@ -4486,8 +4554,8 @@ mastery 1
 startitem "Staff of the Magi"
 
 newmonster "Archwizard"
-spr1 ""
-spr2 ""
+spr1 "ee/spr/wiz/archwizard1.tga"
+spr2 "ee/spr/wiz/archwizard2.tga"
 descr ""
 rank -1
 hp 7
@@ -4496,7 +4564,7 @@ mr 10
 mor 6
 str 4
 spellweapon 29 3 # Wizardry
-meleeweapon
+meleeweapon 0 5 # Staff
 power 55 3
 allitemslots
 human
@@ -4504,8 +4572,8 @@ unaging
 startitem "Staff of the Magi"
 
 newmonster "Warden"
-spr1 ""
-spr2 ""
+spr1 "ee/spr/wiz/warden1.tga"
+spr2 "ee/spr/wiz/warden2.tga"
 descr ""
 rank -1
 hp 10
@@ -4513,63 +4581,39 @@ armor 2
 mr 5 # 6?
 mor 7
 str 5 # 6?
-rangedweapon # Crossbow
-meleeweapon # Greatsword
+rangedweapon 1 9 # Crossbow
+meleeweapon 1 21 # Greatsword
 allitemslots
 acutesenses
 human
 rearpos # Bodyguard unit, basically. Advanced familiar.
 
-newmonster "Scholar"
-copystats "Alchemist"
-spr1
-spr2
-descr ""
-rank -1
-hp 5
-armor 0
-mr 6
-mor 4
-str 4
-clearweapons
-spellweapon 44 1 # Sage
-meleeweapon 0 0 # Fist
-allitemslots
-human
-
-newmonster "Sage"
-spr1
-spr2
-descr ""
-rank -1
-hp 6
-armor 0
-mr 8
-mor 5
-str 4
-spellweapon 44 2 # Sage
-meleeweapon 0 0 # Fist
-allitemslots
-human
-
 newclass
 setclassname "Wizard"
 maincom "Wizard"
-classdescr
+classdescr ""
 hometerr 88 # Academy of Higher Magics. As an unwanted side effect, starts with an enchanted gate. I could fix that easily enough, but... effort.
 addstartterr ? # Hamlet, probably.
-addstartunits "Peltast" 8
-addstartunits "Slinger" 5
+addstartunits "Spearman" 8
+addstartunits "Crossbowman" 5
 addstartcom "Apprentice Wizard"
 recherochance 1
 recasschance 2
 libbonusdescr "apprentices and wizard mercenaries"
-addcomrec "Apprentice Wizard" 4
+templebonusdescr "Hoburg Horticulturists"
+addcomrec "Apprentice Wizard" 4 40 15 0
 libraryrec
-addcomrec "Scholar" 2
+addcomrec "Scholar" 2 40 15 0
 libraryrec
-addcomrec "Alchemist" 0
+addcomrec "Alchemist" 0 40 15 0
 libraryrec
+addcomrec "Magus" 0 85 20 0
+libraryrec
+# Hoburg Auxiliaries
+addcomrec "Horticulturist" 2 75 10 0
+templerec
+addunitrec "Hoburg Militia" 10 10 35 0 0
+addunitrec "Hoburg Slinger" 10 10 35 0 0
 # Generic Civilized
 addcomrec "Mercenary Captain" 5 45 10 0
 addmercrec "Mercenary Cavalry" 10 4 50 12 0

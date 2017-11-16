@@ -4526,11 +4526,11 @@ clearweapons
 spellweapon 29 1 # Wizardry
 meleeweapon 0 5 # Staff
 more1spells 1
+spellrange 1
 power 55 1
-gold -2
+#gold -2 - oddly enough doesn't seem to get copystatted.
 allitemslots
 human
-startitem "Staff of the Magi"
 randomitem 30
 randommisc 100
 
@@ -4548,13 +4548,17 @@ str 4
 clearweapons
 spellweapon 29 2 # Wizardry
 meleeweapon 0 5 # Staff
+more1spells 1
 more2spells 1
+spellrange 1
 power 55 2
 allitemslots
 human
 diseaseres
 startitem "Staff of the Magi"
 startitem "Ring of Protection"
+randomitem -25 # Hopefully getting rid of the Magus' copystatted thing.
+randomrare -10
 
 newmonster "Archwizard"
 spr1 "ee/spr/wiz/archwizard1.tga"
@@ -4569,19 +4573,19 @@ str 4
 spellweapon 29 3 # Wizardry
 meleeweapon 0 5 # Staff
 more3spells 1
+spellrange 1
 power 55 3
 allitemslots
 human
 unaging
 diseaseres
 poisonres 50
-startitem "Staff of the Magi"
 
 # Tower Guard/Defender/Guardian
 newmonster "Defender"
 spr1 "ee/spr/wiz/defender1.tga"
 spr2 "ee/spr/wiz/defender2.tga"
-descr "The Wizards are very concerned about the integrity of their vaults and libraries and consequently retain companies of professional soldiers known as Defenders.  These are much like the Tower Guards of the Baron who were later founded for similar purposes.  The Defenders are frequently exposed to magic and often develop a tolerance for it.  The famed Wardens are usually recruited from among the Defenders."
+descr "The Wizards are very concerned about the integrity of their vaults and libraries and consequently retain companies of professional soldiers known as Defenders.  These men and women are much like the Tower Guards of the Baron who were later founded for similar purposes.  The Defenders are frequently exposed to magic and often develop a tolerance for it.  The famed Wardens are usually recruited from among the Defenders."
 rank 0
 hp 7
 armor 1
@@ -4597,7 +4601,7 @@ shield
 newmonster "Warden"
 spr1 "ee/spr/wiz/warden1.tga"
 spr2 "ee/spr/wiz/warden2.tga"
-descr ""
+descr "One of the oldest and most mysterious Wizarding traditions is embodied by the Wardens.  Each Warden is a skilled warrior willingly bound to the service of a Wizard.  They are essentially human familiars.  Where the Defenders are ordinary soldiers assigned to defend the Towers, Wardens are the personal guards of the Wizards.  Where most elite warriors would be found where the battle is thickest, the Wardens stand behind the Wizards in battle. While the Wizards destroy all comers with their spellcraft, the Wardens will defend them from assassins and other dangers.  Most Wardens are experienced warriors armed with greatswords and crossbows.  Their bond grants them magical strength and resilience, and is also the source and cause of many tawdry rumours."
 rank -1
 hp 10
 armor 2
@@ -4615,10 +4619,12 @@ fireres 50
 diseaseres
 rearpos # Bodyguard unit, basically. Advanced familiar.
 
+#TODO Lore revamp - Metal Orders are the oldest and most respected Orders of Wizards. Name and mechanics may have to be revised.
+
 newclass
 setclassname "Wizard"
 maincom "Wizard"
-classdescr "The Wizard was once a member of the Order of Wizards and is the inheritor and guardian of some very old traditions.  Long before humans arrived on Elysium, mankind lived in a realm called Terra.  It was an orderly and peaceful land where the wildlife was meek and civilization flourished.  Magical resources were scarce and the dark arts were banned.  The Order was strong in these days but fell into obscurity during the Dark Ages.  The Wizard has preserved these traditions and built a great keep to guard the collected lore of his Order.  Seeing Elysium fall into disarray, the Wizard has decided to be much more proactive in his duty.^^The Wizard can perform a limited number of rituals that only require mundane materials, but he cannot summon inhuman forces or build constructs to do his bidding.  Instead he must rely on mortal troops and his own spellcraft to conquer Elysium.^^The Wizard lives in a great and majestic tower which has a library to rival the greatest magical academies on Elysium.  He can cast very powerful spells in battle and many magic-users will seek to study in his great library, but in the end he is only human.^^The Wizard has a well-known fondness for pipe weed and has formed a bond with the local Hoburghers, who may occasionally be found in his company.^^Abilities:^Starts in a heavily fortified Wizard's Keep.^The Wizard's Keep doubles as a third-level library.^Has numerous defensive and utility rituals.^Wizards use very potent battle-magic.^Can recruit many apprentices which often come with magic items."
+classdescr "The Wizard is the inheritor and guardian of   Long before humans arrived on Elysium, mankind lived in a realm called Terra.  It was an orderly and peaceful land where the wildlife was meek and civilization flourished.  Magical resources were scarce and the dark arts were banned.  The Order was strong in these days but fell into obscurity during the Dark Ages.  The Wizard has preserved these traditions and built a great keep to guard the collected lore of his Order.  Seeing Elysium fall into disarray, the Wizard has decided to be much more proactive in his duty.^^The Wizard can perform a limited number of rituals that only require mundane materials, but he cannot summon inhuman forces or build constructs to do his bidding.  Instead he must rely on mortal troops and his own spellcraft to conquer Elysium.^^The Wizard lives in a great and majestic tower which has a library to rival the greatest magical academies on Elysium.  He can cast very powerful spells in battle and many magic-users will seek to study in his great library, but in the end he is only human.^^The Wizard has a well-known fondness for pipe weed and has formed a bond with the local Hoburghers, who may occasionally be found in his company.^^Abilities:^Starts in a heavily fortified Wizard's Keep.^The Wizard's Keep doubles as a third-level library.^Has numerous defensive and utility rituals.^Wizards use very potent battle-magic.^Can recruit many apprentices which often come with magic items."
 hometerr 88 # Academy of Higher Magics. As an unwanted side effect, starts with an enchanted gate. I could fix that easily enough, but... effort.
 addstartterr ? # Hamlet, probably.
 addstartunits "Spearman" 8
@@ -4633,8 +4639,6 @@ libraryrec
 addcomrec "Scholar" 2 40 15 0
 libraryrec
 addcomrec "Alchemist" 0 40 15 0
-libraryrec
-addcomrec "Magus" 0 85 20 0
 libraryrec
 # Hoburg Auxiliaries
 addcomrec "Horticulturist" 2 75 10 0

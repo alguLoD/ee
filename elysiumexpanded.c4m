@@ -2,10 +2,14 @@ icon "ee/ee.tga"
 description "A mod that seeks to tweak and expand on the game without changing its spirit or creating terrible imbalance."
 # For those wondering why I sometimes separate the descriptions from the monsters and rituals themselves - call it superstition. I once had a missing description for a ritual despite said description being present under the ritual itself, and doing that fixed it. It may be - and is likely - that it was something else I did that fixed it, but ever since...
 #
-# WARNING WARNING WARNING WARNING
-# I DID *NOT* REMEMBER TO UPLOAD THE LATEST CHANGES FROM HOME THIS MORNING
-# SO MANUALLY COMPARE THE TWO DIFFERENT VERSIONS WHEN YOU GET HOME
-# 
+# TODO Teaser image
+#
+# TODO Investigate whether new things get IDs assigned to them automatically. This would vary with the mods you had installed, of course, leading to incompatibility if they were not designed to work in tandem. (You can have some mods earlier but that only works if all the mods load in a sane order.)
+# [CLASSES]
+# ?: Shah
+# ?: Red Wizard
+# ?: Wight? Lord
+#
 # [RITPOWERS]
 # 48: Mastersmith, Navigator, Icecrafter
 # 49: Sheol
@@ -16,9 +20,23 @@ description "A mod that seeks to tweak and expand on the game without changing i
 # 54: Dastur
 # 55: Wizard
 #
+# [TERRAINS]
+# 260: Shah's castle (NYI)
+# 261: Wizard's Keep
+# 262: Tower of Power
+#
 # [NEW WEAPONS]
 #
-# TODO Teaser image
+# ?: Composite Bow
+# ?: Great Bow
+# ?: Frost Bow
+# ?: Frost Arrow
+# ?: Ice Lance
+# ?: Magic Lance Charge
+# ?: Spectral Javelin
+# ?: Project Fear
+# ?: Longspear
+#
 
 newweapon "Composite Bow"
 range 5
@@ -50,7 +68,6 @@ flysound 14  # Arrow
 sound -1  # No sound on impact
 # Used by Gibbor Archers.
 
-#TODO next effect
 newweapon "Frost Bow"
 range 5
 init 2
@@ -272,38 +289,39 @@ randomitem 50
 selectmonster "Warrior Mage"
 descr "Some students at the academy suffer are known to suffer from deficient attention spans, or else complain about the difficulty of their studies and how they wish they had stayed with their families and become knights instead.  Those who are not simply expelled or otherwise disappear sometimes find patronage with the Iron Order and become warrior mages.  They fight like cavalrymen but are usually more prudent and prefer to charge into battle only after they have softened the enemy up and properly prepared themselves."
 
-newmonster "Scholar"
-copystats "Alchemist"
-spr1 "ee/spr/i/scholar1.tga"
-spr2 "ee/spr/i/scholar2.tga"
-descr ""
-rank -1
-hp 5
-armor 0
-mr 6
-mor 4
-str 4
-clearweapons
-spellweapon 44 1 # Sage
-meleeweapon 0 0 # Fist
-gold -2
-allitemslots
-human
+#TODO Implement the below
+#newmonster "Scholar"
+#copystats "Alchemist"
+#spr1 "ee/spr/i/scholar1.tga"
+#spr2 "ee/spr/i/scholar2.tga"
+#descr ""
+#rank -1
+#hp 5
+#armor 0
+#mr 6
+#mor 4
+#str 4
+#clearweapons
+#spellweapon 44 1 # Sage
+#meleeweapon 0 0 # Fist
+#gold -2
+#allitemslots
+#human
 
-newmonster "Sage"
-spr1 "ee/spr/i/sage1.tga"
-spr2 "ee/spr/i/sage2.tga"
-descr ""
-rank -1
-hp 6
-armor 0
-mr 8
-mor 5
-str 4
-spellweapon 44 2 # Sage
-meleeweapon 0 0 # Fist
-allitemslots
-human
+#newmonster "Sage"
+#spr1 "ee/spr/i/sage1.tga"
+#spr2 "ee/spr/i/sage2.tga"
+#descr ""
+#rank -1
+#hp 6
+#armor 0
+#mr 8
+#mor 5
+#str 4
+#spellweapon 44 2 # Sage
+#meleeweapon 0 0 # Fist
+#allitemslots
+#human
 
 # Ritpow 48, Master Smith, Icecrafter, Chartmaker
 
@@ -941,15 +959,17 @@ newrit 1
 soundfx 57 # orchhit.smp
 free
 
+#TODO see if this works
 newritual "Ritual of Mastery"
 ritpow 49 # Sheol
 level 1
 cost 5 30 # Hands
 newrit 2
-levelup 2
+levelupmon 2 # Level up to monster in addstring if below level 2?
 soundfx 57 # orchhit.smp
 rebatelvl 2
 free
+addstring "Zamzummite"
 
 newritual "Ritual of Grand Mastery"
 ritpow 49 # Sheol
@@ -1330,10 +1350,11 @@ power 1 0 # Gets rid of necromancy
 power 49 2 # Sheol
 gatherhands
 
-newmonster "Zamzummite"
-copystats "Zamzummite"
-copyspr "Zamzummite"
-descr "The Zamzummite, or the Murmurer, is an Anakite sorcerer and shepherd of the dead.  During the Time of Giants they presided at the cultic funerary festivals and the banquets for the dead Rephaite kings.  Now they are called by the servants of Ba'al to prepare the world for the second coming of the dark God."
+#TODO is levelupmon does not work, uncomment.
+#newmonster "Zamzummite"
+#copystats "Zamzummite"
+#copyspr "Zamzummite"
+#descr "The Zamzummite, or the Murmurer, is an Anakite sorcerer and shepherd of the dead.  During the Time of Giants they presided at the cultic funerary festivals and the banquets for the dead Rephaite kings.  Now they are called by the servants of Ba'al to prepare the world for the second coming of the dark God."
 
 newmonster "Anakite Elder"
 copystats "Court Mage"
@@ -2809,6 +2830,7 @@ clearritspec
 level 9
 nostart
 
+# TODO nexttoo doesn't work if you happen to start with a ritual, so fix 'em up!
 newritual "Sculpt Terracotta Soldiers"
 ritpow 11 # Enchantment
 level 1
@@ -3508,6 +3530,7 @@ fast
 allitemslots
 nobootslots
 
+#TODO The sprite needs archers. May also want to adjust stats.
 newmonster "Turan War Elephant"
 copystats "War Elephant"
 spr1 "ee/spr/shah/warelephant1.tga"
@@ -4368,8 +4391,39 @@ reclimiter "+Turtle Chief"
 # Changing my mind about these guys, I think. Get rid of Arco stuff, make it more of a LotR/WoT homage. Wardens, Hoburg allies, the use of weed as a resource?
 
 # Terrains - may have to be done by selecting "blank" or unused terrain numbers? Not sure, don't think so.
+
 # Wizard's Keep - or w/e
+selectterr 261
+spr "ee/spr/terr/wkeep.tga"
+name "Wizard's Keep"
+apcost 1
+ownable
+gold 3
+trade 1
+snowok
+desertok
+library1
+library2
+farsight
+citadel
+siegeable
+highwalls
+widebattlements
+irongate
+
 # Tower of Power
+selectterr 262
+spr "ee/spr/terr/ptower.tga"
+name "Tower of Power"
+apcost 1
+ownable
+gold 1
+library2
+farsight
+citadel
+siegeable
+highwalls
+irongate
 
 newritpow
 
@@ -4377,7 +4431,7 @@ newritual "Study Lesser Rituals"
 descr
 ritpow 55
 level 1
-cost 0 ?
+cost 0 15
 newrit 1
 terr -3 # Any library
 apcost 2
@@ -4391,19 +4445,21 @@ free
 #cost
 
 newritual "Scry"
-descr
+descr ""
 ritpow 55
 level 1
 cost 0 5 # Gold
 apcost 2
-
-soundfx ?
+chooseloc 1
+soundfx 23
+scryloc 15
+closewin
 
 newritual "Bind Familiar"
 descr ""
 ritpow 55
 level 1
-cost
+cost 0 5
 apcost 2
 summoning
 addstring "Raven Familiar"
@@ -4442,9 +4498,10 @@ newritual "Bind Warden"
 descr ""
 ritpow 55
 level 2
-cost
+cost 0 15
 apcost 2
-# Summoning or promotion?
+promotion 1
+addstring "Defender"
 addstring "Warden"
 
 newritual "Craft Guardian"
@@ -4478,8 +4535,10 @@ newritual "Tower of Power"
 descr ""
 ritpow 55
 level 3
-terr # Faerie Circle?
-cost
+terr 197 # Faerie Circle?
+cost 0 200
+cost 1 50
+apcost 5
 alterloc "Tower of Power"
 start
 
@@ -4491,7 +4550,7 @@ ritpow 55
 level 3
 cost 0 60
 cost 1 60
-terr "Wizard's Keep"
+terr 261
 makeportal 20
 apcost 5
 soundfx 57
@@ -4502,14 +4561,33 @@ ritpow 55
 level 3
 cost 0 60
 cost 1 60
-terr "Tower of Power"
+terr 262
 makeportal 20
 apcost 5
 soundfx 57
 hasportalreq 20
 nostart
 
-#newritual "Extraplanar Scrying"
+
+#TODO all of this junk
+newritual "Extraplanar Scrying"
+#descr "This is the same ritual with which Elysium was first discovered. It is random but the ritual scry-construct is engineered to slide off any target that isn't dry land.."
+ritpow 55
+level 3
+cost
+apcost
+setplane -1 # Random
+randomloc 1 # Any land
+centerloc
+nexttoo
+
+#gainrit stuff
+
+#Elemental portal
+nexttoo
+#Agartha portal
+nexttoo
+#Infernal portal
 
 newmonster "Apprentice Wizard"
 copystats "Alchemist"
@@ -4526,15 +4604,15 @@ clearweapons
 spellweapon 29 1 # Wizardry
 meleeweapon 0 5 # Staff
 more1spells 1
-spellrange 1
 power 55 1
-#gold -2 - oddly enough doesn't seem to get copystatted.
+gold -2
 allitemslots
 human
+startitem "Staff of the Magi"
 randomitem 30
 randommisc 100
 
-newmonster "Wizard"
+newmonster "Red Wizard"
 copystats "Magus"
 spr1 "ee/spr/wiz/wizard1.tga"
 spr2 "ee/spr/wiz/wizard2.tga"
@@ -4548,17 +4626,13 @@ str 4
 clearweapons
 spellweapon 29 2 # Wizardry
 meleeweapon 0 5 # Staff
-more1spells 1
 more2spells 1
-spellrange 1
 power 55 2
 allitemslots
 human
 diseaseres
 startitem "Staff of the Magi"
 startitem "Ring of Protection"
-randomitem -25 # Hopefully getting rid of the Magus' copystatted thing.
-randomrare -10
 
 newmonster "Archwizard"
 spr1 "ee/spr/wiz/archwizard1.tga"
@@ -4573,19 +4647,20 @@ str 4
 spellweapon 29 3 # Wizardry
 meleeweapon 0 5 # Staff
 more3spells 1
-spellrange 1
 power 55 3
 allitemslots
 human
 unaging
 diseaseres
 poisonres 50
+startitem "Staff of the Magi"
 
 # Tower Guard/Defender/Guardian
 newmonster "Defender"
-spr1 "ee/spr/wiz/defender1.tga"
-spr2 "ee/spr/wiz/defender2.tga"
-descr "The Wizards are very concerned about the integrity of their vaults and libraries and consequently retain companies of professional soldiers known as Defenders.  These men and women are much like the Tower Guards of the Baron who were later founded for similar purposes.  The Defenders are frequently exposed to magic and often develop a tolerance for it.  The famed Wardens are usually recruited from among the Defenders."
+copyspr "Tower Guard # TODO Temporary measure because I'm lazy.
+#spr1 "ee/spr/wiz/defender1.tga"
+#spr2 "ee/spr/wiz/defender2.tga"
+descr "The Wizards are very concerned about the integrity of their vaults and libraries and consequently retain companies of professional soldiers known as Defenders.  These are much like the Tower Guards of the Baron who were later founded for similar purposes.  The Defenders are frequently exposed to magic and often develop a tolerance for it.  The famed Wardens are usually recruited from among the Defenders."
 rank 0
 hp 7
 armor 1
@@ -4601,7 +4676,7 @@ shield
 newmonster "Warden"
 spr1 "ee/spr/wiz/warden1.tga"
 spr2 "ee/spr/wiz/warden2.tga"
-descr "One of the oldest and most mysterious Wizarding traditions is embodied by the Wardens.  Each Warden is a skilled warrior willingly bound to the service of a Wizard.  They are essentially human familiars.  Where the Defenders are ordinary soldiers assigned to defend the Towers, Wardens are the personal guards of the Wizards.  Where most elite warriors would be found where the battle is thickest, the Wardens stand behind the Wizards in battle. While the Wizards destroy all comers with their spellcraft, the Wardens will defend them from assassins and other dangers.  Most Wardens are experienced warriors armed with greatswords and crossbows.  Their bond grants them magical strength and resilience, and is also the source and cause of many tawdry rumours."
+descr ""
 rank -1
 hp 10
 armor 2
@@ -4619,26 +4694,29 @@ fireres 50
 diseaseres
 rearpos # Bodyguard unit, basically. Advanced familiar.
 
-#TODO Lore revamp - Metal Orders are the oldest and most respected Orders of Wizards. Name and mechanics may have to be revised.
-
 newclass
-setclassname "Wizard"
-maincom "Wizard"
-classdescr "The Wizard is the inheritor and guardian of   Long before humans arrived on Elysium, mankind lived in a realm called Terra.  It was an orderly and peaceful land where the wildlife was meek and civilization flourished.  Magical resources were scarce and the dark arts were banned.  The Order was strong in these days but fell into obscurity during the Dark Ages.  The Wizard has preserved these traditions and built a great keep to guard the collected lore of his Order.  Seeing Elysium fall into disarray, the Wizard has decided to be much more proactive in his duty.^^The Wizard can perform a limited number of rituals that only require mundane materials, but he cannot summon inhuman forces or build constructs to do his bidding.  Instead he must rely on mortal troops and his own spellcraft to conquer Elysium.^^The Wizard lives in a great and majestic tower which has a library to rival the greatest magical academies on Elysium.  He can cast very powerful spells in battle and many magic-users will seek to study in his great library, but in the end he is only human.^^The Wizard has a well-known fondness for pipe weed and has formed a bond with the local Hoburghers, who may occasionally be found in his company.^^Abilities:^Starts in a heavily fortified Wizard's Keep.^The Wizard's Keep doubles as a third-level library.^Has numerous defensive and utility rituals.^Wizards use very potent battle-magic.^Can recruit many apprentices which often come with magic items."
-hometerr 88 # Academy of Higher Magics. As an unwanted side effect, starts with an enchanted gate. I could fix that easily enough, but... effort.
-addstartterr ? # Hamlet, probably.
+setclassname "Red Wizard"
+setmaincom "Red Wizard"
+classdescr "The Wizard was once a member of the Order of Wizards and is the inheritor and guardian of some very old traditions.  Long before humans arrived on Elysium, mankind lived in a realm called Terra.  It was an orderly and peaceful land where the wildlife was meek and civilization flourished.  Magical resources were scarce and the dark arts were banned.  The Order was strong in these days but fell into obscurity during the Dark Ages.  The Wizard has preserved these traditions and built a great keep to guard the collected lore of his Order.  Seeing Elysium fall into disarray, the Wizard has decided to be much more proactive in his duty.^^The Wizard can perform a limited number of rituals that only require mundane materials, but he cannot summon inhuman forces or build constructs to do his bidding.  Instead he must rely on mortal troops and his own spellcraft to conquer Elysium.^^The Wizard lives in a great and majestic tower which has a library to rival the greatest magical academies on Elysium.  He can cast very powerful spells in battle and many magic-users will seek to study in his great library, but in the end he is only human.^^The Wizard has a well-known fondness for pipe weed and has formed a bond with the local Hoburghers, who may occasionally be found in his company.^^Abilities:^Starts in a heavily fortified Wizard's Keep.^The Wizard's Keep doubles as a third-level library.^Has numerous defensive and utility rituals.^Wizards use very potent battle-magic.^Can recruit many apprentices which often come with magic items."
+hometerr 261 # Wizard's Keep, hopefully not broken
+#hometerr 88  Academy of Higher Magics. As an unwanted side effect, starts with an enchanted gate. I could fix that easily enough, but... effort.
+addstartterr 8 # Hamlet, probably.
 addstartunits "Spearman" 8
 addstartunits "Crossbowman" 5
 addstartcom "Apprentice Wizard"
 recherochance 1
 recasschance 2
+recwizchance 2
+stdtroops
 libbonusdescr "apprentices and wizard mercenaries"
-templebonusdescr "Hoburg Horticulturists"
+templebonusdescr "hoburg horticulturists"
 addcomrec "Apprentice Wizard" 4 40 15 0
 libraryrec
-addcomrec "Scholar" 2 40 15 0
-libraryrec
+#addcomrec "Scholar" 2 40 15 0
+#libraryrec
 addcomrec "Alchemist" 0 40 15 0
+libraryrec
+addcomrec "Magus" 0 85 20 0
 libraryrec
 # Hoburg Auxiliaries
 addcomrec "Horticulturist" 2 75 10 0
@@ -4660,4 +4738,5 @@ libraryrec
 addcomrec "Mermage" 1 40 20 0
 libraryrec
 reclimiter "+Turtle Chief"
+
 

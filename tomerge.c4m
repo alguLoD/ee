@@ -1,3 +1,13 @@
+#"Claims" an Ancient Battlefield, turning it into a spawning centre for a specific type of undead by spawning a "flag" unit tied to events?
+# Or maybe alters the terrain. Might be simpler, actually. OR creates an immobile "obelisk" unit of some sort.
+newritual ""
+descr ""
+summoning
+addstring # Imperial
+addstring # Dust
+addstring # Bane
+addstring # Unfrozen
+
 selectmonster "Wight"
 name "Barrow Wight"
 coldaura 2
@@ -22,4 +32,10 @@ coldaura 2
 
 newmonster "Mound King" # ID ?
 
-newmonster "Knight of the Unholy Sepulchre"
+newmonster "Knight of the Unholy Sepulchre" # ID ?
+
+newmonster "empireflag"
+
+newmonster "dustflag"
+
+newmonster "unfrozenflag"

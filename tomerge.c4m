@@ -1,0 +1,25 @@
+selectmonster "Wight"
+name "Barrow Wight"
+coldaura 2
+
+selectmonster "Wight Lord"
+power 1 0 # Necromancy removed
+power ? 1 
+hp 51
+fear 1
+clearweapons
+meleeweapon 8 261 # 2h Bane Blade
+
+# TODO Experiment with IDs to see whether they can be used in place of monster names, e.g. to have mounted Mound Kings.
+
+newmonster "Wight" # ID ?
+copystats "Barrow Wight"
+armor 2
+clearweapons
+meleeweapon 2 700 # 1h Bane Blade 1-9 dmg
+shield
+coldaura 2
+
+newmonster "Mound King" # ID ?
+
+newmonster "Knight of the Unholy Sepulchre"

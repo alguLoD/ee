@@ -1,7 +1,89 @@
-#"Claims" an Ancient Battlefield, turning it into a spawning centre for a specific type of undead by spawning a "flag" unit tied to events?
-# Or maybe alters the terrain. Might be simpler, actually. OR creates an immobile "obelisk" unit of some sort.
+# Wight Lord and Acolytes, uses Hands.
+newritpow
+
+newritual "Lesser Ritual of Mastery"
+descr ""
+ritpow ?
+level 1
+cost ? ?
+free
+newrit 1
+soundfx 57
+
+# Acolytes-only.
+newritual "Ritual of Mastery"
+descr ""
+ritpow ?
+level 1
+cost ? ?
+newrit 2
+levelup 2
+soundfx 57
+rebatelvl 2
+free
+noundead
+
+# Wight Lord-only
+newritual "Ritual of Mastery"
+descr ""
+ritpow ?
+level 1
+cost ? ?
+newrit 2
+levelup 2
+soundfx 57
+rebatelvl 2
+free
+notforpoor
+
+newritual "Raise Dead"
+ritpow ?
+level 1
+raisedead
+apcost 2
+free
+notforpoor
+
+newritual "Raise Beasts"
+ritpow ?
+level 1
+raiseanimals
+apcost 2
+free # Unlike the Necromancer/Nekromant versions.
+notforpoor
+
+#TODO Is probably amusingly broken if the old wights are barrow wights and the new wights are what they are.
+newritual "Unholy Armaments"
+descr ""
+ritpow ?
+level 1
+noundead # Bars Wight Lord from using it.
+cost
+apcost 2
+promotion 3
+addstring "Barrow Wight"
+addstring "Wight"
+
+# Stygian something. Unlike the Wight Lord who is barred from Hades, the Acolytes can perform some lesser necromantic/dark arts to draw on the inhabitants of that plane. Unlike true necromancers their rituals are less flexible and cannot summon deathly beings from Elysium, though this is less necessary with the power the Wight Lord wields over them.
 newritual ""
 descr ""
+ritpow ?
+level 1
+noundead # Bars Wight Lord from using it.
+summoning
+addstring "Black Servant"
+addstring ""
+addstring ""
+
+# "Claims" an Ancient Battlefield, turning it into a spawning centre for a specific type of undead by spawning a "flag" unit tied to events?
+# Or maybe alters the terrain. Might be simpler, actually. OR creates an immobile "obelisk" unit of some sort. I like the Obelisk idea, the issue lies in the sprites.
+# Just recolor the Monolith and/or scrabble runes on it?
+newritual ""
+descr ""
+ritpow ? ?
+level 2
+cost ? ?
+notforpoor
 summoning
 addstring # Imperial
 addstring # Dust
@@ -13,12 +95,33 @@ name "Barrow Wight"
 coldaura 2
 
 selectmonster "Wight Lord"
+descr ""
 power 1 0 # Necromancy removed
-power ? 1 
+power ? 2
 hp 51
 fear 1
 clearweapons
 meleeweapon 8 261 # 2h Bane Blade
+#reanimate 10 # Reanimates some dead without the need for a ritual.
+saner 2
+
+newmonster "Acolyte"
+spr1 "ee/wightlord/acolyte1.tga"
+spr2 "ee/wightlord/acolyte2.tga"
+descr ""
+rank -1
+hp 5
+armor 0
+mr 6
+str 4
+meleeweapon ? ?
+spellweapon 8 1 # Unlife
+power ? 1
+classcost 10 # Negative rebate to bar them from using reanimation rituals.
+
+# Upgraded Acolyte, required for KotUS?
+newmonster "" 
+
 
 # TODO Experiment with IDs to see whether they can be used in place of monster names, e.g. to have mounted Mound Kings.
 
@@ -31,11 +134,56 @@ shield
 coldaura 2
 
 newmonster "Mound King" # ID ?
+copystats 274
+spr1 "ee/wightlord/mountedmoundking1.tga"
+spr2 "ee/wightlord/mountedmoundking2.tga"
+descr ""
+hp 8
+armor 2
+meleeweapon # hoof
+fast
+
+newmonster "Longdead Horseman" # ID ?
+
+#newmonster "Longdead Knight" ? # ID ?
 
 newmonster "Knight of the Unholy Sepulchre" # ID ?
 
-newmonster "empireflag"
+#TODO check whether this copystat works
+newmonster "Longdead Mage" # ID ?
+copystats 261
+spr1 "ee/wightlord/longdeadmage1.tga"
+spr2 "ee/wightlord/longdeadmage2.tga"
+descr ""
+rank -1
+hp 4
+#armor 0
+mr 4
+#str 4
+#meleeweapon 0 0 # Fist
+spellweapon 29 1 # Wizardry
+#water
+#coldres 100
+#poisonres 100
+#undead
+#sleepres
+#charmres
+#noheal
+#allitemslots
+#inanimate
 
-newmonster "dustflag"
+newmonster "Black Servant"
+copystats "Shade"
+spr1 "ee/wightlord/blackservant1.tga"
+spr2 "ee/wightlord/blackservant2.tga"
+descr ""
+nocombat
+spiritsight
+invisible
+wander 1 # ?
 
-newmonster "unfrozenflag"
+#newmonster "empireflag"
+
+#newmonster "dustflag"
+
+#newmonster "unfrozenflag"

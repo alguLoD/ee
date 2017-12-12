@@ -1,3 +1,106 @@
+# Damaged golems and repair rituals. Credits to Xelos for the idea.
+
+newritual ""
+promotion 1
+addstring "Crippled Guardian"
+addstring "Damaged Guardian"
+addstring "Damaged Guardian"
+addstring "Guardian"
+addstring "Crippled Wood Golem"
+addstring "Damaged Wood Golem"
+addstring "Damaged Wood Golem"
+addstring "Wood Golem"
+addstring "Crippled Stone Golem"
+addstring "Damaged Stone Golem"
+addstring "Damaged Stone Golem"
+addstring "Stone Golem"
+addstring "Crippled Iron Golem"
+addstring "Damaged Iron Golem"
+addstring "Damaged Iron Golem"
+addstring "Iron Golem"
+addstring "Crippled Oak Golem"
+addstring "Damaged Oak Golem"
+addstring "Damaged Oak Golem"
+addstring "Oak Golem"
+addstring "Crippled Silver Golem"
+addstring "Damaged Silver Golem"
+addstring "Damaged Silver Golem"
+addstring "Silver Golem"
+addstring "Crippled Gold Golem"
+addstring "Damaged Gold Golem"
+addstring "Damaged Gold Golem"
+addstring "Gold Golem"
+addstring "Crippled Vessel of Iron Lore"
+addstring "Damaged Vessel of Iron Lore"
+addstring "Damaged Vessel of Iron Lore"
+addstring "Vessel of Iron Lore"
+addstring "Crippled Vessel of Silver Lore"
+addstring "Damaged Vessel of Silver Lore"
+addstring "Damaged Vessel of Silver Lore"
+addstring "Vessel of Silver Lore"
+addstring "Crippled Vessel of Gold Lore"
+addstring "Damaged Vessel of Gold Lore"
+addstring "Damaged Vessel of Gold Lore"
+addstring "Vessel of Gold Lore"
+addstring "Crippled Colossus"
+addstring "Damaged Colossus"
+addstring "Damaged Colossus"
+addstring "Colossus"
+
+newmonster "Damaged Guardian"
+
+newmonster "Crippled Guardian"
+
+newmonster "Damaged Wood Golem"
+
+newmonster "Crippled Wood Golem"
+
+newmonster "Damaged Stone Golem"
+
+newmonster "Crippled Stone Golem"
+
+newmonster "Damaged Iron Golem"
+
+newmonster "Crippled Iron Golem"
+
+newmonster "Damaged Oak Golem"
+
+newmonster "Crippled Oak Golem"
+
+# Crystalline Golems cannot be repaired.
+#newmonster "Damaged Ice Golem"
+#newmonster "Crippled Ice Golem"
+#newmonster "Damaged Onyx Golem"
+#newmonster "Crippled Onyx Golem"
+#newmonster "Damaged Crystal Golem"
+#newmonster "Crippled Crystal Golem"
+
+newmonster "Damaged Silver Golem"
+
+newmonster "Crippled Silver Golem"
+
+newmonster "Damaged Gold Golem"
+
+newmonster "Crippled Gold Golem"
+
+newmonster "Damaged Vessel of Iron Lore"
+
+newmonster "Crippled Vessel of Iron Lore"
+
+newmonster "Damaged Vessel of Silver Lore"
+
+newmonster "Crippled Vessel of Silver Lore"
+
+newmonster "Damaged Vessel of Gold Lore"
+
+newmonster "Crippled Vessel of Gold Lore"
+
+# The Enchanter can't make new Colossi (yet?) but can repair ones that are found.
+newmonster "Damaged Colossus"
+
+newmonster "Crippled Colossus"
+
+
 # Wight Lord and Acolytes, uses Hands.
 newritpow
 
@@ -58,12 +161,28 @@ descr ""
 ritpow ?
 level 1
 noundead # Bars Wight Lord from using it.
+nexttoo
 cost 
 cost 
 apcost 2
 promotion 3
 addstring "Barrow Wight"
 addstring "Wight"
+
+#Bane-blades and Bane-fire Archers?
+newritual ""
+descr ""
+ritpow ?
+level 1
+noundead
+nostart
+cost # #
+apcost 2
+promotion 5
+addstring "Longdead"
+addstring ""
+addstring "Longdead"
+addstring ""
 
 # Stygian something. Unlike the Wight Lord who is barred from Hades, the Acolytes can perform some lesser necromantic/dark arts to draw on the inhabitants of that plane. Unlike true necromancers their rituals are less flexible and cannot summon deathly beings from Elysium, though this is less necessary with the power the Wight Lord wields over them.
 newritual ""

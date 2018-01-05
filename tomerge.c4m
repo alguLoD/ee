@@ -1,3 +1,10 @@
+# High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned.
+selectclass 5
+addunitrec
+reclimiter "+"
+addunitrec
+reclimiter "+"
+
 # Damaged golems and repair rituals. Credits to Xelos for the idea.
 
 newritual ""

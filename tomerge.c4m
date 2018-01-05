@@ -1,11 +1,79 @@
-# High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned.
+# High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned. Gibbor can be rarely recruited right from the start but become more common if a Qedesim is available.
+# Now that giants can be both recruited and summoned, move back towards a more vanilla Blood Feast list? Blood Feast is about the same cost in sacrifices (disregarding criticals which you probably shouldn't) but of course does not cost gold or iron.
 selectclass 5
-addunitrec
+addmercrec "Gibbor Scout" 5 1 25 15 3
+resxcost 4 5
+addunitrec "Gibbor" 10 3 60 15 15
+resxcost 4 15
+addunitrec "Gibbor Archer" 10 3 60 15 15
+resxcost 4 15
+# Qedesim Gibbor recruit offers. More likely and fixed or reduced cost variable?
+addmercrec "Gibbor Scout" 10 1 25 5 3
+reclimiter "Qedesim"
+resxcost 4 5
+addunitrec "Gibbor" 25 3 60 5 15
+reclimiter "+Qedesim"
+resxcost 4 15
+addunitrec "Gibbor Archer" 25 3 60 5 15
+reclimiter "+Qedesim"
+resxcost 4 15
+# Anakite recruit offers, costs based on the Ancient Pale Ones, who are surprisingly close in stats. More hit points and amphibious, but bad sight and especially vulnerable to eyeloss. Of course, Anakites also cost sacrifices.
+addunitrec "Anakite" 20 2 60 0 15
+reclimiter "+Anakite Captain"
+reclimiter "+Adon"
+resxcost 4 30
+addunitrec "Dawn Guard" 10 2 80 0 25
+reclimiter "+Adon"
+resxcost 4 30
+addcomrec "Anakite Elder" 1 
+libraryrec
+reclimiter "+Adon"
+reclimiter "+Belus"
+resxcost 4 x
+addcomrec "Emite" 1
+libraryrec
+reclimiter "+Adon"
+reclimiter "+Zamzummite"
+resxcost 4 x
+addunitrec "Rephaite"
+reclimiter "+Melqart"
+reclimiter "+Belus"
+resxcost 4 x
+
+# Proper plural is "Qedestim."
+newmonster "Qedesim"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedestim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedestim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest."
+
+# Ba'al recruitables, cheaper, more plentiful? Could alternatively use invisible flags which spawn in recruitment spots if Ba'al exists in the world.
+addmercrec "Gibbor Scout" 5 1 25 10 3
 reclimiter "+"
-addunitrec
+resxcost 4 5
+addunitrec "Gibbor"
 reclimiter "+"
+resxcost 4 x
+addunitrec "Gibbor Archer"
+reclimiter "+"
+resxcost 4 x
+addunitrec "Anakite"
+reclimiter "+"
+resxcost 4 x
+addunitrec "Dawn Guard"
+reclimiter "+"
+resxcost 4 x
+addunitrec "Rephaite"
+reclimiter "+"
+resxcost 4 x
+addcomrec "Anakite Elder"
+libraryrec
+reclimiter "+"
+resxcost 4 x
+addcomrec "Emite"
+libraryrec
+reclimiter "+"
+resxcost 4 x
 
 # Damaged golems and repair rituals. Credits to Xelos for the idea.
+# Note that you'll need to essentially replace the old golems with new ones since shrinkHP only works with consecutive IDs.
 
 newritual ""
 promotion 1
@@ -54,27 +122,48 @@ addstring "Damaged Colossus"
 addstring "Damaged Colossus"
 addstring "Colossus"
 
+selectmonster "Guardian"
+shrinkhp
+
 newmonster "Damaged Guardian"
+shrinkhp
 
 newmonster "Crippled Guardian"
 
+selectmonster "Wood Golem"
+shrinkhp
+
 newmonster "Damaged Wood Golem"
+shrinkhp
 
 newmonster "Crippled Wood Golem"
 
+selectmonster "Stone Golem"
+shrinkhp
+
 newmonster "Damaged Stone Golem"
+shrinkhp
 
 newmonster "Crippled Stone Golem"
 
+selectmonster "Iron Golem"
+shrinkhp
+
 newmonster "Damaged Iron Golem"
+shrinkhp
 
 newmonster "Crippled Iron Golem"
 
+selectmonster "Oak Golem"
+shrinkhp
+
 newmonster "Damaged Oak Golem"
+shrinkhp
 
 newmonster "Crippled Oak Golem"
 
 # Crystalline Golems cannot be repaired.
+# Doesn't mean they can't have damaged shapes but that'd mostly be sprites.
 #newmonster "Damaged Ice Golem"
 #newmonster "Crippled Ice Golem"
 #newmonster "Damaged Onyx Golem"
@@ -82,28 +171,52 @@ newmonster "Crippled Oak Golem"
 #newmonster "Damaged Crystal Golem"
 #newmonster "Crippled Crystal Golem"
 
+selectmonster "Silver Golem"
+shrinkhp
+
 newmonster "Damaged Silver Golem"
+shrinkhp
 
 newmonster "Crippled Silver Golem"
 
+selectmonster "Gold Golem"
+shrinkhp
+
 newmonster "Damaged Gold Golem"
+shrinkhp
 
 newmonster "Crippled Gold Golem"
 
+selectmonster "Vessel of Iron Lore"
+shrinkhp
+
 newmonster "Damaged Vessel of Iron Lore"
+shrinkhp
 
 newmonster "Crippled Vessel of Iron Lore"
 
+selectmonster "Vessel of Silver Lore"
+shrinkhp
+
 newmonster "Damaged Vessel of Silver Lore"
+shrinkhp
 
 newmonster "Crippled Vessel of Silver Lore"
 
+selectmonster "Vessel of Gold Lore"
+shrinkhp
+
 newmonster "Damaged Vessel of Gold Lore"
+shrinkhp
 
 newmonster "Crippled Vessel of Gold Lore"
 
 # The Enchanter can't make new Colossi (yet?) but can repair ones that are found.
+selectmonster "Colossus"
+shrinkhp
+
 newmonster "Damaged Colossus"
+shrinkhp
 
 newmonster "Crippled Colossus"
 

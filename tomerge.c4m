@@ -9,10 +9,12 @@ addunitrec "Gibbor Archer" 10 3 60 15 15
 resxcost 4 15
 # Qedesim Gibbor recruit offers. More likely and fixed or reduced cost variable?
 addmercrec "Gibbor Scout" 10 1 25 5 3
-reclimiter "Qedesim"
+reclimiter "+Qedesim"
+reclimiter "-God"
 resxcost 4 5
 addunitrec "Gibbor" 25 3 60 5 15
 reclimiter "+Qedesim"
+reclimiter "-God"
 resxcost 4 15
 addunitrec "Gibbor Archer" 25 3 60 5 15
 reclimiter "+Qedesim"
@@ -21,6 +23,7 @@ resxcost 4 15
 addunitrec "Anakite" 20 2 60 0 20
 reclimiter "+Anakite Captain"
 reclimiter "+Adon"
+reclimiter "-God"
 resxcost 4 30
 addunitrec "Dawn Guard" 10 2 80 0 30
 reclimiter "+Adon"
@@ -38,39 +41,175 @@ resxcost 4 20
 addunitrec "Rephaite" 20 1 60 0 25
 reclimiter "+Melqart"
 reclimiter "+Belus"
+reclimiter "-God"
 resxcost 4 40
 
 # Proper plural is "Qedestim." Also, new feature.
 newmonster "Qedesim"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedestim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedestim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest.^^Gibborim are much more likely to seek out and offer their loyalty to the High Priestesses who retain Qedestim in their service."
 
+
+# DON'T do the below - leaving it in should I change my mind, this is a sort of scrapbook after all.
+# It's trying too hard to cram Dominions into CoE, I think. It's fine to have distinct Watchers but I'm not sure the Nephilim fit?
+# Then again, with the Melqarts and all...
+# New Nephil - incidentally, I just noticed that the default one has spellweaponbonus. Mostly wasted because it's mid-rank and probably doesn't want to be in melee anyway. But it does give me the idea for a distinct role for them.
+
+selectmonster "Nephil"
+rank 1
+rearpos
+# This makes it so that they will eventually close into melee range, but will stand behind everything else first. This lets them get a few spells off, possibly get buffed, and lets other units soak the first wave of e.g. flamebreath.
+
+newmonster "Son of Azazel"
+copystats "Nephil"
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+newmonster "Son of Semyaza"
+copystats "Nephil"
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+newmonster "Son of Ezekiel"
+copystats "Nephil"
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+newmonster "Son of Shamshiel"
+copystats "Nephil"
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+newmonster "Son of Kokabel"
+copystats "Nephil"
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+newmonster "Son of Arakiel"
+copystats "Nephil"
+descr ""
+rank 1
+rearpos
+clearweapons
+spellweaponbonus
+meleeweapon
+
+selectmonster "Nephil"
+copystats "Son of Arakiel"
+clearweapons
+spellweaponbonus
+meleeweapon ? ?
+
 # Ba'al recruitables, cheaper, more plentiful? Could alternatively use invisible flags which spawn in recruitment spots if Ba'al exists in the world.
 addmercrec "Gibbor Scout" 5 1 25 10 3
-reclimiter "+"
+reclimiter "+God"
 resxcost 4 5
-addunitrec "Gibbor"
-reclimiter "+"
+addunitrec "Gibbor" 
+reclimiter "+God"
 resxcost 4 x
-addunitrec "Gibbor Archer"
-reclimiter "+"
+addunitrec "Gibbor Archer" 
+reclimiter "+God"
 resxcost 4 x
-addunitrec "Anakite"
-reclimiter "+"
+addunitrec "Anakite" 
+reclimiter "+God"
 resxcost 4 x
-addunitrec "Dawn Guard"
-reclimiter "+"
+addunitrec "Rephaite" 
+reclimiter "+God"
 resxcost 4 x
-addunitrec "Rephaite"
-reclimiter "+"
-resxcost 4 x
-addcomrec "Anakite Elder"
-libraryrec
-reclimiter "+"
-resxcost 4 x
-addcomrec "Emite"
-libraryrec
-reclimiter "+"
-resxcost 4 x
+#addcomrec "Anakite Elder" 
+#libraryrec
+#reclimiter "+God"
+#resxcost 4 x
+#addcomrec "Emite" 
+#libraryrec
+#reclimiter "+God"
+#resxcost 4 x
+
+# Advanced units often with resxcosts - mostly specific for each class and has pre-requisites, not sure what direction to take this. Some classes might lack them entirely.
+# Probably
+# Barbarian - were-things?
+# Senator - mostly has such a thing in place already. Might throw in Vestals for the God Emperor and Shadow Vestals for the Dark God Emperor.
+# Demonologist - turn Bloodsworn into this. Several varieties of Bloodsworn?
+# Druid - Beast Riders. Like, duh.
+
+newmonster "Moose Rider"
+
+newmonster "Boar Rider"
+
+newmonster "Wyvern Rider"
+
+# Maybe
+# Necromancer - has them already. Maybe add ghouls, but probably not?
+# High Priestess - if any, then cursed weapons? High-end options requiring Grigori?
+# Bakemono - cursed blades?
+# Illusionist - nnno need? Mirror Armor, maybe.
+# Markgraf - already has a bit of this, though I did consider a blacksteel line...
+# The Baron already has his knights but might get more.
+
+# Unlikely
+# Enchanter - nothing, probably.
+# Warlock - this one is tricky because the theoretical upgrades would look a lot like Elemental and Paraelemental soldiers. Can't see a good way to justify turning those into recruitables, either.
+# Priest King - largely no need, though Jaguar Warriors might want a few sacrifices.
+# Dryad Queen - something like that already built into the class. Might be warranted but the current mechanics are very tightly woven into the way the class is structured.
+# Voice of El - no need.
+# Dwarf Queen - literally half her class' gimmick. Zero need for more.
+# High Cultist - not this one.
+
+# Unsure
+# Witch - ?
+# Troll King - already added some of these but should add more. Mostly goblins so far. Might want to add something for trolls or at least giants?
+# Pale One - unsure. Olm Sages might give you recruitment offers for Olms. Would give them a use. Add Olmspawn? 
+# Burgmeister - ?
+
+# New gimmick class with addresxunits? Focuses a lot around upgrades and stuff? Hm. A Sorcerer?
+
+# Throwing axe for new mercenary unit. Slightly faster and stronger than javelin. Not entirely sure there's a good flylook? Can these be modded?
+
+newweapon "Throwing Axe"
+range 3
+init 2
+dmgtype 1 # Slashing
+dmg 5
+oneshot
+mundane
+arrow
+flymode
+flylook
+flysound
+sound -1
+
+# New mercenary unit, based on the Abysian Axe Thrower from Dominions. Possibly give a spear instead?
+
+newmonster "Mercenary Axe Thrower"
+spr1 "ee/spr/i/mercaxethrower1.tga"
+spr2 "ee/spr/i/mercaxethrower2.tga"
+descr ""
+rank 1
+hp 6
+armor 0
+mr 5
+mor 5
+str 4
+rangedweapon 0 "Throwing Axe"
+meleeweapon 0 3 # Axe
+fireres 50
+human
+shield
+allitemslots
 
 # Damaged golems and repair rituals. Credits to Xelos for the idea.
 # Note that you'll need to essentially replace the old golems with new ones since shrinkHP only works with consecutive IDs.

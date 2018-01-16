@@ -1,48 +1,50 @@
+# TODO investigate WTF terr -61 "Forge Location" is.
+
 # High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned. Gibbor can be rarely recruited right from the start but become more common if a Qedesim is available. Costs based loosely on the Dai Bakemono. Stronger overall but also cost slightly more before sacrifices.
 # Now that giants can be both recruited and summoned, move back towards a more vanilla Blood Feast list? Blood Feast is about the same cost in sacrifices (disregarding criticals which you probably shouldn't) but of course does not cost gold or iron.
 selectclass 5
-addmercrec "Gibbor Scout" 5 1 25 15 3
-resxcost 4 5
-addunitrec "Gibbor" 10 3 60 15 15
-resxcost 4 15
-addunitrec "Gibbor Archer" 10 3 60 15 15
-resxcost 4 15
+addmercrec "Gibbor Scout" 4 1 25 15 3
+recxcost 4 5
+addunitrec "Gibbor" 5 3 60 15 15
+recxcost 4 15
+addunitrec "Gibbor Archer" 2 3 60 15 15
+recxcost 4 15
 # Qedesim Gibbor recruit offers. More likely and fixed or reduced cost variable?
-addmercrec "Gibbor Scout" 10 1 25 5 3
+addmercrec "Gibbor Scout" 5 1 25 5 3
 reclimiter "+Qedesim"
 reclimiter "-God"
-resxcost 4 5
-addunitrec "Gibbor" 25 3 60 5 15
+recxcost 4 5
+addunitrec "Gibbor" 15 3 60 5 15
 reclimiter "+Qedesim"
 reclimiter "-God"
-resxcost 4 15
-addunitrec "Gibbor Archer" 25 3 60 5 15
+recxcost 4 15
+addunitrec "Gibbor Archer" 6 3 60 5 15
 reclimiter "+Qedesim"
-resxcost 4 15
+recxcost 4 15
 # Anakite recruit offers, costs based on the Ancient Pale Ones, who are surprisingly close in stats. More hit points and amphibious, but bad sight and especially vulnerable to eyeloss. Of course, Anakites also cost sacrifices.
-addunitrec "Anakite" 20 2 60 0 20
+addunitrec "Anakite" 15 2 60 0 20
 reclimiter "+Anakite Captain"
 reclimiter "+Adon"
 reclimiter "-God"
-resxcost 4 30
-addunitrec "Dawn Guard" 10 2 80 0 30
+recxcost 4 30
+addunitrec "Dawn Guard" 5 2 80 0 30
 reclimiter "+Adon"
-resxcost 4 30
+recxcost 4 30
 addcomrec "Anakite Elder" 1 70 20 0
 libraryrec
 reclimiter "+Adon"
 reclimiter "+Belus"
-resxcost 4 20
+recxcost 4 20
 addcomrec "Emite" 1 75 20 0
 libraryrec
 reclimiter "+Adon"
 reclimiter "+Zamzummite"
-resxcost 4 20
-addunitrec "Rephaite" 20 1 60 0 25
+recxcost 4 20
+addunitrec "Rephaite" 15 1 60 0 25
 reclimiter "+Melqart"
 reclimiter "+Belus"
 reclimiter "-God"
-resxcost 4 40
+recxcost 4 40
 
 # Proper plural is "Qedestim." Also, new feature.
 newmonster "Qedesim"
@@ -158,11 +160,15 @@ newmonster "Wyvern Rider"
 # Bakemono - cursed blades?
 # Illusionist - nnno need? Mirror Armor, maybe.
 # Markgraf - already has a bit of this, though I did consider a blacksteel line...
-# The Baron already has his knights but might get more.
+# The Baron already has his knights but might get more. Pterippi/Pegasi if Cloud Castle owned? Cave fire?
+
 
 # Unlikely
 # Enchanter - nothing, probably.
+
 # Warlock - this one is tricky because the theoretical upgrades would look a lot like Elemental and Paraelemental soldiers. Can't see a good way to justify turning those into recruitables, either.
+# Exotic cavalry, perhaps, unlocked by Greater Warlocks of the respective element? So things like cave knights etc.
+
 # Priest King - largely no need, though Jaguar Warriors might want a few sacrifices.
 # Dryad Queen - something like that already built into the class. Might be warranted but the current mechanics are very tightly woven into the way the class is structured.
 # Voice of El - no need.
@@ -177,6 +183,28 @@ newmonster "Wyvern Rider"
 
 # New gimmick class with addresxunits? Focuses a lot around upgrades and stuff? Hm. A Sorcerer?
 
+# New model for mercenaries, closer to the special Dwarf Queen/Baron/Senator offers: given rarely, 3-5% chance of a 6-10 unit recoffer, sometimes with captains as a -1 choice. Non-Dwarf Queen classes get them cheaper, though there is a random component. Between 1.2-1.5x the gold cost of a regular equivalent sounds reasonable.
+
+E.g.
+# Generic Civilized
+addmercrec "Mercenary Cavalry" 4 8 120 30 0
+addcomrec "Mercenary Captain" -1 40 10 0
+addmercrec "Mercenary Axe Thrower" 4 10 120 30
+
+# Lance-esque once-only attack for pike units which gives them the first strike and only clumsy thereafter? Kind of want to give it range 1 but that would be odd for pikemen in the second rank who get a sudden quick attack when the first rank of pikes die.
+
+newweapon "Brace Pike"
+range 2
+init 7
+dmgtype 3 # Piercing
+oneshot
+mundane
+sound 84
+
+clearweapons
+meleeweaponspec ? "Brace Pike"
+meleeweaponlong ? 22
+
 # Throwing axe for new mercenary unit. Slightly faster and stronger than javelin. Not entirely sure there's a good flylook? Can these be modded?
 
 newweapon "Throwing Axe"
@@ -187,9 +215,9 @@ dmg 5
 oneshot
 mundane
 arrow
-flymode
-flylook
-flysound
+flymode ?
+flylook ?
+flysound ?
 sound -1
 
 # New mercenary unit, based on the Abysian Axe Thrower from Dominions. Possibly give a spear instead?
@@ -210,6 +238,70 @@ fireres 50
 human
 shield
 allitemslots
+
+# New mercenary unit, a slinger with a shield(?) and relatively limited utility, but may be nice to have if fighting a lot of pierce-resistant enemies? And ofc mercs don't take up a recruitment slot.
+
+newmonster "Mercenary Slinger"
+spr1
+spr2
+descr ""
+rank 0
+hp 6
+armor 0
+mr 4
+mor 5
+str 4
+rangedweapon 0 27 # Sling
+meleeweapon 0 
+human
+shield # ?
+allitemslots
+
+# New High Priestess/Shah/Illusionist(?) mercenary cavalry unit. Similar to regular mercenary cavalry but with sword + bow. May also be available to those who've claimed a Desert Palace? Desire and cost iron, both because they use swords (i.e. riding swordsman equivalent) and lorewise because while mercenaries they are nomads, and nomads like iron.
+addmercrec "" 4 8 120 30 8
+addcomrec "" -1 40 10 5
+
+newmonster ""
+spr1 "ee/spr/TODO"
+spr2 "ee/spr/TODO"
+descr ""
+rank 1
+hp 10
+armor 0
+mor 4 # Not a true Ba'alite, thus regular morale.
+mr 4
+str 4
+rangedweapon 0 7 # Bow.
+meleeweapon 0 2 # Broadsword.
+fast
+human
+shield
+allitemslots
+nobootslots
+
+# Not sure if this will work (almost certainly not but worth a shot), but a "Conjurer" promotion for the Hedge Wizard?
+
+selectmonster "Hedge Wizard"
+copystats 4
+mor 5
+clearweapons
+spellweapon 7 1 # Hedge.
+meleeweapon 0 5 # Staff.
+mastery
+
+# Alternate solution for mastery: determine the ID of the Conjurer unit, do some math, use a really big value for the mastery, and hope that doesn't break anything.
+
+newmonster "Conjurer"
+
+# New "generic" (bad guys only) Sorcerer blood mage?
+newmonster "Sorcerer"
+spellweapon 11 2 # Blood magic.
+
+# Demonologist Ogre recruitment offers in exchange for sacrifices. With luck may provide extra early game beef.
+
+selectclass 3
+addmercrec "Ogre" 4 2 50 15 0
+recxcost 4 10
 
 # Damaged golems and repair rituals. Credits to Xelos for the idea.
 # Note that you'll need to essentially replace the old golems with new ones since shrinkHP only works with consecutive IDs.

@@ -75,3 +75,48 @@ Watchers completely revamped. Now you must scry for their infernal prison using 
 
 0.41 Shah Hotfix Build 171110
 * Bugfixes, ritual descriptions.
+
+
+Make a new, full changelog for 0.5
+
+Design for 0.5:
+* Implement new mercenary system. Expensive but rare options, sometimes with leaders attached, comprised of units designed to expand the buyer's options.
+Mercenaries should include:
+Everyone: Mermen w/ captain, 
+Civilized: humanbred-alike axe throwers, light spear/javelin cavalry w/ captain,
+Desert (Ba'al/Illusionist): desert raiders sword/bow cavalry w/ captain,
+
+* Unlockable recruits:
+Necromancer: Wraiths (w/ Hands recxcost) if in possession of a Wraith Lord or King. Flat rate?
+
+* Framework for invisible flag system?
+
+0.5 Alpha Build 18xxxx
+* 
+
+0.4 design
+* Implementing the Shah, finally.
+
+* Terracotta cost -> 10 gold (from 20).
+* Second run at the High Priestess. More-or-less a complete revamp of the class' mechanics once I'm done. 
+Blood feasts revamped, lesser blood feast gone completely, though a Blood Banquet ritual at T2 (more expensive) emulates its functionality.
+Expanded roster of giants accessed through their leaders. Blood Feast spells leave ruins. Spells available to giant lords (Adon, Melqart, the new Belus) allow duplication of Blood Spell effect at dramatically higher cost.
+Qedesim, gibbor archers and scouts. Anakite Emites, which upgrade into Zamzummim. High Arcana Anakite Elders, Sages, and Rephaite Belusim. Anakite Dawn Guards. Blood feasts more expensive?
+New undead units. Fossil warriors. More appropriate spectral units. 
+Add central-only scorpion summons to Creatures rituals, less efficient than southern.
+T1 & T2 Ceremonies have temple-only variant copies (learned at the same time) at a slight increase in cost, so you can always summon demons in your starting citadel and in any temples you find outside the south.
+Baal replaces one spellweapon /w Command 3. New levels for Ba'alite rituals, Nephil and Ba'al-exclusive, respectively. Invade Hell to release revamped Grigori?
+Watchers can only be summoned at a Pit in the Inferno.
+
+Polish up the Barbarian's and Troll King's new stuff.
+Zotz for the Priest King.
+Spirit Sight for Hades recruitables.
+Unaging for most spectral undead.
+Master Smith gives magic swords as well and can also upgrade Unicorn Knights (and will prioritize them first).
+Generic Chartmaker/Navigator/Stormcaller that can scry for ports and "sail" (teleport at high AP cost) from port to port at a suitable fee in gold.
+Mermen mercenaries. Low probability of recruiting a Turtle Chief, in turn gives recruitment offers for Turtle Warriors and Mermages (even without libraries, though quite rare).
+Mercenary cavalry tweaked to follow the same model. Recruit a Mercenary Captain first to get offers for mercenary cavalry. More units may follow in the future.
+Stone Soldiers for the Enchanter significantly slower, 6 AP per. (That's what you get for unmatched cost-efficiency.)
+
+0.5?
+More terrains and indies spawned in turn 0?

@@ -3,31 +3,36 @@
 # High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned. Gibbor can be rarely recruited right from the start but become more common if a Qedesim is available. Costs based loosely on the Dai Bakemono. Stronger overall but also cost slightly more before sacrifices.
 # Now that giants can be both recruited and summoned, move back towards a more vanilla Blood Feast list? Blood Feast is about the same cost in sacrifices (disregarding criticals which you probably shouldn't) but of course does not cost gold or iron.
 selectclass 5
-addmercrec "Gibbor Scout" 4 1 25 15 3
+addmercrec "Gibbor Scout" 4 1 30 15 3
+reclimiter "-Qedesim"
 recxcost 4 5
-addunitrec "Gibbor" 5 3 60 15 15
+addunitrec "Gibbor" 5 3 65 15 15
+reclimiter "-Qedesim"
+reclimiter "-God"
 recxcost 4 15
-addunitrec "Gibbor Archer" 2 3 60 15 15
+addunitrec "Gibbor Archer" 2 3 65 15 15
+reclimiter "-Qedesim"
+reclimiter "-God"
 recxcost 4 15
 # Qedesim Gibbor recruit offers. More likely and fixed or reduced cost variable?
-addmercrec "Gibbor Scout" 5 1 25 5 3
+addmercrec "Gibbor Scout" 5 1 30 5 3
 reclimiter "+Qedesim"
 reclimiter "-God"
 recxcost 4 5
-addunitrec "Gibbor" 15 3 60 5 15
+addunitrec "Gibbor" 15 3 65 5 15
 reclimiter "+Qedesim"
 reclimiter "-God"
 recxcost 4 15
-addunitrec "Gibbor Archer" 6 3 60 5 15
+addunitrec "Gibbor Archer" 10 3 65 5 15
 reclimiter "+Qedesim"
 recxcost 4 15
 # Anakite recruit offers, costs based on the Ancient Pale Ones, who are surprisingly close in stats. More hit points and amphibious, but bad sight and especially vulnerable to eyeloss. Of course, Anakites also cost sacrifices.
-addunitrec "Anakite" 15 2 60 0 20
+addunitrec "Anakite" 15 2 80 0 20
 reclimiter "+Anakite Captain"
 reclimiter "+Adon"
 reclimiter "-God"
-recxcost 4 30
-addunitrec "Dawn Guard" 5 2 80 0 30
+recxcost 4 20
+addunitrec "Dawn Guard" 5 2 100 0 30
 reclimiter "+Adon"
 recxcost 4 30
 addcomrec "Anakite Elder" 1 70 20 0
@@ -40,7 +45,7 @@ libraryrec
 reclimiter "+Adon"
 reclimiter "+Zamzummite"
 recxcost 4 20
-addunitrec "Rephaite" 15 1 60 0 25
+addunitrec "Rephaite" 15 1 60 0 20
 reclimiter "+Melqart"
 reclimiter "+Belus"
 reclimiter "-God"
@@ -50,6 +55,36 @@ recxcost 4 40
 newmonster "Qedesim"
 descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedestim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedestim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest.^^Gibborim are much more likely to seek out and offer their loyalty to the High Priestesses who retain Qedestim in their service."
 
+# Ba'al recruitables, cheaper, more plentiful? Could alternatively use invisible flags which spawn in recruitment spots if Ba'al exists in the world.
+addunitrec "Gibbor" 
+reclimiter "+God"
+recxcost 4 10
+addunitrec "Gibbor Archer" 
+reclimiter "+God"
+recxcost 4 10
+addunitrec "Anakite" 
+reclimiter "+God"
+recxcost 4 10
+addunitrec "Rephaite" 
+reclimiter "+God"
+recxcost 4 20
+#addcomrec "Anakite Elder" 
+#libraryrec
+#reclimiter "+God"
+#resxcost 4 x
+#addcomrec "Emite" 
+#libraryrec
+#reclimiter "+God"
+#resxcost 4 x
+addcomrec "Adon" 10
+reclimiter "+God"
+reclimiter "-Adon"
+addcomrec "Melqart" 10
+reclimiter "+God"
+reclimiter "-Melqart"
+addcomrec "Belus" 10
+reclimiter "+God"
+reclimiter "-Belus"
 
 # DON'T do the below - leaving it in should I change my mind, this is a sort of scrapbook after all.
 # It's trying too hard to cram Dominions into CoE, I think. It's fine to have distinct Watchers but I'm not sure the Nephilim fit?
@@ -116,30 +151,7 @@ clearweapons
 spellweaponbonus
 meleeweapon ? ?
 
-# Ba'al recruitables, cheaper, more plentiful? Could alternatively use invisible flags which spawn in recruitment spots if Ba'al exists in the world.
-addmercrec "Gibbor Scout" 5 1 25 10 3
-reclimiter "+God"
-resxcost 4 5
-addunitrec "Gibbor" 
-reclimiter "+God"
-resxcost 4 x
-addunitrec "Gibbor Archer" 
-reclimiter "+God"
-resxcost 4 x
-addunitrec "Anakite" 
-reclimiter "+God"
-resxcost 4 x
-addunitrec "Rephaite" 
-reclimiter "+God"
-resxcost 4 x
-#addcomrec "Anakite Elder" 
-#libraryrec
-#reclimiter "+God"
-#resxcost 4 x
-#addcomrec "Emite" 
-#libraryrec
-#reclimiter "+God"
-#resxcost 4 x
+
 
 # Advanced units often with resxcosts - mostly specific for each class and has pre-requisites, not sure what direction to take this. Some classes might lack them entirely.
 # Probably

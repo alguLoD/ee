@@ -69,6 +69,23 @@ Watchers completely revamped, [redacted].
 * Mercenaries tweaked. First a commander is hired and then other mercenary recruitment offers will appear. The basic mercenary line only includes light cavalry for now.
 * Turtle Tribe/Merman mercenaries. Grant limited amphibious capabilities to all classes.
 
+Make a new, full changelog for 0.5
+
+Design for 0.5:
+* Implement new mercenary system. Expensive but rare options, sometimes with leaders attached, comprised of units designed to expand the buyer's options.
+Mercenaries should include:
+Everyone: Mermen w/ captain, 
+Civilized: humanbred-alike axe throwers, light spear/javelin cavalry w/ captain,
+Desert (Ba'al/Illusionist): desert raiders sword/bow cavalry w/ captain,
+
+* Unlockable recruits:
+Necromancer: Wraiths (w/ Hands recxcost) if in possession of a Wraith Lord or King. Flat rate?
+
+* Framework for invisible flag system?
+
+0.5 Alpha Build 18xxxx
+* 
+
 0.4 design
 * Implementing the Shah, finally.
 

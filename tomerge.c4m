@@ -1,5 +1,11 @@
 # TODO investigate WTF terr -61 "Forge Location" is.
 
+# "Khan" or "Barbarian King" path for Barbarians.
+# Gate-creation for Bakemono. Potential to transform the class? Can't get rid of the freespawn mechanic, though.
+# Senator - the ability to found a capital if none is present on Elysium?
+# King - the ability to create a King's Castle if no capital is present on Elysium? (I.e. Dark Ages/Agricultural only?)
+# 
+
 # High Priestess can recruit giants using gold, iron and sacrifices when the appropriate lord is summoned. Gibbor can be rarely recruited right from the start but become more common if a Qedesim is available. Costs based loosely on the Dai Bakemono. Stronger overall but also cost slightly more before sacrifices.
 # Now that giants can be both recruited and summoned, move back towards a more vanilla Blood Feast list? Blood Feast is about the same cost in sacrifices (disregarding criticals which you probably shouldn't) but of course does not cost gold or iron.
 selectclass 5

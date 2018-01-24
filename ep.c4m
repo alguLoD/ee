@@ -46,7 +46,8 @@ oneshot
 arrow
 flymode 1
 flylook 1
-flysound 19
+flysound 19arrow
+
 sound -1
 # Used by Spectral Ba'alites.
 

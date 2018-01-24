@@ -57,6 +57,7 @@ sound -1
 # [MONSTERS]
 # [MERCENARIES]
 
+# Mercenary cavalry, available to most human classes.
 newmonster "Mercenary Cavalry"
 spr1 "ee/spr/i/merccav1.tga"
 spr2 "ee/spr/i/merccav2.tga"
@@ -82,6 +83,7 @@ rank 0
 hp 12
 mor 5
 
+# Mermen, mercenaries common to every class.
 newmonster "Turtle Warrior"
 spr1 "ee/spr/i/lmman1.tga"
 spr2 "ee/spr/i/lmman2.tga"
@@ -151,6 +153,7 @@ nobootslots
 water
 landshape -1
 
+# Common mercenary, available to nearly every class.
 newmonster "Mercenary Axe Thrower"
 spr1 "ee/spr/i/mercaxethrower1.tga"
 spr2 "ee/spr/i/mercaxethrower2.tga"
@@ -168,6 +171,7 @@ human
 shield
 allitemslots
 
+# Mercenary, rarity TBD
 newmonster "Mercenary Slinger"
 spr1
 spr2
@@ -184,6 +188,7 @@ human
 shield # ?
 allitemslots
 
+# Essentially a HP cavalry mercenary variant.
 newmonster "Desert Raider"
 spr1 "ee/spr/TODO"
 spr2 "ee/spr/TODO"
@@ -201,7 +206,6 @@ human
 shield
 allitemslots
 nobootslots
-# Essentially a HP cavalry mercenary variant.
 
 newmonster "Raider Chieftain"
 copystats "Desert Raider"
@@ -461,19 +465,35 @@ addmercrec "Turtle Warrior" 3 10 100 25 0
 addcomrec "Turtle Chief" -1
 addmercrec "Mercenary Axe Thrower" 3 10 100 25 10
 addmercrec "Mercenary Slinger" 3 10 100 25 0
-addmercrec ""
 
 # [NECROMANCER]
-
+selectclass 2
+addmercrec "Mercenary Cavalry" 3 8 100 25 0
+addcomrec "Mercenary Captain" -1
+addmercrec "Turtle Warrior" 3 10 100 25 0
+addcomrec "Turtle Chief" -1
+addmercrec "Mercenary Axe Thrower" 3 10 100 25 10
+addmercrec "Mercenary Slinger" 3 10 100 25 0
 # [DEMONOLOGIST]
 
 # Demonologist Ogre recruitment offers in exchange for sacrifices. With luck may provide extra early game beef. Mostly flavor.
 
 selectclass 3
+addmercrec "Mercenary Cavalry" 3 8 100 25 0
+addcomrec "Mercenary Captain" -1
+addmercrec "Turtle Warrior" 3 10 100 25 0
+addcomrec "Turtle Chief" -1
+addmercrec "Mercenary Axe Thrower" 3 10 100 25 10
+addmercrec "Mercenary Slinger" 3 10 100 25 0
 addmercrec "Ogre" 8 1 25 15 0
 recxcost 4 5
 
 # [WITCH]
+selectclass 4
+addmercrec "Turtle Warrior" 3 10 100 25 0
+addcomrec "Turtle Chief" -1
+addmercrec "Mercenary Axe Thrower" 3 10 100 25 10
+addmercrec "Mercenary Slinger" 3 10 100 25 0
 
 # [HIGH PRIESTESS]
 

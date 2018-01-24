@@ -7,6 +7,9 @@ description "Elysium Plus is a collection of tweaks and some new bits of content
 # [NEW MONSTERS]
 # ??
 # ??
+# [VARIABLES USED]
+# 70-86, Uncle Bob
+# 200, Nephil glutton
 
 # [NEW WEAPONS]
 
@@ -180,7 +183,7 @@ human
 shield # ?
 allitemslots
 
-newmonster ""
+newmonster "Desert Raider"
 spr1 "ee/spr/TODO"
 spr2 "ee/spr/TODO"
 descr ""
@@ -199,7 +202,111 @@ allitemslots
 nobootslots
 # Essentially a HP cavalry mercenary variant.
 
+newmonster "Raider Chieftain"
+copystats "Desert Raider"
+descr ""
+rank 0
+hp 12
+mor 5
+
+# [INDEPENDENT]
+
+# Ethereal undead unaging and spirit sight.
+selectmonster "Ghost Captain"
+spiritsight
+unaging
+
+selectmonster "Dispossessed Spirit"
+unaging
+
+selectmonster "Ghost Warrior"
+unaging
+
+selectmonster "Spectral Archer"
+unaging
+
+selectmonster "Spectral Horseman"
+unaging
+
+selectmonster "Shade"
+unaging
+
+selectmonster "Shade Lord"
+unaging
+
+selectmonster "Shade Mage"
+unaging
+
+selectmonster "Shade Beast"
+unaging
+
+selectmonster "Ghost"
+unaging
+
+selectmonster "Banshee"
+unaging
+
+selectmonster "Wraith"
+unaging
+
+selectmonster "Wraith Lord"
+unaging
+
+selectmonster "Wraith King"
+unaging
+
+selectmonster "Ghost Mage"
+unaging
+
+selectmonster "Ghost King"
+unaging
+
+selectmonster "Stygian Ghost"
+unaging
+
+selectmonster "Stygian King"
+unaging
+
+selectmonster "Dusk Elder"
+unaging
+
+# [DEMONOLOGIST]
+
+selectmonster "Bloodsworn"
+ctrlchance 100
+
 # [HIGH PRIESTESS]
+
+# Rearpos means the Shed will hide behind infantry, Gibbor, giant insects etc. while not entirely eliminating its weaknesses by simply setting it to mid-rank.
+selectmonster "Shed"
+rearpos
+
+selectmonster "Lammashta"
+unaging
+
+# Malikum given the magic sword mentioned in their description and the new Sheol ritpower. Spirit sight, too.
+selectmonster "Malik"
+spiritsight
+clearweapons
+spellweapon 38 3 # Necromancy
+meleeweapon 22 474 # Magic sword, damage 1-29
+power 1 0 # Gets rid of Necromancy.
+power 49 3 # Sheol
+unaging
+gatherhands
+
+# Ditanim are described as having magic swords like the Malikum, and now they do.
+selectmonster "Ditanu"
+clearweapons
+meleeweapon 19 474 # Magic sword, damage 1-26
+mr 7
+unaging
+
+selectmonster "Rephaite"
+fireres 50
+
+selectmonster "Melqart"
+fireres 50
 
 newmonster "Gibbor Scout"
 copystats "Gibbor"
@@ -346,9 +453,24 @@ nametype 50
 
 # [BARON]
 
+selectclass 1
+addmercrec "Mercenary Cavalry" 3 8 100 25 0
+addcomrec "Mercenary Captain" -1
+addmercrec "Turtle Warrior" 3 10 100 25 0
+addcomrec "Turtle Chief" -1
+addmercrec "Mercenary Axe Thrower" 3 10 100 25 10
+addmercrec "Mercenary Slinger" 3 10 100 25 0
+addmercrec ""
+
 # [NECROMANCER]
 
 # [DEMONOLOGIST]
+
+# Demonologist Ogre recruitment offers in exchange for sacrifices. With luck may provide extra early game beef. Mostly flavor.
+
+selectclass 3
+addmercrec "Ogre" 8 1 25 15 0
+recxcost 4 5
 
 # [WITCH]
 
@@ -442,5 +564,267 @@ recxcost 4 20
 # [BARBARIAN]
 
 # [PALE ONE]
+
+# [EVENTS]
+
+# [HIGH PRIESTESS]
+# Cannibalism events, just for fun.
+
+playerevent
++chance 2
++player -2
++hasunit -2 "Anakite"
++hasunitthere -2 "Desert Raider"
+message -2 "An Anakite of prodigous appetite caught sight of a horse belonging to a desert raider and decided to eat it. When the owner objected strenously with drawn steel, the Anakite ate him as well."
+killunit 999
+endevent
+
+playerevent
++chance 1
++player -2
++hasunit -2 "Rephaite"
++hasunitthere -2 "Gibbor"
+message -2 "A Rephaite of prodigous appetite has wrung the neck of a Gibbor and swallowed him whole! Apparently, they taste like chicken."
+killunit 999
+endevent
+
+playerevent
++chance 1
++player -2
++hasunit -2 "Nephil"
++hasunitthere -2 "Rephaite"
++varequal 200 0
+message -2 "A Nephil has grown irate at the antics of a grandchild and, like any angry grandfather would, devoured him whole. The Nephil has been chastised over the incident and promises not to do it again."
+killunit 999
+setvar 200 1
+endevent
+
+# [BARBARIAN]
+# Spirit Guide spawn event. Not sure if it's worth having so many just to give any potential Barbarian player an equal shot.
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 1
++class -2 "Barbarian"
++varequal 70 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 70 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 2
++class -2 "Barbarian"
++varequal 71 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 71 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 3
++class -2 "Barbarian"
++varequal 72 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 72 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 4
++class -2 "Barbarian"
++varequal 73 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 73 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 5
++class -2 "Barbarian"
++varequal 74 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 74 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 6
++class -2 "Barbarian"
++varequal 75 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 75 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 7
++class -2 "Barbarian"
++varequal 76 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 76 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 8
++class -2 "Barbarian"
++varequal 77 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 77 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 9
++class -2 "Barbarian"
++varequal 78 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 78 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 10
++class -2 "Barbarian"
++varequal 79 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 79 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 11
++class -2 "Barbarian"
++varequal 80 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 80 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 12
++class -2 "Barbarian"
++varequal 81 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 81 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 13
++class -2 "Barbarian"
++varequal 82 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 82 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 14
++class -2 "Barbarian"
++varequal 83 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 83 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 15
++class -2 "Barbarian"
++varequal 84 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 84 1
+endevent
+
+playerevent
++squareowner -2
++minturnnbr 12
++chance 10
++player 16
++class -2 "Barbarian"
++varequal 85 0
+-hascom -2 "Spirit Guide"
+message -2 "Your long-lost uncle came sprinting into camp today, completely exposed and gibbering incoherently.  Before anyone knew who he was he was chained up and thrown in a cesspit overnight.  He now speaks of incomprehensible and mildly offensive prophesies and claims that your long-dead grandfather spoke to him in his dreams and sent him to your side."
+newunits -2 "c*Spirit Guide"
+comname "Uncle Bob"
+setvar 85 1
+endevent
+
 
 

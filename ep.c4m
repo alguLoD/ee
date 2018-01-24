@@ -1,0 +1,446 @@
+icon "ep/ep.tga"
+description "Elysium Plus is a collection of tweaks and some new bits of content intended to enhance the game while remaining close to vanilla. Consult the ep_readme file for a full changelog."
+
+# [NEW WEAPONS]
+# ??
+# ??
+# [NEW MONSTERS]
+# ??
+# ??
+
+# [NEW WEAPONS]
+
+newweapon "Throwing Axe"
+range 3
+init 2
+dmgtype 1 # Slashing
+dmg 5
+oneshot
+mundane
+arrow
+flymode ?
+flylook ?
+flysound ?
+sound -1
+# Used by mercenary axe throwers.
+
+newweapon "Brace Pike"
+range 2
+init 7
+dmgtype 3 # Piercing
+oneshot
+mundane
+sound 84
+# Used by all pike units.
+# Intended for use with:
+#clearweapons
+#meleeweaponspec # "Brace Pike"
+#meleeweaponlong # 22
+# to give pike-wielding units a high-initative first strike.
+
+newweapon "Spectral Javelin"
+range 3
+init 1
+dmgtype 7 # Magic.
+oneshot
+arrow
+flymode 1
+flylook 1
+flysound 19
+sound -1
+# Used by Spectral Ba'alites.
+
+# [MONSTERS]
+# [MERCENARIES]
+
+newmonster "Mercenary Cavalry"
+spr1 "ee/spr/i/merccav1.tga"
+spr2 "ee/spr/i/merccav2.tga"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry. Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
+rank 1
+hp 10
+armor 0
+mor 4
+mr 4
+str 4
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
+fast
+human
+shield
+allitemslots
+nobootslots
+
+newmonster "Mercenary Captain"
+copystats "Mercenary Cavalry"
+descr "Every now and then, restless bands of young men and women will strike out from their hamlets and villages to look for adventure. This rarely works out well for anyone involved. If they are not soon ambushed and eaten by a herd of deer, they usually turn to banditry.  Those who have armaments of some sort may instead return to civilized society and offer their services as sellswords. This mercenary captain has somehow acquired a horse and would probably turn to cattle-rustling if not given employment."
+rank 0
+hp 12
+mor 5
+
+newmonster "Turtle Warrior"
+spr1 "ee/spr/i/lmman1.tga"
+spr2 "ee/spr/i/lmman2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+rangedweapon 0 24 # Javelin.
+meleeweapon 0 4 # Spear.
+human # If Gibbor count, these are close enough.
+shield
+allitemslots
+nobootslots
+watershape 1
+
+newmonster "Turtle Warrior"
+spr1 "ee/spr/i/wmman1.tga"
+spr2 "ee/spr/i/wmman2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation. They are sometimes known as mermen. Contrary to popular belief, they do not possess the lower body of a fish.  They are actually more like dolphins or whales, and usually learn to breathe water at a young age."
+rank 1
+hp 6
+armor 0
+mor 4
+mr 5
+str 4
+meleeweapon 0 4 # Spear.
+human
+shield
+battlefast
+allitemslots
+nobootslots
+landshape -1
+
+newmonster "Turtle Chief"
+spr1 "ee/spr/i/lmcap1.tga"
+spr2 "ee/spr/i/lmcap2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+rank 0
+hp 8
+armor 1
+mor 5
+mr 5
+str 4
+meleeweapon 0 26 # Trident.
+allitemslots
+nobootslots
+water
+watershape 1
+
+newmonster "Turtle Chief"
+spr1 "ee/spr/i/wmcap1.tga"
+spr2 "ee/spr/i/wmcap2.tga"
+descr "The Turtle Tribe inhabits the coasts of Elysium. Unlike most of the barbarian tribes they are a cordial people and would seem almost ordinary if not for their abilities of transformation.  They are sometimes known as mermen.  Some of their chiefs seek out civilized lords and offer their allegiance, an exchange which typically leverages the unique abilities of the merfolk in exchange for tax exemptions."
+rank 0
+hp 8
+armor 1
+mor 5
+mr 5
+str 4
+meleeweapon 0 26 # Trident.
+battlefast
+allitemslots
+nobootslots
+water
+landshape -1
+
+newmonster "Mercenary Axe Thrower"
+spr1 "ee/spr/i/mercaxethrower1.tga"
+spr2 "ee/spr/i/mercaxethrower2.tga"
+descr ""
+rank 1
+hp 6
+armor 0
+mr 5
+mor 5
+str 4
+rangedweapon 0 "Throwing Axe"
+meleeweapon 0 3 # Axe
+fireres 50
+human
+shield
+allitemslots
+
+newmonster "Mercenary Slinger"
+spr1
+spr2
+descr ""
+rank 0
+hp 6
+armor 0
+mr 4
+mor 5
+str 4
+rangedweapon 0 27 # Sling.
+meleeweapon 0 
+human
+shield # ?
+allitemslots
+
+newmonster ""
+spr1 "ee/spr/TODO"
+spr2 "ee/spr/TODO"
+descr ""
+rank 1
+hp 10
+armor 0
+mor 4
+mr 4
+str 4
+rangedweapon 0 7 # Bow.
+meleeweapon 0 2 # Broadsword.
+fast
+human
+shield
+allitemslots
+nobootslots
+# Essentially a HP cavalry mercenary variant.
+
+# [HIGH PRIESTESS]
+
+newmonster "Gibbor Scout"
+copystats "Gibbor"
+copyspr "Gibbor"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  They are men of great stature and prowess.  Some of the more keen-eyed Gibbor serve the High Priestess as scouts rather than true warriors."
+rank 0
+acutesenses
+
+newmonster "Qedesim"
+spr1 "ee/spr/hp/qed1.tga"
+spr2 "ee/spr/hp/qed2.tga"
+descr "The Gibborim are lesser descendants of the primeval giants that walked the earth when Ba'al was incarnate.  The Qedesim is a Gibbor priest.  There are no women among the Rephaim or their descendants, but the Qedesim seem to take their role in the social order, as cooks, maids and scribes. While most Gibbor are looked down on by their pureblooded cousins, the Qedesim are exempt from this.  In fact, the giants seem emboldened by their presence on the field of battle and fight fiercely to protect and impress the priest."
+rank -1
+hp 18
+armor 0
+mr 6
+mor 5
+str 6
+spellweapon 28 1 # Dark Prayers
+meleeweapon 4 0 # Fist
+localleadership 1
+human
+allitemslots
+nametype 49
+size1x1
+
+newmonster "Emite"
+spr1 "ee/spr/hp/emite1.tga"
+spr2 "ee/spr/hp/emite2.tga"
+descr "The Emite is a lowly Anakite necromancer and spokesman of the dead.  They are the students and assistants of the Zamzummite Murmurers but do not yet have any religious authority of their own.  With the return of the Anakim, the Adons have begun to call them back to serve in the High Priestess' hosts."
+rank -1
+hp 40
+armor 0
+mr 8
+mor 6
+str 7
+spellweapon 38 1 
+meleeweapon 6 5 # Staff
+power 49 1
+classcost 100
+weaponslots
+gatherhands
+mastery 1
+nametype 49
+size2x2
+
+newmonster "Spectral Ba'alite"
+spr1 "ee/spr/hp/spbal1.tga"
+spr2 "ee/spr/hp/spbal2.tga"
+descr "Spectral Ba'alites are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
+rank
+hp 6
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 0 "Spectral Javelin"
+meleeweapon 4 222 # Spectral Spear
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Spectral Ba'alite Zealot"
+spr1 "ee/spr/hp/spbaz1.tga"
+spr2 "ee/spr/hp/spbaz2.tga"
+descr "Spectral Ba'alite Zealots are the apparitions of Ba'alite Zealots fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour.  The Zealots in particular retain faith, though it's hard to say whether they realize they are dead."
+rank 1
+hp 12
+armor 0
+mr 7
+mor 7
+str 4
+meleeweapon 6 158 # Spectral Sword
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Spectral Ba'alite Archer"
+spr1 "ee/spr/hp/spbar1.tga"
+spr2 "ee/spr/hp/spbar2.tga"
+descr "Spectral Ba'alite Archers are the apparitions of Ba'alite cultists fallen in battle, rewarded for their service by being made to serve once more, this time for eternity.  They seem to accept their fate with surprisingly good humour."
+rank 0
+hp 4
+armor 0
+mr 6
+mor 7
+str 4
+rangedweapon 3 223 # Spectral Bow
+meleeweapon 2 222 # Spectral Dagger/Weapon
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+
+newmonster "Hierodule Ghost"
+spr1 "ee/spr/hp/sphi1.tga"
+spr2 "ee/spr/hp/sphi2.tga"
+descr "The ghosts of the Hierodules are much like their living counterparts and remain devoted to Ba'al.  Their magic seems to take on a different tone, however, and necromancers describe their visage as displaying an almost desperate hunger."
+rank -1
+hp 5
+armor 0
+mr 7
+mor 6
+str 4
+spellweapon 8 1 # Unlife right now. Should it? Dark? Or Dark Prayers?
+meleeweapon 6 10 # Drain Life
+float
+ethereal
+coldres 100
+poisonres 100
+sleepres
+charmres
+diseaseres
+undead
+unaging
+allitemslots
+banishsurv
+nametype 50
+
+# [CLASSES]
+
+# [BARON]
+
+# [NECROMANCER]
+
+# [DEMONOLOGIST]
+
+# [WITCH]
+
+# [HIGH PRIESTESS]
+
+selectclass 5
+addmercrec "Gibbor Scout" 10 1 30 15 5
+reclimiter "+Qedesim"
+reclimiter "-God"
+recxcost 4 5
+addunitrec "Gibbor" 15 3 65 15 15
+reclimiter "+Qedesim"
+reclimiter "-God"
+recxcost 4 15
+addunitrec "Anakite" 15 2 80 0 20
+reclimiter "+Anakite Captain"
+reclimiter "+Adon"
+reclimiter "-God"
+recxcost 4 20
+addcomrec "Anakite Captain" 20 50 15 10
+reclimiter "+Adon"
+recxcost 4 15
+addunitrec "Rephaite" 15 1 60 0 20
+reclimiter "+Melqart"
+reclimiter "-God"
+recxcost 4 40
+addcomrec "Emite" 0 75 20 0
+libraryrec
+reclimiter "+Adon"
+reclimiter "+Zamzummite"
+recxcost 4 20
+# Ba'al gives discounts and improved recoffers to most giants.
+addmercrec "Gibbor Scout" 10 1 30 15 5
+reclimiter "+God"
+recxcost 4 3
+addunitrec "Gibbor" 25 3 45 15 15
+reclimiter "+God"
+recxcost 4 7
+addunitrec "Anakite" 25 2 80 0 20
+reclimiter "+God"
+recxcost 4 10
+addunitrec "Rephaite" 25 1 60 0 20
+reclimiter "+God"
+recxcost 4 20
+
+# [BAKEMONO]
+
+# [BARBARIAN]
+
+# [SENATOR]
+
+# [PALE ONE]
+
+# [DRUID]
+
+# [BURGMEISTER]
+
+# [WARLOCK]
+
+# [PRIEST KING]
+
+# [TROLL KING]
+
+# [ENCHANTER]
+
+# [BEHOLDER]
+# NPC-only, but included anyway.
+
+# [ARCHMAGE]
+# NPC-only, but included anyway.
+
+# [GOBLIN KING]
+# NPC-only, but included anyway.
+
+# [HIGH CULTIST]
+
+# [DWARF QUEEN]
+
+# [VOICE OF EL]
+
+# [ILLUSIONIST]
+
+# [MARKGRAF]
+
+# [DRYAD QUEEN]
+
+# [RITUALS]
+
+# [HIGH PRIESTESS]
+
+# [BARBARIAN]
+
+# [PALE ONE]
+
+
